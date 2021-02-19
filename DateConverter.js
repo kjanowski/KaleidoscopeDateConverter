@@ -253,14 +253,20 @@ function getConvertedTime(calendar, standardSeconds){
 	
 	
 	var era;
+	var eraIndex;
 	if(after)
+	{
 		era = params[calendar].eraAfter;
-	else era = params[calendar].eraBefore;
-	
-	
+		eraIndex=1;
+	}
+	else{
+		era = params[calendar].eraBefore;
+		eraIndex=0;
+	}
 	
 	var dateTime = {
 		year: year,
+		eraIndex: eraIndex,
 		era: era,
 		month: month,
 		monthName: monthName,
@@ -332,7 +338,6 @@ function updateDisplay(calendar){
 	document.getElementById("output-"+calendar+"-diff").innerHTML = textDiff;
 }
 
-
 function setTime(which){
 	//get the values and convert them to numbers
 	var calendar = document.getElementById('calendar'+which).value;
@@ -348,4 +353,53 @@ function setTime(which){
 
 	for(name of calendarNames)
 		updateDisplay(name);
+}
+
+function submitInputs(which, calendar){
+	//get the values and convert them to numbers
+	var year = document.getElementById('year_'+calendar).value *1.0;
+	var eraIndex = document.getElementById('era_'+calendar).selectedIndex;
+	if(eraIndex == 0)
+		year = -year;
+	
+	var month = document.getElementById('month_'+calendar).value *1.0;
+	var day = document.getElementById('day_'+calendar).value *1.0;
+	var hour = document.getElementById('hour_'+calendar).value *1.0;
+	var minute = document.getElementById('minute_'+calendar).value *1.0;
+	var second = document.getElementById('second_'+calendar).value *1.0;
+	
+	//set the date in the selected calendar
+	setDateTime('Now', calendar, year, month, day, hour, minute, second);
+}
+
+function limitInputs(calendar)
+{
+	var yearInput = document.getElementById('year_'+calendar);
+	var era = document.getElementById('era_'+calendar).selectedIndex;
+	if(era>0)
+		yearInput.min = 0;
+	else yearInput.min =1;
+	yearInput.value = Math.max(yearInput.value, yearInput.min);
+	
+	
+	var dayInput = document.getElementById('day_'+calendar);
+	var month = document.getElementById('month_'+calendar).value * 1 - 1;
+	dayInput.max = params[calendar].monthLength[month];
+	dayInput.value = Math.min(dayInput.value, dayInput.max);
+}
+
+function updateInputs(which, calendar){
+	var dateTime = getDateTime(which, calendar);
+	
+	document.getElementById('year_'+calendar).value = ""+dateTime.year;
+	
+	var eraDropdown = document.getElementById('era_'+calendar);
+	eraDropdown.selectedIndex = dateTime.eraIndex;
+	
+		
+	document.getElementById('month_'+calendar).value = ""+dateTime.month;
+	document.getElementById('day_'+calendar).value = ""+dateTime.day;
+	document.getElementById('hour_'+calendar).value = ""+dateTime.hour;
+	document.getElementById('minute_'+calendar).value = ""+dateTime.minute;
+	document.getElementById('second_'+calendar).value = ""+dateTime.second;
 }

@@ -1,0 +1,123 @@
+:root{
+	--item-margin: 5px;
+	
+	--inner-border-size: 5px;
+	
+	--generic-font-family: 'Oregano', sans-serif;
+	
+	--generic-brighter-color: #cccccc;
+	--generic-neutral-color: #555555;
+	--generic-darker-color: #333333;
+	--generic-text-color: white; 
+
+	--generic-page-color: rgba(255,255,255,0.15);
+	--generic-panel-color: rgba(0,0,0,0.5);
+	
+	--page-bg-img:url('img/starfield_1920.jpg');
+	--twk-bg-img:url('img/velvet.png');
+	
+	--generic-border-img:url('img/multiColorFrame.png') 20 stretch;
+	--twk-border-img:url('img/purpleFrame.png') 20 stretch;
+	
+	--twk-highlight-color: chartreuse;
+	--twk-brighter-color: #e0e0f0;
+	--twk-neutral-color: blueViolet;
+	--twk-darker-color: indigo; 
+}
+
+body{
+	background-image: var(--page-bg-img);
+	color: var(--generic-text-color);
+	margin:0px;
+}
+
+body,input,select,button{
+	font-family:var(--generic-font-family);
+	font-size:18px;
+}
+
+h1,h2,h3,h4,h5{
+	color:var(--generic-text-color);
+	font-family:var(--generic-font-family);
+	margin:0px;
+}
+
+
+.toolshelf{
+	background: var(--generic-page-color);
+	padding:0px;
+	margin:0px;
+	position:relative;
+	left:0%;
+	top:0px;
+	height:auto;
+	width:330px;
+}
+
+
+.toolshelf-section{
+	border: var(--inner-border-size) solid transparent;
+	padding:10px;
+	display:inline-block;
+	position:relative;
+	vertical-align:top;
+	width:300px;
+	margin:0px;
+	height:auto;
+}
+
+.utd.toolshelf-section{
+	border-image: var(--generic-border-img);
+	background: var(--generic-page-color);
+}
+
+.twk.toolshelf-section{
+	border-image: var(--twk-border-img);
+	background-image: var(--twk-bg-img);
+	background-size: 300px 300px;
+}
+
+
+select, input{
+	background: var(--generic-panel-color);
+	border: 1px solid var(--generic-text-color);
+	color: var(--generic-text-color);	
+}
+
+.twk select, .twk input{
+	background: var(--twk-darker-color);
+}
+
+select{
+	width: auto;
+}
+
+input{
+	width:40px;
+}
+
+input#hour_utd,
+input#hour_twk{
+	width:60px;
+}
+
+input#year_utd,
+input#year_twk{
+	width:80px;
+}
+
+select, input{
+	margin: var(--item-margin);
+}
+
+button{
+	margin:var(--item-margin) 0px 0px 0px;
+	width:100%;
+}
+
+.toolshelf-section label{
+	display:inline-block;
+	margin-left:0px;
+	width:50px!important;
+}
+

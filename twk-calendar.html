@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<html>
+<head>
+	<link href='https://fonts.googleapis.com/css?family=Oregano' rel='stylesheet'>
+	<script src="DateConverter.js"></script>
+	<link rel="stylesheet" type="text/css" href="DateConverter_twk.css">
+	<script>
+		function updateTime(calendar){
+			//get the values and convert them to numbers
+			var year = document.getElementById('year_'+calendar).value *1.0;
+			var month = document.getElementById('month_'+which).value *1.0;
+			var day = document.getElementById('day_'+which).value *1.0;
+			var hour = document.getElementById('hour_'+which).value *1.0;
+			var minute = document.getElementById('minute_'+which).value *1.0;
+			var second = document.getElementById('second_'+which).value *1.0;
+			
+			//set the date in the selected calendar
+			setDateTime('Now', calendar, year, month, day, hour, minute, second);
+		}
+		
+		function initDate()
+		{
+			document.getElementById("year_utd").value = "289070";
+			document.getElementById("era_utd").selectedIndex = "1";
+			document.getElementById("month_utd").selectedIndex = "6";
+			document.getElementById("day_utd").value = "7";
+			document.getElementById("hour_utd").value = "12";
+			document.getElementById("minute_utd").value = "0";
+			document.getElementById("second_utd").value = "0";
+			
+			document.getElementById("year_twk").value = "80210";
+			document.getElementById("era_twk").selectedIndex = "1";
+			document.getElementById("month_twk").selectedIndex = "3";
+			document.getElementById("day_twk").value = "27";
+			document.getElementById("hour_twk").value = "163";
+			document.getElementById("minute_twk").value = "50";
+			document.getElementById("second_twk").value = "45";
+		}
+	</script>
+</head>
+<body>
+	<div class="toolshelf">
+		<div class="utd toolshelf-section">
+			<h2>UTD</h2>
+			<form>
+				<label>year:</label>
+				<input type="number" id="year_utd" name="year_utd" value="289070">
+				<br>
+				<label>era:</label>
+				<select id="era_utd" name="era_utd" onclick="limitInputs('utd');">
+					<option value="before">before the beginning of time</option>
+					<option value="after">since the beginning of time</option>
+				</select>
+				<br>
+				<label>month:</label>
+				<select id="month_utd" name="month_utd" onclick="limitInputs('utd');">
+					<option value="1">January</option>
+					<option value="2">February</option>
+					<option value="3">March</option>
+					<option value="4">April</option>
+					<option value="5">May</option>
+					<option value="6">June</option>
+					<option value="7">July</option>
+					<option value="8">August</option>
+					<option value="9">September</option>
+					<option value="10">October</option>
+					<option value="11">November</option>
+					<option value="12">December</option>
+				</select>
+				<br>
+				<label>day:</label>
+				<input type="number" id="day_utd" name="day_utd" min="1" value="6">
+				<br><label>time:</label>
+				<input type="number" id="hour_utd" name="hour_utd" min="0" max="23" value="12">:
+				<input type="number" id="minute_utd" name="minute_utd" min="0" max="59" value="0">:
+				<input type="number" id="second_utd" name="second_utd" min="0" max="59" value="0">
+			</form>
+			<button id="setNow" onclick="submitInputs('Now','utd');updateInputs('Now','twk');">set UTD time</button>
+		</div>	
+		<br>
+		<div class="twk toolshelf-section">
+			<h2>Those Who Know</h2>
+			<form>
+				<label>year:</label>
+				<input type="number" id="year_twk" name="year_twk" value="80210">
+				<br>
+				<label>era:</label>
+				<select id="era_twk" name="era_twk" value="1" onclick="limitInputs('twk');">
+					<option value="before">before the hive</option>
+					<option value="after">in the hive</option>
+				</select>
+				<br>
+				<label>month:</label>
+				<select id="month_twk" name="month_twk" value="4" onclick="limitInputs('twk');">
+					<option value="1">... The Phase Of Greatest Power</option>
+					<option value="2">... The Phase Of Waning Power</option>
+					<option value="3">... The Phase Of Power Loss</option>
+					<option value="4">... The Phase Of Waxing Power</option>
+				</select>
+				<br>
+				<label>day:</label>
+				<input type="number" id="day_twk" name="day_twk" min="1" value="27">
+				<br><label>time:</label>
+				<input type="number" id="hour_twk" name="hour_twk" min="0" max="199" value="0">:
+				<input type="number" id="minute_twk" name="minute_twk" min="0" max="79" value="0">:
+				<input type="number" id="second_twk" name="second_twk" min="0" max="49" value="0">
+			</form>
+			<button id="setTWK" onclick="submitInputs('Now','twk');updateInputs('Now','utd');">set local time</button>	
+		</div>
+	</div>
+	<script>
+		initDate();
+	</script>
+</body>
+</html>

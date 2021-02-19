@@ -4,8 +4,6 @@
 	--outer-border-size: 10px;
 	--inner-border-size: 5px;
 	
-	--generic-font-family: 'Oregano', sans-serif;
-	
 	--generic-brighter-color: #cccccc;
 	--generic-neutral-color: #555555;
 	--generic-darker-color: #333333;
@@ -49,7 +47,6 @@
 
 body{
 	background-image: var(--page-bg-img);
-	background-repeat: both;
 	color: var(--generic-text-color);
 	margin:0px;
 }

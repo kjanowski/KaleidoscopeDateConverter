@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<html>
+<head>
+	<link href='https://fonts.googleapis.com/css?family=Oregano' rel='stylesheet'>
+	<script src="DateConverter.js"></script>
+	<link rel="stylesheet" type="text/css" href="DateConverter.css">
+</head>
+<body>
+	<div class="page">
+			<div class="panel toolshelf">
+				<div class="toolshelf-section">
+					<h2>Current Time</h2>
+					<form>
+						<label>calendar:</label>
+						<select id="calendarNow" name="calendarNow">
+							<option value="utd">utd</option>
+							<option value="nimyric">nimyric</option>
+							<option value="pereqaian">pereqaian</option>
+							<option value="rilsu">rilsu</option>
+							<option value="twk">twk</option>
+						</select>
+						<br><label>date:</label>
+						<input type="number" id="yearNow" name="yearNow" value="289070">/
+						<input type="number" id="monthNow" name="monthNow" value="7">/
+						<input type="number" id="dayNow" name="dayNow" value="6">
+						<br><label>time:</label>
+						<input type="number" id="hourNow" name="hourNow" value="12">:
+						<input type="number" id="minuteNow" name="minuteNow" value="0">:
+						<input type="number" id="secondNow" name="secondNow" value="0">
+					</form>
+					<button id="setNow" onclick="setTime('Now')">set current time</button>
+				</div>	
+				<div class="separator"></div>
+				<div class="toolshelf-section">
+					<h2>Comparison Time</h2>
+					<form>
+						<label>calendar:</label>
+						<select id="calendarThen" name="calendarThen">
+							<option value="utd">utd</option>
+							<option value="nimyric">nimyric</option>
+							<option value="pereqaian">pereqaian</option>
+							<option value="rilsu">rilsu</option>
+							<option value="twk">twk</option>
+						</select>
+						<br><label>date:</label>
+						<input type="number" id="yearThen" name="yearThen" value="0">/
+						<input type="number" id="monthThen" name="monthThen" value="1">/
+						<input type="number" id="dayThen" name="dayThen" value="1">
+						<br><label>time:</label>
+						<input type="number" id="hourThen" name="hourThen" value="0">:
+						<input type="number" id="minuteThen" name="minuteThen" value="0">:
+						<input type="number" id="secondThen" name="secondThen" value="0">
+					</form>
+					<button id="setThen" onclick="setTime('Then')">set comparison time</button>	
+				</div>
+			</div>
+			
+			<div class="panel output" id="utdDisplay">
+				<div class="display-section display-caption"><h3>UTD</h3></div>
+				<div class="display-section display-now" id="output-utd-now"></div>
+				<div class="separator"></div>
+				<div class="display-section display-then" id="output-utd-then"></div>
+				<div class="separator"></div>
+				<div class="display-section display-diff" id="output-utd-diff"></div>
+			</div>
+			<div class="panel output" id="nimyricDisplay">
+				<div class="display-section display-caption"><h3>Nimýric Empire</h3></div>
+				<div class="display-section display-now" id="output-nimyric-now"></div>
+				<div class="separator"></div>
+				<div class="display-section display-then" id="output-nimyric-then"></div>
+				<div class="separator"></div>
+				<div class="display-section display-diff" id="output-nimyric-diff"></div>
+			</div>
+			<div class="panel output" id="pereqaianDisplay">
+				<div class="display-section display-caption"><h3>Pereqaian Alliance</h3></div>
+				<div class="display-section display-now" id="output-pereqaian-now"></div>
+				<div class="separator"></div>
+				<div class="display-section display-then" id="output-pereqaian-then"></div>
+				<div class="separator"></div>
+				<div class="display-section display-diff" id="output-pereqaian-diff"></div>
+			</div>
+			<div class="panel output" id="rilsuDisplay">
+				<div class="display-section display-caption"><h3>Rilsu World Republic</h3></div>
+				<div class="display-section display-now" id="output-rilsu-now"></div>
+				<div class="separator"></div>
+				<div class="display-section display-then" id="output-rilsu-then"></div>
+				<div class="separator"></div>
+				<div class="display-section display-diff" id="output-rilsu-diff"></div>
+			</div>
+			<div class="panel output" id="twkDisplay">
+				<div class="display-section display-caption"><h3>The Hive</h3></div>
+				<div class="display-section display-now" id="output-twk-now"></div>
+				<div class="separator"></div>
+				<div class="display-section display-then" id="output-twk-then"></div>
+				<div class="separator"></div>
+				<div class="display-section display-diff" id="output-twk-diff"></div>
+			</div>
+			
+	</div>
+</body>
+</html>

@@ -1,0 +1,88 @@
+:root{
+	--item-margin: 5px;
+	
+	--outer-border-size: 10px;
+	--inner-border-size: 5px;
+	
+	--generic-brighter-color: #cccccc;
+	--generic-neutral-color: #555555;
+	--generic-darker-color: #333333;
+	--generic-tag-neutral-color: rgba(20,20,20,0.5);
+	--generic-tag-darker-color: rgba(0,0,0,0.5);
+	--generic-font-family: Oregano, sans-serif;
+	--generic-text-color: white; 
+
+	--generic-page-color: rgba(255,255,255,0.15);
+	--generic-panel-color: rgba(0,0,0,0.5);
+	--generic-panel-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+	--generic-page-color: rgba(255,255,255,0.15);
+	--generic-page-glow: 0px 0px 60px rgba(170,170,170,1.0);
+
+	--page-bg-img:url('img/starfield_1920.jpg');
+	--fish-bg-img:url('img/woodPanels_door_lowContrast.png');
+	--rilsu-bg-img:url('img/steel_1000x500px.jpg');
+	--twk-bg-img:url('img/velvet.png');
+	
+	--generic-border-img:url('img/multiColorFrame.png') 20 stretch;
+	--fish-border-img:url('img/brassFrame.png') 20 stretch;
+	--rilsu-border-img:url('img/steel.png') 20 stretch;
+	--twk-border-img:url('img/purpleFrame.png') 20 stretch;
+	
+	--twk-highlight-color: chartreuse;
+	--twk-brighter-color: #e0e0f0;
+	--twk-neutral-color: blueViolet;
+	--twk-darker-color: indigo; 
+	--rilsu-highlight-color: #80d4ff;
+	--rilsu-brighter-color: #d0d0e1;
+	--rilsu-neutral-color: #50507c;
+	--rilsu-darker-color: #28283e;
+	--fish-highlight-color: khaki;
+	--nimyric-brighter-color: #ccdbff;
+	--nimyric-neutral-color: #004eff;
+	--nimyric-darker-color: #002680;
+	--pereqaian-brighter-color: #ffcccc;
+	--pereqaian-neutral-color: #ff0000;
+	--pereqaian-darker-color: #800000;
+}
+
+body{
+	background-image: var(--page-bg-img);
+	color: var(--generic-text-color);
+	margin:0px;
+}
+
+body,input,select,button{
+	font-family:var(--generic-font-family);
+	font-size:18px;
+}
+
+h1,h2,h3,h4,h5,a{
+	color:var(--generic-text-color);
+	font-family:var(--generic-font-family);
+	margin:0px;
+}
+
+.page{
+	width:300px;
+	background:var(--generic-page-color);
+	border: var(--outer-border-size) solid transparent;
+	border-image:var(--generic-border-img);
+	height:auto;
+	margin:auto;
+}
+
+.page .link-section{
+	display:block;
+	padding:10px;
+	background:var(--generic-page-color);
+	border:5px solid transparent;
+	border-image:var(--generic-border-img);
+	text-align:center;
+	margin:10px;
+}
+
+.page .link-section.twk{
+	border-image:var(--twk-border-img);
+	background-image:var(--twk-bg-img);
+	background-size:300px 300px;
+}
