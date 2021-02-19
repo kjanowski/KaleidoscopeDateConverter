@@ -44,14 +44,14 @@ h1,h2,h3,h4,h5{
 
 
 .toolshelf{
-	background: var(--generic-page-color);
+	background: transparent;
 	padding:0px;
 	margin:0px;
 	position:relative;
 	left:0%;
 	top:0px;
 	height:auto;
-	width:330px;
+	width:auto;
 }
 
 
