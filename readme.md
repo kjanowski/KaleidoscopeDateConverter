@@ -17,16 +17,8 @@ Therefore, I am placing the code under the [GNU General Public License 3.0](http
 
 
 However, this does *not* include the *worldbuilding concepts and art assets*.
-Specifically, I reserve all rights on:
-- the parameters for the calendars _nimyric_, _pereqaian_, _rilsu_ and _twk_
- - the (short and full) names of the calendar itself
- - the names of the months
- - the specific number of days for these months
- - the specific conversion rates for days, hours, minutes and seconds in these calendars 
-- references to the aforementioned fictional cultures in the HTML pages
-- the images used in the page design (in the "img" subfolder)
-
-What you *can* do is replace all these parameters, names and images with your own.
+Specifically excluded are the file "Config_Kaleidoscope.js" and the contents of the "img" subfolder.
+You can still use them as reference for creating your own version of these files.  
 
 
 # Technologies

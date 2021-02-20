@@ -50,14 +50,14 @@
 	--generic-link-glow: 3px -3px 5px var(--rainbow-glow-color1), 3px 3px 5px var(--rainbow-glow-color2), -3px 3px 5px var(--rainbow-glow-color3), -3px -3px 5px var(--rainbow-glow-color4);
  
 
-	--page-bg-img:url('img/starfield_1920.jpg');
-	--fish-bg-img:url('img/woodPanels_door_lowContrast.png');
-	--rilsu-bg-img:url('img/steel_1000x500px.jpg');
+	--page-bg-img:url('img/starfield.jpg');
+	--fish-bg-img:url('img/wood.png');
+	--rilsu-bg-img:url('img/steel.jpg');
 	--twk-bg-img:url('img/velvet.png');
 	
 	--generic-border-img:url('img/multiColorFrame.png') 20 stretch;
 	--fish-border-img:url('img/brassFrame.png') 20 stretch;
-	--rilsu-border-img:url('img/steel.png') 20 stretch;
+	--rilsu-border-img:url('img/steelFrame.png') 20 stretch;
 	--twk-border-img:url('img/purpleFrame.png') 20 stretch;
 	
 	--twk-highlight-color: chartreuse;

@@ -38,11 +38,11 @@
 	--generic-page-color: rgba(255,255,255,0.15);
 	--generic-panel-color: rgba(0,0,0,0.5);
 	
-	--page-bg-img:url('img/starfield_1920.jpg');
+	--page-bg-img:url('img/starfield.jpg');
 	--generic-border-img:url('img/multiColorFrame.png') 20 stretch;
 	
-	--rilsu-bg-img:url('img/steel_1000x500px.jpg');
-	--rilsu-border-img:url('img/steel.png') 20 stretch;
+	--rilsu-bg-img:url('img/steel.jpg');
+	--rilsu-border-img:url('img/steelFrame.png') 20 stretch;
 	
 	--rilsu-highlight-color: #80d4ff;
 	--rilsu-brighter-color: #d0d0e1;
