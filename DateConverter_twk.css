@@ -51,7 +51,7 @@ h1,h2,h3,h4,h5{
 	position:relative;
 	left:0px;
 	top:0px;
-	height:auto;
+	height:630px;
 	width:337px;
 }
 
@@ -63,20 +63,67 @@ h1,h2,h3,h4,h5{
 	position:relative;
 	width:287px;
 	height:255px;
-	margin:auto;
+	margin-left:auto;
+	margin-right:auto;
 }
 
 .twk.toolshelf-section{
 	margin-top:10px;
+	margin-bottom:0px;
 	border-image: var(--twk-border-img);
 	background-image: var(--twk-bg-img);
 	background-size: 300px 300px;
 }
 
 .utd.toolshelf-section{
-	margin-top:30px;
+	margin-top:10px;
 	border-image: var(--generic-border-img);
 	background: var(--generic-page-color);
+}
+
+.toolshelf .about{
+	padding:10px;
+	top:590px;
+	position:absolute;
+	height:20px;
+	width:317px;
+	background:var(--generic-darker-color);
+	z-index:1;
+	vertical-align:bottom;
+}
+
+.toolshelf .about a{
+	color:var(--generic-text-color);
+}
+
+.toolshelf .about a:hover{
+	color:var(--generic-text-color);
+	text-shadow:0px 0px 10px var(--twk-highlight-color);
+}
+
+.toolshelf .about:hover{
+	height:250px;
+	top:360px;
+	box-shadow:0px 0px 30px black;
+}
+
+.toolshelf .about .trigger{
+	height:20px;
+	color:var(--generic-text-color);
+	opacity:1.0;
+}
+
+.toolshelf .about:hover .trigger{
+	opacity:0.25;
+}
+
+.toolshelf .about .show-on-hover{
+	display:none;
+	height:230px;
+}
+
+.toolshelf .about:hover .show-on-hover{
+	display:inline-block;
 }
 
 

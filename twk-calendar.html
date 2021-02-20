@@ -49,8 +49,8 @@
 				<br>
 				<label>era:</label>
 				<select id="era_twk" name="era_twk" value="1" onclick="limitInputs('twk');">
-					<option value="before">before the hive</option>
-					<option value="after">in the hive</option>
+					<option value="before">Before The Hive</option>
+					<option value="after">In The Hive</option>
 				</select>
 				<br>
 				<label>month:</label>
@@ -70,7 +70,6 @@
 			</form>
 			<button id="setTWK" onclick="submitInputs('Now','twk');updateInputs('Now','utd');">set local time</button>	
 		</div>
-		<br>
 		<div class="utd toolshelf-section">
 		<h2>UTD</h2>
 			<form>
@@ -79,8 +78,8 @@
 				<br>
 				<label>era:</label>
 				<select id="era_utd" name="era_utd" onclick="limitInputs('utd');">
-					<option value="before">before the beginning of time</option>
-					<option value="after">since the beginning of time</option>
+					<option value="before">before time began</option>
+					<option value="after">since time began</option>
 				</select>
 				<br>
 				<label>month:</label>
@@ -107,6 +106,15 @@
 				<input type="number" id="second_utd" name="second_utd" min="0" max="59" value="0">
 			</form>
 			<button id="setNow" onclick="submitInputs('Now','utd');updateInputs('Now','twk');">set UTD time</button>
+		</div>
+		<div class="about">
+			<div class="show-on-hover">
+				This date converter was written as part of the <a href="https://www.worldanvil.com/w/the-kaleidoscope-system-kaleidechse">Kaleidoscope System</a> project.<p>All worldbuilding content involved therein (such as culture, era and month names) belongs to <a href="https://www.kathrinjanowski.com/en/home">Kathrin Janowski</a> a.k.a. Kaleidechse.</p>
+				<p>
+				The converter is hosted via GitHub pages. It does not use any cookies or third-party tracking software.
+				</p>
+			</div>
+			<div class="trigger">About this converter...</div>
 		</div>
 	</div>
 	<script>
