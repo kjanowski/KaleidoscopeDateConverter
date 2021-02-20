@@ -1,0 +1,185 @@
+/*
+ * This code was written by Kathrin Janowski (https://www.kathrinjanowski.com/en/home).
+ * 
+ * The CSS may be modified according to the CC-BY license
+ * (https://creativecommons.org/licenses/by/4.0/legalcode).
+ *
+ * However, all rights are reserved on the specific names and aesthetics
+ * associated with the calendars. If you want to use this CSS,
+ * you need to replace the linked images with your own.
+ *
+ * Further details can be found in the file "readme.md" in the root folder.
+ */
+
+:root{
+	--item-margin: 5px;
+	
+	--inner-border-size: 5px;
+	
+	--generic-font-family: 'Oregano', sans-serif;
+	
+	--generic-brighter-color: #cccccc;
+	--generic-neutral-color: #555555;
+	--generic-darker-color: #333333;
+	--generic-text-color: white; 
+
+	--generic-page-color: rgba(255,255,255,0.15);
+	--generic-panel-color: rgba(0,0,0,0.5);
+	
+	--page-bg-img:url('img/starfield_1920.jpg');
+	--generic-border-img:url('img/multiColorFrame.png') 20 stretch;
+	
+	--fish-bg-img:url('img/woodPanels_door_lowContrast.png');
+	--fish-border-img:url('img/brassFrame.png') 20 stretch;
+	
+	--fish-highlight-color: khaki;
+	--pereqaian-brighter-color: #ffcccc;
+	--pereqaian-neutral-color: #ff0000;
+	--pereqaian-darker-color: #800000;
+}
+
+body{
+	background-image: var(--page-bg-img);
+	color: var(--generic-text-color);
+	margin:0px;
+}
+
+body,input,select,button{
+	font-family:var(--generic-font-family);
+	font-size:18px;
+}
+
+h1,h2,h3,h4,h5{
+	color:var(--generic-text-color);
+	font-family:var(--generic-font-family);
+	margin:0px;
+}
+
+
+.toolshelf{
+	display:block;
+	background:transparent;
+	padding:0px;
+	margin:0px;
+	position:relative;
+	left:0px;
+	top:0px;
+	height:630px;
+	width:337px;
+}
+
+
+.toolshelf-section{
+	border: var(--inner-border-size) solid transparent;
+	padding:10px;
+	display:block;
+	position:relative;
+	width:287px;
+	height:255px;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+.pereqaian.toolshelf-section{
+	margin-top:10px;
+	margin-bottom:0px;
+	border-image: var(--fish-border-img);
+	background-image: var(--fish-bg-img);
+	background-size: 300px 300px;
+}
+
+.utd.toolshelf-section{
+	margin-top:10px;
+	border-image: var(--generic-border-img);
+	background: var(--generic-page-color);
+}
+
+.toolshelf .about{
+	padding:10px;
+	top:590px;
+	position:absolute;
+	height:20px;
+	width:317px;
+	background:var(--generic-darker-color);
+	z-index:1;
+	vertical-align:bottom;
+}
+
+.toolshelf .about a{
+	color:var(--generic-text-color);
+}
+
+.toolshelf .about a:hover{
+	color:var(--generic-text-color);
+	text-shadow:0px 0px 10px var(--fish-highlight-color);
+}
+
+.toolshelf .about:hover{
+	height:270px;
+	top:340px;
+	box-shadow:0px 0px 30px black;
+}
+
+.toolshelf .about .trigger{
+	height:20px;
+	color:var(--generic-text-color);
+	opacity:1.0;
+}
+
+.toolshelf .about:hover .trigger{
+	opacity:0.25;
+}
+
+.toolshelf .about .show-on-hover{
+	display:none;
+	height:250px;
+}
+
+.toolshelf .about:hover .show-on-hover{
+	display:inline-block;
+}
+
+
+select, input{
+	background: var(--generic-panel-color);
+	border: 1px solid var(--generic-text-color);
+	color: var(--generic-text-color);	
+}
+
+.pereqaian select, .pereqaian input{
+	background: var(--pereqaian-darker-color);
+}
+
+select{
+	width: auto;
+}
+
+input{
+	width:40px;
+}
+
+input#hour_utd,
+input#hour_pereqaian{
+	width:60px;
+}
+
+input#year_utd,
+input#year_pereqaian{
+	width:80px;
+}
+
+select, input{
+	margin: var(--item-margin);
+}
+
+button{
+	margin:var(--item-margin) 0px 0px 0px;
+	width:100%;
+}
+
+.toolshelf-section label{
+	display:inline-block;
+	margin-left:0px;
+	width:50px!important;
+}
+

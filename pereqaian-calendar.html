@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<html>
+<!--
+  This code was written by Kathrin Janowski (https://www.kathrinjanowski.com/en/home).
+  
+  The HTML content may be modified according to the CC-BY license
+  (https://creativecommons.org/licenses/by/4.0/legalcode).
+  
+  However, all rights are reserved on the specific parameters and names associated with the
+  "nimyric", "pereqaian", "rilsu" and "twk" calendars.
+  
+  Further details can be found in the file "readme.md" in the root folder.
+  -->
+<head>
+	<link href='https://fonts.googleapis.com/css?family=Oregano' rel='stylesheet'>
+	<script src="DateConverter.js"></script>
+	<link rel="stylesheet" type="text/css" href="DateConverter_pereqaian.css">
+	<script>
+		function updateTime(calendar){
+			//get the values and convert them to numbers
+			var year = document.getElementById('year_'+calendar).value *1.0;
+			var month = document.getElementById('month_'+which).value *1.0;
+			var day = document.getElementById('day_'+which).value *1.0;
+			var hour = document.getElementById('hour_'+which).value *1.0;
+			var minute = document.getElementById('minute_'+which).value *1.0;
+			var second = document.getElementById('second_'+which).value *1.0;
+			
+			//set the date in the selected calendar
+			setDateTime('Now', calendar, year, month, day, hour, minute, second);
+		}
+		
+		function initDate()
+		{
+			document.getElementById("year_utd").value = "289070";
+			document.getElementById("era_utd").selectedIndex = "1";
+			document.getElementById("month_utd").selectedIndex = "6";
+			document.getElementById("day_utd").value = "7";
+			document.getElementById("hour_utd").value = "12";
+			document.getElementById("minute_utd").value = "0";
+			document.getElementById("second_utd").value = "0";
+			
+			document.getElementById("year_pereqaian").value = "434";
+			document.getElementById("era_pereqaian").selectedIndex = "1";
+			document.getElementById("month_pereqaian").selectedIndex = "7";
+			document.getElementById("day_pereqaian").value = "7";
+			document.getElementById("hour_pereqaian").value = "21";
+			document.getElementById("minute_pereqaian").value = "45";
+			document.getElementById("second_pereqaian").value = "21";
+		}
+	</script>
+</head>
+<body>
+	<div class="toolshelf">
+		<div class="pereqaian toolshelf-section">
+			<h2>Pereqaian Alliance</h2>
+			<form>
+				<label>year:</label>
+				<input type="number" id="year_pereqaian" name="year_pereqaian" value="434">
+				<br>
+				<label>era:</label>
+				<select id="era_pereqaian" name="era_pereqaian" value="1" onclick="limitInputs('pereqaian');">
+					<option value="before">FGZ</option>
+					<option value="after">TGZ</option>
+				</select>
+				<br>
+				<label>month:</label>
+				<select id="month_pereqaian" name="month_pereqaian" value="8" onclick="limitInputs('pereqaian');">
+					<option value="1">Mu Nèlisi</option>
+					<option value="2">Mu Niseqòn</option>
+					<option value="3">Mu Ozide</option>
+					<option value="4">Mu Sedùt</option>
+					<option value="5">Mu Qòtve</option>
+					<option value="6">Mu Pêtve</option>
+					<option value="7">Mu Seshivèr</option>
+					<option value="8">Mu Nèlgofi</option>
+					<option value="9">Mu Shulòri</option>
+					<option value="10">Mu Renifi</option>
+					<option value="11">Mu Qùshve</option>
+					<option value="12">Mu Nifhêqa</option>
+					<option value="13">Mu Fêfumish</option>
+					<option value="14">Mu Zêicen</option>
+				</select>
+				<br>
+				<label>day:</label>
+				<input type="number" id="day_pereqaian" name="day_pereqaian" min="1" value="7">
+				<br><label>time:</label>
+				<input type="number" id="hour_pereqaian" name="hour_pereqaian" min="0" max="29" value="21">:
+				<input type="number" id="minute_pereqaian" name="minute_pereqaian" min="0" max="59" value="45">:
+				<input type="number" id="second_pereqaian" name="second_pereqaian" min="0" max="59" value="21">
+			</form>
+			<button id="setPereqaian" onclick="submitInputs('Now','pereqaian');updateInputs('Now','utd');">set local time</button>	
+		</div>
+		<div class="utd toolshelf-section">
+		<h2>UTD</h2>
+			<form>
+				<label>year:</label>
+				<input type="number" id="year_utd" name="year_utd" value="289070">
+				<br>
+				<label>era:</label>
+				<select id="era_utd" name="era_utd" onclick="limitInputs('utd');">
+					<option value="before">before time began</option>
+					<option value="after">since time began</option>
+				</select>
+				<br>
+				<label>month:</label>
+				<select id="month_utd" name="month_utd" onclick="limitInputs('utd');">
+					<option value="1">January</option>
+					<option value="2">February</option>
+					<option value="3">March</option>
+					<option value="4">April</option>
+					<option value="5">May</option>
+					<option value="6">June</option>
+					<option value="7">July</option>
+					<option value="8">August</option>
+					<option value="9">September</option>
+					<option value="10">October</option>
+					<option value="11">November</option>
+					<option value="12">December</option>
+				</select>
+				<br>
+				<label>day:</label>
+				<input type="number" id="day_utd" name="day_utd" min="1" value="6">
+				<br><label>time:</label>
+				<input type="number" id="hour_utd" name="hour_utd" min="0" max="23" value="12">:
+				<input type="number" id="minute_utd" name="minute_utd" min="0" max="59" value="0">:
+				<input type="number" id="second_utd" name="second_utd" min="0" max="59" value="0">
+			</form>
+			<button id="setUTD" onclick="submitInputs('Now','utd');updateInputs('Now','pereqaian');">set UTD time</button>
+		</div>
+		<div class="about">
+			<div class="show-on-hover">
+				This date converter was written as part of the <a href="https://www.worldanvil.com/w/the-kaleidoscope-system-kaleidechse">Kaleidoscope System</a> project.<p>All worldbuilding content involved therein (such as culture, era and month names) belongs to <a href="https://www.kathrinjanowski.com/en/home">Kathrin Janowski</a> a.k.a. Kaleidechse.</p>
+				<p>
+				The converter is hosted via <a href="https://pages.github.com/">GitHub Pages</a> and uses <a href="https://fonts.google.com/">Google Fonts</a>. It does not store any personal data or use third-party tracking software.
+				</p>
+			</div>
+			<div class="trigger">About this converter...</div>
+		</div>
+	</div>
+	<script>
+		initDate();
+	</script>
+</body>
+</html>
