@@ -30,6 +30,13 @@
 	--generic-panel-shadow: 2px 2px 10px rgba(0,0,0,0.5);
 	--generic-page-color: rgba(255,255,255,0.15);
 	--generic-page-glow: 0px 0px 60px rgba(170,170,170,1.0);
+	
+	--rainbow-glow-color1: rgba(70,90,255,0.5);
+	--rainbow-glow-color2: rgba(255, 25, 30, 0.5);
+	--rainbow-glow-color3: rgba(255, 200,0,0.5);
+	--rainbow-glow-color4: rgba(10,255,130,0.5);
+	--generic-link-glow: 3px -3px 5px var(--rainbow-glow-color1), 3px 3px 5px var(--rainbow-glow-color2), -3px 3px 5px var(--rainbow-glow-color3), -3px -3px 5px var(--rainbow-glow-color4);
+ 
 
 	--page-bg-img:url('img/starfield_1920.jpg');
 	--fish-bg-img:url('img/woodPanels_door_lowContrast.png');
@@ -77,25 +84,132 @@ h1,h2,h3,h4,h5,a{
 
 .page{
 	width:300px;
+	height:auto;
 	background:var(--generic-page-color);
 	border: var(--outer-border-size) solid transparent;
 	border-image:var(--generic-border-img);
-	height:auto;
 	margin:auto;
+	position:relative;
+	top:40px;
+	box-shadow:var(--generic-page-glow);
 }
 
 .page .link-section{
 	display:block;
-	padding:10px;
 	background:var(--generic-page-color);
 	border:5px solid transparent;
 	border-image:var(--generic-border-img);
 	text-align:center;
 	margin:10px;
+	padding:0px;
+	height:50px;
+}
+.page .link-section .indicator{
+	display: block;
+	vertical-align:100%;
+	width: 100%;
+	height: 10px;
+	margin:0px;
+	padding:0px;
+	border: 0px solid transparent;
+	background: var(--generic-darker-color);
+}
+.page .link-section a{
+	display: inline-block;
+	width:100%
+	height:30px;
+	margin:3px 0px 0px 0px;
+	text-align:center;
+	padding:5px;
+}
+.page .link-section a:hover{
+	text-shadow:var(--generic-link-glow);
 }
 
 .page .link-section.twk{
 	border-image:var(--twk-border-img);
 	background-image:var(--twk-bg-img);
 	background-size:300px 300px;
+}
+.page .link-section.twk .indicator{
+	background: var(--twk-neutral-color);
+}
+.page .link-section.twk a:hover{
+	text-shadow: 0px 0px 10px var(--twk-highlight-color); 
+}
+
+
+.page .link-section.rilsu{
+	border-image:var(--rilsu-border-img);
+	background-image:var(--rilsu-bg-img);
+	background-size:1000px 1700px;
+}
+.page .link-section.rilsu .indicator{
+	background: var(--rilsu-neutral-color);
+}
+.page .link-section.rilsu a:hover{
+	text-shadow: 0px 0px 10px var(--rilsu-highlight-color); 
+}
+
+.page .link-section.nimyric,
+.page .link-section.pereqaian{
+	border-image:var(--fish-border-img);
+	background-image:var(--fish-bg-img);
+	background-size:300px 300px;
+}
+.page .link-section.nimyric a:hover,
+.page .link-section.pereqaian a:hover{
+	text-shadow: 0px 0px 10px var(--fish-highlight-color); 
+}
+.page .link-section.nimyric .indicator{
+	background: var(--nimyric-neutral-color);
+}
+.page .link-section.pereqaian .indicator{
+	background: var(--pereqaian-neutral-color);
+}
+
+
+.page .about{
+	padding:10px;
+	position:absolute;
+	top:-50px;
+	left:-10px;
+	height:20px;
+	width:300px;
+	background:var(--generic-darker-color);
+	z-index:1;
+	vertical-align:bottom;
+}
+
+.page .about a{
+	color:var(--generic-text-color);
+}
+
+.page .about a:hover{
+	color:var(--generic-text-color);
+	text-shadow:var(--generic-link-glow);
+}
+
+.page .about:hover{
+	height:270px;
+	box-shadow:0px 0px 30px black;
+}
+
+.page .about .trigger{
+	height:20px;
+	color:var(--generic-text-color);
+	opacity:1.0;
+}
+
+.page .about:hover .trigger{
+	opacity:0.25;
+}
+
+.page .about .show-on-hover{
+	display:none;
+	height:260px;
+}
+
+.page .about:hover .show-on-hover{
+	display:inline-block;
 }
