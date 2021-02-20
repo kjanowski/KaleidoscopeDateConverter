@@ -111,7 +111,7 @@ h1,h2,h3,h4,h5{
 
 .toolshelf .about a:hover{
 	color:var(--generic-text-color);
-	text-shadow:0px 0px 10px var(--fish-highlight-color);
+	text-shadow:0px 0px 10px var(--rilsu-highlight-color);
 }
 
 .toolshelf .about:hover{
