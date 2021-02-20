@@ -1,8 +1,8 @@
 /*
  * This code was written by Kathrin Janowski (https://www.kathrinjanowski.com/en/home).
  * 
- * The converter logic may be modified according to the CC-BY license
- *(https://creativecommons.org/licenses/by/4.0/legalcode).
+ * The converter logic may be modified according to the GPLv3 license
+ *(https://www.gnu.org/licenses/gpl-3.0.en.html).
  * 
  * However, all rights are reserved on the specific parameters of the
  * "nimyric", "pereqaian", "rilsu" and "twk" calendars.

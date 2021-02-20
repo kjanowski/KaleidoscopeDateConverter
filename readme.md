@@ -13,15 +13,16 @@ If you're interested in the lore behind these calendars, you can find more infom
 # License
 
 You are free to adapt the converter logic for your own calendars, or add functionality such as leap years.
-Therefore, I am placing the *JavaScript functions* under a [CC-BY license]<https://creativecommons.org/licenses/by/4.0/legalcode>.
+Therefore, I am placing the code under the [GNU General Public License 3.0](https://www.gnu.org/licenses/gpl-3.0.en.html).
 
-However, this does *not* include the *worldbuilding concepts*.
+
+However, this does *not* include the *worldbuilding concepts and art assets*.
 Specifically, I reserve all rights on:
-- the parameters for the calendars _nimyric, pereqaian, rilsu and twk_
--- the (short and full) names of the calendar itself
--- the names of the months
--- the specific number of days for these months
--- the specific conversion rates for days, hours, minutes and seconds in these calendars 
+- the parameters for the calendars _nimyric_, _pereqaian_, _rilsu_ and _twk_
+ - the (short and full) names of the calendar itself
+ - the names of the months
+ - the specific number of days for these months
+ - the specific conversion rates for days, hours, minutes and seconds in these calendars 
 - references to the aforementioned fictional cultures in the HTML pages
 - the images used in the page design (in the "img" subfolder)
 
