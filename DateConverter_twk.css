@@ -52,7 +52,7 @@ h1,h2,h3,h4,h5{
 	left:0px;
 	top:0px;
 	height:auto;
-	width:327px;
+	width:337px;
 }
 
 
@@ -74,7 +74,7 @@ h1,h2,h3,h4,h5{
 }
 
 .utd.toolshelf-section{
-	margin-top:20px;
+	margin-top:30px;
 	border-image: var(--generic-border-img);
 	background: var(--generic-page-color);
 }
