@@ -1,14 +1,27 @@
 /*
- * This code was written by Kathrin Janowski (https://www.kathrinjanowski.com/en/home).
- * 
- * The converter logic may be modified according to the GPLv3 license
- *(https://www.gnu.org/licenses/gpl-3.0.en.html).
- * 
- * However, all rights are reserved on the specific parameters of the
- * "nimyric", "pereqaian", "rilsu" and "twk" calendars.
- *
- * Further details can be found in the file "readme.md" in the root folder.
- */
+	Copyright Kathrin Janowski (https://www.kathrinjanowski.com/en/home), 2020-2021.
+  
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <https://www.gnu.org/licenses/>.
+  
+    --------------------------------------
+  
+	Regarding the worldbuilding content: 
+	The specific parameters and names associated with the
+	"nimyric", "pereqaian", "rilsu" and "twk" calendars are not included
+	in the license mentioned above.
+	Further details can be found in the file "readme.md" in the root folder.
+*/
 
 //init global variables
 var times = {}
