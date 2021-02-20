@@ -51,7 +51,7 @@ h1,h2,h3,h4,h5{
 	position:relative;
 	left:0px;
 	top:0px;
-	height:640px;
+	height:610px;
 	width:327px;
 }
 
@@ -67,7 +67,7 @@ h1,h2,h3,h4,h5{
 }
 
 .twk.toolshelf-section{
-	margin-bottom:15px;
+	margin-bottom:10px;
 	margin-top:10px;
 	border-image: var(--twk-border-img);
 	background-image: var(--twk-bg-img);
@@ -75,8 +75,7 @@ h1,h2,h3,h4,h5{
 }
 
 .utd.toolshelf-section{
-	margin-bottom:10px;
-	margin-top:auto;
+	margin-top:10px;
 	border-image: var(--generic-border-img);
 	background: var(--generic-page-color);
 }
