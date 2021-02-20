@@ -1,3 +1,15 @@
+/*
+ * This code was written by Kathrin Janowski (https://www.kathrinjanowski.com/en/home).
+ * 
+ * The converter logic may be modified according to the CC-BY license
+ *(https://creativecommons.org/licenses/by/4.0/legalcode).
+ * 
+ * However, all rights are reserved on the specific parameters of the
+ * "nimyric", "pereqaian", "rilsu" and "twk" calendars.
+ *
+ * Further details can be found in the file "readme.md" in the root folder.
+ */
+
 //init global variables
 var times = {}
 times["Now"] = 0.0;

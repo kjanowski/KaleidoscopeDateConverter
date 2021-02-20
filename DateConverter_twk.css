@@ -1,3 +1,16 @@
+/*
+ * This code was written by Kathrin Janowski (https://www.kathrinjanowski.com/en/home).
+ * 
+ * The CSS may be modified according to the CC-BY license
+ * (https://creativecommons.org/licenses/by/4.0/legalcode).
+ *
+ * However, all rights are reserved on the specific names and aesthetics
+ * associated with the calendars. If you want to use this CSS,
+ * you need to replace the linked images with your own.
+ *
+ * Further details can be found in the file "readme.md" in the root folder.
+ */
+
 :root{
 	--item-margin: 5px;
 	
@@ -102,8 +115,8 @@ h1,h2,h3,h4,h5{
 }
 
 .toolshelf .about:hover{
-	height:250px;
-	top:360px;
+	height:270px;
+	top:340px;
 	box-shadow:0px 0px 30px black;
 }
 
@@ -119,7 +132,7 @@ h1,h2,h3,h4,h5{
 
 .toolshelf .about .show-on-hover{
 	display:none;
-	height:230px;
+	height:250px;
 }
 
 .toolshelf .about:hover .show-on-hover{

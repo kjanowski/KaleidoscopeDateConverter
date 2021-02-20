@@ -1,3 +1,16 @@
+/*
+ * This code was written by Kathrin Janowski (https://www.kathrinjanowski.com/en/home).
+ * 
+ * The CSS may be modified according to the CC-BY license
+ * (https://creativecommons.org/licenses/by/4.0/legalcode).
+ *
+ * However, all rights are reserved on the specific names and aesthetics
+ * associated with the calendars. If you want to use this CSS,
+ * you need to replace the linked images with your own.
+ *
+ * Further details can be found in the file "readme.md" in the root folder.
+ */
+
 :root{
 	--item-margin: 5px;
 	
