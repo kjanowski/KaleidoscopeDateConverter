@@ -41,8 +41,38 @@
 </head>
 <body>
 	<div class="toolshelf">
+		<div class="twk toolshelf-section">
+			<h2>Those Who Know</h2>
+			<form>
+				<label>year:</label>
+				<input type="number" id="year_twk" name="year_twk" value="80210">
+				<br>
+				<label>era:</label>
+				<select id="era_twk" name="era_twk" value="1" onclick="limitInputs('twk');">
+					<option value="before">before the hive</option>
+					<option value="after">in the hive</option>
+				</select>
+				<br>
+				<label>month:</label>
+				<select id="month_twk" name="month_twk" value="4" onclick="limitInputs('twk');">
+					<option value="1">... The Phase Of Greatest Power</option>
+					<option value="2">... The Phase Of Waning Power</option>
+					<option value="3">... The Phase Of Power Loss</option>
+					<option value="4">... The Phase Of Waxing Power</option>
+				</select>
+				<br>
+				<label>day:</label>
+				<input type="number" id="day_twk" name="day_twk" min="1" value="27">
+				<br><label>time:</label>
+				<input type="number" id="hour_twk" name="hour_twk" min="0" max="199" value="0">:
+				<input type="number" id="minute_twk" name="minute_twk" min="0" max="79" value="0">:
+				<input type="number" id="second_twk" name="second_twk" min="0" max="49" value="0">
+			</form>
+			<button id="setTWK" onclick="submitInputs('Now','twk');updateInputs('Now','utd');">set local time</button>	
+		</div>
+		<br>
 		<div class="utd toolshelf-section">
-			<h2>UTD</h2>
+		<h2>UTD</h2>
 			<form>
 				<label>year:</label>
 				<input type="number" id="year_utd" name="year_utd" value="289070">
@@ -77,36 +107,6 @@
 				<input type="number" id="second_utd" name="second_utd" min="0" max="59" value="0">
 			</form>
 			<button id="setNow" onclick="submitInputs('Now','utd');updateInputs('Now','twk');">set UTD time</button>
-		</div>	
-		<br>
-		<div class="twk toolshelf-section">
-			<h2>Those Who Know</h2>
-			<form>
-				<label>year:</label>
-				<input type="number" id="year_twk" name="year_twk" value="80210">
-				<br>
-				<label>era:</label>
-				<select id="era_twk" name="era_twk" value="1" onclick="limitInputs('twk');">
-					<option value="before">before the hive</option>
-					<option value="after">in the hive</option>
-				</select>
-				<br>
-				<label>month:</label>
-				<select id="month_twk" name="month_twk" value="4" onclick="limitInputs('twk');">
-					<option value="1">... The Phase Of Greatest Power</option>
-					<option value="2">... The Phase Of Waning Power</option>
-					<option value="3">... The Phase Of Power Loss</option>
-					<option value="4">... The Phase Of Waxing Power</option>
-				</select>
-				<br>
-				<label>day:</label>
-				<input type="number" id="day_twk" name="day_twk" min="1" value="27">
-				<br><label>time:</label>
-				<input type="number" id="hour_twk" name="hour_twk" min="0" max="199" value="0">:
-				<input type="number" id="minute_twk" name="minute_twk" min="0" max="79" value="0">:
-				<input type="number" id="second_twk" name="second_twk" min="0" max="49" value="0">
-			</form>
-			<button id="setTWK" onclick="submitInputs('Now','twk');updateInputs('Now','utd');">set local time</button>	
 		</div>
 	</div>
 	<script>
