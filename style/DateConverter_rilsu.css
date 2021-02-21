@@ -38,16 +38,16 @@
 	--generic-page-color: rgba(255,255,255,0.15);
 	--generic-panel-color: rgba(0,0,0,0.5);
 	
-	--page-bg-img:url('img/starfield.jpg');
-	--twk-bg-img:url('img/velvet.png');
+	--page-bg-img:url('../img/starfield.jpg');
+	--generic-border-img:url('../img/multiColorFrame.png') 20 stretch;
 	
-	--generic-border-img:url('img/multiColorFrame.png') 20 stretch;
-	--twk-border-img:url('img/purpleFrame.png') 20 stretch;
+	--rilsu-bg-img:url('../img/steel.jpg');
+	--rilsu-border-img:url('../img/steelFrame.png') 20 stretch;
 	
-	--twk-highlight-color: chartreuse;
-	--twk-brighter-color: #e0e0f0;
-	--twk-neutral-color: blueViolet;
-	--twk-darker-color: indigo; 
+	--rilsu-highlight-color: #80d4ff;
+	--rilsu-brighter-color: #d0d0e1;
+	--rilsu-neutral-color: #50507c;
+	--rilsu-darker-color: #28283e;
 }
 
 body{
@@ -92,11 +92,11 @@ h1,h2,h3,h4,h5{
 	margin-right:auto;
 }
 
-.twk.toolshelf-section{
+.rilsu.toolshelf-section{
 	margin-top:10px;
 	margin-bottom:0px;
-	border-image: var(--twk-border-img);
-	background-image: var(--twk-bg-img);
+	border-image: var(--rilsu-border-img);
+	background-image: var(--rilsu-bg-img);
 	background-size: 300px 300px;
 }
 
@@ -123,7 +123,7 @@ h1,h2,h3,h4,h5{
 
 .toolshelf .about a:hover{
 	color:var(--generic-text-color);
-	text-shadow:0px 0px 10px var(--twk-highlight-color);
+	text-shadow:0px 0px 10px var(--rilsu-highlight-color);
 }
 
 .toolshelf .about:hover{
@@ -158,8 +158,8 @@ select, input{
 	color: var(--generic-text-color);	
 }
 
-.twk select, .twk input{
-	background: var(--twk-darker-color);
+.rilsu select, .rilsu input{
+	background: var(--rilsu-darker-color);
 }
 
 select{
@@ -171,12 +171,12 @@ input{
 }
 
 input#hour_utd,
-input#hour_twk{
+input#hour_rilsu{
 	width:60px;
 }
 
 input#year_utd,
-input#year_twk{
+input#year_rilsu{
 	width:80px;
 }
 

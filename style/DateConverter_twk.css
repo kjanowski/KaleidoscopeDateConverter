@@ -38,16 +38,16 @@
 	--generic-page-color: rgba(255,255,255,0.15);
 	--generic-panel-color: rgba(0,0,0,0.5);
 	
-	--page-bg-img:url('img/starfield.jpg');
-	--generic-border-img:url('img/multiColorFrame.png') 20 stretch;
+	--page-bg-img:url('../img/starfield.jpg');
+	--twk-bg-img:url('../img/velvet.png');
 	
-	--fish-bg-img:url('img/wood.png');
-	--fish-border-img:url('img/brassFrame.png') 20 stretch;
+	--generic-border-img:url('../img/multiColorFrame.png') 20 stretch;
+	--twk-border-img:url('../img/purpleFrame.png') 20 stretch;
 	
-	--fish-highlight-color: khaki;
-	--pereqaian-brighter-color: #ffcccc;
-	--pereqaian-neutral-color: #ff0000;
-	--pereqaian-darker-color: #800000;
+	--twk-highlight-color: chartreuse;
+	--twk-brighter-color: #e0e0f0;
+	--twk-neutral-color: blueViolet;
+	--twk-darker-color: indigo; 
 }
 
 body{
@@ -92,11 +92,11 @@ h1,h2,h3,h4,h5{
 	margin-right:auto;
 }
 
-.pereqaian.toolshelf-section{
+.twk.toolshelf-section{
 	margin-top:10px;
 	margin-bottom:0px;
-	border-image: var(--fish-border-img);
-	background-image: var(--fish-bg-img);
+	border-image: var(--twk-border-img);
+	background-image: var(--twk-bg-img);
 	background-size: 300px 300px;
 }
 
@@ -123,7 +123,7 @@ h1,h2,h3,h4,h5{
 
 .toolshelf .about a:hover{
 	color:var(--generic-text-color);
-	text-shadow:0px 0px 10px var(--fish-highlight-color);
+	text-shadow:0px 0px 10px var(--twk-highlight-color);
 }
 
 .toolshelf .about:hover{
@@ -158,8 +158,8 @@ select, input{
 	color: var(--generic-text-color);	
 }
 
-.pereqaian select, .pereqaian input{
-	background: var(--pereqaian-darker-color);
+.twk select, .twk input{
+	background: var(--twk-darker-color);
 }
 
 select{
@@ -171,12 +171,12 @@ input{
 }
 
 input#hour_utd,
-input#hour_pereqaian{
+input#hour_twk{
 	width:60px;
 }
 
 input#year_utd,
-input#year_pereqaian{
+input#year_twk{
 	width:80px;
 }
 

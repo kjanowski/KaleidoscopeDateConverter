@@ -38,16 +38,16 @@
 	--generic-page-color: rgba(255,255,255,0.15);
 	--generic-panel-color: rgba(0,0,0,0.5);
 	
-	--page-bg-img:url('img/starfield.jpg');
-	--generic-border-img:url('img/multiColorFrame.png') 20 stretch;
+	--page-bg-img:url('../img/starfield.jpg');
+	--generic-border-img:url('../img/multiColorFrame.png') 20 stretch;
 	
-	--fish-bg-img:url('img/wood.png');
-	--fish-border-img:url('img/brassFrame.png') 20 stretch;
+	--fish-bg-img:url('../img/wood.png');
+	--fish-border-img:url('../img/brassFrame.png') 20 stretch;
 	
 	--fish-highlight-color: khaki;
-	--nimyric-brighter-color: #ccdbff;
-	--nimyric-neutral-color: #004eff;
-	--nimyric-darker-color: #002680;
+	--pereqaian-brighter-color: #ffcccc;
+	--pereqaian-neutral-color: #ff0000;
+	--pereqaian-darker-color: #800000;
 }
 
 body{
@@ -92,7 +92,7 @@ h1,h2,h3,h4,h5{
 	margin-right:auto;
 }
 
-.nimyric.toolshelf-section{
+.pereqaian.toolshelf-section{
 	margin-top:10px;
 	margin-bottom:0px;
 	border-image: var(--fish-border-img);
@@ -158,8 +158,8 @@ select, input{
 	color: var(--generic-text-color);	
 }
 
-.nimyric select, .nimyric input{
-	background: var(--nimyric-darker-color);
+.pereqaian select, .pereqaian input{
+	background: var(--pereqaian-darker-color);
 }
 
 select{
@@ -171,12 +171,12 @@ input{
 }
 
 input#hour_utd,
-input#hour_nimyric{
+input#hour_pereqaian{
 	width:60px;
 }
 
 input#year_utd,
-input#year_nimyric{
+input#year_pereqaian{
 	width:80px;
 }
 

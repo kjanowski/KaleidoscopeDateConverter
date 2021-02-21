@@ -38,16 +38,16 @@
 	--generic-page-color: rgba(255,255,255,0.15);
 	--generic-panel-color: rgba(0,0,0,0.5);
 	
-	--page-bg-img:url('img/starfield.jpg');
-	--generic-border-img:url('img/multiColorFrame.png') 20 stretch;
+	--page-bg-img:url('../img/starfield.jpg');
+	--generic-border-img:url('../img/multiColorFrame.png') 20 stretch;
 	
-	--rilsu-bg-img:url('img/steel.jpg');
-	--rilsu-border-img:url('img/steelFrame.png') 20 stretch;
+	--fish-bg-img:url('../img/wood.png');
+	--fish-border-img:url('../img/brassFrame.png') 20 stretch;
 	
-	--rilsu-highlight-color: #80d4ff;
-	--rilsu-brighter-color: #d0d0e1;
-	--rilsu-neutral-color: #50507c;
-	--rilsu-darker-color: #28283e;
+	--fish-highlight-color: khaki;
+	--nimyric-brighter-color: #ccdbff;
+	--nimyric-neutral-color: #004eff;
+	--nimyric-darker-color: #002680;
 }
 
 body{
@@ -92,11 +92,11 @@ h1,h2,h3,h4,h5{
 	margin-right:auto;
 }
 
-.rilsu.toolshelf-section{
+.nimyric.toolshelf-section{
 	margin-top:10px;
 	margin-bottom:0px;
-	border-image: var(--rilsu-border-img);
-	background-image: var(--rilsu-bg-img);
+	border-image: var(--fish-border-img);
+	background-image: var(--fish-bg-img);
 	background-size: 300px 300px;
 }
 
@@ -123,7 +123,7 @@ h1,h2,h3,h4,h5{
 
 .toolshelf .about a:hover{
 	color:var(--generic-text-color);
-	text-shadow:0px 0px 10px var(--rilsu-highlight-color);
+	text-shadow:0px 0px 10px var(--fish-highlight-color);
 }
 
 .toolshelf .about:hover{
@@ -158,8 +158,8 @@ select, input{
 	color: var(--generic-text-color);	
 }
 
-.rilsu select, .rilsu input{
-	background: var(--rilsu-darker-color);
+.nimyric select, .nimyric input{
+	background: var(--nimyric-darker-color);
 }
 
 select{
@@ -171,12 +171,12 @@ input{
 }
 
 input#hour_utd,
-input#hour_rilsu{
+input#hour_nimyric{
 	width:60px;
 }
 
 input#year_utd,
-input#year_rilsu{
+input#year_nimyric{
 	width:80px;
 }
 

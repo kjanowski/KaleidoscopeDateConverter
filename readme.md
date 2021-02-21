@@ -2,7 +2,7 @@
 
 The converters here are part of my worldbuilding project, the Kaleidoscope System.
 
-Their primary purpose is to allow me to convert dates and times between the calendars that I am developing for my fictional cultures. But I figured it might be informative for others as well.
+Their primary purpose is to allow me to convert dates and times between the calendars that I am developing for my fictional cultures.
 
 If you're interested in the lore behind these calendars, you can find more infomation here:
 * WorldAnvil: <https://www.worldanvil.com/w/the-kaleidoscope-system-kaleidechse>
@@ -17,7 +17,7 @@ Therefore, I am placing the code under the [GNU General Public License 3.0](http
 
 
 However, this does *not* include the *worldbuilding concepts and art assets*.
-Specifically excluded are the file "Config_Kaleidoscope.js" and the contents of the "img" subfolder.
+Specifically excluded are the scripts in the "config" folder and the images in the "img" subfolder.
 You can still use them as reference for creating your own version of these files.  
 
 
