@@ -1,25 +1,10 @@
 /*
 	Copyright Kathrin Janowski (https://www.kathrinjanowski.com/en/home), 2021.
   
-	This program is free software: you can redistribute it and/or modify
-	it under the terms of the GNU General Public License as published by
-	the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
-
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License
-    along with this program.  If not, see <https://www.gnu.org/licenses/>.
-  
-    --------------------------------------
-  
-	Regarding the worldbuilding content: 
-	The specific parameters and names associated with the
-	"nimyric", "pereqaian", "rilsu" and "twk" calendars are not included
-	in the license mentioned above.
+	This particular file contains the specific parameters and names associated with the
+	Kaleidoscope System project, which are not covered by the GPLv3 license.
+	However, you can use it as a reference for creating your own theme.
+	
 	Further details can be found in the file "readme.md" in the root folder.
 */
 
@@ -107,15 +92,37 @@ a:hover{
    outer containers
   ----------------------------------------------*/
 
-.page .kaleidoscope{
+.page.framed.kaleidoscope{
 	border-image: var(--generic-border-img);
+	background:var(--generic-page-color);
 	box-shadow:var(--generic-page-glow);
+	margin-top:40px;
 }
 
-.kaleidoscope .panel{
-	border-image: var(--generic-border-img);
+
+.kaleidoscope .panel,
+.kaleidoscope canvas{
+	background:var(--generic-page-color);
+	border-image:var(--generic-border-img);
 }
 
+.panel.nimyric,
+.panel.pereqaian{
+	background-image:var(--fish-bg-img);
+	background-size: 300px 300px;
+	border-image:var(--fish-border-img);
+}
+
+.panel.rilsu{
+	background-image:var(--rilsu-bg-img);
+	background-size: 1000px 1700px;
+	border-image:var(--rilsu-border-img);
+}
+.panel.twk{
+	background-image:var(--twk-bg-img);
+	background-size: 300px 300px;
+	border-image:var(--twk-border-img);
+}
 
 /*----------------------------------------------
    date inputs
@@ -130,10 +137,42 @@ a:hover{
 	top:5px;
 }
 
+.kaleidoscope.wide .toolshelf-section{
+	width: 400px;
+}
+
+.kaleidoscope.narrow .toolshelf-section{
+	height: 255px;
+}
+
+.kaleidoscope.narrow .toolshelf-section.lower{
+	margin-top:10px;
+}
+
+.kaleidoscope.narrow h2{
+	margin-bottom:0px;
+}
+
 .kaleidoscope select, input{
-	background: var(--generic-panel-color);
+	background: var(--generic-darker-color);
 	border: 1px solid var(--generic-text-color);
 	color: var(--generic-text-color);	
+}
+
+.nimyric select, .nimyric input{
+	background: var(--nimyric-darker-color);
+}
+
+.pereqaian select, .pereqaian input{
+	background: var(--pereqaian-darker-color);
+}
+
+.rilsu select, .rilsu input{
+	background: var(--rilsu-darker-color);
+}
+
+.twk select, .twk input{
+	background: var(--twk-darker-color);
 }
 
 
@@ -157,20 +196,8 @@ a:hover{
 	top:-5px;
 }
 
-.output.utd{
-	background:var(--generic-page-color);
-	border-image:var(--generic-border-img);
-}
-
 .output.utd .display-caption{
 	background:var(--generic-panel-color);
-}
-
-.output.nimyric,
-.output.pereqaian{
-	background-image:var(--fish-bg-img);
-	background-size: 300px 300px;
-	border-image:var(--fish-border-img);
 }
 
 .output.nimyric .display-caption{
@@ -185,11 +212,6 @@ a:hover{
 	text-shadow: 0px 0px 20px var(--pereqaian-darker-color);
 }
 
-.output.rilsu{
-	background-image:var(--rilsu-bg-img);
-	background-size: 1000px 1700px;
-	border-image:var(--rilsu-border-img);
-}
 .output.rilsu.display-caption{
 	background: var(--rilsu-neutral-color);
 	box-shadow: 0px 0px 50px inset var(--rilsu-darker-color);
@@ -197,9 +219,6 @@ a:hover{
 }
 
 .output.twk{
-	background-image:var(--twk-bg-img);
-	background-size: 300px 300px;
-	border-image:var(--twk-border-img);
 	height:130px;
 }
 
@@ -248,4 +267,65 @@ a:hover{
 
 .about:hover .show-on-hover{
 	background:var(--generic-darker-color);
+}
+
+/*----------------------------------------------
+   link blocks
+  ----------------------------------------------*/
+
+.kaleidoscope .link-block{
+	border-image:var(--generic-border-img);
+	background:var(--generic-darker-color);
+}
+
+.kaleidoscope .link-block .indicator{
+	background: var(--generic-panel-color);
+}
+
+.link-block.nimyric,
+.link-block.pereqaian{
+	border-image:var(--fish-border-img);
+	background-image:var(--fish-bg-img);
+	background-size:300px 300px;
+}
+
+.link-block.nimyric a:hover,
+.link-block.pereqaian a:hover{
+	text-shadow: 0px 0px 10px var(--fish-highlight-color); 
+}
+
+.link-block.nimyric .indicator{
+	background: var(--nimyric-neutral-color);
+}
+
+.link-block.pereqaian .indicator{
+	background: var(--pereqaian-neutral-color);
+}
+
+.link-block.rilsu{
+	border-image:var(--rilsu-border-img);
+	background-image:var(--rilsu-bg-img);
+	background-size:1000px 1700px;
+}
+
+.link-block.rilsu .indicator{
+	background: var(--rilsu-neutral-color);
+}
+
+.link-block.rilsu a:hover{
+	text-shadow: 0px 0px 10px var(--rilsu-highlight-color); 
+}
+
+.link-block.twk{
+	border-image:var(--twk-border-img);
+	background-image:var(--twk-bg-img);
+	background-size:300px 300px;
+}
+
+.link-block.twk .indicator{
+	background: var(--twk-neutral-color);
+}
+
+.link-block.twk a:hover{
+	text-shadow: 0px 0px 10px var(--twk-highlight-color); 
 }

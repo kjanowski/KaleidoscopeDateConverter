@@ -28,22 +28,18 @@
   -->
 <head>
 	<title>Celestial body display for the Nimýric Empire</title>
-	<link href='https://fonts.googleapis.com/css?family=Oregano' rel='stylesheet'>
 	<script src="../configs/Config_Kaleidoscope.js"></script>
 	<script src="../DateConverter.js"></script>
 	<script src="../configs/CelestialConfig_Kaleidoscope.js"></script>
 	<script src="../starSystem.js"></script>
-	<link rel="stylesheet" type="text/css" href="../style/Celestial_nimyric.css">
-	<script>
-		function initDate()
-		{
-			setDateTime('Now', 'nimyric', 1447, 11, 10, 11, 45, 31);
-			updateInputs('Now', 'nimyric');
-		}
-	</script>
+	<link rel="icon" href="../img/favicon_kaleidechse_57x57.png" type="image/png">
+	<link href='https://fonts.googleapis.com/css?family=Oregano' rel='stylesheet'>
+	<link rel="stylesheet" type="text/css" href="../style/_layout.css">
+	<link rel="stylesheet" type="text/css" href="../style/_about_bottom_narrow.css">
+	<link rel="stylesheet" type="text/css" href="../style/theme_Kaleidoscope.css">
 </head>
 <body>
-	<div class="toolshelf">
+	<div class="page kaleidoscope narrow">
 		<canvas id="starSystem" width="327" height="290">
 			Your browser does not support the canvas element.
 		</canvas>
@@ -51,7 +47,7 @@
 			<h2>Nimýric Empire</h2>
 			<form>
 				<label>year:</label>
-				<input type="number" id="year_nimyric" name="year_nimyric" value="1447">
+				<input class="year" type="number" id="year_nimyric" name="year_nimyric" value="1447">
 				<br>
 				<label>era:</label>
 				<select id="era_nimyric" name="era_nimyric" value="1" onclick="limitInputs('nimyric');">
@@ -80,7 +76,7 @@
 				<label>day:</label>
 				<input type="number" id="day_nimyric" name="day_nimyric" min="1" value="11">
 				<br><label>time:</label>
-				<input type="number" id="hour_nimyric" name="hour_nimyric" min="0" max="29" value="19">:
+				<input class="hour" type="number" id="hour_nimyric" name="hour_nimyric" min="0" max="29" value="19">:
 				<input type="number" id="minute_nimyric" name="minute_nimyric" min="0" max="59" value="0">:
 				<input type="number" id="second_nimyric" name="second_nimyric" min="0" max="59" value="0">
 			</form>
@@ -99,7 +95,11 @@
 		</div>
 	</div>
 	<script>
-		initParams();initDate();initStarSystem();updateStarSystem();
+		initParams();
+		setDateTime('Now', 'nimyric', 1447, 11, 10, 11, 45, 31);
+		updateInputs('Now', 'nimyric');
+		initStarSystem();
+		updateStarSystem();
 	</script>
 </body>
 </html>

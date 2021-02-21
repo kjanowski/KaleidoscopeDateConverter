@@ -359,4 +359,6 @@ function updateInputs(which, calendar){
 	document.getElementById('hour_'+calendar).value = ""+dateTime.hour;
 	document.getElementById('minute_'+calendar).value = ""+dateTime.minute;
 	document.getElementById('second_'+calendar).value = ""+dateTime.second;
+	
+	limitInputs(calendar);
 }

@@ -27,12 +27,14 @@
 	
   -->
 <head>
-	<link href='https://fonts.googleapis.com/css?family=Oregano' rel='stylesheet'>
+	<title>Date converters for the Kaleidoscope System</title>
 	<script src="../configs/Config_Kaleidoscope.js"></script>
 	<script src="../DateConverter.js"></script>
+	<link rel="icon" href="../img/favicon_kaleidechse_57x57.png" type="image/png">
+	<link href='https://fonts.googleapis.com/css?family=Oregano' rel='stylesheet'>
 	<link rel="stylesheet" type="text/css" href="../style/_about_top_wide.css">
 	<link rel="stylesheet" type="text/css" href="../style/_layout.css">
-	<link rel="stylesheet" type="text/css" href="../style/_Kaleidoscope.css">
+	<link rel="stylesheet" type="text/css" href="../style/theme_Kaleidoscope.css">
 </head>
 <body>
 	<div class="kaleidoscope page wide">
@@ -59,11 +61,11 @@
 						<option value="twk">twk</option>
 					</select>
 					<br><label>date:</label>
-					<input type="number" id="yearNow" name="yearNow" value="289070">/
+					<input class="year" type="number" id="yearNow" name="yearNow" value="289070">/
 					<input type="number" id="monthNow" name="monthNow" value="7">/
 					<input type="number" id="dayNow" name="dayNow" value="7">
 					<br><label>time:</label>
-					<input type="number" id="hourNow" name="hourNow" value="12">:
+					<input class="hour" type="number" id="hourNow" name="hourNow" value="12">:
 					<input type="number" id="minuteNow" name="minuteNow" value="0">:
 					<input type="number" id="secondNow" name="secondNow" value="0">
 				</form>
@@ -82,11 +84,11 @@
 						<option value="twk">twk</option>
 					</select>
 					<br><label>date:</label>
-					<input type="number" id="yearThen" name="yearThen" value="0">/
+					<input class="year" type="number" id="yearThen" name="yearThen" value="0">/
 					<input type="number" id="monthThen" name="monthThen" value="1">/
 					<input type="number" id="dayThen" name="dayThen" value="1">
 					<br><label>time:</label>
-					<input type="number" id="hourThen" name="hourThen" value="0">:
+					<input class="hour" type="number" id="hourThen" name="hourThen" value="0">:
 					<input type="number" id="minuteThen" name="minuteThen" value="0">:
 					<input type="number" id="secondThen" name="secondThen" value="0">
 				</form>
@@ -136,7 +138,9 @@
 		</div>
 	</div>
 	<script>
-		initParams();setTime('Now');setTime('Then');
+		initParams();
+		setTime('Now');
+		setTime('Then');
 	</script>
 </body>
 </html>

@@ -37,6 +37,9 @@ hr{
 	border: 1px solid gray;
 }
 
+.centered{
+	text-align:center;
+}
 
 /*----------------------------------------------
    outer containers
@@ -58,8 +61,25 @@ hr{
 	margin-top:0px;
 }
 
+.page .page-row{
+	display:inline-block;
+	width:100%;
+	margin-top:20px;
+}
 
-.panel{
+.page .page-column{
+	display:inline-block;
+	width:264px;
+	padding:10px;
+	vertical-align:top;
+	margin:0px;
+}
+
+.page.framed{
+	border: var(--outer-border-size) solid gray;
+}
+
+.panel, canvas{
 	border: var(--inner-border-size) solid gray;
 	padding:0px;
 }
@@ -86,16 +106,41 @@ hr{
 	height:auto;
 }
 
-.toolshelf-section.wide{
+.toolshelf-section{
 	padding:10px;
-	display:inline-block;
 	position:relative;
+}
+
+.toolshelf-section h2{
+	margin-bottom:10px;
+}
+
+.toolshelf-section.wide{
+	display:inline-block;
 	vertical-align:top;
 	width:380px;
 	margin:auto;
 	min-height:150px;
 	height:auto;
 }
+
+.narrow .toolshelf-section{
+	display:block;
+	width:287px;
+	height:225px;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+.narrow .toolshelf-section.upper{
+	margin-top:10px;
+	margin-bottom:0px;
+}
+
+.narrow .toolshelf-section.lower{
+	margin-top:40px;
+}
+
 
 .toolshelf .separator{
 	min-height:160px;
@@ -110,15 +155,15 @@ select{
 }
 
 input{
-	width: 60px;
+	width: 40px;
 }
 
-input .hour{
+input.hour{
+	width: 50px;
+}
+
+input.year{
 	width: 80px;
-}
-
-input .year{
-	width: 120px;
 }
 
 select, input{
@@ -133,9 +178,26 @@ button{
 label{
 	display:inline-block;
 	margin-left:0px;
-	width:80px;
+	width:60px;
 }
 
+.toolshelf-section .anim-control{
+	position:absolute;
+	top:10px;
+	right:10px;
+	width:auto;
+	height:30px;
+	z-index:1;
+	padding:0px;
+}
+.toolshelf-section .anim-control button{
+	display: inline;
+	width:30px;
+	height:30px;
+	margin-top:0px;
+	margin-bottom:0px;
+	font-family:sans-serif;
+}
 
 /*----------------------------------------------
    textual date displays
@@ -217,4 +279,38 @@ label{
 	display:inline-block;
 }
 
+
+/*----------------------------------------------
+   link blocks
+  ----------------------------------------------*/
+
+.link-block{
+	display:block;
+	background:white;
+	border:5px solid gray;
+	text-align:center;
+	margin:0px;
+	padding:0px;
+	height:50px;
+}
+
+.link-block .indicator{
+	display: block;
+	vertical-align:100%;
+	width: 100%;
+	height: 10px;
+	margin:0px;
+	padding:0px;
+	border: 0px solid gray;
+	background: darkGray;
+}
+
+.link-block a{
+	display: inline-block;
+	width:100%
+	height:30px;
+	margin:3px 0px 0px 0px;
+	text-align:center;
+	padding:5px;
+}
 

@@ -28,60 +28,30 @@
   -->
 <head>
 	<title>Date converter for the Nimýric Empire</title>
-	<link href='https://fonts.googleapis.com/css?family=Oregano' rel='stylesheet'>
 	<script src="../configs/Config_Kaleidoscope.js"></script>
 	<script src="../DateConverter.js"></script>
-	<link rel="stylesheet" type="text/css" href="../style/DateConverter_nimyric.css">
-	<script>
-		function updateTime(calendar){
-			//get the values and convert them to numbers
-			var year = document.getElementById('year_'+calendar).value *1.0;
-			var month = document.getElementById('month_'+which).value *1.0;
-			var day = document.getElementById('day_'+which).value *1.0;
-			var hour = document.getElementById('hour_'+which).value *1.0;
-			var minute = document.getElementById('minute_'+which).value *1.0;
-			var second = document.getElementById('second_'+which).value *1.0;
-			
-			//set the date in the selected calendar
-			setDateTime('Now', calendar, year, month, day, hour, minute, second);
-		}
-		
-		function initDate()
-		{
-			document.getElementById("year_utd").value = "289070";
-			document.getElementById("era_utd").selectedIndex = "1";
-			document.getElementById("month_utd").selectedIndex = "6";
-			document.getElementById("day_utd").value = "7";
-			document.getElementById("hour_utd").value = "12";
-			document.getElementById("minute_utd").value = "0";
-			document.getElementById("second_utd").value = "0";
-			
-			document.getElementById("year_nimyric").value = "1447";
-			document.getElementById("era_nimyric").selectedIndex = "1";
-			document.getElementById("month_nimyric").selectedIndex = "10";
-			document.getElementById("day_nimyric").value = "10";
-			document.getElementById("hour_nimyric").value = "11";
-			document.getElementById("minute_nimyric").value = "45";
-			document.getElementById("second_nimyric").value = "31";
-		}
-	</script>
+	<link rel="icon" href="../img/favicon_kaleidechse_57x57.png" type="image/png">
+	<link href='https://fonts.googleapis.com/css?family=Oregano' rel='stylesheet'>
+	<link rel="stylesheet" type="text/css" href="../style/_about_bottom_narrow.css">
+	<link rel="stylesheet" type="text/css" href="../style/_layout.css">
+	<link rel="stylesheet" type="text/css" href="../style/theme_Kaleidoscope.css">
 </head>
 <body>
-	<div class="toolshelf">
-		<div class="nimyric toolshelf-section">
+	<div class="page kaleidoscope narrow">
+		<div class="panel nimyric toolshelf-section upper">
 			<h2>Nimýric Empire</h2>
 			<form>
 				<label>year:</label>
-				<input type="number" id="year_nimyric" name="year_nimyric" value="1447">
+				<input class="year" type="number" id="year_nimyric" name="year_nimyric">
 				<br>
 				<label>era:</label>
-				<select id="era_nimyric" name="era_nimyric" value="1" onclick="limitInputs('nimyric');">
+				<select id="era_nimyric" name="era_nimyric" onclick="limitInputs('nimyric');">
 					<option value="before">NN</option>
 					<option value="after">PN</option>
 				</select>
 				<br>
 				<label>month:</label>
-				<select id="month_nimyric" name="month_nimyric" value="10" onclick="limitInputs('nimyric');">
+				<select id="month_nimyric" name="month_nimyric" onclick="limitInputs('nimyric');">
 					<option value="1">Córélun</option>
 					<option value="2">Aolun</option>
 					<option value="3">Lahalun</option>
@@ -99,19 +69,19 @@
 				</select>
 				<br>
 				<label>day:</label>
-				<input type="number" id="day_nimyric" name="day_nimyric" min="1" value="11">
+				<input type="number" id="day_nimyric" name="day_nimyric" min="1">
 				<br><label>time:</label>
-				<input type="number" id="hour_nimyric" name="hour_nimyric" min="0" max="29" value="19">:
-				<input type="number" id="minute_nimyric" name="minute_nimyric" min="0" max="59" value="0">:
-				<input type="number" id="second_nimyric" name="second_nimyric" min="0" max="59" value="0">
+				<input class="hour" type="number" id="hour_nimyric" name="hour_nimyric" min="0" max="29">:
+				<input type="number" id="minute_nimyric" name="minute_nimyric" min="0" max="59">:
+				<input type="number" id="second_nimyric" name="second_nimyric" min="0" max="59">
 			</form>
-			<button id="setNimyric" onclick="submitInputs('Now','nimyric');updateInputs('Now','utd');">set local time</button>	
+			<button id="setNimyric" onclick="submitInputs('Now','nimyric');updateInputs('Now','utd');">set Nimýric time</button>	
 		</div>
-		<div class="utd toolshelf-section">
+		<div class="panel utd toolshelf-section lower">
 		<h2>UTD</h2>
 			<form>
 				<label>year:</label>
-				<input type="number" id="year_utd" name="year_utd" value="289070">
+				<input class="year" type="number" id="year_utd" name="year_utd">
 				<br>
 				<label>era:</label>
 				<select id="era_utd" name="era_utd" onclick="limitInputs('utd');">
@@ -136,11 +106,11 @@
 				</select>
 				<br>
 				<label>day:</label>
-				<input type="number" id="day_utd" name="day_utd" min="1" value="6">
+				<input type="number" id="day_utd" name="day_utd" min="1">
 				<br><label>time:</label>
-				<input type="number" id="hour_utd" name="hour_utd" min="0" max="23" value="12">:
-				<input type="number" id="minute_utd" name="minute_utd" min="0" max="59" value="0">:
-				<input type="number" id="second_utd" name="second_utd" min="0" max="59" value="0">
+				<input class="hour" type="number" id="hour_utd" name="hour_utd" min="0" max="23">:
+				<input type="number" id="minute_utd" name="minute_utd" min="0" max="59">:
+				<input type="number" id="second_utd" name="second_utd" min="0" max="59">
 			</form>
 			<button id="setUTD" onclick="submitInputs('Now','utd');updateInputs('Now','nimyric');">set UTD time</button>
 		</div>
@@ -156,7 +126,10 @@
 		</div>
 	</div>
 	<script>
-		initParams();initDate();
+		initParams();
+		setDateTime('Now', 'nimyric', 1447, 11, 10, 11, 45, 31);
+		updateInputs('Now', 'nimyric');
+		updateInputs('Now', 'utd');
 	</script>
 </body>
 </html>

@@ -16,10 +16,9 @@ You are free to adapt the converter logic for your own calendars, or add functio
 Therefore, I am placing the code under the [GNU General Public License 3.0](https://www.gnu.org/licenses/gpl-3.0.en.html).
 
 
-However, this does *not* include the *worldbuilding concepts and art assets*.
-Specifically excluded are the scripts in the "config" folder and the images in the "img" subfolder.
-You can still use them as reference for creating your own version of these files.  
-
+However, this does *not* include the *worldbuilding concepts, art assets and my personal logo*.
+Specifically excluded are the scripts in the "config" folder, the images in the "img" subfolder and the file "theme_Kaleidoscope.css".
+You can still use them as reference for creating your own version of these files.
 
 # Technologies
 
