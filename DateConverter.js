@@ -156,8 +156,6 @@ function getConvertedTime(calendar, standardSeconds){
 		//complement
 		hour = params[calendar].locHoursPerDay + hour -1;
 	}
-
-	
 	
 	//extract the date -------------------------------------------
 	
@@ -216,6 +214,11 @@ function getConvertedTime(calendar, standardSeconds){
 		eraIndex=0;
 	}
 	
+	var yearFraction = localYearDays/params[calendar].daysPerYear;
+	var dayFraction = (hour + (minute/params[calendar].minutesPerHour)
+						   + (second/(params[calendar].secondsPerMinute*params[calendar].minutesPerHour)))
+							/ params[calendar].locHoursPerDay;
+	
 	var dateTime = {
 		year: year,
 		eraIndex: eraIndex,
@@ -226,7 +229,9 @@ function getConvertedTime(calendar, standardSeconds){
 		day: day,
 		hour: hour,
 		minute: minute,
-		second: second
+		second: second,
+		yearFraction: yearFraction,
+		dayFraction: dayFraction
 	};
 	
 	return dateTime;
