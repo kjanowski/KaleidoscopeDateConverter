@@ -4,10 +4,13 @@ function initStarSystem(){
 	for(planet of star.planets)
 	{
 		planet.orbitOffset = planet.orbitDayOffset / params[planet.calendar].daysPerYear;
+		
+		for(moon of planet.moons)
+			moon.orbitOffset = moon.orbitDayOffset / moon.orbitDays;
 	}
 }
 
-function getTransform(dateTime, planet)
+function getPlanetTransform(dateTime, planet)
 {
 	var orbitAngle = -(dateTime.yearFraction + planet.orbitOffset)*2.0*Math.PI; 
 	var rotationAngle = -dateTime.dayFraction*2.0*Math.PI;
@@ -17,20 +20,32 @@ function getTransform(dateTime, planet)
 	var orbitY = Math.sin(orbitAngle);
 	var orbitVX = orbitX*planet.visualDistance;
 	var orbitVY = orbitY*planet.visualDistance;
-	var orbitRX = orbitX*planet.realDistance;
-	var orbitRY = orbitY*planet.realDistance;
 	
 	var transform = {
 		orbitVisualX: orbitVX,
 		orbitVisualY: orbitVY,
-		orbitRealX: orbitRX,
-		orbitRealY: orbitRY,
 		relAngle: relRotationAngle
 	};
 	
 	return transform;
 }
 
+function getMoonTransform(dateTime, moon)
+{
+	var orbitAngle = -((dateTime.totalDays / moon.orbitDays)+moon.orbitOffset)*2.0*Math.PI; 
+	
+	var orbitX = Math.cos(orbitAngle);
+	var orbitY = Math.sin(orbitAngle);
+	var orbitVX = orbitX*moon.visualDistance;
+	var orbitVY = orbitY*moon.visualDistance;
+	
+	var transform = {
+		orbitVisualX: orbitVX,
+		orbitVisualY: orbitVY
+	};
+	
+	return transform;
+}
 
 function drawCelestialBody(ctx, centerX, centerY, celestial)
 {
@@ -49,7 +64,7 @@ function drawCelestialBody(ctx, centerX, centerY, celestial)
 
 function drawPlanet(ctx, originX, originY, planet){
 	var dateTime = getDateTime('Now', planet.calendar);
-	var transform = getTransform(dateTime, planet);
+	var transform = getPlanetTransform(dateTime, planet);
 	
 	var centerX =  originX + transform.orbitVisualX;
 	var centerY = originY + transform.orbitVisualY;
@@ -76,6 +91,17 @@ function drawPlanet(ctx, originX, originY, planet){
 			   centerY+(Math.sin(poiEndRad)*arrowInnerRadius)); 
 	ctx.closePath();
 	ctx.fill();
+	
+	
+	for (moon of planet.moons){
+		drawOrbit(ctx, centerX, centerY, moon);
+		
+		var moonTransform = getMoonTransform(dateTime, moon);
+		var moonX = centerX + moonTransform.orbitVisualX;
+		var moonY = centerY + moonTransform.orbitVisualY;
+
+		drawCelestialBody(ctx, moonX, moonY, moon);
+	}
 }
 
 function drawOrbit(ctx, originX, originY, celestial)
@@ -103,6 +129,7 @@ function updateStarSystem(){
 	
 	drawCelestialBody(ctx, originX, originY, star);
 	drawOrbit(ctx, originX, originY, star.planets[0]);
+	
 	drawPlanet(ctx, originX, originY, star.planets[0]);
 }
 
