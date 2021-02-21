@@ -24,11 +24,6 @@
 */
 
 :root{
-	--item-margin: 5px;
-	
-	--outer-border-size: 10px;
-	--inner-border-size: 5px;
-	
 	--generic-brighter-color: #cccccc;
 	--generic-neutral-color: #555555;
 	--generic-darker-color: #333333;
@@ -47,7 +42,10 @@
 	--rainbow-glow-color2: rgba(255, 25, 30, 0.5);
 	--rainbow-glow-color3: rgba(255, 200,0,0.5);
 	--rainbow-glow-color4: rgba(10,255,130,0.5);
-	--generic-link-glow: 3px -3px 5px var(--rainbow-glow-color1), 3px 3px 5px var(--rainbow-glow-color2), -3px 3px 5px var(--rainbow-glow-color3), -3px -3px 5px var(--rainbow-glow-color4);
+	--generic-link-glow: 3px -3px 5px var(--rainbow-glow-color1),
+						 3px 3px 5px var(--rainbow-glow-color2),
+						 -3px 3px 5px var(--rainbow-glow-color3),
+						 -3px -3px 5px var(--rainbow-glow-color4);
  
 	--page-bg-img:url('../img/starfield.jpg');
 	--fish-bg-img:url('../img/wood.png');
@@ -79,7 +77,6 @@
 body{
 	background-image: var(--page-bg-img);
 	color: var(--generic-text-color);
-	margin:0px;
 }
 
 body, body .page, input,select,button{
@@ -94,263 +91,161 @@ h1,h2,h3,h4,h5{
 }
 
 hr{
-	border: 1px solid var(--generic-text-color);
+	border-color:var(--generic-text-color);
 }
 
-.page{
-	width:860px;
-	margin:auto;
-	border: var(--outer-border-size) solid transparent;
+a{
+	color:var(--generic-text-color);
+}
+
+a:hover{
+	color:var(--generic-text-color);
+	text-shadow:var(--generic-link-glow);
+}
+
+/*----------------------------------------------
+   outer containers
+  ----------------------------------------------*/
+
+.page .kaleidoscope{
 	border-image: var(--generic-border-img);
 	box-shadow:var(--generic-page-glow);
-	position:relative;
-	top:40px;
 }
 
-.panel{
-	border: var(--inner-border-size) solid transparent;
+.kaleidoscope .panel{
 	border-image: var(--generic-border-img);
-	padding:0px;
 }
 
-.separator{
-	display:inline-block;
-	position:relative;
-	margin:5px 0px 5px 0px;
-	padding:0px;
-	width:0px;
-	border-right: 1px solid var(--generic-page-color);
-	border-left: 1px solid var(--generic-panel-color);
-}
 
-.toolshelf{
+/*----------------------------------------------
+   date inputs
+  ----------------------------------------------*/
+
+.kaleidoscope .toolshelf{
 	background: var(--generic-page-color);
-	padding:0px;
-	height:200px;
-	margin-bottom:10px;
 }
 
-.toolshelf-section{
-	padding:10px;
-	display:inline-block;
-	position:relative;
-	vertical-align:top;
-	width:399px;
-	margin:auto;
-	height:180px;
-}
-
-.toolshelf .separator{
+.kaleidoscope .toolshelf .separator{
 	height:190px;
+	top:5px;
 }
 
-.output{
-	position:relative;
-	display:block;
-	padding: var(--panel-padding);
-	color: var(--fg-color);
-	height:105px;
-}
-.output#twkDisplay{
-	height:130px;
-}
-
-.output .separator{
-	height:95px;
-}
-.output#twkDisplay .separator{
-	height:120px;
-}
-
-.output .display-section{
-	padding:5px;
-	display:inline-block;
-	position:relative;
-	vertical-align:top;
-	margin:0px;
-	text-align:left;
-	height:95px;
-	border: 0px solid transparent;
-}
-.output#twkDisplay .display-section{
-	height:120px;
-}
-
-.output .display-now,
-.output .display-then,
-.output .display-diff{
-	width:230px;
-}
-
-.output .display-caption{
-	width:80px;
-	padding-left:10px;
-}
-
-.tooltip{
-	display:inline;
-	position:relative;
-	border-bottom: 1px dotted var(--generic-text-color)!important;
-}
-
-.tooltip .tooltip-text{
-	display:none;
-	position:absolute;
-	text-align:center;
-	background:var(--generic-darker-color);
-	color:var(--fg-color);
-	padding:5px;
-	width: 30px;
-	bottom:100%;
-	margin-left:-20px;
-	left:50%;
-	z-index:1;
-}
-
-.tooltip .tooltip-text::after{
-	content: " ";
-	position: absolute;
-	top: 100%;
-	left: 50%;
-	margin-left: -5px;
-	border-width: 5px;
-	border-style: solid;
-	border-color: var(--generic-darker-color) transparent transparent transparent!important;
-}
-
-.tooltip:hover .tooltip-text{
-	display:inline-block;
-}
-
-
-#utdDisplay{
-	background:var(--generic-page-color);
-	border-image:var(--generic-border-img);
-}
-
-#utdDisplay .display-caption{
-	background:var(--generic-panel-color);
-}
-
-
-#nimyricDisplay, #pereqaianDisplay{
-	background-image:var(--fish-bg-img);
-	background-size: 300px 300px;
-	border-image:var(--fish-border-img);
-}
-#nimyricDisplay .display-caption{
-	background: var(--nimyric-neutral-color);
-	box-shadow: 0px 0px 50px inset var(--nimyric-darker-color);
-	text-shadow: 0px 0px 20px var(--nimyric-darker-color);
-}
-#pereqaianDisplay .display-caption{
-	background: var(--pereqaian-neutral-color);
-	box-shadow: 0px 0px 50px inset var(--pereqaian-darker-color);
-	text-shadow: 0px 0px 20px var(--pereqaian-darker-color);
-}
-
-#rilsuDisplay{
-	background-image:var(--rilsu-bg-img);
-	background-size: 1000px 1700px;
-	border-image:var(--rilsu-border-img);
-}
-#rilsuDisplay .display-caption{
-	background: var(--rilsu-neutral-color);
-	box-shadow: 0px 0px 50px inset var(--rilsu-darker-color);
-	text-shadow: 0px 0px 20px var(--rilsu-darker-color);
-}
-
-#twkDisplay{
-	background-image:var(--twk-bg-img);
-	background-size: 300px 300px;
-	border-image:var(--twk-border-img);
-}
-#twkDisplay .display-caption{
-	background:var(--twk-neutral-color);
-	box-shadow: 0px 0px 50px inset var(--twk-darker-color);
-	text-shadow: 0px 0px 20px var(--twk-darker-color);
-}
-
-select, input{
+.kaleidoscope select, input{
 	background: var(--generic-panel-color);
 	border: 1px solid var(--generic-text-color);
 	color: var(--generic-text-color);	
 }
 
-select{
-	width: 4.5em;
+
+/*----------------------------------------------
+   textual date displays
+  ----------------------------------------------*/
+
+.kaleidoscope .output{
+	color: var(--fg-color);
+	height: 110px;
 }
 
-input{
-	width: 2em;
+.kaleidoscope .output .separator{
+	height: 110px;
 }
 
-input#hourNow,
-input#hourThen{
-	width:2.5em;
+.kaleidoscope .output .display-caption{
+	background:var(--generic-panel-color);
+	width:90px;
+	left:-5px;
+	top:-5px;
 }
 
-input#yearNow,
-input#yearThen{
-	width:4em;
+.output.utd{
+	background:var(--generic-page-color);
+	border-image:var(--generic-border-img);
 }
 
-select, input{
-	margin: var(--item-margin);
+.output.utd .display-caption{
+	background:var(--generic-panel-color);
 }
 
-button{
-	margin:var(--item-margin) 0px 0px 0px;
-	width:100%;
+.output.nimyric,
+.output.pereqaian{
+	background-image:var(--fish-bg-img);
+	background-size: 300px 300px;
+	border-image:var(--fish-border-img);
 }
 
-.toolshelf-section label{
-	display:inline-block;
-	margin-left:0px;
-	width:80px!important;
+.output.nimyric .display-caption{
+	background: var(--nimyric-neutral-color);
+	box-shadow: 0px 0px 50px inset var(--nimyric-darker-color);
+	text-shadow: 0px 0px 20px var(--nimyric-darker-color);
 }
 
-.page .about{
-	padding:10px;
-	position:absolute;
-	top:-50px;
-	left:-10px;
-	height:20px;
-	width:860px;
+.output.pereqaian .display-caption{
+	background: var(--pereqaian-neutral-color);
+	box-shadow: 0px 0px 50px inset var(--pereqaian-darker-color);
+	text-shadow: 0px 0px 20px var(--pereqaian-darker-color);
+}
+
+.output.rilsu{
+	background-image:var(--rilsu-bg-img);
+	background-size: 1000px 1700px;
+	border-image:var(--rilsu-border-img);
+}
+.output.rilsu.display-caption{
+	background: var(--rilsu-neutral-color);
+	box-shadow: 0px 0px 50px inset var(--rilsu-darker-color);
+	text-shadow: 0px 0px 20px var(--rilsu-darker-color);
+}
+
+.output.twk{
+	background-image:var(--twk-bg-img);
+	background-size: 300px 300px;
+	border-image:var(--twk-border-img);
+	height:130px;
+}
+
+.output.twk .separator{
+	height:130px;
+}
+
+.output.twk .display-section{
+	height:130px;
+}
+
+.output.twk .display-caption{
+	background:var(--twk-neutral-color);
+	box-shadow: 0px 0px 50px inset var(--twk-darker-color);
+	text-shadow: 0px 0px 20px var(--twk-darker-color);
+}
+
+/*----------------------------------------------
+   tooltips
+  ----------------------------------------------*/
+  
+.kaleidoscope .tooltip{
+	border-bottom-color:var(--generic-text-color);
+}
+
+.kaleidoscope .tooltip .tooltip-text{
 	background:var(--generic-darker-color);
-	z-index:1;
-	vertical-align:bottom;
+	color:var(--fg-color);
 }
 
-.page .about a{
-	color:var(--generic-text-color);
+.kaleidoscope .tooltip .tooltip-text::after{
+	border-top-color: var(--generic-darker-color);
 }
 
-.page .about a:hover{
-	color:var(--generic-text-color);
-	text-shadow:var(--generic-link-glow);
-}
-
-.page .about:hover{
-	height:150px;
-	box-shadow:0px 0px 30px black;
-}
-
-.page .about .trigger{
-	height:20px;
-	color:var(--generic-text-color);
-	opacity:1.0;
-}
-
-.page .about:hover .trigger{
-	opacity:0.25;
-}
-
-.page .about .show-on-hover{
-	display:none;
-	height:140px;
-}
-
-.page .about:hover .show-on-hover{
+.kaleidoscope .tooltip:hover .tooltip-text{
 	display:inline-block;
+}
+
+/*----------------------------------------------
+   about boxes
+  ----------------------------------------------*/
+
+.about{
+	background:var(--generic-darker-color);
+}
+
+.about:hover .show-on-hover{
+	background:var(--generic-darker-color);
 }

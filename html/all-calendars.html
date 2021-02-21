@@ -30,12 +30,24 @@
 	<link href='https://fonts.googleapis.com/css?family=Oregano' rel='stylesheet'>
 	<script src="../configs/Config_Kaleidoscope.js"></script>
 	<script src="../DateConverter.js"></script>
-	<link rel="stylesheet" type="text/css" href="../style/DateConverter_all.css">
+	<link rel="stylesheet" type="text/css" href="../style/_about_top_wide.css">
+	<link rel="stylesheet" type="text/css" href="../style/_layout.css">
+	<link rel="stylesheet" type="text/css" href="../style/_Kaleidoscope.css">
 </head>
 <body>
-	<div class="page">
+	<div class="kaleidoscope page wide">
+		<div class="about">
+			<div class="trigger">About these converters...</div>
+			<div class="show-on-hover">
+				<p>These date converters were written as part of the <a href="https://www.worldanvil.com/w/the-kaleidoscope-system-kaleidechse" target="_blank">Kaleidoscope System</a> project.
+				</p><p>All worldbuilding content involved therein (such as culture, era and month names) belongs to <a href="https://www.kathrinjanowski.com/en/home" target="_blank">Kathrin Janowski</a> a.k.a. Kaleidechse.</p>
+				<p>
+				The converters are hosted via <a href="https://pages.github.com/" target="_blank">GitHub Pages</a> and use <a href="https://fonts.google.com/" target="_blank">Google Fonts</a>. They do not store any personal data or use third-party tracking software.
+				</p>
+			</div>
+		</div>
 		<div class="panel toolshelf">
-			<div class="toolshelf-section">
+			<div class="toolshelf-section wide">
 				<h2>Current Time</h2>
 				<form>
 					<label>calendar:</label>
@@ -58,7 +70,7 @@
 				<button id="setNow" onclick="setTime('Now')">set current time</button>
 			</div>	
 			<div class="separator"></div>
-			<div class="toolshelf-section">
+			<div class="toolshelf-section wide">
 				<h2>Comparison Time</h2>
 				<form>
 					<label>calendar:</label>
@@ -82,7 +94,7 @@
 			</div>
 		</div>
 		
-		<div class="panel output" id="utdDisplay">
+		<div class="panel output utd" id="utdDisplay">
 			<div class="display-section display-caption"><h3>UTD</h3></div>
 			<div class="display-section display-now" id="output-utd-now"></div>
 			<div class="separator"></div>
@@ -90,7 +102,7 @@
 			<div class="separator"></div>
 			<div class="display-section display-diff" id="output-utd-diff"></div>
 		</div>
-		<div class="panel output" id="nimyricDisplay">
+		<div class="panel output nimyric" id="nimyricDisplay">
 			<div class="display-section display-caption"><h3>Nimýric Empire</h3></div>
 			<div class="display-section display-now" id="output-nimyric-now"></div>
 			<div class="separator"></div>
@@ -98,7 +110,7 @@
 			<div class="separator"></div>
 			<div class="display-section display-diff" id="output-nimyric-diff"></div>
 		</div>
-		<div class="panel output" id="pereqaianDisplay">
+		<div class="panel output pereqaian" id="pereqaianDisplay">
 			<div class="display-section display-caption"><h3>Pereqaian Alliance</h3></div>
 			<div class="display-section display-now" id="output-pereqaian-now"></div>
 			<div class="separator"></div>
@@ -106,7 +118,7 @@
 			<div class="separator"></div>
 			<div class="display-section display-diff" id="output-pereqaian-diff"></div>
 		</div>
-		<div class="panel output" id="rilsuDisplay">
+		<div class="panel output rilsu" id="rilsuDisplay">
 			<div class="display-section display-caption"><h3>Rilsu World Republic</h3></div>
 			<div class="display-section display-now" id="output-rilsu-now"></div>
 			<div class="separator"></div>
@@ -114,21 +126,13 @@
 			<div class="separator"></div>
 			<div class="display-section display-diff" id="output-rilsu-diff"></div>
 		</div>
-		<div class="panel output" id="twkDisplay">
+		<div class="panel output twk">
 			<div class="display-section display-caption"><h3>The Hive</h3></div>
 			<div class="display-section display-now" id="output-twk-now"></div>
 			<div class="separator"></div>
 			<div class="display-section display-then" id="output-twk-then"></div>
 			<div class="separator"></div>
 			<div class="display-section display-diff" id="output-twk-diff"></div>
-		</div>
-		<div class="about">
-			<div class="trigger">About these converters...</div>
-			<div class="show-on-hover">
-				<p>These date converters were written as part of the <a href="https://www.worldanvil.com/w/the-kaleidoscope-system-kaleidechse">Kaleidoscope System</a> project.
-				</p><p>All worldbuilding content involved therein (such as culture, era and month names) belongs to <a href="https://www.kathrinjanowski.com/en/home">Kathrin Janowski</a> a.k.a. Kaleidechse.</p>
-				The converters are hosted via <a href="https://pages.github.com/">GitHub Pages</a> and use <a href="https://fonts.google.com/">Google Fonts</a>. They do not store any personal data or use third-party tracking software.
-			</div>
 		</div>
 	</div>
 	<script>
