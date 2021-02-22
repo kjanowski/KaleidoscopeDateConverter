@@ -29,8 +29,6 @@ times["Then"] = 0.0;
 //
 
 function initParams(){
-	console.log (params);
-	
 	var offsetFactor = params["utd"].daysPerYear*params["utd"].stdHoursPerDay*params["utd"].minutesPerHour*params["utd"].secondsPerMinute;
 
 	for(calendar of calendarNames)
@@ -365,8 +363,6 @@ function updateInputs(which, calendar){
 		document.getElementById('second_'+calendar).value = ""+dateTime.second;
 	
 		limitInputs(calendar);
-	}else{
-		console.log("no inputs for calendar "+calendar+" -> nothing to update");
 	}
 }
 
