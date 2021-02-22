@@ -43,7 +43,7 @@ star.planets = [
 				radius: 3,
 				visualDistance: 30,
 				orbitDays: 25,
-				orbitDayOffset: 3
+				orbitDayOffset: 1
 			}
 		],
 		ring:undefined
@@ -66,7 +66,7 @@ star.planets = [
 				radius: 4,
 				visualDistance: 30,
 				orbitDays: 32,
-				orbitDayOffset: -7
+				orbitDayOffset: -12
 			},
 			{
 				color: "#CCCCCC",

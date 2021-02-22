@@ -29,7 +29,7 @@ star.planets = [
 				radius: 4,
 				visualDistance: 30,
 				orbitDays: 32,
-				orbitDayOffset: -7
+				orbitDayOffset: -12
 			},
 			{
 				color: "#CCCCCC",

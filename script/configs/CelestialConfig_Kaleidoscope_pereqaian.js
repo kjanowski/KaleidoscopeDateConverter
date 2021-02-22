@@ -29,7 +29,7 @@ star.planets = [
 				radius: 3,
 				visualDistance: 30,
 				orbitDays: 25,
-				orbitDayOffset: 4
+				orbitDayOffset: 0
 			}
 		],
 		ring:undefined

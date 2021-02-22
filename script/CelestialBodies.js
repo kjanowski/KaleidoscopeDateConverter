@@ -43,15 +43,17 @@ function getPlanetTransform(dateTime, planet)
 	var transform = {
 		orbitVisualX: orbitVX,
 		orbitVisualY: orbitVY,
+		orbitAngle: orbitAngle,
 		relAngle: relRotationAngle
 	};
 	
 	return transform;
 }
 
-function getMoonTransform(dateTime, calParams, moon)
+function getMoonTransform(dateTime, calParams, planetOrbitAngle, moon)
 {
 	var orbitAngle = (moon.orbitOffset-(dateTime.totalDays / moon.orbitDays))*2.0*Math.PI; 
+	orbitAngle = orbitAngle+planetOrbitAngle;
 	
 	var orbitX = Math.cos(orbitAngle);
 	var orbitY = Math.sin(orbitAngle);
@@ -98,7 +100,7 @@ function drawPlanet(ctx, originX, originY, planet){
 	for (moon of planet.moons){
 		drawOrbit(ctx, centerX, centerY, moon);
 		
-		var moonTransform = getMoonTransform(dateTime, params[planet.calendar], moon);
+		var moonTransform = getMoonTransform(dateTime, params[planet.calendar], transform.orbitAngle, moon);
 		var moonX = centerX + moonTransform.orbitVisualX;
 		var moonY = centerY + moonTransform.orbitVisualY;
 
