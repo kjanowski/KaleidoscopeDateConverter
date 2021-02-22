@@ -150,7 +150,8 @@ function getConvertedTime(calendar, standardSeconds){
 	
 	var hour = localHours % params[calendar].locHoursPerDay;
 	//console.log("["+calendar+"] hours:"+hour);
-	var localDays = (localHours - hour)/params[calendar].locHoursPerDay;
+	var totalLocalDays = (localHours - hour)/params[calendar].locHoursPerDay;
+	var localDays = totalLocalDays;
 	if(!after)
 	{
 		//complement
@@ -225,7 +226,7 @@ function getConvertedTime(calendar, standardSeconds){
 		era: era,
 		month: month,
 		monthName: monthName,
-		totalDays : localDays,
+		totalDays : totalLocalDays,
 		day: day,
 		hour: hour,
 		minute: minute,
