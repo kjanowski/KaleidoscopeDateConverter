@@ -17,7 +17,7 @@ Therefore, I am placing the code under the [GNU General Public License 3.0](http
 
 
 However, this does *not* include the *worldbuilding concepts, art assets and my personal logo*.
-Specifically excluded are the scripts in the "config" folder, the images in the "img" subfolder and the file "theme_Kaleidoscope.css".
+Specifically excluded are the scripts in the "script/configs" folder, the images in the "img" subfolder and the file "style/theme_Kaleidoscope.css".
 You can still use them as reference for creating your own version of these files.
 
 # Technologies

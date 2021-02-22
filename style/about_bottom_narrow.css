@@ -22,7 +22,7 @@
 .about .show-on-hover{
 	display:none;
 	width:317px;
-	height:250px;
+	height:280px;
 	margin:0px;
 	padding:10px;
 	background:lightGray;
@@ -32,6 +32,6 @@
 	display:inline-block;
 	box-shadow:0px 0px 30px black;
 	position:absolute;
-	top:-270px;
+	top:-300px;
 	left:0px;
 }
