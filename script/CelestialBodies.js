@@ -17,6 +17,7 @@
 
 
 var animator = undefined;
+var animatorCalendar = 'utd';
 
 function initStarSystem(){
 	for(planet of star.planets)
@@ -89,27 +90,10 @@ function drawPlanet(ctx, originX, originY, planet){
 	
 	drawCelestialBody(ctx, centerX, centerY, planet);
 	
-	//draw POI
-	var arrowWidth = 0.75;
-	var arrowInnerRadius = planet.radius * 0.3;
-	var arrowOuterRadius = planet.radius * 0.9;
-		
-	var poiCenterRad = transform.relAngle;
-	var poiStartRad = poiCenterRad - arrowWidth;
-	var poiEndRad = poiCenterRad + arrowWidth;
-				
-	ctx.fillStyle = planet.poiColor;
-		
-	ctx.beginPath();	
-	ctx.moveTo(centerX+(Math.cos(poiStartRad)*arrowInnerRadius),
-			   centerY+(Math.sin(poiStartRad)*arrowInnerRadius));
-	ctx.lineTo(centerX+(Math.cos(poiCenterRad)*arrowOuterRadius),
-			   centerY+(Math.sin(poiCenterRad)*arrowOuterRadius));
-	ctx.lineTo(centerX+(Math.cos(poiEndRad)*arrowInnerRadius),
-			   centerY+(Math.sin(poiEndRad)*arrowInnerRadius)); 
-	ctx.closePath();
-	ctx.fill();
-	
+	for(marker of planet.markers)
+	{
+		drawMarker(ctx, centerX, centerY, marker, transform.relAngle, planet.radius);
+	}
 	
 	for (moon of planet.moons){
 		drawOrbit(ctx, centerX, centerY, moon);
@@ -120,13 +104,52 @@ function drawPlanet(ctx, originX, originY, planet){
 
 		drawCelestialBody(ctx, moonX, moonY, moon);
 	}
+	
+	drawRing(ctx, centerX, centerY, planet);
+}
+
+function drawMarker(ctx, centerX, centerY, marker, relAngle, radius)
+{
+	var arrowWidth = 0.75;
+	var arrowInnerRadius = radius * 0.3;
+	var arrowOuterRadius = radius * 0.9;
+		
+	var markCenterRad = relAngle + marker.angle;
+	var markStartRad = markCenterRad - arrowWidth;
+	var markEndRad = markCenterRad + arrowWidth;
+				
+	ctx.fillStyle = marker.color;
+		
+	ctx.beginPath();	
+	ctx.moveTo(centerX+(Math.cos(markStartRad)*arrowInnerRadius),
+			   centerY+(Math.sin(markStartRad)*arrowInnerRadius));
+	ctx.lineTo(centerX+(Math.cos(markCenterRad)*arrowOuterRadius),
+			   centerY+(Math.sin(markCenterRad)*arrowOuterRadius));
+	ctx.lineTo(centerX+(Math.cos(markEndRad)*arrowInnerRadius),
+			   centerY+(Math.sin(markEndRad)*arrowInnerRadius)); 
+	ctx.closePath();
+	ctx.fill();	
 }
 
 function drawOrbit(ctx, originX, originY, celestial)
 {
+	ctx.lineWidth = 1;
+	ctx.strokeStyle = "#FFFFFF";
 	ctx.beginPath();
 	ctx.arc(originX, originY, celestial.visualDistance, 0, 2 * Math.PI);
 	ctx.stroke();
+}
+
+function drawRing(ctx, centerX, centerY, planet)
+{
+	if(planet.ring != undefined){
+		ctx.lineWidth = planet.ring.thickness;
+		ctx.strokeStyle = planet.ring.color;
+		
+		ctx.beginPath();
+		ctx.arc(centerX, centerY, planet.ring.radius, 0, 2 * Math.PI);
+		ctx.stroke();
+	}
 }
 
 function updateStarSystem(){
@@ -146,16 +169,20 @@ function updateStarSystem(){
 	var originY = canvasHeight/2;
 	
 	drawCelestialBody(ctx, originX, originY, star);
-	drawOrbit(ctx, originX, originY, star.planets[0]);
 	
-	drawPlanet(ctx, originX, originY, star.planets[0]);
+	for(planet of star.planets)
+	{
+		drawOrbit(ctx, originX, originY, planet);
+		drawPlanet(ctx, originX, originY, planet);
+	}
 }
 
-function toggleAnimation()
+function toggleAnimation(calendar)
 {
 	var btn = document.getElementById("toggleAnim")
 	if(animator == undefined)
 	{
+		animatorCalendar = calendar;
 		animator = setInterval(advanceTime, 20);
 		btn.innerHTML = "||";
 	}else{
@@ -167,12 +194,12 @@ function toggleAnimation()
 
 
 function advanceTime() {
-	var calendarParams=params[star.planets[0].calendar];
+	var calendarParams=params[animatorCalendar];
 	var timeStep = calendarParams.minutesPerHour*calendarParams.secondsPerMinute;
 
 	times['Now'] = times['Now'] + timeStep;
 
-	updateInputs('Now', star.planets[0].calendar);
+	updateAllInputs('Now');
 	updateStarSystem();
 }
 

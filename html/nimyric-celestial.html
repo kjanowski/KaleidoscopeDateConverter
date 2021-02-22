@@ -28,10 +28,10 @@
   -->
 <head>
 	<title>Celestial body display for the Nimýric Empire</title>
-	<script src="../configs/Config_Kaleidoscope.js"></script>
-	<script src="../DateConverter.js"></script>
-	<script src="../configs/CelestialConfig_Kaleidoscope.js"></script>
-	<script src="../starSystem.js"></script>
+	<script src="../script/configs/Config_Kaleidoscope.js"></script>
+	<script src="../script/DateConverter.js"></script>
+	<script src="../script/configs/CelestialConfig_Kaleidoscope_nimyric.js"></script>
+	<script src="../script/CelestialBodies.js"></script>
 	<link rel="icon" href="../img/favicon_kaleidechse_57x57.png" type="image/png">
 	<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Oregano'>
 	<link rel="stylesheet" type="text/css" href="../style/layout.css">
@@ -43,7 +43,7 @@
 		<canvas id="starSystem" width="327" height="290">
 			Your browser does not support the canvas element.
 		</canvas>
-		<div class="panel nimyric toolshelf-section">
+		<div class="panel nimyric toolshelf-section" id="inputs_nimyric">
 			<h2>Nimýric Empire</h2>
 			<form>
 				<label>year:</label>
@@ -82,7 +82,7 @@
 			</form>
 			<button id="setNimyric" onclick="submitInputs('Now','nimyric');updateStarSystem();">set time</button>	
 			<div class="anim-control">
-				<button id="toggleAnim" onclick="toggleAnimation()">►</button> 
+				<button id="toggleAnim" onclick="toggleAnimation('nimyric')">►</button> 
 			</div>
 		</div>
 		<div class="about">

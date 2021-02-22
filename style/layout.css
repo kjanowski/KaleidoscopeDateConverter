@@ -95,6 +95,23 @@ hr{
 	border-left: 1px solid darkGray;
 }
 
+.sidebar{
+	width:337px;
+	height:900px;
+	margin:0px;
+	position:absolute;
+	top:0px;
+}
+
+.sidebar.left{
+	left:0px;
+}
+
+.sidebar.right{
+	right:0px;
+}
+
+
 
 /*----------------------------------------------
    date inputs

@@ -7,7 +7,7 @@
 	Further details can be found in the file "readme.md" in the root folder.
 */
 
-var calendarNames = ["utd", "nimyric", "pereqaian", "rilsu", "twk"];
+var calendarNames = ["utd", "nimyric", "pereqaian", "rilsu", "twk", "achyu", "ivlare"];
 
 var params = {}
 
@@ -86,3 +86,34 @@ params["twk"].daysPerYear=205.0;
 params["twk"].eraBefore = "Before The Hive"
 params["twk"].eraAfter = "In The Hive"
 params["twk"].rawOffsetUTD = 0.0;
+
+
+/*------------------------------------------------------
+  dummy calendars for un-inhabited celestial bodies
+  ------------------------------------------------------*/
+
+params["achyu"] = {}
+params["achyu"].name = "The Burnt Planet";
+params["achyu"].secondsPerMinute = 60.0;
+params["achyu"].minutesPerHour = 60.0;
+params["achyu"].locHoursPerDay = 30.0;
+params["achyu"].stdHoursPerDay = 30.0;
+params["achyu"].monthNames = ["The Orbit"];
+params["achyu"].monthLength = [95];
+params["achyu"].daysPerYear=95.0;
+params["achyu"].eraBefore = "Before The Hive"
+params["achyu"].eraAfter = "In The Hive"
+params["achyu"].rawOffsetUTD = 0.0;
+
+params["ivlare"] = {}
+params["ivlare"].name = "The Ringed Planet";
+params["ivlare"].secondsPerMinute = 60.0;
+params["ivlare"].minutesPerHour = 60.0;
+params["ivlare"].locHoursPerDay = 14.0;
+params["ivlare"].stdHoursPerDay = 14.0;
+params["ivlare"].monthNames = ["The Orbit"];
+params["ivlare"].monthLength = [783];
+params["ivlare"].daysPerYear=783.0;
+params["ivlare"].eraBefore = "Before The Hive"
+params["ivlare"].eraAfter = "In The Hive"
+params["ivlare"].rawOffsetUTD = 0.0;

@@ -27,18 +27,23 @@
 	
   -->
 <head>
-	<title>Date converter for the Rilsu World Republic</title>
+	<title>Celestial body display for the Rilsu World Republic</title>
 	<script src="../script/configs/Config_Kaleidoscope.js"></script>
 	<script src="../script/DateConverter.js"></script>
+	<script src="../script/configs/CelestialConfig_Kaleidoscope_rilsu.js"></script>
+	<script src="../script/CelestialBodies.js"></script>
 	<link rel="icon" href="../img/favicon_kaleidechse_57x57.png" type="image/png">
 	<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Oregano'>
-	<link rel="stylesheet" type="text/css" href="../style/about_bottom_narrow.css">
 	<link rel="stylesheet" type="text/css" href="../style/layout.css">
+	<link rel="stylesheet" type="text/css" href="../style/about_bottom_narrow.css">
 	<link rel="stylesheet" type="text/css" href="../style/theme_Kaleidoscope.css">
 </head>
 <body>
 	<div class="page kaleidoscope narrow">
-		<div class="panel rilsu toolshelf-section upper" id="inputs_rilsu">
+		<canvas id="starSystem" width="327" height="290">
+			Your browser does not support the canvas element.
+		</canvas>
+		<div class="panel rilsu toolshelf-section" id="inputs_rilsu">
 			<h2>Rilsu World Republic</h2>
 			<form>
 				<label>year:</label>
@@ -78,61 +83,26 @@
 				<input type="number" id="minute_rilsu" name="minute_rilsu" min="0" max="63">:
 				<input type="number" id="second_rilsu" name="second_rilsu" min="0" max="63">
 			</form>
-			<button id="setRilsu" onclick="submitInputs('Now','rilsu');updateInputs('Now','utd');">set Rilsu time</button>	
-		</div>
-		<div class="panel utd toolshelf-section lower" id="inputs_utd">
-		<h2>UTD</h2>
-			<form>
-				<label>year:</label>
-				<input class="year" type="number" id="year_utd" name="year_utd">
-				<br>
-				<label>era:</label>
-				<select id="era_utd" name="era_utd" onclick="limitInputs('utd');">
-					<option value="before">before time began</option>
-					<option value="after">since time began</option>
-				</select>
-				<br>
-				<label>month:</label>
-				<select id="month_utd" name="month_utd" onclick="limitInputs('utd');">
-					<option value="1">January</option>
-					<option value="2">February</option>
-					<option value="3">March</option>
-					<option value="4">April</option>
-					<option value="5">May</option>
-					<option value="6">June</option>
-					<option value="7">July</option>
-					<option value="8">August</option>
-					<option value="9">September</option>
-					<option value="10">October</option>
-					<option value="11">November</option>
-					<option value="12">December</option>
-				</select>
-				<br>
-				<label>day:</label>
-				<input type="number" id="day_utd" name="day_utd" min="1">
-				<br><label>time:</label>
-				<input class="hour" type="number" id="hour_utd" name="hour_utd" min="0" max="23">:
-				<input type="number" id="minute_utd" name="minute_utd" min="0" max="59">:
-				<input type="number" id="second_utd" name="second_utd" min="0" max="59">
-			</form>
-			<button id="setUTD" onclick="submitInputs('Now','utd');updateInputs('Now','rilsu');">set UTD time</button>
+			<button id="setRilsu" onclick="submitInputs('Now','rilsu');updateStarSystem();">set Rilsu time</button>	
+			<div class="anim-control">
+				<button id="toggleAnim" onclick="toggleAnimation('rilsu')">►</button> 
+			</div>
 		</div>
 		<div class="about">
-			<div class="show-on-hover">
-				This date converter was written as part of the <a href="https://www.worldanvil.com/w/the-kaleidoscope-system-kaleidechse" target="_blank">Kaleidoscope System</a> project.
-				<p>All worldbuilding content involved therein (such as culture, era and month names) belongs to <a href="https://www.kathrinjanowski.com/en/home" target="_blank">Kathrin Janowski</a> a.k.a. Kaleidechse.</p>
-				<p>
-				The converter is hosted via <a href="https://pages.github.com/" target="_blank">GitHub Pages</a> and uses <a href="https://fonts.google.com/" target="_blank">Google Fonts</a>. It does not store any personal data or use third-party tracking software.
-				</p>
-			</div>
 			<div class="trigger">About this converter...</div>
+			<div class="show-on-hover">
+				<p>This date converter was written as part of the <a href="https://www.worldanvil.com/w/the-kaleidoscope-system-kaleidechse">Kaleidoscope System</a> project.
+				</p><p>All worldbuilding content involved therein (such as culture, era and month names) belongs to <a href="https://www.kathrinjanowski.com/en/home">Kathrin Janowski</a> a.k.a. Kaleidechse.</p>
+				The converter is hosted via <a href="https://pages.github.com/">GitHub Pages</a> and uses <a href="https://fonts.google.com/">Google Fonts</a>. It does not store any personal data or use third-party tracking software.
+			</div>
 		</div>
 	</div>
 	<script>
 		initParams();
 		setDateTime('Now', 'rilsu', 821, 1, 18, 29, 33, 23);
 		updateInputs('Now', 'rilsu');
-		updateInputs('Now', 'utd');
+		initStarSystem();
+		updateStarSystem();
 	</script>
 </body>
 </html>

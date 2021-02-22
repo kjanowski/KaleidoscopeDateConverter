@@ -348,17 +348,30 @@ function limitInputs(calendar)
 function updateInputs(which, calendar){
 	var dateTime = getDateTime(which, calendar);
 	
-	document.getElementById('year_'+calendar).value = ""+dateTime.year;
+	//check whether inputs for this calendar are present
+	if(document.getElementById('inputs_'+calendar) != undefined){
 	
-	var eraDropdown = document.getElementById('era_'+calendar);
-	eraDropdown.selectedIndex = dateTime.eraIndex;
+		document.getElementById('year_'+calendar).value = ""+dateTime.year;
 	
+		var eraDropdown = document.getElementById('era_'+calendar);
+		eraDropdown.selectedIndex = dateTime.eraIndex;
 		
-	document.getElementById('month_'+calendar).value = ""+dateTime.month;
-	document.getElementById('day_'+calendar).value = ""+dateTime.day;
-	document.getElementById('hour_'+calendar).value = ""+dateTime.hour;
-	document.getElementById('minute_'+calendar).value = ""+dateTime.minute;
-	document.getElementById('second_'+calendar).value = ""+dateTime.second;
+			
+		document.getElementById('month_'+calendar).value = ""+dateTime.month;
+		document.getElementById('day_'+calendar).value = ""+dateTime.day;
+		document.getElementById('hour_'+calendar).value = ""+dateTime.hour;
+		document.getElementById('minute_'+calendar).value = ""+dateTime.minute;
+		document.getElementById('second_'+calendar).value = ""+dateTime.second;
 	
-	limitInputs(calendar);
+		limitInputs(calendar);
+	}else{
+		console.log("no inputs for calendar "+calendar+" -> nothing to update");
+	}
+}
+
+function updateAllInputs(which){
+	for(calendar of calendarNames)
+	{
+		updateInputs(which, calendar)
+	}
 }
