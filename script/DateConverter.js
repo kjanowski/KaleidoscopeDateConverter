@@ -293,7 +293,13 @@ function updateDisplay(calendarName){
 						+"<div class=\"tooltip-text\">"
 							+dateTimeNow.month+"</div></div> "
 					+dateTimeNow.day+"<br>"+getTimeText(dateTimeNow);
-	document.getElementById("output-"+calendarName+"-now").innerHTML = textNow;
+	var output = document.getElementById("output-"+calendarName+"-now");
+	if(output == undefined)
+	{
+		console.log("no output for calendar \""+calendarName+"\"");
+		return;
+	}
+	output.innerHTML= textNow;
 								
 	var dateTimeThen = getDateTime("Then", calendarName);
 	
