@@ -49,6 +49,8 @@ function loadStarSystem(celestialConfigURL){
 
 
 function initStarSystem(json){
+	console.log("star system: "+json);
+	
 	star = JSON.parse(json);
 	for(planet of star.planets)
 	{	
@@ -59,6 +61,7 @@ function initStarSystem(json){
 			moon.orbitOffset = moon.orbitDayOffset / moon.orbitDays;
 	}
 	
+	console.log("loaded star with "+star.planets.length+" planets");
 	updateStarSystem();
 }
 
