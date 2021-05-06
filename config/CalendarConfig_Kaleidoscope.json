@@ -83,7 +83,7 @@
 			"daysPerYear": 95.0,
 			"eraBefore": "Before The Hive",
 			"eraAfter": "In The Hive",
-			"rawOffsetUTD": 0.0;
+			"rawOffsetUTD": 0.0
 		},
 		"ivlare":
 		{
@@ -97,7 +97,7 @@
 			"daysPerYear": 783.0,
 			"eraBefore": "Before The Hive",
 			"eraAfter": "In The Hive",
-			"rawOffsetUTD": 0.0;
+			"rawOffsetUTD": 0.0
 		}
 	}
 }
