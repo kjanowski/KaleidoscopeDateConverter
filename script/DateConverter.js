@@ -55,7 +55,7 @@ function initCalendars(json){
 			calendar.offsetUTD = calendar.rawOffsetUTD*offsetFactor;
 	}
 	
-	console.log("calendars ready: "+calendarConfig.toString());
+	console.log("calendars ready: "+calendarConfig.calendarNames.toString());
 }
 
 //=================================================================
