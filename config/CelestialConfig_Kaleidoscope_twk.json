@@ -1,0 +1,23 @@
+{
+	"color": "#FFFF88",
+	"radius": 20,
+	"planets":
+	[
+		{	
+			"color": "#FFFFBB",
+			"radius": 4,
+			"calendar": "twk",
+			"orbitDayOffset": 77,
+			"visualDistance": 100,
+			"markers":
+			[
+				{
+					"angle":0.0,
+					"color":"#8800FF"
+				}
+			],
+			"moons":[],
+			"ring":undefined
+		}
+	]
+}

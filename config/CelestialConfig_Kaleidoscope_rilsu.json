@@ -1,0 +1,39 @@
+{
+	"color": "#FFFF88",
+	"radius": 20,
+	"planets":
+	[
+		{	
+			"color": "#FFCC44",
+			"radius": 13,
+			"calendar": "rilsu",
+			"orbitDayOffset": -64,
+			"visualDistance": 100,
+			"markers":
+			[
+				{
+					"angle":0.0,
+					"color":"#FF8800"
+				}
+			],
+			"moons":
+			[
+				{
+					"color": "#FFAA88",
+					"radius": 4,
+					"visualDistance": 30,
+					"orbitDays": 32,
+					"orbitDayOffset": -12
+				},
+				{
+					"color": "#CCCCCC",
+					"radius": 2,
+					"visualDistance": 40,
+					"orbitDays": 57,
+					"orbitDayOffset": 0
+				}
+			],
+			"ring":undefined
+		}
+	]
+}

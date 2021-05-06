@@ -30,7 +30,7 @@
 					"color": "#FF0000"
 				}
 			],
-			moons:
+			"moons":
 			[
 				{
 					"color": "#CCCCCC",
@@ -55,7 +55,7 @@
 					"color":"#FF8800"
 				}
 			],
-			moons:
+			"moons":
 			[
 				{
 					"color": "#FFAA88",
@@ -109,7 +109,7 @@
 				}
 			],
 			"moons":[],
-			"ring":[]
+			"ring":undefined
 		}
 	]
 }
