@@ -1,0 +1,109 @@
+{
+	"calendarNames": ["utd", "nimyric", "pereqaian", "rilsu", "twk", "achyu", "ivlare"],
+	"params":
+	{
+		"utd":
+		{
+			"name": "UTD",
+			"secondsPerMinute": 60.0,
+			"minutesPerHour": 60.0,
+			"locHoursPerDay": 24.0,
+			"stdHoursPerDay": 24.0,
+			"daysPerYear": 365.0,
+			"monthNames": ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+			"monthLength": [31, 28, 31, 30, 31, 30,	31, 31, 30, 31, 30, 31],
+			"eraBefore": "before time began",
+			"eraAfter": "since time began"
+		},
+		"nimyric":
+		{
+			"name": "Nimýric Empire",
+			"secondsPerMinute": 60.0,
+			"minutesPerHour": 60.0,
+			"locHoursPerDay": 30.0,
+			"stdHoursPerDay": 30.0,
+			"monthNames": ["Córélun","Aolun","Lahalun","Chychlun","Chynlun","Dapolun","Hémélun","Dyntélun","Miblun","Uklun","Vésólun","Matcylun","Roklun","Murilun"],
+			"monthLength": [24,25,25,25,25,25,25,24,25,25,25,25,25,25],
+			"daysPerYear": 348.0,
+			"eraBefore": "NN",
+			"eraAfter": "PN",
+			"rawOffsetUTD": = 287345.12537
+		},
+		"pereqaian":
+		{
+			"name": "Pereqaian Alliance",
+			"secondsPerMinute": 60.0,
+			"minutesPerHour": 60.0,
+			"locHoursPerDay": 30.0,
+			"stdHoursPerDay": 30.0,
+			"monthNames": ["Mu Nèlisi", "Mu Niseqòn", "Mu Ozide", "Mu Sedùt", "Mu Qòtve", "Mu Pêtve", "Mu Seshivèr", "Mu Nèlgofi", "Mu Shulòri", "Mu Renifi", "Mu Qùshve", "Mu Nifhêqa", "Mu Fêfumish", "Mu Zêicen"],
+			"monthLength": [25,25,25,24,25,25,25,25,25,25,24,25,25,25],
+			"daysPerYear": 348.0,
+			"eraBefore": "FGZ",
+			"eraAfter": "TGZ",
+			"rawOffsetUTD": 288552.6619
+		},
+		"rilsu":
+		{
+			"name": "Rilsu World Republic",
+			"secondsPerMinute": 64.0,
+			"minutesPerHour": 64.0,
+			"locHoursPerDay": 32.0,
+			"stdHoursPerDay": 33.0,
+			"monthNames": ["Sizonoma", "Tugrunoma", "Aminoma", "Guztinoma", "Uvonoma", "Kolkanoma", "Sigifnoma", "Degmanoma", "Sedunoma", "Pikanoma", "Akrunoma", "Keponoma", "Zadrunoma", "Despinoma", "Hudrunoma", "Atrunoma", "Taprunoma"],
+			"monthLength": [32,32,32,32,32,32,32,32,32,32,9,32,32,32,32,32,32],
+			"daysPerYear": 521.0,
+			"eraBefore": "NZR",
+			"eraAfter": "VZR",
+			"rawOffsetUTD": 287459.0931
+		},
+		"twk":
+		{
+			"name": "The Hive",
+			"secondsPerMinute": 50.0,
+			"minutesPerHour": 80.0,
+			"locHoursPerDay": 200.0,
+			"stdHoursPerDay": 154.0,
+			"monthNames": ["The Phase Formerly Known As The Phase Of Greatest Power", "The Phase Formerly Known As The Phase Of Waning Power", "The Phase Formerly Known As The Phase Of Power Loss", "The Phase Formerly Known As The Phase Of Waxing Power"],
+			"monthLength": [50,50,55,50],
+			"daysPerYear": 205.0,
+			"eraBefore": "Before The Hive",
+			"eraAfter": "In The Hive",
+			"rawOffsetUTD": 0.0
+		},
+		"achyu":
+		{
+			"name": "The Burnt Planet",
+			"secondsPerMinute": 60.0,
+			"minutesPerHour": 60.0,
+			"locHoursPerDay": 30.0,
+			"stdHoursPerDay": 30.0,
+			"monthNames": ["The Orbit"],
+			"monthLength": [95],
+			"daysPerYear": 95.0,
+			"eraBefore": "Before The Hive",
+			"eraAfter": "In The Hive",
+			"rawOffsetUTD": 0.0;
+		},
+		"ivlare":
+		{
+			"name": "The Ringed Planet",
+			"secondsPerMinute": 60.0,
+			"minutesPerHour": 60.0,
+			"locHoursPerDay": 14.0,
+			"stdHoursPerDay": 14.0,
+			"monthNames": ["The Orbit"],
+			"monthLength": [783],
+			"daysPerYear": 783.0,
+			"eraBefore": "Before The Hive",
+			"eraAfter": "In The Hive",
+			"rawOffsetUTD": 0.0;
+		}
+	}
+}
+
+/*------------------------------------------------------
+  dummy calendars for un-inhabited celestial bodies
+  ------------------------------------------------------*/
+
+

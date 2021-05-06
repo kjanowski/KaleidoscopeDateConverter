@@ -24,17 +24,34 @@ var times = {}
 times["Now"] = 0.0;
 times["Then"] = 0.0;
 
+var calendarConfig = undefined;
+
 //
 // You also need to include a configuration .js file in your HTML before executing anything here.
 //
 
-function initParams(){
-	var offsetFactor = params["utd"].daysPerYear*params["utd"].stdHoursPerDay*params["utd"].minutesPerHour*params["utd"].secondsPerMinute;
+function initParams(configURL){
+	var xmlhttp = new XMLHttpRequest();
 
-	for(calendar of calendarNames)
+	xmlhttp.onreadystatechange = function() {
+		if (this.readyState == 4 && this.status == 200) {
+			calendarConfig = JSON.parse(this.responseText);
+			adjustCalendars();
+		}
+	};
+	xmlhttp.open("GET", configURL, true);
+	xmlhttp.send();
+}
+
+function adjustCalendars(){
+	var offsetFactor = calendarConfig.params["utd"].daysPerYear
+					 * calendarConfig.params["utd"].stdHoursPerDay
+					 * calendarConfig.params["utd"].minutesPerHour
+					 * calendarConfig.params["utd"].secondsPerMinute;
+	for(calendar of calendarConfig.calendarNames)
 	{
 		if(calendar != 'utd')
-			params[calendar].offsetUTD = params[calendar].rawOffsetUTD*offsetFactor;
+			calendarConfig.params[calendar].offsetUTD = calendarConfig.params[calendar].rawOffsetUTD*offsetFactor;
 	}
 }
 
@@ -48,13 +65,13 @@ function setDateTime(which, calendar, year, month, day, hour, minute, second){
 	var after = (year >= 0);
 		
 	//add up the days for all years until now
-	var localDays = year*params[calendar].daysPerYear;
+	var localDays = year*calendarConfig.params[calendar].daysPerYear;
 		
 	//add the past months of the current year
 	var m=1;
 	while(m<month)
 	{
-		localDays = localDays + params[calendar].monthLength[m-1];
+		localDays = localDays + calendarConfig.params[calendar].monthLength[m-1];
 		m++;
 	}
 	
@@ -64,33 +81,33 @@ function setDateTime(which, calendar, year, month, day, hour, minute, second){
 	//convert to seconds --------------------------------------- 
 	
 	//days -> hours
-	var localHours = localDays * params[calendar].locHoursPerDay;
+	var localHours = localDays * calendarConfig.params[calendar].locHoursPerDay;
 	//add current hour
 	localHours = localHours + hour;
 	
 	//hours -> minutes
-	var localMinutes = localHours * params[calendar].minutesPerHour;
+	var localMinutes = localHours * calendarConfig.params[calendar].minutesPerHour;
 	//add current minute
 	localMinutes = localMinutes + minute;
 	
 	//minutes -> seconds
-	var localSeconds = localMinutes * params[calendar].secondsPerMinute;
+	var localSeconds = localMinutes * calendarConfig.params[calendar].secondsPerMinute;
 	//add current second
 	localSeconds = localSeconds + second;
 	
 	//convert to standard seconds -------------------------------
 	
 	var standardSeconds = localSeconds
-						/ params[calendar].secondsPerMinute //current value: local minutes
-						/ params[calendar].minutesPerHour //current value: local hours
-						/ params[calendar].locHoursPerDay //current value: local days
-						* params[calendar].stdHoursPerDay //current value: standard hours
-						* params["utd"].minutesPerHour    //current value: standard minutes
-						* params["utd"].secondsPerMinute; //current value: standard seconds
+						/ calendarConfig.params[calendar].secondsPerMinute //current value: local minutes
+						/ calendarConfig.params[calendar].minutesPerHour //current value: local hours
+						/ calendarConfig.params[calendar].locHoursPerDay //current value: local days
+						* calendarConfig.params[calendar].stdHoursPerDay //current value: standard hours
+						* calendarConfig.params["utd"].minutesPerHour    //current value: standard minutes
+						* calendarConfig.params["utd"].secondsPerMinute; //current value: standard seconds
 	
 	//shift relative to standard time ---------------------------
 	
-	times[which] = standardSeconds + params[calendar].offsetUTD;
+	times[which] = standardSeconds + calendarConfig.params[calendar].offsetUTD;
 }
 
 
@@ -98,7 +115,7 @@ function setDateTime(which, calendar, year, month, day, hour, minute, second){
 
 function getDateTime(which, calendar)
 {
-	var standardSeconds = times[which] - params[calendar].offsetUTD;
+	var standardSeconds = times[which] - calendarConfig.params[calendar].offsetUTD;
 	return getConvertedTime(calendar, standardSeconds);
 }
 
@@ -116,44 +133,44 @@ function getConvertedTime(calendar, standardSeconds){
 	//convert to local seconds ----------------------------------
 	
 	var localSeconds = standardSeconds
-					 / params["utd"].secondsPerMinute //standard minutes
-					 / params["utd"].minutesPerHour   //standard hours
-					 / params[calendar].stdHoursPerDay //local days
-					 * params[calendar].locHoursPerDay //local hours
-					 * params[calendar].minutesPerHour //local minutes
-					 * params[calendar].secondsPerMinute; //local seconds
+					 / calendarConfig.params["utd"].secondsPerMinute //standard minutes
+					 / calendarConfig.params["utd"].minutesPerHour   //standard hours
+					 / calendarConfig.params[calendar].stdHoursPerDay //local days
+					 * calendarConfig.params[calendar].locHoursPerDay //local hours
+					 * calendarConfig.params[calendar].minutesPerHour //local minutes
+					 * calendarConfig.params[calendar].secondsPerMinute; //local seconds
 	
 	if(!after)
 		localSeconds = localSeconds + 1;
 	
-	var second = localSeconds % params[calendar].secondsPerMinute;
+	var second = localSeconds % calendarConfig.params[calendar].secondsPerMinute;
 	
 	
-	var localMinutes = (localSeconds - second)/params[calendar].secondsPerMinute;
+	var localMinutes = (localSeconds - second)/calendarConfig.params[calendar].secondsPerMinute;
 	if(!after)
 	{
 		//complement
-		second = params[calendar].secondsPerMinute + second -1;
+		second = calendarConfig.params[calendar].secondsPerMinute + second -1;
 	}
 	second = Math.floor(second);
 	
-	var minute = localMinutes % params[calendar].minutesPerHour;
+	var minute = localMinutes % calendarConfig.params[calendar].minutesPerHour;
 	
-	var localHours = (localMinutes - minute)/params[calendar].minutesPerHour;
+	var localHours = (localMinutes - minute)/calendarConfig.params[calendar].minutesPerHour;
 	if(!after)
 	{
 		//complement
-		minute = params[calendar].minutesPerHour + minute -1;
+		minute = calendarConfig.params[calendar].minutesPerHour + minute -1;
 	}
 	
-	var hour = localHours % params[calendar].locHoursPerDay;
+	var hour = localHours % calendarConfig.params[calendar].locHoursPerDay;
 	//console.log("["+calendar+"] hours:"+hour);
-	var totalLocalDays = (localHours - hour)/params[calendar].locHoursPerDay;
+	var totalLocalDays = (localHours - hour)/calendarConfig.params[calendar].locHoursPerDay;
 	var localDays = totalLocalDays;
 	if(!after)
 	{
 		//complement
-		hour = params[calendar].locHoursPerDay + hour -1;
+		hour = calendarConfig.params[calendar].locHoursPerDay + hour -1;
 	}
 	
 	//extract the date -------------------------------------------
@@ -162,15 +179,15 @@ function getConvertedTime(calendar, standardSeconds){
 	var localYear;
 	if(after)
 	{
-		localYearDays = localDays % params[calendar].daysPerYear +1;
-		localYear = Math.floor(localDays/params[calendar].daysPerYear);
+		localYearDays = localDays % calendarConfig.params[calendar].daysPerYear +1;
+		localYear = Math.floor(localDays/calendarConfig.params[calendar].daysPerYear);
 	}
 	else
 	{
 		localDays = -localDays;
-		localYear = Math.floor(localDays/params[calendar].daysPerYear) +1;
-		localYearDays = params[calendar].daysPerYear
-							 - (localDays - (localYear-1)*params[calendar].daysPerYear);
+		localYear = Math.floor(localDays/calendarConfig.params[calendar].daysPerYear) +1;
+		localYearDays = calendarConfig.params[calendar].daysPerYear
+							 - (localDays - (localYear-1)*calendarConfig.params[calendar].daysPerYear);
 	}
 	
 	
@@ -187,14 +204,14 @@ function getConvertedTime(calendar, standardSeconds){
 	
 	//extract the month, if it's not the leap month
 	var m = 0;
-	while((m<params[calendar].monthNames.length) && (monthName==""))
+	while((m<calendarConfig.params[calendar].monthNames.length) && (monthName==""))
 	{
-		if (day <= params[calendar].monthLength[m])
+		if (day <= calendarConfig.params[calendar].monthLength[m])
 		{
-			monthName = params[calendar].monthNames[m];
+			monthName = calendarConfig.params[calendar].monthNames[m];
 			month = m+1;
 		}else{
-			day = day - params[calendar].monthLength[m];
+			day = day - calendarConfig.params[calendar].monthLength[m];
 			m = m+1;
 		}
 		
@@ -205,18 +222,18 @@ function getConvertedTime(calendar, standardSeconds){
 	var eraIndex;
 	if(after)
 	{
-		era = params[calendar].eraAfter;
+		era = calendarConfig.params[calendar].eraAfter;
 		eraIndex=1;
 	}
 	else{
-		era = params[calendar].eraBefore;
+		era = calendarConfig.params[calendar].eraBefore;
 		eraIndex=0;
 	}
 	
-	var yearFraction = localYearDays/params[calendar].daysPerYear;
-	var dayFraction = (hour + (minute/params[calendar].minutesPerHour)
-						   + (second/(params[calendar].secondsPerMinute*params[calendar].minutesPerHour)))
-							/ params[calendar].locHoursPerDay;
+	var yearFraction = localYearDays/calendarConfig.params[calendar].daysPerYear;
+	var dayFraction = (hour + (minute/calendarConfig.params[calendar].minutesPerHour)
+						   + (second/(calendarConfig.params[calendar].secondsPerMinute*calendarConfig.params[calendar].minutesPerHour)))
+							/ calendarConfig.params[calendar].locHoursPerDay;
 	
 	var dateTime = {
 		year: year,
@@ -340,7 +357,7 @@ function limitInputs(calendar)
 	
 	var dayInput = document.getElementById('day_'+calendar);
 	var month = document.getElementById('month_'+calendar).value * 1 - 1;
-	dayInput.max = params[calendar].monthLength[month];
+	dayInput.max = calendarConfig.params[calendar].monthLength[month];
 	dayInput.value = Math.min(dayInput.value, dayInput.max);
 }
 
