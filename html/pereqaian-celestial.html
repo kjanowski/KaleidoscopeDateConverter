@@ -28,9 +28,7 @@
   -->
 <head>
 	<title>Celestial body display for the Pereqaian Alliance</title>
-	<script src="../script/configs/Config_Kaleidoscope.js"></script>
 	<script src="../script/DateConverter.js"></script>
-	<script src="../script/configs/CelestialConfig_Kaleidoscope_pereqaian.js"></script>
 	<script src="../script/CelestialBodies.js"></script>
 	<link rel="icon" href="../img/favicon_kaleidechse_57x57.png" type="image/png">
 	<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Oregano'>
@@ -98,11 +96,7 @@
 		</div>
 	</div>
 	<script>
-		initParams();
-		setDateTime('Now', 'pereqaian', 434, 8, 7, 21, 45, 21);
-		updateInputs('Now', 'pereqaian');
-		initStarSystem();
-		updateStarSystem();
+		loadCelestialConfig('../config/CalendarConfig_Kaleidoscope.json', '../config/CelestialConfig_Kaleidoscope_pereqaian.json');
 	</script>
 </body>
 </html>

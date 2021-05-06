@@ -10,8 +10,7 @@
 			"orbitDayOffset": 0,
 			"visualDistance": 50,
 			"markers":[],
-			"moons":[],
-			"ring":undefined
+			"moons":[]
 		},
 		{	
 			"color": "#88FFFF",
