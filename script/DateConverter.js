@@ -32,7 +32,7 @@ function loadCalendarConfig(configURL){
 
 	xmlhttp.onreadystatechange = function() {
 		if (this.readyState == 4 && this.status == 200) {
-			initCalendars();
+			initCalendars(this.responseText);
 		}
 	};
 	xmlhttp.open("GET", configURL, true);
