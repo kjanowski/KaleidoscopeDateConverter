@@ -19,14 +19,47 @@
 var animator = undefined;
 var animatorCalendar = 'utd';
 
-function initStarSystem(){
+var star = undefined;
+
+function loadCelestialConfig(calendarConfigURL, celestialConfigURL){
+	var xmlhttp = new XMLHttpRequest();
+
+	xmlhttp.onreadystatechange = function() {
+		if (this.readyState == 4 && this.status == 200) {
+			initCalendars(this.responseText);
+			loadStarSystem(celestialConfigURL);
+		}
+	};
+	xmlhttp.open("GET", calendarConfigURL, true);
+	xmlhttp.send();
+}
+
+
+function loadStarSystem(celestialConfigURL){
+	var xmlhttp = new XMLHttpRequest();
+
+	xmlhttp.onreadystatechange = function() {
+		if (this.readyState == 4 && this.status == 200) {
+			initStarSystem(this.responseText);
+		}
+	};
+	xmlhttp.open("GET", celestialConfigURL, true);
+	xmlhttp.send();
+}
+
+
+function initStarSystem(json){
+	star = JSON.parse(json);
 	for(planet of star.planets)
-	{
-		planet.orbitOffset = planet.orbitDayOffset / params[planet.calendar].daysPerYear;
+	{	
+		var planetCalendar = getCalendar(planet.calendar);		
+		planet.orbitOffset = planet.orbitDayOffset / planetCalendar.daysPerYear;
 		
 		for(moon of planet.moons)
 			moon.orbitOffset = moon.orbitDayOffset / moon.orbitDays;
 	}
+	
+	updateStarSystem();
 }
 
 function getPlanetTransform(dateTime, planet)
@@ -100,7 +133,8 @@ function drawPlanet(ctx, originX, originY, planet){
 	for (moon of planet.moons){
 		drawOrbit(ctx, centerX, centerY, moon);
 		
-		var moonTransform = getMoonTransform(dateTime, params[planet.calendar], transform.orbitAngle, moon);
+		var planetCalendar = getCalendar(planet.calendar);
+		var moonTransform = getMoonTransform(dateTime, planetCalendar, transform.orbitAngle, moon);
 		var moonX = centerX + moonTransform.orbitVisualX;
 		var moonY = centerY + moonTransform.orbitVisualY;
 
@@ -196,7 +230,7 @@ function toggleAnimation(calendar)
 
 
 function advanceTime() {
-	var calendarParams=params[animatorCalendar];
+	var calendar= getCalendar[animatorCalendar];
 	var timeStep = calendarParams.minutesPerHour*calendarParams.secondsPerMinute;
 
 	times['Now'] = times['Now'] + timeStep;

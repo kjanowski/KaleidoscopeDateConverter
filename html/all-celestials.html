@@ -28,9 +28,7 @@
   -->
 <head>
 	<title>Celestial body display for the Kaleidoscope System</title>
-	<script src="../script/configs/Config_Kaleidoscope.js"></script>
 	<script src="../script/DateConverter.js"></script>
-	<script src="../script/configs/CelestialConfig_Kaleidoscope.js"></script>
 	<script src="../script/CelestialBodies.js"></script>
 	<link rel="icon" href="../img/favicon_kaleidechse_57x57.png" type="image/png">
 	<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Oregano'>
@@ -252,11 +250,7 @@
 	</div>
 	
 	<script>
-		initParams();
-		setDateTime('Now', 'nimyric', 1447, 11, 10, 11, 45, 31);
-		updateAllInputs('Now');
-		initStarSystem();
-		updateStarSystem();
+		loadCalendarConfig('../config/CalendarConfig_Kaleidoscope.json', '../config/CelestialConfig_Kaleidoscope.json');
 	</script>
 </body>
 </html>

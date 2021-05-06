@@ -42,8 +42,8 @@ function loadCalendarConfig(configURL){
 function initCalendars(json){
 	calendarConfig = JSON.parse(json);
 	
-	var indexUTD = calendarConfig.calendarNames.indexOf("utd");
-	var utdCalendar = calendarConfig.params[indexUTD];
+	
+	var utdCalendar = getCalendar("utd");
 	
 	var offsetFactor = utdCalendar.daysPerYear
 					 * utdCalendar.stdHoursPerDay
@@ -53,8 +53,16 @@ function initCalendars(json){
 	{
 		if(calendar.name != 'UTD')
 			calendar.offsetUTD = calendar.rawOffsetUTD*offsetFactor;
+		else calendar.offsetUTD = 0.0;
 	}
 }
+
+function getCalendar(calendarName){
+	var index = calendarConfig.calendarNames.indexOf(calendarName);
+	var calendar = calendarConfig.params[index];
+	return calendar;
+}
+
 
 //=================================================================
 // calculating time
@@ -63,11 +71,8 @@ function initCalendars(json){
 
 function setDateTime(which, calendarName, year, month, day, hour, minute, second){
 	
-	var srcCalendarIndex = calendarConfig.calendarNames.indexOf(calendarName);
-	var srcCalendar = calendarConfig.params[srcCalendarIndex];
-	
-	var dstCalendarIndex = calendarConfig.calendarNames.indexOf("utd");
-	var dstCalendar = calendarConfig.params[dstCalendarIndex];
+	var srcCalendar = getCalendar(calendarName);
+	var dstCalendar = getCalendar("utd");
 	
 	console.log("converting from \""+srcCalendar.name+"\" to \""+dstCalendar.name+"\"");
 	
@@ -126,8 +131,7 @@ function setDateTime(which, calendarName, year, month, day, hour, minute, second
 
 function getDateTime(which, calendarName)
 {
-	var dstCalendarIndex = calendarConfig.calendarNames.indexOf(calendarName);
-	var dstCalendar = calendarConfig.params[dstCalendarIndex];	
+	var dstCalendar = getCalendar(calendarName);
 	var standardSeconds = times[which] - dstCalendar.offsetUTD;
 
 	return getConvertedTime(calendarName, standardSeconds);
@@ -142,10 +146,8 @@ function getDeltaTime(calendarName)
 
 
 function getConvertedTime(calendarName, standardSeconds){
-	var srcCalendarIndex = calendarConfig.calendarNames.indexOf("utd");
-	var srcCalendar = calendarConfig.params[srcCalendarIndex];	
-	var dstCalendarIndex = calendarConfig.calendarNames.indexOf(calendarName);
-	var dstCalendar = calendarConfig.params[dstCalendarIndex];	
+	var srcCalendar = getCalendar("utd");
+	var dstCalendar = getCalendar(calendarName);
 	
 	
 	console.log("converting from \""+srcCalendar.name+"\" to \""+dstCalendar.name+"\"");
@@ -386,8 +388,7 @@ function limitInputs(calendarName)
 	var dayInput = document.getElementById('day_'+calendarName);
 	var month = document.getElementById('month_'+calendarName).value * 1 - 1;
 	
-	var calendarIndex = calendarConfig.calendarNames.indexOf(calendarName);
-	var calendar = calendarConfig.params[calendarIndex];
+	var calendar= getCalendar(calendarName);
 	
 	dayInput.max = calendar.monthLength[month];
 	dayInput.value = Math.min(dayInput.value, dayInput.max);
