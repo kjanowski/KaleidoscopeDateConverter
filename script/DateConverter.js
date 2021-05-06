@@ -54,8 +54,6 @@ function initCalendars(json){
 		if(calendar.name != 'UTD')
 			calendar.offsetUTD = calendar.rawOffsetUTD*offsetFactor;
 	}
-	
-	console.log("calendars ready: "+calendarConfig.calendarNames.toString());
 }
 
 //=================================================================
@@ -344,7 +342,7 @@ function setTime(which){
 	//set the date in the selected calendar
 	setDateTime(which, calendar, year, month, day, hour, minute, second);
 
-	for(name of calendarNames)
+	for(name of calendarConfig.calendarNames)
 		updateDisplay(name);
 }
 
@@ -408,7 +406,7 @@ function updateInputs(which, calendar){
 }
 
 function updateAllInputs(which){
-	for(calendar of calendarNames)
+	for(calendar of calendarConfig.calendarNames)
 	{
 		updateInputs(which, calendar)
 	}
