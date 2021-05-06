@@ -51,9 +51,11 @@ function initCalendars(json){
 					 * utdCalendar.secondsPerMinute;
 	for(calendar of calendarConfig.params)
 	{
-		if(calendar != 'utd')
+		if(calendar.name != 'UTD')
 			calendar.offsetUTD = calendar.rawOffsetUTD*offsetFactor;
 	}
+	
+	console.log("calendars ready: "+calendarConfig.toString());
 }
 
 //=================================================================
