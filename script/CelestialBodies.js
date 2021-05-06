@@ -48,9 +48,7 @@ function loadStarSystem(celestialConfigURL){
 }
 
 
-function initStarSystem(json){
-	console.log("star system: "+json);
-	
+function initStarSystem(json){	
 	star = JSON.parse(json);
 	for(planet of star.planets)
 	{	
