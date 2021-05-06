@@ -61,9 +61,9 @@ function initCalendars(json){
 //=================================================================
 
 
-function setDateTime(which, calendar, year, month, day, hour, minute, second){
+function setDateTime(which, calendarName, year, month, day, hour, minute, second){
 	
-	var srcCalendarIndex = calendarConfig.calendarNames.indexOf(calendar);
+	var srcCalendarIndex = calendarConfig.calendarNames.indexOf(calendarName);
 	var srcCalendar = calendarConfig.params[srcCalendarIndex];
 	
 	var dstCalendarIndex = calendarConfig.calendarNames.indexOf("utd");
@@ -182,7 +182,7 @@ function getConvertedTime(calendarName, standardSeconds){
 	}
 	
 	var hour = localHours % dstCalendar.locHoursPerDay;
-	//console.log("["+calendar+"] hours:"+hour);
+	
 	var totalLocalDays = (localHours - hour)/dstCalendar.locHoursPerDay;
 	var localDays = totalLocalDays;
 	if(!after)
@@ -284,8 +284,8 @@ function getTimeText(dateTime)
 	return text;
 }
 
-function updateDisplay(calendar){
-	var dateTimeNow = getDateTime("Now", calendar);
+function updateDisplay(calendarName){
+	var dateTimeNow = getDateTime("Now", calendarName);
 	
 	var textNow = "<h3>Current time:</h3>"
 					+dateTimeNow.year+" "+dateTimeNow.era+"<br>"
@@ -293,9 +293,9 @@ function updateDisplay(calendar){
 						+"<div class=\"tooltip-text\">"
 							+dateTimeNow.month+"</div></div> "
 					+dateTimeNow.day+"<br>"+getTimeText(dateTimeNow);
-	document.getElementById("output-"+calendar+"-now").innerHTML = textNow;
+	document.getElementById("output-"+calendarName+"-now").innerHTML = textNow;
 								
-	var dateTimeThen = getDateTime("Then", calendar);
+	var dateTimeThen = getDateTime("Then", calendarName);
 	
 	var timeThen = ""+dateTimeThen.hour+":";
 	if(dateTimeThen.minute < 10)
@@ -311,9 +311,9 @@ function updateDisplay(calendar){
 						+"<div class=\"tooltip-text\">"
 							+dateTimeThen.month+"</div></div> "
 					+dateTimeThen.day+"<br>"+getTimeText(dateTimeThen);	
-	document.getElementById("output-"+calendar+"-then").innerHTML = textThen;
+	document.getElementById("output-"+calendarName+"-then").innerHTML = textThen;
 
-	var deltaTime = getDeltaTime(calendar);
+	var deltaTime = getDeltaTime(calendarName);
 	
 	var timeDiff = ""+deltaTime.hour+":";
 	if(deltaTime.minute < 10)
@@ -326,12 +326,12 @@ function updateDisplay(calendar){
 	var textDiff = "<h3>Distance:</h3>"
 					+deltaTime.year+" years, "+(deltaTime.month-1)+" months, "+(deltaTime.day-1)+" days,<br>"+getTimeText(deltaTime)
 					+"<br>("+deltaTime.totalDays+" days total)"; 
-	document.getElementById("output-"+calendar+"-diff").innerHTML = textDiff;
+	document.getElementById("output-"+calendarName+"-diff").innerHTML = textDiff;
 }
 
 function setTime(which){
 	//get the values and convert them to numbers
-	var calendar = document.getElementById('calendar'+which).value;
+	var calendarName = document.getElementById('calendar'+which).value;
 	var year = document.getElementById('year'+which).value *1.0;
 	var month = document.getElementById('month'+which).value *1.0;
 	var day = document.getElementById('day'+which).value *1.0;
@@ -340,27 +340,27 @@ function setTime(which){
 	var second = document.getElementById('second'+which).value *1.0;
 	
 	//set the date in the selected calendar
-	setDateTime(which, calendar, year, month, day, hour, minute, second);
+	setDateTime(which, calendarName, year, month, day, hour, minute, second);
 
 	for(name of calendarConfig.calendarNames)
 		updateDisplay(name);
 }
 
-function submitInputs(which, calendar){
+function submitInputs(which, calendarName){
 	//get the values and convert them to numbers
-	var year = document.getElementById('year_'+calendar).value *1.0;
-	var eraIndex = document.getElementById('era_'+calendar).selectedIndex;
+	var year = document.getElementById('year_'+calendarName).value *1.0;
+	var eraIndex = document.getElementById('era_'+calendarName).selectedIndex;
 	if(eraIndex == 0)
 		year = -year;
 	
-	var month = document.getElementById('month_'+calendar).value *1.0;
-	var day = document.getElementById('day_'+calendar).value *1.0;
-	var hour = document.getElementById('hour_'+calendar).value *1.0;
-	var minute = document.getElementById('minute_'+calendar).value *1.0;
-	var second = document.getElementById('second_'+calendar).value *1.0;
+	var month = document.getElementById('month_'+calendarName).value *1.0;
+	var day = document.getElementById('day_'+calendarName).value *1.0;
+	var hour = document.getElementById('hour_'+calendarName).value *1.0;
+	var minute = document.getElementById('minute_'+calendarName).value *1.0;
+	var second = document.getElementById('second_'+calendarName).value *1.0;
 	
 	//set the date in the selected calendar
-	setDateTime('Now', calendar, year, month, day, hour, minute, second);
+	setDateTime('Now', calendarName, year, month, day, hour, minute, second);
 }
 
 function limitInputs(calendarName)
@@ -383,31 +383,31 @@ function limitInputs(calendarName)
 	dayInput.value = Math.min(dayInput.value, dayInput.max);
 }
 
-function updateInputs(which, calendar){
-	var dateTime = getDateTime(which, calendar);
+function updateInputs(which, calendarName){
+	var dateTime = getDateTime(which, calendarName);
 	
 	//check whether inputs for this calendar are present
-	if(document.getElementById('inputs_'+calendar) != undefined){
+	if(document.getElementById('inputs_'+calendarName) != undefined){
 	
-		document.getElementById('year_'+calendar).value = ""+dateTime.year;
+		document.getElementById('year_'+calendarName).value = ""+dateTime.year;
 	
-		var eraDropdown = document.getElementById('era_'+calendar);
+		var eraDropdown = document.getElementById('era_'+calendarName);
 		eraDropdown.selectedIndex = dateTime.eraIndex;
 		
 			
-		document.getElementById('month_'+calendar).value = ""+dateTime.month;
-		document.getElementById('day_'+calendar).value = ""+dateTime.day;
-		document.getElementById('hour_'+calendar).value = ""+dateTime.hour;
-		document.getElementById('minute_'+calendar).value = ""+dateTime.minute;
-		document.getElementById('second_'+calendar).value = ""+dateTime.second;
+		document.getElementById('month_'+calendarName).value = ""+dateTime.month;
+		document.getElementById('day_'+calendarName).value = ""+dateTime.day;
+		document.getElementById('hour_'+calendarName).value = ""+dateTime.hour;
+		document.getElementById('minute_'+calendarName).value = ""+dateTime.minute;
+		document.getElementById('second_'+calendarName).value = ""+dateTime.second;
 	
-		limitInputs(calendar);
+		limitInputs(calendarName);
 	}
 }
 
 function updateAllInputs(which){
-	for(calendar of calendarConfig.calendarNames)
+	for(calendarName of calendarConfig.calendarNames)
 	{
-		updateInputs(which, calendar)
+		updateInputs(which, calendarName)
 	}
 }
