@@ -28,7 +28,6 @@
   -->
 <head>
 	<title>Date converter for the Rilsu World Republic</title>
-	<script src="../script/configs/Config_Kaleidoscope.js"></script>
 	<script src="../script/DateConverter.js"></script>
 	<link rel="icon" href="../img/favicon_kaleidechse_57x57.png" type="image/png">
 	<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Oregano'>
@@ -132,10 +131,7 @@
 		</div>
 	</div>
 	<script>
-		initParams();
-		setDateTime('Now', 'rilsu', 821, 1, 18, 29, 33, 23);
-		updateInputs('Now', 'rilsu');
-		updateInputs('Now', 'utd');
+		loadCalendarConfig('../config/CalendarConfig_Kaleidoscope.json');
 	</script>
 </body>
 </html>

@@ -28,7 +28,6 @@
   -->
 <head>
 	<title>Date converter for Those Who Know</title>
-	<script src="../script/configs/Config_Kaleidoscope.js"></script>
 	<script src="../script/DateConverter.js"></script>
 	<link rel="icon" href="../img/favicon_kaleidechse_57x57.png" type="image/png">
 	<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Oregano'>
@@ -119,10 +118,7 @@
 		</div>
 	</div>
 	<script>
-		initParams();
-		setDateTime('Now', 'twk', 80210, 4, 27, 163, 50, 45);
-		updateInputs('Now', 'twk');
-		updateInputs('Now', 'utd');
+		loadCalendarConfig('../config/CalendarConfig_Kaleidoscope.json');
 	</script>
 </body>
 </html>

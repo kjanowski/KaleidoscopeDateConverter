@@ -28,7 +28,6 @@
   -->
 <head>
 	<title>Date converter for the Pereqaian Alliance</title>
-	<script src="../script/configs/Config_Kaleidoscope.js"></script>
 	<script src="../script/DateConverter.js"></script>
 	<link rel="icon" href="../img/favicon_kaleidechse_57x57.png" type="image/png">
 	<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Oregano'>
@@ -128,10 +127,7 @@
 		</div>
 	</div>
 	<script>
-		initParams();
-		setDateTime('Now', 'pereqaian', 434, 8, 7, 21, 45, 21);
-		updateInputs('Now', 'pereqaian');
-		updateInputs('Now', 'utd');
+		loadCalendarConfig('../config/CalendarConfig_Kaleidoscope.json');
 	</script>
 </body>
 </html>

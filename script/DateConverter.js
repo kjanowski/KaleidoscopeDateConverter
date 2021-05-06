@@ -69,7 +69,7 @@ function setDateTime(which, calendarName, year, month, day, hour, minute, second
 	var dstCalendarIndex = calendarConfig.calendarNames.indexOf("utd");
 	var dstCalendar = calendarConfig.params[dstCalendarIndex];
 	
-	console.log("converting from \""+srcCalendar.name+"\" to \""+dstCalendar.name+"\");
+	console.log("converting from \""+srcCalendar.name+"\" to \""+dstCalendar.name+"\"");
 	
 	
 	
@@ -148,7 +148,7 @@ function getConvertedTime(calendarName, standardSeconds){
 	var dstCalendar = calendarConfig.params[dstCalendarIndex];	
 	
 	
-	console.log("converting from \""+srcCalendar.name+"\" to \""+dstCalendar.name+"\");
+	console.log("converting from \""+srcCalendar.name+"\" to \""+dstCalendar.name+"\"");
 	
 	var after = (standardSeconds >= 0);
 	
