@@ -39,8 +39,7 @@
 					"orbitDays": 25,
 					"orbitDayOffset": 1
 				}
-			],
-			"ring":undefined
+			]
 		},
 		{	
 			"color": "#FFCC44",
@@ -71,8 +70,7 @@
 					"orbitDays": 57,
 					"orbitDayOffset": 0
 				}
-			],
-			"ring":undefined
+			]
 		},
 		{	
 			"color": "#66BBFF",
@@ -108,8 +106,7 @@
 					"color":"#8800FF"
 				}
 			],
-			"moons":[],
-			"ring":undefined
+			"moons":[]
 		}
 	]
 }
