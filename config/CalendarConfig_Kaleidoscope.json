@@ -1,8 +1,7 @@
 {
 	"calendarNames": ["utd", "nimyric", "pereqaian", "rilsu", "twk", "achyu", "ivlare"],
 	"params":
-	{
-		"utd":
+	[
 		{
 			"name": "UTD",
 			"secondsPerMinute": 60.0,
@@ -15,7 +14,6 @@
 			"eraBefore": "before time began",
 			"eraAfter": "since time began"
 		},
-		"nimyric":
 		{
 			"name": "Nimýric Empire",
 			"secondsPerMinute": 60.0,
@@ -29,7 +27,6 @@
 			"eraAfter": "PN",
 			"rawOffsetUTD": 287345.12537
 		},
-		"pereqaian":
 		{
 			"name": "Pereqaian Alliance",
 			"secondsPerMinute": 60.0,
@@ -43,7 +40,6 @@
 			"eraAfter": "TGZ",
 			"rawOffsetUTD": 288552.6619
 		},
-		"rilsu":
 		{
 			"name": "Rilsu World Republic",
 			"secondsPerMinute": 64.0,
@@ -57,7 +53,6 @@
 			"eraAfter": "VZR",
 			"rawOffsetUTD": 287459.0931
 		},
-		"twk":
 		{
 			"name": "The Hive",
 			"secondsPerMinute": 50.0,
@@ -71,7 +66,6 @@
 			"eraAfter": "In The Hive",
 			"rawOffsetUTD": 0.0
 		},
-		"achyu":
 		{
 			"name": "The Burnt Planet",
 			"secondsPerMinute": 60.0,
@@ -85,7 +79,6 @@
 			"eraAfter": "In The Hive",
 			"rawOffsetUTD": 0.0
 		},
-		"ivlare":
 		{
 			"name": "The Ringed Planet",
 			"secondsPerMinute": 60.0,
@@ -99,5 +92,5 @@
 			"eraAfter": "In The Hive",
 			"rawOffsetUTD": 0.0
 		}
-	}
+	]
 }
