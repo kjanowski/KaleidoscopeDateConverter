@@ -234,7 +234,7 @@ function toggleAnimation(calendar)
 
 function advanceTime() {
 	var calendar= getCalendar[animatorCalendar];
-	var timeStep = calendarParams.minutesPerHour*calendarParams.secondsPerMinute;
+	var timeStep = calendar.minutesPerHour*calendar.secondsPerMinute;
 
 	times['Now'] = times['Now'] + timeStep;
 
