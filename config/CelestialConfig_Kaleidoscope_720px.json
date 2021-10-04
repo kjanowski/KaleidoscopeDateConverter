@@ -8,7 +8,7 @@
 			"radius": 5,
 			"calendar": "achyu",
 			"orbitDayOffset": 0,
-			"visualDistance": 50,
+			"visualDistance": 30,
 			"markers":[],
 			"moons":[]
 		},
@@ -76,7 +76,7 @@
 			"radius": 14,
 			"calendar": "ivlare",
 			"orbitDayOffset": 67,
-			"visualDistance": 240,
+			"visualDistance": 230,
 			"markers":
 			[
 				{
@@ -97,7 +97,7 @@
 			"radius": 4,
 			"calendar": "twk",
 			"orbitDayOffset": 77,
-			"visualDistance": 280,
+			"visualDistance": 270,
 			"markers":
 			[
 				{
