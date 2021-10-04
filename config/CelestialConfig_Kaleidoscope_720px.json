@@ -17,7 +17,7 @@
 			"radius": 12,
 			"calendar": "nimyric",
 			"orbitDayOffset": -37,
-			"visualDistance": 70,
+			"visualDistance": 65,
 			"markers":
 			[
 				{
@@ -34,7 +34,7 @@
 				{
 					"color": "#CCCCCC",
 					"radius": 3,
-					"visualDistance": 17,
+					"visualDistance": 23,
 					"orbitDays": 25,
 					"orbitDayOffset": 1
 				}
@@ -76,7 +76,7 @@
 			"radius": 14,
 			"calendar": "ivlare",
 			"orbitDayOffset": 67,
-			"visualDistance": 230,
+			"visualDistance": 220,
 			"markers":
 			[
 				{
@@ -97,7 +97,7 @@
 			"radius": 4,
 			"calendar": "twk",
 			"orbitDayOffset": 77,
-			"visualDistance": 270,
+			"visualDistance": 260,
 			"markers":
 			[
 				{
