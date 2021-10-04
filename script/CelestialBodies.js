@@ -196,8 +196,12 @@ function updateStarSystem(){
 	
 	var ctx = c.getContext("2d");
 	
-	ctx.fillStyle="#000000";
-	ctx.fillRect(0, 0, canvasWidth, canvasHeight);
+	if(star.background != undefined)
+	{
+		ctx.fillStyle=star.background;
+		ctx.fillRect(0, 0, canvasWidth, canvasHeight);
+	}
+	else ctx.clearRect(0, 0, canvasWidth, canvasHeight);
 	
 	ctx.strokeStyle = "#FFFFFF";
 	ctx.font = '16px Oregano';
