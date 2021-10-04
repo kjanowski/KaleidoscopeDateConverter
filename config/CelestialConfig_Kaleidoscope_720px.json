@@ -34,7 +34,7 @@
 				{
 					"color": "#CCCCCC",
 					"radius": 3,
-					"visualDistance": 10,
+					"visualDistance": 17,
 					"orbitDays": 25,
 					"orbitDayOffset": 1
 				}
