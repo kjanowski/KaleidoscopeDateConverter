@@ -54,6 +54,11 @@ hr{
 	margin:auto;
 }
 
+.page.w-720{
+	width:720px;
+	margin:auto;
+}
+
 .page.narrow{
 	width:337px;
 	height:630px;
