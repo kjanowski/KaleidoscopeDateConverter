@@ -33,6 +33,7 @@
 						 -3px -3px 5px var(--rainbow-glow-color4);
  
 	--page-bg-img:url('../img/starfield.jpg');
+	--celestial-bg-img:url('../img/kaleidoscope_backdrop.png');
 	--fish-bg-img:url('../img/wood.png');
 	--rilsu-bg-img:url('../img/steel.jpg');
 	--twk-bg-img:url('../img/velvet.png');
@@ -102,8 +103,14 @@ a:hover{
 
 .kaleidoscope .panel,
 .kaleidoscope canvas{
-	background:var(--generic-page-color);
 	border-image:var(--generic-border-img);
+}
+
+.kaleidoscope canvas.backdrop{
+	background:var(--celestial-bg-img);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 
 .panel.nimyric,
