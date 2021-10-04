@@ -1,7 +1,7 @@
 .about{
 	padding:10px;
 	height:20px;
-	width:695px;
+	width:690px;
 	background:lightGray;
 	position:relative;
 	z-index:1;
@@ -20,7 +20,7 @@
 .about .show-on-hover{
 	display:none;
 	height:195px;
-	width:695px;
+	width:690px;
 }
 
 .about:hover .show-on-hover{
