@@ -1,8 +1,8 @@
 {
 	"name": {
+		"none":"",
 		"generic":"The Central Star",
 		"nimyric":"Saphéne",
-		"pereqaian":"Tadan'a",
 		"rilsu":"Larekon"
 	},
 	"color": "#FFFF88",
@@ -11,9 +11,9 @@
 	[
 		{	
 			"name": {
+				"none":"",
 				"generic":"The Burnt Planet",
 				"nimyric":"Achýu",
-				"pereqaian":"?",
 				"rilsu":"Divusu"
 			},
 			"color": "#888888",
@@ -26,9 +26,9 @@
 		},
 		{	
 			"name": {
+				"none":"",
 				"generic":"The Watery Planet",
 				"nimyric":"Chryphóra",
-				"pereqaian":"Qentora",
 				"rilsu":"Tuvasuno"
 			},			
 			"color": "#88FFFF",
@@ -51,9 +51,9 @@
 			[
 				{
 					"name": {
+						"none":"",
 						"generic":"The Dusty Moon",
 						"nimyric":"Palia",
-						"pereqaian":"Belen'a",
 						"rilsu":"Kesivi"
 					},					
 					"color": "#CCCCCC",
@@ -66,9 +66,9 @@
 		},
 		{	
 			"name": {
+				"none":"",
 				"generic":"The Molten Planet",
 				"nimyric":"Éisabó",
-				"pereqaian":"?",
 				"rilsu":"Kasavoa"
 			},			
 			"color": "#FFCC44",
@@ -87,9 +87,9 @@
 			[
 				{
 					"name": {
+						"none":"",
 						"generic":"The Sandy Moon",
 						"nimyric":"Lynvia",
-						"pereqaian":"?",
 						"rilsu":"Ranul"
 					},				
 					"color": "#FFAA88",
@@ -100,9 +100,9 @@
 				},
 				{
 					"name": {
+						"none":"",
 						"generic":"The Rocky Moon",
 						"nimyric":"Cóya",
-						"pereqaian":"?",
 						"rilsu":"Inekoa"
 					},
 					"color": "#CCCCCC",
@@ -115,9 +115,9 @@
 		},
 		{	
 			"name": {
+				"none":"",
 				"generic":"The Ringed Planet",
 				"nimyric":"Lahasabó",
-				"pereqaian":"?",
 				"rilsu":"Ivlare"
 			},			
 			"color": "#66BBFF",
@@ -142,9 +142,9 @@
 		},
 		{	
 			"name": {
+				"none":"",
 				"generic":"The Outer Planetoid",
 				"nimyric":"Temróph",
-				"pereqaian":"?",
 				"rilsu":"Vokeran"
 			},			
 			"color": "#FFFFBB",
