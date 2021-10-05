@@ -1,11 +1,16 @@
 {
-	"name": "Tadan'a",
+	"name": {
+		"generic":"Tadan'a"
+	},
 	"color": "#FFFF88",
 	"radius": 20,
 	"planets":
 	[
 		{	
-			"name": "Qentora",
+			"name"{
+			{
+				"generic": "Qentora"
+			},
 			"color": "#88FFFF",
 			"radius": 12,
 			"calendar": "pereqaian",
@@ -21,7 +26,10 @@
 			"moons":
 			[
 				{
-					"name": "Belen'a",
+					"name":
+					{
+						"generic":"Belen'a"
+					},
 					"color": "#CCCCCC",
 					"radius": 8,
 					"visualDistance": 40,

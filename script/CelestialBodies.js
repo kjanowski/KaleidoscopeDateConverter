@@ -18,6 +18,7 @@
 
 var animator = undefined;
 var animatorCalendar = 'utd';
+var culture = "generic";
 
 var star = undefined;
 
@@ -112,7 +113,7 @@ function drawCelestialBody(ctx, originX, originY, centerX, centerY, celestial)
 	
 	ctx.fillStyle = "#FFFFFF";
 	fontY = centerY + celestial.radius + 20;
-	ctx.fillText(centerX, fontY, celestial.name);
+	ctx.fillText(centerX, fontY, celestial.name[culture]);
 	
 	//light and shadow ----------------------------------
 	if(star.lights != undefined)
@@ -265,8 +266,8 @@ function updateStarSystem(){
 	
 	ctx.fillStyle = "#FFFFFF";
 	fontY = originY + star.radius + 20;
-	ctx.fillText(originX, fontY, star.name);
-
+	ctx.fillText(originX, fontY, star.name[culture]);
+	console.log("printing"+star.name[culture]+" at ("+originX+", "+fontY);
 
 	for(planet of star.planets)
 	{
@@ -302,7 +303,10 @@ function advanceTime() {
 }
 
 
-
+function setCulture(newCulture)
+{
+	culture = newCulture;
+}
 
 
 
