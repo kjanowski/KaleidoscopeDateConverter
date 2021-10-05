@@ -54,7 +54,7 @@
 		<canvas class="backdrop" id="starSystem" width="700" height="540">
 			Your browser does not support the canvas element.
 		</canvas>
-		<div id="cultureSelection" style="position:absolute;left:0;top:50;z-index:10;">
+		<div id="cultureSelection" style="position:absolute;left:0;top:40px;z-index:3;">
 			<form>
 				<select id="cultureSelect" name="culture" onchange="updateCulture();">
 					<option value="generic" selected>The Culture</option>
@@ -186,9 +186,6 @@
 				<input type="number" id="second_pereqaian" name="second_pereqaian" min="0" max="59">
 			</form>
 			<button id="setPereqaian" onclick="submitInputs('Now','pereqaian');updateStarSystem();">set Pereqaian time</button>	
-			<div class="anim-control">
-				<button id="toggleAnim" onclick="toggleAnimation('pereqaian')">►</button> 
-			</div>
 		</div>
 		
 	</div>
