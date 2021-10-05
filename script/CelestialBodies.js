@@ -308,9 +308,10 @@ function advanceTime() {
 }
 
 
-function setCulture(newCulture)
+function updateCulture()
 {
-	culture = newCulture;
+	culture = document.getElementById("cultureSelect").value;
+	updateStarSystem();
 }
 
 

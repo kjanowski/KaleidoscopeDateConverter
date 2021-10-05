@@ -54,6 +54,15 @@
 		<canvas class="backdrop" id="starSystem" width="700" height="540">
 			Your browser does not support the canvas element.
 		</canvas>
+		<div id="cultureSelection">
+			<form>
+				<select id="cultureSelect" name="culture" onselect="updateCulture();">
+					<option value="generic" selected>The Culture</option>
+					<option value="rilsu">Rilsu</option>
+					<option value="nimyric">Nimýrité</option>
+				</select>
+			</form>
+		</div>
 		<div class="panel utd toolshelf-section upper" id="inputs_utd">
 			<form>
 				<input class="year" type="number" id="year_utd" name="year_utd" value="289071">
