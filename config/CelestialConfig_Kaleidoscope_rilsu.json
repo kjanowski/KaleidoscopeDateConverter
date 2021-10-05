@@ -20,7 +20,7 @@
 			[
 				{
 					"color": "#FFAA88",
-					"radius": 10,
+					"radius": 8,
 					"visualDistance": 30,
 					"orbitDays": 32,
 					"orbitDayOffset": -12
@@ -28,7 +28,7 @@
 				{
 					"color": "#CCCCCC",
 					"radius": 5,
-					"visualDistance": 60,
+					"visualDistance": 50,
 					"orbitDays": 57,
 					"orbitDayOffset": 0
 				}

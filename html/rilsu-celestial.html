@@ -45,7 +45,7 @@
 			<h2>Rilsu World Republic</h2>
 			<form>
 				<label>year:</label>
-				<input class="year" type="number" id="year_rilsu" name="year_rilsu">
+				<input class="year" type="number" id="year_rilsu" name="year_rilsu" value="821">
 				<br>
 				<label>era:</label>
 				<select id="era_rilsu" name="era_rilsu" value="1" onclick="limitInputs('rilsu');">
@@ -54,7 +54,7 @@
 				</select>
 				<br>
 				<label>month:</label>
-				<select id="month_rilsu" name="month_rilsu" value="1" onclick="limitInputs('rilsu');">
+				<select id="month_rilsu" name="month_rilsu" value="14" onclick="limitInputs('rilsu');">
 					<option value="1">Sizonoma</option>
 					<option value="2">Tugrunoma</option>
 					<option value="3">Aminoma</option>
@@ -75,11 +75,11 @@
 				</select>
 				<br>
 				<label>day:</label>
-				<input type="number" id="day_rilsu" name="day_rilsu" min="1">
+				<input type="number" id="day_rilsu" name="day_rilsu" min="1" value="9">
 				<br><label>time:</label>
-				<input class="hour" type="number" id="hour_rilsu" name="hour_rilsu" min="0" max="31">:
-				<input type="number" id="minute_rilsu" name="minute_rilsu" min="0" max="63">:
-				<input type="number" id="second_rilsu" name="second_rilsu" min="0" max="63">
+				<input class="hour" type="number" id="hour_rilsu" name="hour_rilsu" min="0" max="31" value="17">:
+				<input type="number" id="minute_rilsu" name="minute_rilsu" min="0" max="63" value="56">:
+				<input type="number" id="second_rilsu" name="second_rilsu" min="0" max="63" value="41">
 			</form>
 			<button id="setRilsu" onclick="submitInputs('Now','rilsu');updateStarSystem();">set Rilsu time</button>	
 			<div class="anim-control">

@@ -45,7 +45,7 @@
 			<h2>Nimýric Empire</h2>
 			<form>
 				<label>year:</label>
-				<input class="year" type="number" id="year_nimyric" name="year_nimyric" value="1447">
+				<input class="year" type="number" id="year_nimyric" name="year_nimyric" value="1448">
 				<br>
 				<label>era:</label>
 				<select id="era_nimyric" name="era_nimyric" value="1" onclick="limitInputs('nimyric');">
@@ -54,7 +54,7 @@
 				</select>
 				<br>
 				<label>month:</label>
-				<select id="month_nimyric" name="month_nimyric" value="10" onclick="limitInputs('nimyric');">
+				<select id="month_nimyric" name="month_nimyric" value="14" onclick="limitInputs('nimyric');">
 					<option value="1">Córélun</option>
 					<option value="2">Aolun</option>
 					<option value="3">Lahalun</option>
@@ -72,11 +72,11 @@
 				</select>
 				<br>
 				<label>day:</label>
-				<input type="number" id="day_nimyric" name="day_nimyric" min="1" value="11">
+				<input type="number" id="day_nimyric" name="day_nimyric" min="1" value="9">
 				<br><label>time:</label>
-				<input class="hour" type="number" id="hour_nimyric" name="hour_nimyric" min="0" max="29" value="19">:
-				<input type="number" id="minute_nimyric" name="minute_nimyric" min="0" max="59" value="0">:
-				<input type="number" id="second_nimyric" name="second_nimyric" min="0" max="59" value="0">
+				<input class="hour" type="number" id="hour_nimyric" name="hour_nimyric" min="0" max="29" value="11">:
+				<input type="number" id="minute_nimyric" name="minute_nimyric" min="0" max="59" value="45">:
+				<input type="number" id="second_nimyric" name="second_nimyric" min="0" max="59" value="31">
 			</form>
 			<button id="setNimyric" onclick="submitInputs('Now','nimyric');updateStarSystem();">set time</button>	
 			<div class="anim-control">

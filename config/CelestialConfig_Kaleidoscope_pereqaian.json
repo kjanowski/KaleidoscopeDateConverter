@@ -20,8 +20,8 @@
 			[
 				{
 					"color": "#CCCCCC",
-					"radius": 3,
-					"visualDistance": 50,
+					"radius": 8,
+					"visualDistance": 40,
 					"orbitDays": 25,
 					"orbitDayOffset": 0
 				}
