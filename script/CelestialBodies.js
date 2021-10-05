@@ -264,7 +264,7 @@ function updateStarSystem(){
 	
 	ctx.fillStyle = "#FFFFFF";
 	fontY = originY + star.radius + 20;
-	ctx.fillText(centerX, fontY, star.name);
+	ctx.fillText(originX, fontY, star.name);
 
 
 	for(planet of star.planets)
