@@ -134,8 +134,8 @@ function drawCelestialBody(ctx, centerX, centerY, celestial)
 		var lightStart = lightAngle - Math.PI*0.5;
 		var lightEnd = lightAngle + Math.Pi*0.5;
 		
-		var lightColor = rgba(255, 255, 255, light.intensity)
-		var shadeColor = rgba(0, 0, 0, light.intensity)
+		var lightColor = "rgba(255, 255, 255,"+light.intensity+")"
+		var shadeColor = "rgba(0, 0, 0,"+light.intensity+")"
 		
 		ctx.fillStyle = lightColor;
 		ctx.strokeStyle = lightColor;
