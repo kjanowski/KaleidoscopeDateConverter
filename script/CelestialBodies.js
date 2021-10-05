@@ -132,16 +132,19 @@ function drawCelestialBody(ctx, centerX, centerY, celestial)
 		
 		//brighten what faces the light, darken what faces away
 		var lightStart = lightAngle - Math.PI*0.5;
-		var lightEnd = lightAngle + Math.Pi*0.5;
+		var lightEnd = lightAngle + Math.PI*0.5;
 		
-		var lightColor = "rgba(255, 255, 255,"+light.intensity+")"
-		var shadeColor = "rgba(0, 0, 0,"+light.intensity+")"
+		var lightColor = "rgba(255, 255, 255, "+light.intensity+")"
+		var shadeColor = "rgba(0, 0, 0, "+light.intensity+")"
 		
 		ctx.fillStyle = lightColor;
 		ctx.strokeStyle = lightColor;
 		
 		ctx.beginPath();
 		ctx.arc(centerX, centerY, celestial.radius, lightStart, lightEnd);
+		ctx.lineTo(centerX, centerY);
+		ctx.lineTo(centerX+ Math.cos(lightStart)*celestial.radius,
+				   centerY+ Math.sin(lightStart)*celestial.radius);
 		ctx.fill();
 		
 		ctx.fillStyle = shadeColor;
@@ -149,6 +152,9 @@ function drawCelestialBody(ctx, centerX, centerY, celestial)
 		
 		ctx.beginPath();
 		ctx.arc(centerX, centerY, celestial.radius, lightEnd, lightStart);
+		ctx.lineTo(centerX, centerY);
+		ctx.lineTo(centerX+ Math.cos(lightEnd)*celestial.radius,
+				   centerY+ Math.sin(lightEnd)*celestial.radius);
 		ctx.fill();
 	}
 }
