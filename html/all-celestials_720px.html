@@ -37,9 +37,6 @@
 	<link rel="stylesheet" type="text/css" href="../style/theme_Kaleidoscope.css">
 </head>
 <body>
-	<script>
-		loadCelestialConfig('../config/CalendarConfig_Kaleidoscope.json', '../config/CelestialConfig_Kaleidoscope_720px.json');
-	</script>
 	<div class="page kaleidoscope w-720">
 		<div class="about">
 			<div class="trigger">About these converters...</div>
@@ -188,9 +185,7 @@
 	</div>
 	
 	<script>
-		submitInputs('Now', 'utd');
-		updateAllInputs('Now');
-		updateStarSystem();
+		loadCelestialConfig('../config/CalendarConfig_Kaleidoscope.json', '../config/CelestialConfig_Kaleidoscope_720px.json');
 	</script>
 </body>
 </html>
