@@ -113,7 +113,6 @@ function drawCelestialBody(ctx, originX, originY, centerX, centerY, celestial)
 	
 	ctx.fillStyle = "#FFFFFF";
 	fontY = centerY + celestial.radius + 20;
-	ctx.shadowColor="red";
 	ctx.shadowBlur=5;
 	ctx.fillText(celestial.name[culture], centerX, fontY);
 	ctx.shadowBlur=0;
@@ -257,7 +256,7 @@ function updateStarSystem(){
 	ctx.strokeStyle = "#FFFFFF";
 	ctx.font = "16px Oregano";
 	ctx.textAlign = "center";
-	ctx.shadowColor = "yellow";
+	ctx.shadowColor = "black";
 
 	var originX = canvasWidth/2;
 	var originY = canvasHeight/2;

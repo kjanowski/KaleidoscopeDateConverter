@@ -1,9 +1,21 @@
 {
+	"name": {
+		"generic":"The Central Star",
+		"nimyric":"Saphéne",
+		"pereqaian":"Tadan'a",
+		"rilsu":"Larekon"
+	},
 	"color": "#FFFF88",
 	"radius": 20,
 	"planets":
 	[
 		{	
+			"name": {
+				"generic":"The Burnt Planet",
+				"nimyric":"Achýu",
+				"pereqaian":"?",
+				"rilsu":"Divusu"
+			},
 			"color": "#888888",
 			"radius": 5,
 			"calendar": "achyu",
@@ -13,6 +25,12 @@
 			"moons":[]
 		},
 		{	
+			"name": {
+				"generic":"The Watery Planet",
+				"nimyric":"Chryphóra",
+				"pereqaian":"Qentora",
+				"rilsu":"Tuvasuno"
+			},			
 			"color": "#88FFFF",
 			"radius": 12,
 			"calendar": "nimyric",
@@ -32,6 +50,12 @@
 			"moons":
 			[
 				{
+					"name": {
+						"generic":"The Dusty Moon",
+						"nimyric":"Palia",
+						"pereqaian":"Belen'a",
+						"rilsu":"Kesivi"
+					},					
 					"color": "#CCCCCC",
 					"radius": 3,
 					"visualDistance": 30,
@@ -41,6 +65,12 @@
 			]
 		},
 		{	
+			"name": {
+				"generic":"The Molten Planet",
+				"nimyric":"Éisabó",
+				"pereqaian":"?",
+				"rilsu":"Kasavoa"
+			},			
 			"color": "#FFCC44",
 			"radius": 13,
 			"calendar": "rilsu",
@@ -56,6 +86,12 @@
 			"moons":
 			[
 				{
+					"name": {
+						"generic":"The Sandy Moon",
+						"nimyric":"Lynvia",
+						"pereqaian":"?",
+						"rilsu":"Ranul"
+					},				
 					"color": "#FFAA88",
 					"radius": 4,
 					"visualDistance": 30,
@@ -63,6 +99,12 @@
 					"orbitDayOffset": -12
 				},
 				{
+					"name": {
+						"generic":"The Rocky Moon",
+						"nimyric":"Cóya",
+						"pereqaian":"?",
+						"rilsu":"Inekoa"
+					},
 					"color": "#CCCCCC",
 					"radius": 2,
 					"visualDistance": 40,
@@ -72,6 +114,12 @@
 			]
 		},
 		{	
+			"name": {
+				"generic":"The Ringed Planet",
+				"nimyric":"Lahasabó",
+				"pereqaian":"?",
+				"rilsu":"Ivlare"
+			},			
 			"color": "#66BBFF",
 			"radius": 14,
 			"calendar": "ivlare",
@@ -93,6 +141,12 @@
 			}
 		},
 		{	
+			"name": {
+				"generic":"The Outer Planetoid",
+				"nimyric":"Temróph",
+				"pereqaian":"?",
+				"rilsu":"Vokeran"
+			},			
 			"color": "#FFFFBB",
 			"radius": 4,
 			"calendar": "twk",
