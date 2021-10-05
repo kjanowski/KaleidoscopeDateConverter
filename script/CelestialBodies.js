@@ -270,7 +270,7 @@ function updateStarSystem(){
 	
 	ctx.fillStyle = "#FFFFFF";
 	fontY = originY + star.radius + 20;
-	var fontWidth = ctx.measureText(celestial.name[culture])*0.5;
+	var fontWidth = ctx.measureText(star.name[culture])*0.5;
 	ctx.shadowBlur=10;
 	ctx.fillText(star.name[culture], originX-fontWidth, fontY);
 	ctx.shadowBlur=0;
