@@ -8,7 +8,7 @@
 			"radius": 12,
 			"calendar": "nimyric",
 			"orbitDayOffset": -37,
-			"visualDistance": 100,
+			"visualDistance": 80,
 			"markers":
 			[
 				{
@@ -20,8 +20,8 @@
 			[
 				{
 					"color": "#CCCCCC",
-					"radius": 3,
-					"visualDistance": 30,
+					"radius": 8,
+					"visualDistance": 50,
 					"orbitDays": 25,
 					"orbitDayOffset": 1
 				}

@@ -5,10 +5,10 @@
 	[
 		{	
 			"color": "#FFFFBB",
-			"radius": 4,
+			"radius": 10,
 			"calendar": "twk",
 			"orbitDayOffset": 77,
-			"visualDistance": 100,
+			"visualDistance": 80,
 			"markers":
 			[
 				{

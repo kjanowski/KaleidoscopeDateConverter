@@ -8,7 +8,7 @@
 			"radius": 12,
 			"calendar": "pereqaian",
 			"orbitDayOffset": 40,
-			"visualDistance": 100,
+			"visualDistance": 80,
 			"markers":
 			[
 				{
@@ -21,7 +21,7 @@
 				{
 					"color": "#CCCCCC",
 					"radius": 3,
-					"visualDistance": 30,
+					"visualDistance": 50,
 					"orbitDays": 25,
 					"orbitDayOffset": 0
 				}
