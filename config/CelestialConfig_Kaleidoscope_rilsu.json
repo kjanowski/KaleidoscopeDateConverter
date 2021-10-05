@@ -1,9 +1,15 @@
 {
+	"name": {
+		"generic":"Larekon"
+	},
 	"color": "#FFFF88",
 	"radius": 20,
 	"planets":
 	[
 		{	
+			"name": {
+				"generic":"Kasavoa"
+			},			
 			"color": "#FFCC44",
 			"radius": 13,
 			"calendar": "rilsu",
@@ -19,6 +25,9 @@
 			"moons":
 			[
 				{
+					"name": {
+						"generic":"Ranul"
+					},					
 					"color": "#FFAA88",
 					"radius": 8,
 					"visualDistance": 30,
@@ -26,6 +35,9 @@
 					"orbitDayOffset": -12
 				},
 				{
+					"name": {
+						"generic":"Inekoa"
+					},					
 					"color": "#CCCCCC",
 					"radius": 5,
 					"visualDistance": 50,

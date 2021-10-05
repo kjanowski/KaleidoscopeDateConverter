@@ -1,9 +1,15 @@
 {
+	"name": {
+		"generic":"Saphéne"
+	},
 	"color": "#FFFF88",
 	"radius": 20,
 	"planets":
 	[
 		{	
+			"name": {
+				"generic":"Chryphóra"
+			},
 			"color": "#88FFFF",
 			"radius": 12,
 			"calendar": "nimyric",
@@ -19,6 +25,9 @@
 			"moons":
 			[
 				{
+					"name": {
+						"generic":"Palia"
+					},					
 					"color": "#CCCCCC",
 					"radius": 8,
 					"visualDistance": 40,

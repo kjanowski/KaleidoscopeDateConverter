@@ -257,7 +257,7 @@ function updateStarSystem(){
 	
 	ctx.strokeStyle = "#FFFFFF";
 	ctx.font = "16px Oregano";
-	ctx.shadowColor = "black";
+	ctx.shadowColor = "yellow";
 
 	var originX = canvasWidth/2;
 	var originY = canvasHeight/2;
