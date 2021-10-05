@@ -107,5 +107,18 @@
 			],
 			"moons":[]
 		}
+	],
+	"lights":[
+		{
+			"type":"point",
+			"x":0,
+			"y":0,
+			"intensity":0.3
+		},
+		{
+			"type":"parallel",
+			"angle": 0,
+			"intensity":0.2
+		}
 	]
 }

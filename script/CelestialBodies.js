@@ -125,7 +125,6 @@ function drawCelestialBody(ctx, originX, originY, centerX, centerY, celestial)
 				//calculate relative angle
 				var deltaX = centerX - (originX+light.x);
 				var deltaY = centerY - (originY+light.y);
-				console.log("deltaX: "+deltaX+", deltaY: "+deltaY);
 				
 				lightAngle = Math.atan2(deltaY, deltaX);			
 			}else if(light.type == "parallel")
