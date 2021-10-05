@@ -251,7 +251,7 @@ function updateStarSystem(){
 	else ctx.clearRect(0, 0, canvasWidth, canvasHeight);
 	
 	ctx.strokeStyle = "#FFFFFF";
-	ctx.font = "16px Oregano";
+	ctx.font = "16px Arial";
 
 	var originX = canvasWidth/2;
 	var originY = canvasHeight/2;
