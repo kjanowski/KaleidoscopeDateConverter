@@ -117,45 +117,47 @@ function drawCelestialBody(ctx, centerX, centerY, celestial)
 	//light and shadow ----------------------------------
 	if(star.lights != undefined)
 	{
-		var light = star.lights[0];
-		var lightAngle = 0.0;
-		if(light.type == "point")
+		for(light of star.lights)
 		{
-			//calculate relative angle
-			var deltaX = light.x - centerX;
-			var deltaY = light.y - centerY;
-			lightAngle = Math.atan2(deltaY, deltaX);			
-		}else if(light.type == "parallel")
-		{
-			lightAngle = light.angle/180.0*Math.PI;	
+			var lightAngle = 0.0;
+			if(light.type == "point")
+			{
+				//calculate relative angle
+				var deltaX = centerX - light.x;
+				var deltaY = centerY - light.y;
+				lightAngle = Math.atan2(deltaY, deltaX);			
+			}else if(light.type == "parallel")
+			{
+				lightAngle = light.angle/180.0*Math.PI;	
+			}
+			
+			//brighten what faces the light, darken what faces away
+			var lightStart = lightAngle - Math.PI*0.5;
+			var lightEnd = lightAngle + Math.PI*0.5;
+			
+			var lightColor = "rgba(255, 255, 255, "+light.intensity+")"
+			var shadeColor = "rgba(0, 0, 0, "+light.intensity+")"
+			
+			ctx.fillStyle = lightColor;
+			ctx.strokeStyle = lightColor;
+			
+			ctx.beginPath();
+			ctx.arc(centerX, centerY, celestial.radius, lightStart, lightEnd);
+			ctx.lineTo(centerX, centerY);
+			ctx.lineTo(centerX+ Math.cos(lightStart)*celestial.radius,
+					   centerY+ Math.sin(lightStart)*celestial.radius);
+			ctx.fill();
+			
+			ctx.fillStyle = shadeColor;
+			ctx.strokeStyle = shadeColor;
+			
+			ctx.beginPath();
+			ctx.arc(centerX, centerY, celestial.radius, lightEnd, lightStart);
+			ctx.lineTo(centerX, centerY);
+			ctx.lineTo(centerX+ Math.cos(lightEnd)*celestial.radius,
+					   centerY+ Math.sin(lightEnd)*celestial.radius);
+			ctx.fill();
 		}
-		
-		//brighten what faces the light, darken what faces away
-		var lightStart = lightAngle - Math.PI*0.5;
-		var lightEnd = lightAngle + Math.PI*0.5;
-		
-		var lightColor = "rgba(255, 255, 255, "+light.intensity+")"
-		var shadeColor = "rgba(0, 0, 0, "+light.intensity+")"
-		
-		ctx.fillStyle = lightColor;
-		ctx.strokeStyle = lightColor;
-		
-		ctx.beginPath();
-		ctx.arc(centerX, centerY, celestial.radius, lightStart, lightEnd);
-		ctx.lineTo(centerX, centerY);
-		ctx.lineTo(centerX+ Math.cos(lightStart)*celestial.radius,
-				   centerY+ Math.sin(lightStart)*celestial.radius);
-		ctx.fill();
-		
-		ctx.fillStyle = shadeColor;
-		ctx.strokeStyle = shadeColor;
-		
-		ctx.beginPath();
-		ctx.arc(centerX, centerY, celestial.radius, lightEnd, lightStart);
-		ctx.lineTo(centerX, centerY);
-		ctx.lineTo(centerX+ Math.cos(lightEnd)*celestial.radius,
-				   centerY+ Math.sin(lightEnd)*celestial.radius);
-		ctx.fill();
 	}
 }
 
@@ -252,9 +254,19 @@ function updateStarSystem(){
 
 	var originX = canvasWidth/2;
 	var originY = canvasHeight/2;
+
 	
-	drawCelestialBody(ctx, originX, originY, star);
+	ctx.fillStyle = star.color;
 	
+	ctx.beginPath();
+	ctx.arc(originX, originY, star.radius, 0, 2 * Math.PI);
+	ctx.fill();
+	
+	ctx.fillStyle = "#FFFFFF";
+	fontY = originY + star.radius + 20;
+	ctx.fillText(centerX, fontY, star.name);
+
+
 	for(planet of star.planets)
 	{
 		drawOrbit(ctx, originX, originY, planet);

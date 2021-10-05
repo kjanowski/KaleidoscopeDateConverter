@@ -113,14 +113,14 @@
 			"type":"point",
 			"x":"0",
 			"y":"0",
-			"intensity":"0.8"
+			"intensity":"0.4"
 		},
 		{
 			"type":"parallel",
 			"angle": "0",
 			"x":"-260",
 			"y":"0",
-			"intensity":"0.6"
+			"intensity":"0.3"
 		}
 	]
 }
