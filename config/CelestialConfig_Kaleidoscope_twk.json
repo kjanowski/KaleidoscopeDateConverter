@@ -1,9 +1,11 @@
 {
+	"name": "The Central Star",
 	"color": "#FFFF88",
 	"radius": 20,
 	"planets":
 	[
 		{	
+			"name": "The Outer Planetoid",
 			"color": "#FFFFBB",
 			"radius": 10,
 			"calendar": "twk",
