@@ -125,7 +125,7 @@ function drawCelestialBody(ctx, centerX, centerY, celestial)
 			var deltaX = light.x - centerX;
 			var deltaY = light.y - centerY;
 			lightAngle = Math.atan2(deltaY, deltaX);			
-		}else if{light.type == "parallel"}
+		}else if(light.type == "parallel")
 		{
 			lightAngle = light.angle/180.0*Math.PI;	
 		}
