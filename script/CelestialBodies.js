@@ -252,7 +252,7 @@ function updateStarSystem(){
 	else ctx.clearRect(0, 0, canvasWidth, canvasHeight);
 	
 	ctx.strokeStyle = "#FFFFFF";
-	ctx.font = "16px Arial";
+	ctx.font = "16px sans-serif";
 
 	var originX = canvasWidth/2;
 	var originY = canvasHeight/2;
@@ -267,7 +267,7 @@ function updateStarSystem(){
 	ctx.fillStyle = "#FFFFFF";
 	fontY = originY + star.radius + 20;
 	ctx.fillText(originX, fontY, star.name[culture]);
-	console.log("printing"+star.name[culture]+" at ("+originX+", "+fontY);
+	console.log("printing "+star.name[culture]+" at ("+originX+", "+fontY+")");
 
 	for(planet of star.planets)
 	{
