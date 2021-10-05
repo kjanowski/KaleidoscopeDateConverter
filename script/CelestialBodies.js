@@ -185,7 +185,7 @@ function drawPlanet(ctx, originX, originY, planet){
 		var moonX = centerX + moonTransform.orbitVisualX;
 		var moonY = centerY + moonTransform.orbitVisualY;
 
-		drawCelestialBody(ctx, moonX, moonY, moon);
+		drawCelestialBody(ctx, originX, originY, moonX, moonY, moon);
 	}
 	
 	drawRing(ctx, centerX, centerY, planet);	
