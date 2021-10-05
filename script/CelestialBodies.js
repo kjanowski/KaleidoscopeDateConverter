@@ -113,7 +113,7 @@ function drawCelestialBody(ctx, originX, originY, centerX, centerY, celestial)
 	
 	ctx.fillStyle = "#FFFFFF";
 	fontY = centerY + celestial.radius + 20;
-	ctx.fillText(centerX, fontY, celestial.name[culture]);
+	ctx.fillText(celestial.name[culture], centerX, fontY);
 	
 	//light and shadow ----------------------------------
 	if(star.lights != undefined)
@@ -252,7 +252,7 @@ function updateStarSystem(){
 	else ctx.clearRect(0, 0, canvasWidth, canvasHeight);
 	
 	ctx.strokeStyle = "#FFFFFF";
-	ctx.font = "16px sans-serif";
+	ctx.font = "16px Oregano";
 
 	var originX = canvasWidth/2;
 	var originY = canvasHeight/2;
@@ -266,7 +266,7 @@ function updateStarSystem(){
 	
 	ctx.fillStyle = "#FFFFFF";
 	fontY = originY + star.radius + 20;
-	ctx.fillText(originX, fontY, star.name[culture]);
+	ctx.fillText(star.name[culture], originX, fontY);
 	console.log("printing "+star.name[culture]+" at ("+originX+", "+fontY+")");
 
 	for(planet of star.planets)
