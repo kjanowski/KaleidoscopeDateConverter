@@ -123,12 +123,12 @@ function drawCelestialBody(ctx, centerX, centerY, celestial)
 			if(light.type == "point")
 			{
 				//calculate relative angle
-				var deltaX = centerX - light.x;
-				var deltaY = centerY - light.y;
+				var deltaX = light.x - centerX;
+				var deltaY = light.y - centerY;
 				lightAngle = Math.atan2(deltaY, deltaX);			
 			}else if(light.type == "parallel")
 			{
-				lightAngle = light.angle/180.0*Math.PI;	
+				lightAngle = -light.angle/180.0*Math.PI;	
 			}
 			
 			//brighten what faces the light, darken what faces away
