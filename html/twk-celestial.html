@@ -45,16 +45,16 @@
 			<h2>Those Who Know</h2>
 			<form>
 				<label>year:</label>
-				<input class="year" type="number" id="year_twk" name="year_twk">
+				<input class="year" type="number" id="year_twk" name="year_twk" value="80211">
 				<br>
 				<label>era:</label>
-				<select id="era_twk" name="era_twk" onclick="limitInputs('twk');">
+				<select id="era_twk" name="era_twk" onclick="limitInputs('twk');" value="1">
 					<option value="before">Before The Hive</option>
 					<option value="after">In The Hive</option>
 				</select>
 				<br>
 				<label>month:</label>
-				<select id="month_twk" name="month_twk" onclick="limitInputs('twk');">
+				<select id="month_twk" name="month_twk" onclick="limitInputs('twk');" value="2">
 					<option value="1">The Phase Of Greatest Power</option>
 					<option value="2">The Phase Of Waning Power</option>
 					<option value="3">The Phase Of Power Loss</option>
@@ -62,11 +62,11 @@
 				</select>
 				<br>
 				<label>day:</label>
-				<input type="number" id="day_twk" name="day_twk" min="1">
+				<input type="number" id="day_twk" name="day_twk" min="1" value="10">
 				<br><label>time:</label>
-				<input class="hour" type="number" id="hour_twk" name="hour_twk" min="0" max="199">:
-				<input type="number" id="minute_twk" name="minute_twk" min="0" max="79">:
-				<input type="number" id="second_twk" name="second_twk" min="0" max="49">
+				<input class="hour" type="number" id="hour_twk" name="hour_twk" min="0" max="199" value="5">:
+				<input type="number" id="minute_twk" name="minute_twk" min="0" max="79" value="15">:
+				<input type="number" id="second_twk" name="second_twk" min="0" max="49" value="29">
 			</form>
 			<button id="setTWK" onclick="submitInputs('Now','twk');updateStarSystem();">set Hive time</button>	
 			<div class="anim-control">
