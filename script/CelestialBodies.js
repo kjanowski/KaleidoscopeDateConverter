@@ -102,7 +102,7 @@ function getMoonTransform(dateTime, calParams, planetOrbitAngle, moon)
 	return transform;
 }
 
-function drawCelestialBody(ctx, centerX, centerY, celestial)
+function drawCelestialBody(ctx, originX, originY, centerX, centerY, celestial)
 {
 	ctx.fillStyle = celestial.color;
 	
@@ -123,8 +123,8 @@ function drawCelestialBody(ctx, centerX, centerY, celestial)
 			if(light.type == "point")
 			{
 				//calculate relative angle
-				var deltaX = centerX - light.x;
-				var deltaY = centerY - light.y;
+				var deltaX = centerX - (originX+light.x);
+				var deltaY = centerY - (originY+light.y);
 				lightAngle = Math.atan2(deltaY, deltaX);			
 			}else if(light.type == "parallel")
 			{
@@ -170,7 +170,7 @@ function drawPlanet(ctx, originX, originY, planet){
 	var centerX =  originX + transform.orbitVisualX;
 	var centerY = originY + transform.orbitVisualY;
 	
-	drawCelestialBody(ctx, centerX, centerY, planet);
+	drawCelestialBody(ctx, originX, originY, centerX, centerY, planet);
 	
 	for(marker of planet.markers)
 	{

@@ -118,8 +118,6 @@
 		{
 			"type":"parallel",
 			"angle": "0",
-			"x":"-260",
-			"y":"0",
 			"intensity":"0.3"
 		}
 	]
