@@ -113,6 +113,44 @@ function drawCelestialBody(ctx, centerX, centerY, celestial)
 	ctx.fillStyle = "#FFFFFF";
 	fontY = centerY + celestial.radius + 20;
 	ctx.fillText(centerX, fontY, celestial.name);
+	
+	//light and shadow ----------------------------------
+	if(star.lights != undefined)
+	{
+		var light = star.lights[0];
+		var lightAngle = 0.0;
+		if(light.type == "point")
+		{
+			//calculate relative angle
+			var deltaX = light.x - centerX;
+			var deltaY = light.y - centerY;
+			lightAngle = Math.atan2(deltaY, deltaX);			
+		}else if{light.type == "parallel"}
+		{
+			lightAngle = light.angle/180.0*Math.PI;	
+		}
+		
+		//brighten what faces the light, darken what faces away
+		var lightStart = lightAngle - Math.PI*0.5;
+		var lightEnd = lightAngle + Math.Pi*0.5;
+		
+		var lightColor = rgba(255, 255, 255, light.intensity)
+		var shadeColor = rgba(0, 0, 0, light.intensity)
+		
+		ctx.fillStyle = lightColor;
+		ctx.strokeStyle = lightColor;
+		
+		ctx.beginPath();
+		ctx.arc(centerX, centerY, celestial.radius, lightStart, lightEnd);
+		ctx.fill();
+		
+		ctx.fillStyle = shadeColor;
+		ctx.strokeStyle = shadeColor;
+		
+		ctx.beginPath();
+		ctx.arc(centerX, centerY, celestial.radius, lightEnd, lightStart);
+		ctx.fill();
+	}
 }
 
 
@@ -142,7 +180,7 @@ function drawPlanet(ctx, originX, originY, planet){
 		drawCelestialBody(ctx, moonX, moonY, moon);
 	}
 	
-	drawRing(ctx, centerX, centerY, planet);
+	drawRing(ctx, centerX, centerY, planet);	
 }
 
 function drawMarker(ctx, centerX, centerY, marker, relAngle, radius)
