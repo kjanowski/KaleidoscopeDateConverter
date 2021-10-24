@@ -33,7 +33,7 @@
 			"minutesPerHour": 60.0,
 			"locHoursPerDay": 30.0,
 			"stdHoursPerDay": 30.0,
-			"monthNames": ["Mu Nèlisi", "Mu Niseqòn", "Mu Ozide", "Mu Sedùt", "Mu Qòtve", "Mu Pêtve", "Mu Seshivèr", "Mu Nèlgofi", "Mu Shulòri", "Mu Renifi", "Mu Qùshve", "Mu Nifhêqa", "Mu Fêfumish", "Mu Zêicen"],
+			"monthNames": ["Mu Lilisi", "Mu Niseqòn", "Mu Ozide", "Mu Sedùt", "Mu Qòtve", "Mu Pêtve", "Mu Seshivèr", "Mu Ligofi", "Mu Shulòri", "Mu Renifi", "Mu Qùshve", "Mu Nifhêqa", "Mu Fêfumish", "Mu Zêicen"],
 			"monthLength": [25,25,25,24,25,25,25,25,25,25,24,25,25,25],
 			"daysPerYear": 348.0,
 			"eraBefore": "FGZ",
