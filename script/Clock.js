@@ -98,10 +98,10 @@ function createHand(id, count, hubX, hubY, thickness, innerRadius, outerRadius, 
 	
 	
 	var svgElement = "<line id=\""+id
-				+"\" x1=\""+hubX+handCos*innerRadius
-				+"\" y1=\""+hubY+handSin*innerRadius
-				+"\" x2=\""+hubX+handCos*outerRadius
-				+"\" y2=\""+hubY+handSin*outerRadius
+				+"\" x1=\""+(hubX+handCos*innerRadius)
+				+"\" y1=\""+(hubY+handSin*innerRadius)
+				+"\" x2=\""+(hubX+handCos*outerRadius)
+				+"\" y2=\""+(hubY+handSin*outerRadius)
 				+"\" style=\"stroke:\""+color+";stroke-width:\""+thickness+"\"/>";	
 	
 	return svgElement;
