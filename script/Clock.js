@@ -23,8 +23,8 @@ function createClock(calendar)
 {
 	var clockSVG = document.getElementById("clock_"+calendar);
 	
-	var hubX = canvasWidth/2.0;
-	var hubY = canvasWidth/2.0;	
+	var hubX = clockSVG.width/2.0;
+	var hubY = clockSVG.height/2.0;	
 	
 	
 	//create the clock face
@@ -55,17 +55,11 @@ function createClock(calendar)
 					innerTickRadius, outerTickRadius, "black");	
 
 	
-	//draw the hands -------------------------------------
-	var hubRadius = hubX*0.05;
-	
-	clockSVG.innerHTML = clockSVG.innerHTML + 
-		createHand("hourHand", 10, hubRadius, innerTickRadius, "black");
-	clockSVG.innerHTML = clockSVG.innerHTML + 
-		createHand("minuteHand", 10, hubRadius, innerTickRadius, "gray");
-	clockSVG.innerHTML = clockSVG.innerHTML + 
-		createHand("secondHand", 10, hubRadius, innerTickRadius, "lightGray");
-	
+	//prepare the hands -------------------------------------
+	clockSVG.innerHTML = clockSVG.innerHTML + "<g id=\"hands_"+calendar+"\"></g>"; 
+		
 	//draw the hub
+	var hubRadius = hubX*0.05;
 	clockSVG.innerHTML = clockSVG.innerHTML +
 		"<circle cx=\""+hubX+"\" cy=\""+hubY+"\" r=\""+hubRadius+"\" fill=\"black\"/>";	
 }
@@ -95,13 +89,19 @@ function createTicks(id, hubX, hubY, tickCount, innerTickRadius, outerTickRadius
 	return svgElement;
 }
 
-function createHand(id, hubX, hubY, thickness, innerRadius, outerRadius, color)
+function createHand(id, count, hubX, hubY, thickness, innerRadius, outerRadius, color)
 {
+	var angle = 2*Math.PI*count;
+	
+	var handCos = Math.cos(angle);
+	var handSin = Math.sin(angle);
+	
+	
 	var svgElement = "<line id=\""+id
-				+"\" x1=\""+hubX
-				+"\" y1=\""+hubY+innerRadius
-				+"\" x2=\""+hubX
-				+"\" y2=\""+hubY+outerRadius
+				+"\" x1=\""+hubX+handCos*innerRadius
+				+"\" y1=\""+hubY+handSin*innerRadius
+				+"\" x2=\""+hubX+handCos*outerRadius
+				+"\" y2=\""+hubY+handSin*outerRadius
 				+"\" style=\"stroke:\""+color+";stroke-width:\""+thickness+"\"/>";	
 	
 	return svgElement;
@@ -110,7 +110,25 @@ function createHand(id, hubX, hubY, thickness, innerRadius, outerRadius, color)
 function updateClock(calendar){
 	var dateTime = getDateTime('Now', calendar);
 	
-	//todo move the hands
+	//draw the hands
+	var clockSVG = document.getElementById("clock_"+calendar);
+	var handsGroup = document.getElementById("hands_"+calendar);
+	
+	var hubX = clockSVG.width/2.0;
+	var hubY = clockSVG.height/2.0;
+	
+	var innerRadius = hubX*0.025;
+	var hourRadius = hubX*0.5;
+	var minuteRadius = hubX*0.75;
+	var secondRadius = hubX*0.95;
+	
+	var hands = createHand("hourHand", dateTime.hour, 10, innerRadius, hourRadius, "black");
+	hands = hands + 
+		createHand("minuteHand", dateTime.minute, 10, innerRadius, minuteRadius, "gray");
+	hands = hands + 
+		createHand("secondHand", dateTime.second, 10, innerRadius, secondRadius, "lightGray");
+	
+	handsGroup.innerHTML = hands;
 }
 
 
