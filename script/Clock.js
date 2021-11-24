@@ -38,23 +38,25 @@ function updateClock(calendarName)
 	
 	
 	//draw the ticks ------------------------------------
-	var innerTickRadius = radius*0.8;
+	var hourRadius = radius*0.5;
+	var minuteRadius = radius*0.75;
+	var secondRadius = radius*0.9;
 	var outerTickRadius = radius*0.85;
 	
 	//draw the second ticks
 	clockSVG.innerHTML = clockSVG.innerHTML +
 		createTicks("secondTicks", hubX, hubY, calendar.secondsPerMinute,
-					innerTickRadius, outerTickRadius, "lightGray");	
+					secondRadius, outerTickRadius, "lightGray");	
 
 	//draw the minutes ticks
 	clockSVG.innerHTML = clockSVG.innerHTML +
 		createTicks("minuteTicks", hubX, hubY, calendar.minutesPerHour,
-					innerTickRadius, outerTickRadius, "gray");	
+					minuteRadius, outerTickRadius, "gray");	
 
 	//draw the hour ticks
 	clockSVG.innerHTML = clockSVG.innerHTML +
 		createTicks("hourTicks", hubX, hubY, calendar.locHoursPerDay,
-					innerTickRadius, outerTickRadius, "black");	
+					hourRadius, outerTickRadius, "black");	
 
 	
 	//draw the hands -------------------------------------
@@ -125,7 +127,7 @@ function createHands(hubX, hubY, calendarName){
 	var innerRadius = radius*0.025;
 	var hourRadius = radius*0.5;
 	var minuteRadius = radius*0.75;
-	var secondRadius = radius*0.95;
+	var secondRadius = radius*0.9;
 	
 	var hands = 
 		createHand("hourHand", dateTime.hour, calendar.locHoursPerDay, hubX, hubY, 10, innerRadius, hourRadius, "black");
