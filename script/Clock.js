@@ -87,7 +87,7 @@ function createTicks(id, tickCount, innerTickRadius, outerTickRadius, color)
 }
 
 function updateClock(calendar){
-	var dateTime = getDateTime('Now', planet.calendar);
+	var dateTime = getDateTime('Now', calendar);
 	
 	//todo move the hands
 }
@@ -107,7 +107,7 @@ function advanceClock(){
 
 function startClock(calendar)
 {
-	if(animator == undefined)
+	if(clockAnimator == undefined)
 	{
 		animatedClock = calendar;
 		clockAnimator = setInterval(advanceClock, 20);
