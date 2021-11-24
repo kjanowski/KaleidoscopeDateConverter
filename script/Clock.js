@@ -64,7 +64,7 @@ function createClock(calendar)
 		"<circle cx=\""+hubX+"\" cy=\""+hubY+"\" r=\""+hubRadius+"\" fill=\"black\"/>";	
 }
 
-function createTicks(id, hubX, hubY, tickCount, innerTickRadius, outerTickRadius, color)
+function createTicks(id, hubX, hubY, tickCount, innerRadius, outerRadius, color)
 {
 	var svgElement = "<g id=\""+id+"\">";	
 
@@ -76,11 +76,17 @@ function createTicks(id, hubX, hubY, tickCount, innerTickRadius, outerTickRadius
 		
 		var tickCos = Math.cos(tickAngle);
 		var tickSin = Math.sin(tickAngle);
+		
+		var startX = hubX+tickCos*innerRadius;
+		var startY = hubY+tickSin*innerRadius;
+		var endX = hubX+tickCos*outerRadius;
+		var endY = hubY+tickSin*outerRadius;
+	
 		svgElement = svgElement +
-			"<line x1=\""+(hubX+tickCos*innerTickRadius)
-				+"\" y1=\""+(hubY+tickSin*innerTickRadius)
-				+"\" x2=\""+(hubX+tickCos*outerTickRadius)
-				+"\" y2=\""+(hubY+tickSin*outerTickRadius)
+			"<line x1=\""+startX
+				+"\" y1=\""+startY
+				+"\" x2=\""+endX
+				+"\" y2=\""+endY
 				+"\" stroke=\""+color+"\"/>";	
 	}
 	
@@ -96,13 +102,17 @@ function createHand(id, calendar, count, maxCount, hubX, hubY, thickness, innerR
 	var handCos = Math.cos(angle);
 	var handSin = Math.sin(angle);
 	
+	var startX = hubX+handCos*innerRadius;
+	var startY = hubY+handSin*innerRadius;
+	var endX = hubX+handCos*outerRadius;
+	var endY = hubY+handSin*outerRadius;
 	
 	var svgElement = "<line id=\""+id
-				+"\" x1=\""+(hubX+handCos*innerRadius)
-				+"\" y1=\""+(hubY+handSin*innerRadius)
-				+"\" x2=\""+(hubX+handCos*outerRadius)
-				+"\" y2=\""+(hubY+handSin*outerRadius)
-				+"\" style=\"stroke:\""+color+";stroke-width:\""+thickness+"\"/>";	
+				+"\" x1=\""+startX
+				+"\" y1=\""+startY
+				+"\" x2=\""+endX
+				+"\" y2=\""+endY
+				+"\" style=\"stroke:"+color+";stroke-width:\""+thickness+"\"/>";	
 	
 	return svgElement;
 }
