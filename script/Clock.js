@@ -34,7 +34,7 @@ function updateClock(calendarName)
 	
 	//create the clock face
 	clockSVG.innerHTML =
-		"<circle cx=\""+hubX+"\" cy=\""+hubY+"\" r=\""+faceRadius+"\" fill=\"white\"/>";	
+		"<circle id=\"clockFace\" cx=\""+hubX+"\" cy=\""+hubY+"\" r=\""+faceRadius+"\" fill=\"white\"/>";	
 	
 	
 	//draw the ticks ------------------------------------
@@ -57,7 +57,7 @@ function updateClock(calendarName)
 					innerTickRadius, outerTickRadius, "black");	
 
 	
-	//prepare the hands -------------------------------------
+	//draw the hands -------------------------------------
 	clockSVG.innerHTML = clockSVG.innerHTML + createHands(hubX, hubY, calendarName); 
 		
 	//draw the hub
@@ -97,9 +97,9 @@ function createTicks(id, hubX, hubY, tickCount, innerRadius, outerRadius, color)
 	return svgElement;
 }
 
-function createHand(id, calendar, count, maxCount, hubX, hubY, thickness, innerRadius, outerRadius, color)
+function createHand(id, count, maxCount, hubX, hubY, thickness, innerRadius, outerRadius, color)
 {
-	var angle = 2*Math.PI*count/maxCount;
+	var angle = 2*Math.PI/maxCount*count;
 	
 	var handCos = Math.cos(angle);
 	var handSin = Math.sin(angle);
@@ -115,10 +115,7 @@ function createHand(id, calendar, count, maxCount, hubX, hubY, thickness, innerR
 	return svgElement;
 }
 
-function createHands(hubX, hubY, calendarName){
-	console.log("updating clock \""+calendarName+"\"");
-	
-	
+function createHands(hubX, hubY, calendarName){	
 	var dateTime = getDateTime('Now', calendarName);
 	var calendar = getCalendar(calendarName);
 	
