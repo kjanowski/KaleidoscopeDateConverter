@@ -103,7 +103,6 @@ function createHand(id, hubX, hubY, thickness, innerRadius, outerRadius, color)
 				+"\" x2=\""+hubX
 				+"\" y2=\""+hubY+outerRadius
 				+"\" style=\"stroke:\""+color+";stroke-width:\""+thickness+"\"/>";	
-	}
 	
 	return svgElement;
 }
