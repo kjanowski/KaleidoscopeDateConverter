@@ -25,10 +25,10 @@ function createClock(calendar)
 	
 	var hubX = clockSVG.getAttribute("width")/2.0;
 	var hubY = clockSVG.getAttribute("height")/2.0;	
-	
+	var radius = Math.min(hubX, hubY);
 	
 	//create the clock face
-	var faceRadius = hubX*0.95;
+	var faceRadius = radius*0.95;
 	
 	//create the clock face
 	clockSVG.innerHTML =
@@ -36,8 +36,8 @@ function createClock(calendar)
 	
 	
 	//draw the ticks ------------------------------------
-	var innerTickRadius = hubX*0.8;
-	var outerTickRadius = hubX*0.85;
+	var innerTickRadius = radius*0.8;
+	var outerTickRadius = radius*0.85;
 	
 	//draw the second ticks
 	clockSVG.innerHTML = clockSVG.innerHTML +
@@ -59,7 +59,7 @@ function createClock(calendar)
 	clockSVG.innerHTML = clockSVG.innerHTML + "<g id=\"hands_"+calendar+"\"></g>"; 
 		
 	//draw the hub
-	var hubRadius = hubX*0.05;
+	var hubRadius = radius*0.05;
 	clockSVG.innerHTML = clockSVG.innerHTML +
 		"<circle cx=\""+hubX+"\" cy=\""+hubY+"\" r=\""+hubRadius+"\" fill=\"black\"/>";	
 }
@@ -116,17 +116,18 @@ function updateClock(calendar){
 	
 	var hubX = clockSVG.width/2.0;
 	var hubY = clockSVG.height/2.0;
+	var radius = Math.min(hubX, hubY);
 	
-	var innerRadius = hubX*0.025;
-	var hourRadius = hubX*0.5;
-	var minuteRadius = hubX*0.75;
-	var secondRadius = hubX*0.95;
+	var innerRadius = radius*0.025;
+	var hourRadius = radius*0.5;
+	var minuteRadius = radius*0.75;
+	var secondRadius = radius*0.95;
 	
-	var hands = createHand("hourHand", dateTime.hour, 10, innerRadius, hourRadius, "black");
+	var hands = createHand("hourHand", dateTime.hour, hubX, hubY, 10, innerRadius, hourRadius, "black");
 	hands = hands + 
-		createHand("minuteHand", dateTime.minute, 10, innerRadius, minuteRadius, "gray");
+		createHand("minuteHand", dateTime.minute, hubX, hubY, 10, innerRadius, minuteRadius, "gray");
 	hands = hands + 
-		createHand("secondHand", dateTime.second, 10, innerRadius, secondRadius, "lightGray");
+		createHand("secondHand", dateTime.second, hubX, hubY, 10, innerRadius, secondRadius, "lightGray");
 	
 	handsGroup.innerHTML = hands;
 }
