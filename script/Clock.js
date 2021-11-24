@@ -27,7 +27,7 @@ function updateClock(calendarName)
 	
 	var hubX = clockSVG.getAttribute("width")/2.0;
 	var hubY = clockSVG.getAttribute("height")/2.0;	
-	var radius = Math.min(hubX, hubY);
+	var radius = Math.min(hubX, hubY)/2.0;
 	
 	//create the clock face
 	var faceRadius = radius*0.95;
@@ -58,7 +58,7 @@ function updateClock(calendarName)
 
 	
 	//prepare the hands -------------------------------------
-	clockSVG.innerHTML = clockSVG.innerHTML + createHands(calendarName); 
+	clockSVG.innerHTML = clockSVG.innerHTML + createHands(hubX, hubY, calendarName); 
 		
 	//draw the hub
 	var hubRadius = radius*0.05;
@@ -115,7 +115,7 @@ function createHand(id, calendar, count, maxCount, hubX, hubY, thickness, innerR
 	return svgElement;
 }
 
-function createHands(calendarName){
+function createHands(hubX, hubY, calendarName){
 	console.log("updating clock \""+calendarName+"\"");
 	
 	
@@ -123,9 +123,7 @@ function createHands(calendarName){
 	var calendar = getCalendar(calendarName);
 	
 	//draw the hands
-	var hubX = clockSVG.width/2.0;
-	var hubY = clockSVG.height/2.0;
-	var radius = Math.min(hubX, hubY);
+	var radius = Math.min(hubX, hubY)/2.0;
 	
 	var innerRadius = radius*0.025;
 	var hourRadius = radius*0.5;
