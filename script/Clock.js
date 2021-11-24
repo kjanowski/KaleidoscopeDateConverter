@@ -76,7 +76,7 @@ function createTicks(id, hubX, hubY, tickCount, innerRadius, outerRadius, thickn
 	
 	for(let i=0; i<tickCount; i++)
 	{
-		var tickAngle = i* secondStep + Math.PI*0.5;
+		var tickAngle = i* secondStep - Math.PI*0.5;
 		
 		var tickCos = Math.cos(tickAngle);
 		var tickSin = Math.sin(tickAngle);
@@ -101,7 +101,7 @@ function createTicks(id, hubX, hubY, tickCount, innerRadius, outerRadius, thickn
 
 function createHand(id, count, maxCount, hubX, hubY, thickness, innerRadius, outerRadius, color)
 {
-	var angle = 2*Math.PI/maxCount*count + Math.PI*0.5;
+	var angle = 2*Math.PI/maxCount*count - Math.PI*0.5;
 	
 	var handCos = Math.cos(angle);
 	var handSin = Math.sin(angle);

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<html>
+<!--
+	Copyright Kathrin Janowski (https://www.kathrinjanowski.com/en/home), 2021.
+  
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <https://www.gnu.org/licenses/>.
+  
+    --------------------------------------
+  
+	Regarding the worldbuilding content: 
+	The specific parameters and names associated with the
+	"nimyric", "pereqaian", "rilsu" and "twk" calendars are not included
+	in the license mentioned above.
+	Further details can be found in the file "readme.md" in the root folder.
+	
+  -->
+<head>
+	<title>Clock display for the Nimýric Empire</title>
+	<script src="../script/DateConverter.js"></script>
+	<script src="../script/Clock.js"></script>
+	<link rel="icon" href="../img/favicon_kaleidechse_57x57.png" type="image/png">
+	<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Oregano'>
+	<link rel="stylesheet" type="text/css" href="../style/layout.css">
+	<link rel="stylesheet" type="text/css" href="../style/about_bottom_narrow.css">
+	<link rel="stylesheet" type="text/css" href="../style/theme_Kaleidoscope.css">
+</head>
+<body>
+	<div class="page kaleidoscope narrow">
+		<svg class="twk" id="clock_twk" width="327" height="290">
+		</svg>
+		<div class="panel twk toolshelf-section" id="inputs_twk">
+			<h2>Those Who Know</h2>
+			<form>
+				<label>year:</label>
+				<input class="year" type="number" id="year_twk" name="year_twk" value="80211">
+				<br>
+				<label>era:</label>
+				<select id="era_twk" name="era_twk" onclick="limitInputs('twk');">
+					<option value="before">Before The Hive</option>
+					<option value="after" selected>In The Hive</option>
+				</select>
+				<br>
+				<label>month:</label>
+				<select id="month_twk" name="month_twk" onclick="limitInputs('twk');">
+					<option value="1">The Phase Of Greatest Power</option>
+					<option value="2" selected>The Phase Of Waning Power</option>
+					<option value="3">The Phase Of Power Loss</option>
+					<option value="4">The Phase Of Waxing Power</option>
+				</select>
+				<br>
+				<label>day:</label>
+				<input type="number" id="day_twk" name="day_twk" min="1" value="10">
+				<br><label>time:</label>
+				<input class="hour" type="number" id="hour_twk" name="hour_twk" min="0" max="199" value="5">:
+				<input type="number" id="minute_twk" name="minute_twk" min="0" max="79" value="15">:
+				<input type="number" id="second_twk" name="second_twk" min="0" max="49" value="29">
+			</form>
+			<button id="setTWK" onclick="submitInputs('Now','twk');updateClock('twk');">set Hive time</button>	
+			<div class="anim-control">
+				<button id="toggleClock" onclick="toggleClock('twk')">►</button> 
+			</div>
+		</div>
+		<div class="about">
+			<div class="trigger">About this converter...</div>
+			<div class="show-on-hover">
+				This date converter was written as part of the <a href="https://www.worldanvil.com/w/the-kaleidoscope-system-kaleidechse">Kaleidoscope System</a> project.
+				<p>All worldbuilding content involved therein (such as culture, era and month names) belongs to <a href="https://www.kathrinjanowski.com/en/home">Kathrin Janowski</a> a.k.a. Kaleidechse.</p>
+				The converter is hosted via <a href="https://pages.github.com/">GitHub Pages</a> and uses <a href="https://fonts.google.com/">Google Fonts</a>. It does not store any personal data or use third-party tracking software.
+				<p>
+				The sourcecode for these converters is available on <a href="https://github.com/kjanowski/KaleidoscopeDateConverter" target="_blank">GitHub</a>.
+				</p>
+			</div>
+		</div>
+	</div>
+	<script>
+		loadCalendarConfig('../config/CalendarConfig_Kaleidoscope.json');
+	</script>
+</body>
+</html>
