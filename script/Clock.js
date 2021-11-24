@@ -19,24 +19,8 @@ var clockAnimator = undefined;
 var animatedClock = undefined;
 
 
-function initClocks(calendarConfigURL, clockNames)
-{
-	var xmlhttp = new XMLHttpRequest();
 
-	xmlhttp.onreadystatechange = function() {
-		if (this.readyState == 4 && this.status == 200) {
-			initCalendars(this.responseText);
-			for(clockName of clockNames)
-				createClock(clockName);
-		}
-	};
-	xmlhttp.open("GET", calendarConfigURL, true);
-	xmlhttp.send();
-}
-
-
-
-function createClock(calendarName)
+function updateClock(calendarName)
 {
 	var calendar = getCalendar(calendarName);
 	var clockSVG = document.getElementById("clock_"+calendar);
@@ -74,7 +58,7 @@ function createClock(calendarName)
 
 	
 	//prepare the hands -------------------------------------
-	clockSVG.innerHTML = clockSVG.innerHTML + "<g id=\"hands_"+calendar+"\"></g>"; 
+	clockSVG.innerHTML = clockSVG.innerHTML + createHands(calendarName); 
 		
 	//draw the hub
 	var hubRadius = radius*0.05;
@@ -131,7 +115,7 @@ function createHand(id, calendar, count, maxCount, hubX, hubY, thickness, innerR
 	return svgElement;
 }
 
-function updateClock(calendarName){
+function createHands(calendarName){
 	console.log("updating clock \""+calendarName+"\"");
 	
 	
