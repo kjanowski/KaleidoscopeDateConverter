@@ -41,17 +41,17 @@ function createClock(calendar)
 	
 	//draw the second ticks
 	clockSVG.innerHTML = clockSVG.innerHTML +
-		createTicks("secondTicks", calendar.secondsPerMinute,
+		createTicks("secondTicks", hubX, hubY, calendar.secondsPerMinute,
 					innerTickRadius, outerTickRadius, "lightGray");	
 
 	//draw the minutes ticks
 	clockSVG.innerHTML = clockSVG.innerHTML +
-		createTicks("minuteTicks", calendar.minutesPerHour,
+		createTicks("minuteTicks", hubX, hubY, calendar.minutesPerHour,
 					innerTickRadius, outerTickRadius, "gray");	
 
 	//draw the hour ticks
 	clockSVG.innerHTML = clockSVG.innerHTML +
-		createTicks("hourTicks", calendar.locHoursPerDay,
+		createTicks("hourTicks", hubX, hubY, calendar.locHoursPerDay,
 					innerTickRadius, outerTickRadius, "black");	
 
 	
