@@ -19,7 +19,7 @@ var clockAnimator = undefined;
 var animatedClock = undefined;
 
 
-function initClocks(calendarURL, clockNames)
+function initClocks(calendarConfigURL, clockNames)
 {
 	var xmlhttp = new XMLHttpRequest();
 
