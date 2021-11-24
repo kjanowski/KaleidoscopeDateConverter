@@ -19,8 +19,9 @@ var clockAnimator = undefined;
 var animatedClock = undefined;
 
 
-function createClock(calendar)
+function createClock(calendarName)
 {
+	var calendar = getCalendar(calendarName);
 	var clockSVG = document.getElementById("clock_"+calendar);
 	
 	var hubX = clockSVG.getAttribute("width")/2.0;
@@ -107,12 +108,8 @@ function createHand(id, calendar, count, maxCount, hubX, hubY, thickness, innerR
 	var endX = hubX+handCos*outerRadius;
 	var endY = hubY+handSin*outerRadius;
 	
-	var svgElement = "<line id=\""+id
-				+"\" x1=\""+startX
-				+"\" y1=\""+startY
-				+"\" x2=\""+endX
-				+"\" y2=\""+endY
-				+"\" style=\"stroke:"+color+";stroke-width:\""+thickness+"\"/>";	
+	var svgElement = "<line id=\""+id+"\" x1=\""+startX+"\" y1=\""+startY
+				+"\" x2=\""+endX+"\" y2=\""+endY+"\" style=\"stroke:"+color+";stroke-width:"+thickness+"/>";	
 	
 	return svgElement;
 }
