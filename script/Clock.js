@@ -23,7 +23,7 @@ var animatedClock = undefined;
 function updateClock(calendarName)
 {
 	var calendar = getCalendar(calendarName);
-	var clockSVG = document.getElementById("clock_"+calendar);
+	var clockSVG = document.getElementById("clock_"+calendarName);
 	
 	var hubX = clockSVG.getAttribute("width")/2.0;
 	var hubY = clockSVG.getAttribute("height")/2.0;	
