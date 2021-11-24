@@ -108,6 +108,8 @@ function createHand(id, count, hubX, hubY, thickness, innerRadius, outerRadius, 
 }
 
 function updateClock(calendar){
+	console.log("updating clock \""+calendar+"\"");
+	
 	var dateTime = getDateTime('Now', calendar);
 	
 	//draw the hands

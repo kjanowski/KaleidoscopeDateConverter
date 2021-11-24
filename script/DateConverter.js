@@ -74,10 +74,6 @@ function setDateTime(which, calendarName, year, month, day, hour, minute, second
 	var srcCalendar = getCalendar(calendarName);
 	var dstCalendar = getCalendar("utd");
 	
-	console.log("converting from \""+srcCalendar.name+"\" to \""+dstCalendar.name+"\"");
-	
-	
-	
 	var after = (year >= 0);
 		
 	//add up the days for all years until now
