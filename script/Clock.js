@@ -38,7 +38,7 @@ function updateClock(calendarName)
 	
 	
 	//draw the ticks ------------------------------------
-	var hourRadius = radius*0.5;
+	var hourRadius = radius*0.65;
 	var minuteRadius = radius*0.75;
 	var secondRadius = radius*0.85;
 	var outerTickRadius = radius*0.9;
@@ -76,7 +76,7 @@ function createTicks(id, hubX, hubY, tickCount, innerRadius, outerRadius, thickn
 	
 	for(let i=0; i<tickCount; i++)
 	{
-		var tickAngle = i* secondStep;
+		var tickAngle = i* secondStep + Math.PI*0.5;
 		
 		var tickCos = Math.cos(tickAngle);
 		var tickSin = Math.sin(tickAngle);
@@ -101,7 +101,7 @@ function createTicks(id, hubX, hubY, tickCount, innerRadius, outerRadius, thickn
 
 function createHand(id, count, maxCount, hubX, hubY, thickness, innerRadius, outerRadius, color)
 {
-	var angle = 2*Math.PI/maxCount*count;
+	var angle = 2*Math.PI/maxCount*count + Math.PI*0.5;
 	
 	var handCos = Math.cos(angle);
 	var handSin = Math.sin(angle);
@@ -125,7 +125,7 @@ function createHands(hubX, hubY, calendarName){
 	var radius = Math.min(hubX, hubY);
 	
 	var innerRadius = radius*0.025;
-	var hourRadius = radius*0.5;
+	var hourRadius = radius*0.65;
 	var minuteRadius = radius*0.75;
 	var secondRadius = radius*0.9;
 	
