@@ -1,4 +1,4 @@
-*
+/*
 	Copyright Kathrin Janowski (https://www.kathrinjanowski.com/en/home), 2020-2021.
   
 	This program is free software: you can redistribute it and/or modify
