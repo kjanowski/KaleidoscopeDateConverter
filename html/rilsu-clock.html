@@ -80,7 +80,10 @@
 				<input type="number" id="minute_rilsu" name="minute_rilsu" min="0" max="63" value="56">:
 				<input type="number" id="second_rilsu" name="second_rilsu" min="0" max="63" value="41">
 			</form>
-			<button id="setRilsu" onclick="submitInputs('Now','rilsu');updateClock();">set Rilsu time</button>	
+			<button id="setRilsu" onclick="submitInputs('Now','rilsu');updateClock();">set Rilsu time</button>
+			<div class="anim-control">
+				<button id="toggleClock" onclick="toggleClock('rilsu')">►</button> 
+			</div>			
 		</div>
 		<div class="about">
 			<div class="trigger">About this converter...</div>
@@ -97,7 +100,7 @@
 	<script>
 		loadCalendarConfig('../config/CalendarConfig_Kaleidoscope.json');
 		createClock('rilsu');
-		startClock('rilsu');
+		toggleClock('rilsu');
 	</script>
 </body>
 </html>

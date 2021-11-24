@@ -144,20 +144,13 @@ function advanceClock(){
 }
 
 
-function startClock(calendar)
+function toggleClock(calendar)
 {
 	if(clockAnimator == undefined)
 	{
 		animatedClock = calendar;
 		clockAnimator = setInterval(advanceClock, 20);
-	}
-	
-	createClock();
-}
-
-function stopClock()
-{
-	if(clockAnimator != undefined)
+	}else
 	{
 		clearInterval(animator);
 		clockAnimator = undefined;
