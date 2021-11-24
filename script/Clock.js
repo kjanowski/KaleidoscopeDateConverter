@@ -89,9 +89,9 @@ function createTicks(id, hubX, hubY, tickCount, innerTickRadius, outerTickRadius
 	return svgElement;
 }
 
-function createHand(id, count, hubX, hubY, thickness, innerRadius, outerRadius, color)
+function createHand(id, calendar, count, maxCount, hubX, hubY, thickness, innerRadius, outerRadius, color)
 {
-	var angle = 2*Math.PI*count;
+	var angle = 2*Math.PI*count/maxCount;
 	
 	var handCos = Math.cos(angle);
 	var handSin = Math.sin(angle);
@@ -107,14 +107,16 @@ function createHand(id, count, hubX, hubY, thickness, innerRadius, outerRadius, 
 	return svgElement;
 }
 
-function updateClock(calendar){
-	console.log("updating clock \""+calendar+"\"");
+function updateClock(calendarName){
+	console.log("updating clock \""+calendarName+"\"");
 	
-	var dateTime = getDateTime('Now', calendar);
+	
+	var dateTime = getDateTime('Now', calendarName);
+	var calendar = getCalendar(calendarName);
 	
 	//draw the hands
-	var clockSVG = document.getElementById("clock_"+calendar);
-	var handsGroup = document.getElementById("hands_"+calendar);
+	var clockSVG = document.getElementById("clock_"+calendarName);
+	var handsGroup = document.getElementById("hands_"+calendarName);
 	
 	var hubX = clockSVG.width/2.0;
 	var hubY = clockSVG.height/2.0;
@@ -125,25 +127,25 @@ function updateClock(calendar){
 	var minuteRadius = radius*0.75;
 	var secondRadius = radius*0.95;
 	
-	var hands = createHand("hourHand", dateTime.hour, hubX, hubY, 10, innerRadius, hourRadius, "black");
+	var hands = createHand("hourHand", dateTime.hour, calendar.locHoursPerDay, hubX, hubY, 10, innerRadius, hourRadius, "black");
 	hands = hands + 
-		createHand("minuteHand", dateTime.minute, hubX, hubY, 10, innerRadius, minuteRadius, "gray");
+		createHand("minuteHand", dateTime.minute, calendar.minutesPerHour, hubX, hubY, 10, innerRadius, minuteRadius, "gray");
 	hands = hands + 
-		createHand("secondHand", dateTime.second, hubX, hubY, 10, innerRadius, secondRadius, "lightGray");
+		createHand("secondHand", dateTime.second, calendar.secondsPerMinute, hubX, hubY, 10, innerRadius, secondRadius, "lightGray");
 	
 	handsGroup.innerHTML = hands;
 }
 
 
 function advanceClock(){
-	var calendar= getCalendar(animatedClock);
+	var calendar = getCalendar(animatedClock);
 	var timeStep = 0.02 * (calendar.minutesPerHour*calendar.secondsPerMinute)
 						/ (3600.0);
 
 	times['Now'] = times['Now'] + timeStep;
 
 	updateAllInputs('Now');
-	updateClock(calendar);
+	updateClock(animatedClock);
 }
 
 
