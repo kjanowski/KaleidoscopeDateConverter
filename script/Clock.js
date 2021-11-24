@@ -107,7 +107,7 @@ function advanceClock(){
 
 function startClock(calendar)
 {
-	if(animator == undefined)
+	if(clockAnimator == undefined)
 	{
 		animatedClock = calendar;
 		clockAnimator = setInterval(advanceClock, 20);
