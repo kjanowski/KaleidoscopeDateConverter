@@ -23,8 +23,8 @@ function createClock(calendar)
 {
 	var clockSVG = document.getElementById("clock_"+calendar);
 	
-	var hubX = clockSVG.width/2.0;
-	var hubY = clockSVG.height/2.0;	
+	var hubX = clockSVG.getAttribute("width")/2.0;
+	var hubY = clockSVG.getAttribute("height")/2.0;	
 	
 	
 	//create the clock face
