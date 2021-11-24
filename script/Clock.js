@@ -19,6 +19,23 @@ var clockAnimator = undefined;
 var animatedClock = undefined;
 
 
+function initClocks(calendarURL, clockNames)
+{
+	var xmlhttp = new XMLHttpRequest();
+
+	xmlhttp.onreadystatechange = function() {
+		if (this.readyState == 4 && this.status == 200) {
+			initCalendars(this.responseText);
+			for(clockName of clockNames)
+				createClock(clockName);
+		}
+	};
+	xmlhttp.open("GET", calendarConfigURL, true);
+	xmlhttp.send();
+}
+
+
+
 function createClock(calendarName)
 {
 	var calendar = getCalendar(calendarName);
