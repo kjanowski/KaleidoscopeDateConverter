@@ -130,9 +130,9 @@ function createHands(hubX, hubY, calendarName){
 	var hands = 
 		createHand("hourHand", dateTime.hour, calendar.locHoursPerDay, hubX, hubY, 10, innerRadius, hourRadius, "black");
 	hands = hands + 
-		createHand("minuteHand", dateTime.minute, calendar.minutesPerHour, hubX, hubY, 10, innerRadius, minuteRadius, "gray");
+		createHand("minuteHand", dateTime.minute, calendar.minutesPerHour, hubX, hubY, 5, innerRadius, minuteRadius, "gray");
 	hands = hands + 
-		createHand("secondHand", dateTime.second, calendar.secondsPerMinute, hubX, hubY, 10, innerRadius, secondRadius, "lightGray");
+		createHand("secondHand", dateTime.second, calendar.secondsPerMinute, hubX, hubY, 2, innerRadius, secondRadius, "lightGray");
 	
 	return hands;
 }
