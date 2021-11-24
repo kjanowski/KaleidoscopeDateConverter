@@ -123,9 +123,6 @@ function createHands(calendarName){
 	var calendar = getCalendar(calendarName);
 	
 	//draw the hands
-	var clockSVG = document.getElementById("clock_"+calendarName);
-	var handsGroup = document.getElementById("hands_"+calendarName);
-	
 	var hubX = clockSVG.width/2.0;
 	var hubY = clockSVG.height/2.0;
 	var radius = Math.min(hubX, hubY);
@@ -141,7 +138,7 @@ function createHands(calendarName){
 	hands = hands + 
 		createHand("secondHand", dateTime.second, calendar.secondsPerMinute, hubX, hubY, 10, innerRadius, secondRadius, "lightGray");
 	
-	handsGroup.innerHTML = hands;
+	return hands;
 }
 
 

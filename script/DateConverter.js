@@ -55,7 +55,6 @@ function initCalendars(json){
 			calendar.offsetUTD = calendar.rawOffsetUTD*offsetFactor;
 		else calendar.offsetUTD = 0.0;
 	}
-	console.log("Calendars loaded: "+calendarNames);
 }
 
 function getCalendar(calendarName){
