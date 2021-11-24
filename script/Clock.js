@@ -19,95 +19,77 @@ var clockAnimator = undefined;
 var animatedClock = undefined;
 
 
-function updateClock(calendar){
-	var dateTime = getDateTime('Now', planet.calendar);
-	
-	var c = document.getElementById("clock_"+calendar);
-	var canvasWidth = c.width;
-	var canvasHeight = c.height;
+function createClock(calendar)
+{
+	var clockSVG = document.getElementById("clock_"+calendar);
 	
 	var hubX = canvasWidth/2.0;
 	var hubY = canvasWidth/2.0;	
 	
-	//draw the clock face
-	var faceRadius = hubX*0.95;
-	ctx.fillStyle = '#ffffff';
 	
-	ctx.beginPath();
-	ctx.arc(hubX, hubY, faceRadius, 0, 2 * Math.PI);
-	ctx.fill();
+	//create the clock face
+	var faceRadius = hubX*0.95;
+	
+	//create the clock face
+	clockSVG.innerHTML =
+		"<circle cx=\""+hubX+"\" cy=\""+hubY+"\" r=\""+faceRadius+"\" fill=\"white\"/>";	
+	
 	
 	//draw the ticks ------------------------------------
 	var innerTickRadius = hubX*0.8;
 	var outerTickRadius = hubX*0.85;
 	
 	//draw the second ticks
-	var secondStep = 2*Math.PI*calendar.secondsPerMinute;
-	ctx.strokeStyle = '#888888';
+	clockSVG.innerHTML = clockSVG.innerHTML +
+		createTicks("secondTicks", calendar.secondsPerMinute,
+					innerTickRadius, outerTickRadius, "lightGray");	
+
+	//draw the minutes ticks
+	clockSVG.innerHTML = clockSVG.innerHTML +
+		createTicks("minuteTicks", calendar.minutesPerHour,
+					innerTickRadius, outerTickRadius, "gray");	
+
+	//draw the hour ticks
+	clockSVG.innerHTML = clockSVG.innerHTML +
+		createTicks("hourTicks", calendar.locHoursPerDay,
+					innerTickRadius, outerTickRadius, "black");	
+
 	
-	for(let i=0; i<calendar.secondsPerMinute; i++)
+	//draw the hub
+	var hubRadius = hubX*0.05;
+	clockSVG.innerHTML = clockSVG.innerHTML +
+		"<circle cx=\""+hubX+"\" cy=\""+hubY+"\" r=\""+hubRadius+"\" fill=\"black\"/>";	
+}
+
+function createTicks(id, tickCount, innerTickRadius, outerTickRadius, color)
+{
+	var svgElement = "<g id=\""+id+"\">";	
+
+	var secondStep = 2*Math.PI*tickCount;
+	
+	for(let i=0; i<tickCount; i++)
 	{
 		var tickAngle = i* secondStep;
 		
 		var tickCos = Math.cos(tickAngle);
 		var tickSin = Math.sin(tickAngle);
-		
-		ctx.beginPath();
-		ctx.moveTo(hubX+tickCos*innerTickRadius,
-				   hubY+tickSin*innerTickRadius);
-		ctx.lineTo(hubX+tickCos*outerTickRadius,
-				   hubY+tickSin*outerTickRadius);
-		ctx.stroke();		   
+		svgElement = svgElement +
+			"<line x1=\""+(hubX+tickCos*innerTickRadius)
+				+"\" y1=\""+(hubY+tickSin*innerTickRadius)
+				+"\" x2=\""+(hubX+tickCos*outerTickRadius)
+				+"\" y2=\""+(hubY+tickSin*outerTickRadius)
+				+"\" stroke=\""+color+"\"/>";	
 	}
 	
+	svgElement = svgElement + "</g>";
 	
-	//draw the minute ticks
-	var minuteStep = 2*Math.PI*calendar.minutesPerHour;
-	ctx.strokeStyle = '#444444';
+	return svgElement;
+}
+
+function updateClock(calendar){
+	var dateTime = getDateTime('Now', planet.calendar);
 	
-	for(let i=0; i<calendar.minutesPerHour; i++)
-	{
-		var tickAngle = i* minuteStep;
-		
-		var tickCos = Math.cos(tickAngle);
-		var tickSin = Math.sin(tickAngle);
-		
-		ctx.beginPath();
-		ctx.moveTo(hubX+tickCos*innerTickRadius,
-				   hubY+tickSin*innerTickRadius);
-		ctx.lineTo(hubX+tickCos*outerTickRadius,
-				   hubY+tickSin*outerTickRadius);
-		ctx.stroke();		   
-	}
-		
-	
-	//draw the hour ticks
-	var hourStep = 2*Math.PI*calendar.locHoursPerDay;
-	ctx.strokeStyle = '#222222';
-	
-	for(let i=0; i<calendar.locHoursPerDay; i++)
-	{
-		var tickAngle = i* hourStep;
-		
-		var tickCos = Math.cos(tickAngle);
-		var tickSin = Math.sin(tickAngle);
-		
-		ctx.beginPath();
-		ctx.moveTo(hubX+tickCos*innerTickRadius,
-				   hubY+tickSin*innerTickRadius);
-		ctx.lineTo(hubX+tickCos*outerTickRadius,
-				   hubY+tickSin*outerTickRadius);
-		ctx.stroke();		   
-	}
-	
-	
-	//draw the hub
-	var hubRadius = hubX*0.05;
-	ctx.fillStyle = '#000000';
-	
-	ctx.beginPath();
-	ctx.arc(hubX, hubY, hubRadius, 0, 2 * Math.PI);
-	ctx.fill();
+	//todo move the hands
 }
 
 
@@ -130,6 +112,8 @@ function startClock(calendar)
 		animatedClock = calendar;
 		clockAnimator = setInterval(advanceClock, 20);
 	}
+	
+	createClock();
 }
 
 function stopClock()
