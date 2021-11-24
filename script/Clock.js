@@ -70,7 +70,7 @@ function createTicks(id, hubX, hubY, tickCount, innerRadius, outerRadius, color)
 {
 	var svgElement = "<g id=\""+id+"\">";	
 
-	var secondStep = 2*Math.PI*tickCount;
+	var secondStep = 2*Math.PI/tickCount;
 	
 	for(let i=0; i<tickCount; i++)
 	{
