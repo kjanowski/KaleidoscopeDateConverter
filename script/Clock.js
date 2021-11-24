@@ -55,13 +55,22 @@ function createClock(calendar)
 					innerTickRadius, outerTickRadius, "black");	
 
 	
-	//draw the hub
+	//draw the hands -------------------------------------
 	var hubRadius = hubX*0.05;
+	
+	clockSVG.innerHTML = clockSVG.innerHTML + 
+		createHand("hourHand", 10, hubRadius, innerTickRadius, "black");
+	clockSVG.innerHTML = clockSVG.innerHTML + 
+		createHand("minuteHand", 10, hubRadius, innerTickRadius, "gray");
+	clockSVG.innerHTML = clockSVG.innerHTML + 
+		createHand("secondHand", 10, hubRadius, innerTickRadius, "lightGray");
+	
+	//draw the hub
 	clockSVG.innerHTML = clockSVG.innerHTML +
 		"<circle cx=\""+hubX+"\" cy=\""+hubY+"\" r=\""+hubRadius+"\" fill=\"black\"/>";	
 }
 
-function createTicks(id, tickCount, innerTickRadius, outerTickRadius, color)
+function createTicks(id, hubX, hubY, tickCount, innerTickRadius, outerTickRadius, color)
 {
 	var svgElement = "<g id=\""+id+"\">";	
 
@@ -82,6 +91,19 @@ function createTicks(id, tickCount, innerTickRadius, outerTickRadius, color)
 	}
 	
 	svgElement = svgElement + "</g>";
+	
+	return svgElement;
+}
+
+function createHand(id, hubX, hubY, thickness, innerRadius, outerRadius, color)
+{
+	var svgElement = "<line id=\""+id
+				+"\" x1=\""+hubX
+				+"\" y1=\""+hubY+innerRadius
+				+"\" x2=\""+hubX
+				+"\" y2=\""+hubY+outerRadius
+				+"\" style=\"stroke:\""+color+";stroke-width:\""+thickness+"\"/>";	
+	}
 	
 	return svgElement;
 }
