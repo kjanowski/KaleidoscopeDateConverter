@@ -99,6 +99,7 @@ function createTicks(id, hubX, hubY, tickCount, innerRadius, outerRadius, color)
 
 function createHand(id, count, maxCount, hubX, hubY, thickness, innerRadius, outerRadius, color)
 {
+	console.log("creating "+id+"...");
 	var angle = 2*Math.PI/maxCount*count;
 	
 	var handCos = Math.cos(angle);
@@ -112,6 +113,7 @@ function createHand(id, count, maxCount, hubX, hubY, thickness, innerRadius, out
 	var svgElement = "<line id=\""+id+"\" x1=\""+startX+"\" y1=\""+startY
 				+"\" x2=\""+endX+"\" y2=\""+endY+"\" style=\"stroke:"+color+";stroke-width:"+thickness+"/>";	
 	
+	console.log(svgElement);
 	return svgElement;
 }
 
