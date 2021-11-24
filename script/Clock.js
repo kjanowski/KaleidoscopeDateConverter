@@ -147,13 +147,17 @@ function advanceClock(){
 
 function toggleClock(calendar)
 {
+	var btn = document.getElementById("toggleClock")
+	
 	if(clockAnimator == undefined)
 	{
 		animatedClock = calendar;
 		clockAnimator = setInterval(advanceClock, 20);
+		btn.innerHTML = "||";
 	}else
 	{
-		clearInterval(animator);
+		clearInterval(clockAnimator);
 		clockAnimator = undefined;
+		btn.innerHTML = "►";
 	}
 }
