@@ -40,23 +40,23 @@ function updateClock(calendarName)
 	//draw the ticks ------------------------------------
 	var hourRadius = radius*0.5;
 	var minuteRadius = radius*0.75;
-	var secondRadius = radius*0.9;
-	var outerTickRadius = radius*0.85;
+	var secondRadius = radius*0.85;
+	var outerTickRadius = radius*0.9;
 	
 	//draw the second ticks
 	clockSVG.innerHTML = clockSVG.innerHTML +
 		createTicks("secondTicks", hubX, hubY, calendar.secondsPerMinute,
-					secondRadius, outerTickRadius, "lightGray");	
+					secondRadius, outerTickRadius, 1, "lightGray");	
 
 	//draw the minutes ticks
 	clockSVG.innerHTML = clockSVG.innerHTML +
 		createTicks("minuteTicks", hubX, hubY, calendar.minutesPerHour,
-					minuteRadius, outerTickRadius, "gray");	
+					minuteRadius, outerTickRadius, 2, "gray");	
 
 	//draw the hour ticks
 	clockSVG.innerHTML = clockSVG.innerHTML +
 		createTicks("hourTicks", hubX, hubY, calendar.locHoursPerDay,
-					hourRadius, outerTickRadius, "black");	
+					hourRadius, outerTickRadius, 5, "black");	
 
 	
 	//draw the hands -------------------------------------
@@ -68,7 +68,7 @@ function updateClock(calendarName)
 		"<circle cx=\""+hubX+"\" cy=\""+hubY+"\" r=\""+hubRadius+"\" fill=\"black\"/>";	
 }
 
-function createTicks(id, hubX, hubY, tickCount, innerRadius, outerRadius, color)
+function createTicks(id, hubX, hubY, tickCount, innerRadius, outerRadius, thickness, color)
 {
 	var svgElement = "<g id=\""+id+"\">";	
 
@@ -91,7 +91,7 @@ function createTicks(id, hubX, hubY, tickCount, innerRadius, outerRadius, color)
 				+"\" y1=\""+startY
 				+"\" x2=\""+endX
 				+"\" y2=\""+endY
-				+"\" stroke=\""+color+"\"/>";	
+				+"\" style=\"stroke:"+color+";stroke-width:"+thickness+"\"/>";	
 	}
 	
 	svgElement = svgElement + "</g>";
