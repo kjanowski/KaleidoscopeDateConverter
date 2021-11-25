@@ -23,6 +23,8 @@
 var times = {}
 times["Now"] = 0.0;
 times["Then"] = 0.0;
+times["Duration"] = 0.0;
+
 
 var calendarConfig = undefined;
 
