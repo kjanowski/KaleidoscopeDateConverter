@@ -1,0 +1,37 @@
+.about{
+	padding:10px;
+	top:420px;
+	position:absolute;
+	height:20px;
+	width:317px;
+	background:lightGray;
+	z-index:1;
+	vertical-align:bottom;
+}
+
+
+.about .trigger{
+	height:20px;
+	opacity:1.0;
+}
+
+.about:hover .trigger{
+	opacity:0.25;
+}
+
+.about .show-on-hover{
+	display:none;
+	width:317px;
+	height:280px;
+	margin:0px;
+	padding:10px;
+	background:lightGray;
+}
+
+.about:hover .show-on-hover{
+	display:inline-block;
+	box-shadow:0px 0px 30px black;
+	position:absolute;
+	top:-300px;
+	left:0px;
+}
