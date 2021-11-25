@@ -27,7 +27,7 @@
 	
   -->
 <head>
-	<title>Duration converter for the Nimýric Empire</title>
+	<title>Duration converters for Rilsu World Republic</title>
 	<script src="../script/DateConverter.js"></script>
 	<link rel="icon" href="../img/favicon_kaleidechse_57x57.png" type="image/png">
 	<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Oregano'>
@@ -37,19 +37,19 @@
 </head>
 <body>
 	<div class="kaleidoscope page narrow short">
-		<div class="panel nimyric toolshelf-section upper" id="inputs_nimyric">
-			<h2>Nimýric Empire</h2>
+		<div class="panel rilsu toolshelf-section upper" id="inputs_rilsu">
+			<h2>Rilsu World Republic</h2>
 			<form>
 				<label>years:</label>
-				<input class="year" type="number" id="year_nimyric" name="year_nimyric" min="0" value="0">
+				<input class="year" type="number" id="year_rilsu" name="year_rilsu" min="0" value="0">
 				<label>days:</label>
-				<input type="number" id="day_nimyric" name="day_nimyric" min="0" value="0">
+				<input type="number" id="day_rilsu" name="day_rilsu" min="0" value="0">
 				<br><label>time:</label>
-				<input class="hour" type="number" id="hour_nimyric" name="hour_nimyric" min="0" max="29" value="0">:
-				<input type="number" id="minute_nimyric" name="minute_nimyric" min="0" max="59" value="0">:
-				<input type="number" id="second_nimyric" name="second_nimyric" min="0" max="59" value="0">
+				<input class="hour" type="number" id="hour_rilsu" name="hour_rilsu" min="0" max="29" value="0">:
+				<input type="number" id="minute_rilsu" name="minute_rilsu" min="0" max="59" value="0">:
+				<input type="number" id="second_rilsu" name="second_rilsu" min="0" max="59" value="0">
 			</form>
-			<button id="setNimyric" onclick="submitDurationInputs('nimyric');updateDurationInputs('utd');">set Nimýric duration</button>	
+			<button id="setRilsu" onclick="submitDurationInputs('rilsu');updateDurationInputs('utd');">set Nimýric duration</button>	
 		</div>
 		<div class="panel utd toolshelf-section lower" id="inputs_utd">
 		<h2>UTD</h2>
@@ -63,7 +63,7 @@
 				<input type="number" id="minute_utd" name="minute_utd" min="0" max="59" value="0">:
 				<input type="number" id="second_utd" name="second_utd" min="0" max="59" value="0">
 			</form>
-			<button id="setUTD" onclick="submitDurationInputs('utd');updateDurationInputs('nimyric');">set UTD duration</button>
+			<button id="setUTD" onclick="submitDurationInputs('utd');updateDurationInputs('rilsu');">set UTD duration</button>
 		</div>
 		
 		<div class="about">
