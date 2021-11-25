@@ -154,6 +154,10 @@ hr{
 	margin-right:auto;
 }
 
+.narrow.short .toolshelf-section{
+	height:125px;
+}
+
 .narrow .toolshelf-section.upper{
 	margin-top:10px;
 	margin-bottom:0px;

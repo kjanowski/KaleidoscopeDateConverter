@@ -31,12 +31,12 @@
 	<script src="../script/DateConverter.js"></script>
 	<link rel="icon" href="../img/favicon_kaleidechse_57x57.png" type="image/png">
 	<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Oregano'>
-	<link rel="stylesheet" type="text/css" href="../style/about_top_wide.css">
+	<link rel="stylesheet" type="text/css" href="../style/about_bottom_narrow.css">
 	<link rel="stylesheet" type="text/css" href="../style/layout.css">
 	<link rel="stylesheet" type="text/css" href="../style/theme_Kaleidoscope.css">
 </head>
 <body>
-	<div class="kaleidoscope page narrow">
+	<div class="kaleidoscope page narrow short">
 		<div class="panel nimyric toolshelf-section upper" id="inputs_nimyric">
 			<h2>Nimýric Empire</h2>
 			<form>
@@ -49,7 +49,7 @@
 				<input type="number" id="minute_nimyric" name="minute_nimyric" min="0" max="59" value="0">:
 				<input type="number" id="second_nimyric" name="second_nimyric" min="0" max="59" value="0">
 			</form>
-			<button id="setNimyric" onclick="submitDurationInputs('nimyric');updateDurationInputs('utd');"> Nimýric end time</button>	
+			<button id="setNimyric" onclick="submitDurationInputs('nimyric');updateDurationInputs('utd');">set Nimýric duration</button>	
 		</div>
 		<div class="panel utd toolshelf-section lower" id="inputs_utd">
 		<h2>UTD</h2>
@@ -63,7 +63,7 @@
 				<input type="number" id="minute_utd" name="minute_utd" min="0" max="59" value="0">:
 				<input type="number" id="second_utd" name="second_utd" min="0" max="59" value="0">
 			</form>
-			<button id="setUTD" onclick="submitDurationInputs('utd');updateDurationInputs('nimyric');">UTD end time</button>
+			<button id="setUTD" onclick="submitDurationInputs('utd');updateDurationInputs('nimyric');">set UTD duration</button>
 		</div>
 		
 		<div class="about">
