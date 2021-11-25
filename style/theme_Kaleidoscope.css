@@ -93,6 +93,11 @@ a:hover{
    outer containers
   ----------------------------------------------*/
 
+.page.short.kaleidoscope{
+	height:450px;
+}
+
+
 .page.framed.kaleidoscope{
 	border-image: var(--generic-border-img);
 	background:var(--generic-page-color);
@@ -150,6 +155,10 @@ a:hover{
 
 .kaleidoscope.narrow .toolshelf-section{
 	height: 255px;
+}
+
+.kaleidoscope.narrow.short .toolshelf-section{
+	height: 145px;
 }
 
 .kaleidoscope.narrow .toolshelf-section.lower{

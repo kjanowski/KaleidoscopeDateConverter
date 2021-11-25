@@ -66,6 +66,10 @@ hr{
 	margin-top:0px;
 }
 
+.page.narrow.short{
+	height:450px;
+}
+
 .page .page-row{
 	display:inline-block;
 	width:100%;
@@ -155,7 +159,7 @@ hr{
 }
 
 .narrow.short .toolshelf-section{
-	height:125px;
+	height:115px;
 }
 
 .narrow .toolshelf-section.upper{
