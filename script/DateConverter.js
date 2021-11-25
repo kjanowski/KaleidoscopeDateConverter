@@ -380,8 +380,8 @@ function submitDurationInputs(calendarName){
 	var second = document.getElementById('second_'+calendarName).value *1.0;
 	
 	//set the date in the selected calendar
-	setDateTime('Then', calendarName, 0, 0, 0, 0, 0, 0);
-	setDateTime('Now', calendarName, year, 0, day, hour, minute, second);
+	setDateTime('Then', calendarName, 0, 1, 1, 0, 0, 0);
+	setDateTime('Now', calendarName, year, 1, 1+day, hour, minute, second);
 }
 
 
