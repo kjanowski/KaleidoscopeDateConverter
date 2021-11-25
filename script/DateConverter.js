@@ -134,9 +134,9 @@ function getDateTime(which, calendarName)
 }
 
 
-function getDeltaTime(calendarName)
+function getDeltaTime(startTime, endTime, calendarName)
 {
-	var deltaStdSec = Math.abs(times["Now"] - times["Then"]);
+	var deltaStdSec = Math.abs(times[endTime] - times[startTime]);
 	return getConvertedTime(calendarName, deltaStdSec);
 }
 
@@ -321,7 +321,7 @@ function updateDisplay(calendarName){
 					+dateTimeThen.day+"<br>"+getTimeText(dateTimeThen);	
 	document.getElementById("output-"+calendarName+"-then").innerHTML = textThen;
 
-	var deltaTime = getDeltaTime(calendarName);
+	var deltaTime = getDeltaTime("Then", "Now", calendarName);
 	
 	var timeDiff = ""+deltaTime.hour+":";
 	if(deltaTime.minute < 10)
@@ -380,7 +380,8 @@ function submitDurationInputs(calendarName){
 	var second = document.getElementById('second_'+calendarName).value *1.0;
 	
 	//set the date in the selected calendar
-	setDateTime('Delta', calendarName, year, 1, day, hour, minute, second);
+	setDateTime('Then', calendarName, 0, 1, 1, 0, 0, 0);
+	setDateTime('Now', calendarName, year, 1, day, hour, minute, second);
 }
 
 
@@ -426,7 +427,7 @@ function updateInputs(which, calendarName){
 }
 
 function updateDurationInputs(calendarName){
-	var dateTime = getDateTime("Delta", calendarName);
+	var dateTime = getDeltaTime("Then", "Now", calendarName);
 	
 	//check whether inputs for this calendar are present
 	if(document.getElementById('inputs_'+calendarName) != undefined){
