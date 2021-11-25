@@ -446,7 +446,7 @@ function updateDurationInputs(calendarName){
 	
 		document.getElementById('year_'+calendarName).value = ""+dateTime.year;
 			
-		document.getElementById('day_'+calendarName).value = ""+dateTime.day;
+		document.getElementById('day_'+calendarName).value = ""+dateTime.day-1;
 		document.getElementById('hour_'+calendarName).value = ""+dateTime.hour;
 		document.getElementById('minute_'+calendarName).value = ""+dateTime.minute;
 		document.getElementById('second_'+calendarName).value = ""+dateTime.second;
