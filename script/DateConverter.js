@@ -387,7 +387,7 @@ function submitDurationInputs(calendarName){
 	var second = document.getElementById('second_'+calendarName).value *1.0;
 	
 	//set the date in the selected calendar
-	time["Duration"] = convertToStdSeconds(calendarName, year, day, hour, minute, second);
+	times["Duration"] = convertToStdSeconds(calendarName, year, day, hour, minute, second);
 }
 
 
@@ -433,7 +433,7 @@ function updateInputs(which, calendarName){
 }
 
 function updateDurationInputs(calendarName){
-	var dateTime = getConvertedTime("Duration", calendarName);
+	var dateTime = getConvertedTime(calendarName, times["Duration"]);
 	
 	//check whether inputs for this calendar are present
 	if(document.getElementById('inputs_'+calendarName) != undefined){
