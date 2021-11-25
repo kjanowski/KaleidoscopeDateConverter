@@ -124,6 +124,8 @@ function convertToStdSeconds(calendarName, year, month, day, hour, minute, secon
 
 function setDateTime(which, calendarName, year, month, day, hour, minute, second){
 	var standardSeconds = convertToStdSeconds(calendarName, year, month, day, hour, minute, second);
+	var srcCalendar = getCalendar(calendarName);
+	
 	times[which] = standardSeconds + srcCalendar.offsetUTD;
 }
 
