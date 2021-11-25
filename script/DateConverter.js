@@ -371,6 +371,19 @@ function submitInputs(which, calendarName){
 	setDateTime('Now', calendarName, year, month, day, hour, minute, second);
 }
 
+function submitDurationInputs(calendarName){
+	//get the values and convert them to numbers
+	var year = document.getElementById('year_'+calendarName).value *1.0;
+	var day = document.getElementById('day_'+calendarName).value *1.0;
+	var hour = document.getElementById('hour_'+calendarName).value *1.0;
+	var minute = document.getElementById('minute_'+calendarName).value *1.0;
+	var second = document.getElementById('second_'+calendarName).value *1.0;
+	
+	//set the date in the selected calendar
+	setDateTime('Delta', calendarName, year, 1, day, hour, minute, second);
+}
+
+
 function limitInputs(calendarName)
 {
 	var yearInput = document.getElementById('year_'+calendarName);
@@ -411,6 +424,23 @@ function updateInputs(which, calendarName){
 		limitInputs(calendarName);
 	}
 }
+
+function updateDurationInputs(calendarName){
+	var dateTime = getDateTime("Delta", calendarName);
+	
+	//check whether inputs for this calendar are present
+	if(document.getElementById('inputs_'+calendarName) != undefined){
+	
+		document.getElementById('year_'+calendarName).value = ""+dateTime.year;
+			
+		document.getElementById('day_'+calendarName).value = ""+dateTime.day;
+		document.getElementById('hour_'+calendarName).value = ""+dateTime.hour;
+		document.getElementById('minute_'+calendarName).value = ""+dateTime.minute;
+		document.getElementById('second_'+calendarName).value = ""+dateTime.second;
+	}
+}
+
+
 
 function updateAllInputs(which){
 	for(calendarName of calendarConfig.calendarNames)
