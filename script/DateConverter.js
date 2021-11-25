@@ -389,7 +389,7 @@ function submitDurationInputs(calendarName){
 	var second = document.getElementById('second_'+calendarName).value *1.0;
 	
 	//set the date in the selected calendar
-	times["Duration"] = convertToStdSeconds(calendarName, year, day, hour, minute, second);
+	times["Duration"] = convertToStdSeconds(calendarName, year, 1, day, hour, minute, second);
 	console.log("Duration: "+times["Duration"])
 }
 
