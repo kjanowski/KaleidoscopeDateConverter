@@ -59,7 +59,7 @@
 			"minutesPerHour": 80.0,
 			"locHoursPerDay": 200.0,
 			"stdHoursPerDay": 154.0,
-			"monthNames": ["The Phase Formerly Known As The Phase Of Greatest Power", "The Phase Formerly Known As The Phase Of Waning Power", "The Phase Formerly Known As The Phase Of Power Loss", "The Phase Formerly Known As The Phase Of Waxing Power"],
+			"monthNames": ["The Phase Of Greatest Power", "The Phase Of Waning Power", "The Phase Of Power Loss", "The Phase Of Waxing Power"],
 			"monthLength": [50,50,55,50],
 			"daysPerYear": 205.0,
 			"eraBefore": "Before The Hive",
