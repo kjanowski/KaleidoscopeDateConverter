@@ -285,6 +285,10 @@ a:hover{
 	background:var(--generic-darker-color);
 }
 
+.narrow .about{
+	top:380px;
+}
+
 /*----------------------------------------------
    link blocks
   ----------------------------------------------*/
