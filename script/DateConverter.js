@@ -381,7 +381,7 @@ function submitDurationInputs(calendarName){
 	
 	//set the date in the selected calendar
 	setDateTime('Then', calendarName, 0, 1, 1, 0, 0, 0);
-	setDateTime('Now', calendarName, year, 1, 1+day, hour, minute, second);
+	setDateTime('Now', calendarName, year, 1, day, hour, minute, second);
 }
 
 
