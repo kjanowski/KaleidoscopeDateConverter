@@ -69,7 +69,7 @@ function getCalendar(calendarName){
 //=================================================================
 
 
-function setDateTime(which, calendarName, year, month, day, hour, minute, second){
+function convertToStdSeconds(calendarName, year, month, day, hour, minute, second){
 	
 	var srcCalendar = getCalendar(calendarName);
 	var dstCalendar = getCalendar("utd");
@@ -118,7 +118,12 @@ function setDateTime(which, calendarName, year, month, day, hour, minute, second
 						* dstCalendar.secondsPerMinute; //current value: standard seconds
 	
 	//shift relative to standard time ---------------------------
-	
+	return standardSeconds;
+}
+
+
+function setDateTime(which, calendarName, year, month, day, hour, minute, second){
+	var standardSeconds = convertToStdSeconds(calendarName, year, month, day, hour, minute, second);
 	times[which] = standardSeconds + srcCalendar.offsetUTD;
 }
 
@@ -380,8 +385,7 @@ function submitDurationInputs(calendarName){
 	var second = document.getElementById('second_'+calendarName).value *1.0;
 	
 	//set the date in the selected calendar
-	setDateTime('Then', calendarName, 0, 1, 1, 0, 0, 0);
-	setDateTime('Now', calendarName, year, 1, day, hour, minute, second);
+	time["Duration"] = convertToStdSeconds(calendarName, year, day, hour, minute, second);
 }
 
 
@@ -427,7 +431,7 @@ function updateInputs(which, calendarName){
 }
 
 function updateDurationInputs(calendarName){
-	var dateTime = getDeltaTime("Then", "Now", calendarName);
+	var dateTime = getConvertedTime("Duration", calendarName);
 	
 	//check whether inputs for this calendar are present
 	if(document.getElementById('inputs_'+calendarName) != undefined){
