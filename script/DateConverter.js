@@ -137,18 +137,18 @@ function getDateTime(which, calendarName)
 	var dstCalendar = getCalendar(calendarName);
 	var standardSeconds = times[which] - dstCalendar.offsetUTD;
 
-	return getConvertedTime(calendarName, standardSeconds);
+	return convertToDateTime(calendarName, standardSeconds);
 }
 
 
 function getDeltaTime(startTime, endTime, calendarName)
 {
 	var deltaStdSec = Math.abs(times[endTime] - times[startTime]);
-	return getConvertedTime(calendarName, deltaStdSec);
+	return convertToDateTime(calendarName, deltaStdSec);
 }
 
 
-function getConvertedTime(calendarName, standardSeconds){
+function convertToDateTime(calendarName, standardSeconds){
 	var srcCalendar = getCalendar("utd");
 	var dstCalendar = getCalendar(calendarName);
 	
@@ -433,7 +433,7 @@ function updateInputs(which, calendarName){
 }
 
 function updateDurationInputs(calendarName){
-	var dateTime = getConvertedTime(calendarName, times["Duration"]);
+	var dateTime = convertToDateTime(calendarName, times["Duration"]);
 	
 	//check whether inputs for this calendar are present
 	if(document.getElementById('inputs_'+calendarName) != undefined){
