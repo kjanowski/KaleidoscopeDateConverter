@@ -285,7 +285,7 @@ a:hover{
 	background:var(--generic-darker-color);
 }
 
-.narrow .about{
+.narrow.short .about{
 	top:380px;
 }
 
