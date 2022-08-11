@@ -55,13 +55,13 @@
 		<button id="setPereqaian" onclick="submitInputs('Now','pereqaian');updateStarSystem();" style="display:inline;width:auto;">set Pereqaian time</button>	
 	</div>		
 	<div class="page kaleidoscope hd">
-		<div class="canvas-container">
-			<canvas class="backdrop" id="starSystem" width="1290" height="800" style="background-position:left; background-size: auto 1500px;">
+		<div class="canvas-container" style="border:none;">
+			<canvas class="backdrop" id="starSystem" width="1290" height="810" style="background-position:left; background-size: auto 1500px;">
 				Your browser does not support the canvas element.
 			</canvas>
 		</div>
 		
-		<div class="panel utd toolshelf-section" id="inputs_utd" style="background:var(--generic-neutral-color);left:var(--inner-border-size);top:var(--inner-border-size);">
+		<div class="panel utd toolshelf-section" id="inputs_utd" style="width:300px;background:var(--generic-neutral-color);left:0px;top:0px;">
 			<h2>Universal Time Date</h2>
 			<form>
 				<input class="year" type="number" id="year_utd" name="year_utd" value="289071">
@@ -91,7 +91,7 @@
 			</form>
 		</div>
 			
-		<div class="panel twk toolshelf-section" id="inputs_twk" style="left:var(--inner-border-size);bottom:0px;">
+		<div class="panel twk toolshelf-section" id="inputs_twk" style="width:300px;left:0px;bottom:0px;">
 			<h2>Those Who Know</h2>
 			<form>
 				<input class="year" type="number" id="year_twk" name="year_twk">
@@ -112,7 +112,7 @@
 				<input type="number" id="second_twk" name="second_twk" min="0" max="49">
 			</form>
 		</div>
-		<div class="panel rilsu toolshelf-section" id="inputs_rilsu" style="right:0px;top:var(--inner-border-size);">
+		<div class="panel rilsu toolshelf-section" id="inputs_rilsu" style="width:260px;right:0px;top:0px;">
 			<h2>Rilsu World Republic</h2>
 			<form>
 				<input class="year" type="number" id="year_rilsu" name="year_rilsu">
@@ -146,7 +146,7 @@
 				<input type="number" id="second_rilsu" name="second_rilsu" min="0" max="63">
 			</form>
 		</div>		
-		<div class="panel nimyric toolshelf-section" id="inputs_nimyric" style="right:0px;bottom:300px;">
+		<div class="panel nimyric toolshelf-section" id="inputs_nimyric" style="width:260px;right:0px;bottom:150px;">
 			<h2>Nimýric Empire</h2>
 			<form>
 				<input class="year" type="number" id="year_nimyric" name="year_nimyric">
@@ -178,7 +178,7 @@
 			</form>
 		</div>
 		
-		<div class="panel pereqaian toolshelf-section" id="inputs_pereqaian" style="right:0px; bottom:0px;">
+		<div class="panel pereqaian toolshelf-section" id="inputs_pereqaian" style="width:260px;right:0px; bottom:0px;">
 			<h2>Pereqaian Alliance</h2>
 			<form>
 				<input class="year" type="number" id="year_pereqaian" name="year_pereqaian">
