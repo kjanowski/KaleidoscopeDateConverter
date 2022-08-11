@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<html>
+<!--
+	Copyright Kathrin Janowski (https://www.kathrinjanowski.com/en/home), 2021.
+  
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <https://www.gnu.org/licenses/>.
+  
+    --------------------------------------
+  
+	Regarding the worldbuilding content: 
+	The specific parameters and names associated with the
+	"nimyric", "pereqaian", "rilsu" and "twk" calendars are not included
+	in the license mentioned above.
+	Further details can be found in the file "readme.md" in the root folder.
+	
+  -->
+<head>
+	<title>Celestial body display for the Kaleidoscope System</title>
+	<script src="../script/DateConverter.js"></script>
+	<script src="../script/CelestialBodies.js"></script>
+	<link rel="icon" href="../img/favicon_kaleidechse_57x57.png" type="image/png">
+	<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Oregano'>
+	<link rel="stylesheet" type="text/css" href="../style/layout.css">
+	<link rel="stylesheet" type="text/css" href="../style/theme_Kaleidoscope.css">
+</head>
+<body>
+	<div id="cultureSelection" style="position:absolute;left:0;top:0px;z-index:3;">
+		<form>
+			<select id="cultureSelect" name="culture" onchange="updateCulture();">
+				<option value="none" selected>no labels</option>
+				<option value="generic">The Culture</option>
+				<option value="rilsu">Rilsu</option>
+				<option value="nimyric">Nimýrité</option>
+			</select>
+		</form>
+	</div>
+	<div class="anim-control">
+		<button id="toggleAnim" onclick="toggleAnimation('utd')">►</button> 
+	</div>
+	
+	<div class="page kaleidoscope hd">
+		<canvas class="backdrop" id="starSystem" width="1200" height="1080">
+			Your browser does not support the canvas element.
+		</canvas>
+		<div class="panel utd toolshelf-section upper" id="inputs_utd">
+			<form>
+				<input class="year" type="number" id="year_utd" name="year_utd" value="289071">
+				<select id="era_utd" name="era_utd" onclick="limitInputs('utd');">
+					<option value="before">before time</option>
+					<option value="after" selected>since time</option>
+				</select>
+				<select id="month_utd" name="month_utd" onclick="limitInputs('utd');">
+					<option value="1">January</option>
+					<option value="2">February</option>
+					<option value="3">March</option>
+					<option value="4">April</option>
+					<option value="5">May</option>
+					<option value="6">June</option>
+					<option value="7">July</option>
+					<option value="8">August</option>
+					<option value="9">September</option>
+					<option value="10">October</option>
+					<option value="11">November</option>
+					<option value="12" selected>December</option>
+				</select>
+				<input type="number" id="day_utd" name="day_utd" min="1" value="17">
+				<input class="hour" type="number" id="hour_utd" name="hour_utd" min="0" max="23" value="0">:
+				<input type="number" id="minute_utd" name="minute_utd" min="0" max="59" value="0">:
+				<input type="number" id="second_utd" name="second_utd" min="0" max="59" value="0">
+			</form>
+			<button id="setUTD" onclick="submitInputs('Now','utd');updateAllInputs('Now');updateStarSystem();">set UTD time</button>	
+		</div>
+		<div class="panel rilsu toolshelf-section" id="inputs_rilsu">
+			<form>
+				<input class="year" type="number" id="year_rilsu" name="year_rilsu">
+				<select id="era_rilsu" name="era_rilsu" value="1" onclick="limitInputs('rilsu');">
+					<option value="before">NZR</option>
+					<option value="after">VZR</option>
+				</select>
+				<select id="month_rilsu" name="month_rilsu" value="1" onclick="limitInputs('rilsu');">
+					<option value="1">Sizonoma</option>
+					<option value="2">Tugrunoma</option>
+					<option value="3">Aminoma</option>
+					<option value="4">Guztinoma</option>
+					<option value="5">Uvonoma</option>
+					<option value="6">Kolkanoma</option>
+					<option value="7">Sigifnoma</option>
+					<option value="8">Degmanoma</option>
+					<option value="9">Sedunoma</option>
+					<option value="10">Pikanoma</option>
+					<option value="11">Akrunoma</option>
+					<option value="12">Keponoma</option>
+					<option value="13">Zadrunoma</option>
+					<option value="14">Despinoma</option>
+					<option value="15">Hudrunoma</option>
+					<option value="16">Atrunoma</option>
+					<option value="17">Taprunoma</option>
+				</select>
+				<input type="number" id="day_rilsu" name="day_rilsu" min="1">
+				<input class="hour" type="number" id="hour_rilsu" name="hour_rilsu" min="0" max="31">:
+				<input type="number" id="minute_rilsu" name="minute_rilsu" min="0" max="63">:
+				<input type="number" id="second_rilsu" name="second_rilsu" min="0" max="63">
+			</form>
+			<button id="setRilsu" onclick="submitInputs('Now','rilsu');updateAllInputs('Now');updateStarSystem();">set Rilsu time</button>	
+		</div>
+		<div class="panel nimyric toolshelf-section" id="inputs_nimyric">
+			<form>
+				<input class="year" type="number" id="year_nimyric" name="year_nimyric">
+				<select id="era_nimyric" name="era_nimyric" onclick="limitInputs('nimyric');">
+					<option value="before">NN</option>
+					<option value="after">PN</option>
+				</select>
+				<select id="month_nimyric" name="month_nimyric" onclick="limitInputs('nimyric');">
+					<option value="1">Córélun</option>
+					<option value="2">Aolun</option>
+					<option value="3">Lahalun</option>
+					<option value="4">Chychlun</option>
+					<option value="5">Chynlun</option>
+					<option value="6">Dapolun</option>
+					<option value="7">Hémélun</option>
+					<option value="8">Dyntélun</option>
+					<option value="9">Miblun</option>
+					<option value="10">Uklun</option>
+					<option value="11">Vésólun</option>
+					<option value="12">Matcylun</option>
+					<option value="13">Roklun</option>
+					<option value="14">Murilun</option>
+				</select>
+				<input type="number" id="day_nimyric" name="day_nimyric" min="1">
+				<input class="hour" type="number" id="hour_nimyric" name="hour_nimyric" min="0" max="29">:
+				<input type="number" id="minute_nimyric" name="minute_nimyric" min="0" max="59">:
+				<input type="number" id="second_nimyric" name="second_nimyric" min="0" max="59">
+			</form>
+			<button id="setNimyric" onclick="submitInputs('Now','nimyric');updateAllInputs('Now');updateStarSystem();">set Nimýric time</button>	
+		</div>
+		<div class="panel pereqaian toolshelf-section" id="inputs_pereqaian">
+			<form>
+				<input class="year" type="number" id="year_pereqaian" name="year_pereqaian">
+				<select id="era_pereqaian" name="era_pereqaian" onclick="limitInputs('pereqaian');">
+					<option value="before">FGZ</option>
+					<option value="after">TGZ</option>
+				</select>
+				<select id="month_pereqaian" name="month_pereqaian" onclick="limitInputs('pereqaian');">
+					<option value="1">Mu Lilisi</option>
+					<option value="2">Mu Niseqòn</option>
+					<option value="3">Mu Ozide</option>
+					<option value="4">Mu Sedùt</option>
+					<option value="5">Mu Qòtve</option>
+					<option value="6">Mu Pêtve</option>
+					<option value="7">Mu Seshivèr</option>
+					<option value="8">Mu Ligofi</option>
+					<option value="9">Mu Shulòri</option>
+					<option value="10">Mu Renifi</option>
+					<option value="11">Mu Qùshve</option>
+					<option value="12">Mu Nifhêqa</option>
+					<option value="13">Mu Fêfumish</option>
+					<option value="14">Mu Zêicen</option>
+				</select>
+				<input type="number" id="day_pereqaian" name="day_pereqaian" min="1">
+				<input class="hour" type="number" id="hour_pereqaian" name="hour_pereqaian" min="0" max="29">:
+				<input type="number" id="minute_pereqaian" name="minute_pereqaian" min="0" max="59">:
+				<input type="number" id="second_pereqaian" name="second_pereqaian" min="0" max="59">
+			</form>
+			<button id="setPereqaian" onclick="submitInputs('Now','pereqaian');updateStarSystem();">set Pereqaian time</button>	
+		</div>
+		
+	</div>
+	
+	<script>
+		loadCelestialConfig('../config/CalendarConfig_Kaleidoscope.json', '../config/CelestialConfig_Kaleidoscope_720px.json');
+		updateCulture();
+	</script>
+</body>
+</html>
