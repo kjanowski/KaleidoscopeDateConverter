@@ -149,7 +149,7 @@
 			},			
 			"color": "#FFFFBB",
 			"radius": 4,
-			"calendar": "twk",
+			"calendar": "static",
 			"orbitDayOffset": 77,
 			"visualDistance": 520,
 			"markers":
@@ -159,7 +159,8 @@
 					"color":"#8800FF"
 				}
 			],
-			"moons":[]
+			"moons":[],
+			"drawOrbit":"false"
 		}
 	],
 	"lights":[

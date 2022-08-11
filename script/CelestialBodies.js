@@ -220,6 +220,9 @@ function drawMarker(ctx, centerX, centerY, marker, relAngle, radius)
 
 function drawOrbit(ctx, originX, originY, celestial)
 {
+	if(celestial.drawOrbit == "false")
+		return;
+	
 	ctx.lineWidth = 1;
 	ctx.strokeStyle = "#FFFFFF";
 	ctx.beginPath();

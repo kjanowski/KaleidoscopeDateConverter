@@ -1,5 +1,5 @@
 {
-	"calendarNames": ["utd", "nimyric", "pereqaian", "rilsu", "twk", "achyu", "ivlare"],
+	"calendarNames": ["utd", "nimyric", "pereqaian", "rilsu", "twk", "achyu", "ivlare", "static"],
 	"params":
 	[
 		{
@@ -90,6 +90,19 @@
 			"daysPerYear": 783.0,
 			"eraBefore": "Before The Hive",
 			"eraAfter": "In The Hive",
+			"rawOffsetUTD": 0.0
+		},
+		{
+			"name": "none",
+			"secondsPerMinute": 1.0,
+			"minutesPerHour": 1.0,
+			"locHoursPerDay": 1.0,
+			"stdHoursPerDay": 1.0,
+			"monthNames": ["The Orbit"],
+			"monthLength": [1],
+			"daysPerYear": 1.0,
+			"eraBefore": "before time",
+			"eraAfter": "since time",
 			"rawOffsetUTD": 0.0
 		}
 	]
