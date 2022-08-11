@@ -17,6 +17,7 @@
 
 
 .hd .sidebar{
+	position:relative;
 	width:620px;
 	display:inline-block;
 	vertical-align:top;
