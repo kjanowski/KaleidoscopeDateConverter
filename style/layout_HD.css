@@ -15,7 +15,7 @@
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 
-.page.hd{
+.page{
 	width:1290px;
 	height:810px;
 	margin-left:auto;
@@ -24,32 +24,37 @@
 	position:relative;
 }
 
-.hd .canvas-container{
+.canvas-container{
 	position:relative;
 	width:1290px;
 	display:inline-block;
 }
 
-.hd .toolshelf-section{
+.toolshelf-section{
 	font-size: 1.0em;
 	position: absolute;
+	width:230px;
 }
 
-.hd .toolshelf-section input,
-.hd .toolshelf-section select{
+.toolshelf-section h2{
+	margin-left:5px;
+}
+
+.toolshelf-section input,
+.toolshelf-section select{
 	font-size: 1.0em;
 }
 
-.hd .toolshelf-section input{
+.toolshelf-section input{
 	width:50px;
 }
 
-.hd .toolshelf-section input.year{
+.toolshelf-section input.year{
 	width:80px;
 }
 
 
-.hd .control-panel{
+.control-panel{
 	position:absolute;
 	left:0px;
 	bottom:0px;
