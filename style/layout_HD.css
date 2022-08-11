@@ -47,6 +47,10 @@
 	font-size: 1.05em;
 }
 
+.hd .toolshelf-section input{
+	width:50px;
+}
+
 .hd .toolshelf-section input.year{
 	width:100px;
 }
