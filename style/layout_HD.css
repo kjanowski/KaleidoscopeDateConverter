@@ -18,7 +18,6 @@
 .page.hd{
 	width:1920px;
 	height:1080px;
-	background:rgba(255,255,255,0.2);
 	margin-left:auto;
 	margin-right:auto;
 	border: 1px solid white;
@@ -26,13 +25,13 @@
 
 .hd .canvas-container{
 	position:relative;
-	width:75%;
+	width:1290px;
 	display:inline-block;
 }
 
 .hd .sidebar{
 	position:relative;
-	width:25%;
+	width:620px;
 	display:inline-block;
 	vertical-align:top;
 	margin-left:6px;
