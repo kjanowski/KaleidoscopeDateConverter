@@ -19,6 +19,7 @@
 	width:1920px;
 	height:1080px;
 	display:inline-block;
+	margin-left:auto;
 }
 
 .hd .sidebar{
@@ -41,4 +42,19 @@
 
 .hd .toolshelf-section input.year{
 	width:100px;
+}
+
+.hd .controlpanel{
+	position:absolute;
+	left:0px;
+	bottom:0px;
+	z-index:5;
+}
+
+.hd .controlpanel.show-on-hover{
+	opacity:0.0;
+}
+
+.hd .controlpanel.show-on-hover:hover{
+	opacity:1.0;
 }
