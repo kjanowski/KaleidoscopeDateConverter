@@ -150,7 +150,7 @@
 			"color": "#FFFFBB",
 			"radius": 4,
 			"calendar": "static",
-			"orbitDayOffset": 77,
+			"orbitDayOffset": 0.5,
 			"visualDistance": 520,
 			"markers":
 			[
