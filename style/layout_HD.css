@@ -15,9 +15,10 @@
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 
+
 .page{
-	width:1290px;
-	height:810px;
+	width:1920px;
+	height:1080px;
 	margin-left:auto;
 	margin-right:auto;
 	border: 1px solid white;
@@ -26,14 +27,13 @@
 
 .canvas-container{
 	position:relative;
-	width:1290px;
 	display:inline-block;
 }
 
 .toolshelf-section{
-	font-size: 1.0em;
+	font-size: 1.8em;
 	position: absolute;
-	width:230px;
+	width:395px;
 }
 
 .toolshelf-section h2{
@@ -46,17 +46,16 @@
 }
 
 .toolshelf-section input{
-	width:50px;
+	width:70px;
 }
 
 .toolshelf-section input.year{
-	width:80px;
+	width:160px;
 }
 
 
 .control-panel{
-	position:absolute;
-	left:0px;
-	bottom:0px;
-	z-index:5;
+	position:relative;
+	width:1920px;
+	margin-left:auto;
 }
