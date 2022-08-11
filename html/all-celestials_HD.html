@@ -37,7 +37,7 @@
 	<link rel="stylesheet" type="text/css" href="../style/theme_Kaleidoscope.css">
 </head>
 <body>
-	<div id="controlPanel show-on-hover" style="margin-bottom:20px;">
+	<div id="control-panel show-on-hover" style="margin-bottom:20px;">
 		<form style="display:inline; margin-right:50px;">
 		<label style="width:auto;">select labels:</label>
 			<select id="cultureSelect" name="culture" onchange="updateCulture();">
@@ -55,7 +55,7 @@
 		<button id="setPereqaian" onclick="submitInputs('Now','pereqaian');updateStarSystem();" style="display:inline;width:auto;">set Pereqaian time</button>	
 	</div>		
 	<div class="page kaleidoscope hd">
-		<div style="display:inline-block;">
+		<div class="canvas-container">
 			<canvas class="backdrop" id="starSystem" width="1280" height="1070" style="background-position:left; background-size: auto 1500px;">
 				Your browser does not support the canvas element.
 			</canvas>

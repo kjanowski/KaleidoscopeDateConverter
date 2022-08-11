@@ -16,7 +16,18 @@
 */
 
 .page.hd{
-	width:100%;
+	width:1920px;
+	height:1080px;
+	background:rgba(255,255,255,0.2);
+	margin-left:auto;
+	margin-right:auto;
+	border: 1px solid white;
+}
+
+.hd .canvas-container{
+	position:relative;
+	width:75%;
+	display:inline-block;
 }
 
 .hd .sidebar{
@@ -25,10 +36,6 @@
 	display:inline-block;
 	vertical-align:top;
 	margin-left:6px;
-}
-
-.hd canvas{
-	width:75%;
 }
 
 .hd .toolshelf-section{
@@ -45,17 +52,18 @@
 	width:100px;
 }
 
-.hd .controlPanel{
+
+.hd .control-panel{
 	position:absolute;
 	left:0px;
 	bottom:0px;
 	z-index:5;
 }
 
-.hd .controlPanel.show-on-hover{
+.hd .control-panel.show-on-hover{
 	opacity:0.0;
 }
 
-.hd .controlPanel.show-on-hover:hover{
+.hd .control-panel.show-on-hover:hover{
 	opacity:1.0;
 }
