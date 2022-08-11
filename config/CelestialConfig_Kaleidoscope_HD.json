@@ -1,0 +1,178 @@
+{
+	"name": {
+		"generic":"The Central Star",
+		"nimyric":"Saphéne",
+		"none":"",
+		"rilsu":"Larekon"
+	},
+	"color": "#FFFF88",
+	"radius": 20,
+	"planets":
+	[
+		{	
+			"name": {
+				"generic":"The Burnt Planet",
+				"nimyric":"Achýu",
+				"none":"",
+				"rilsu":"Divusu"
+			},
+			"color": "#888888",
+			"radius": 5,
+			"calendar": "achyu",
+			"orbitDayOffset": 0,
+			"visualDistance": 40,
+			"markers":[],
+			"moons":[]
+		},
+		{	
+			"name": {
+				"generic":"The Watery Planet",
+				"nimyric":"Chryphóra",
+				"none":"",
+				"rilsu":"Tuvasuno"
+			},			
+			"color": "#88FFFF",
+			"radius": 12,
+			"calendar": "nimyric",
+			"orbitDayOffset": -37,
+			"visualDistance": 81,
+			"markers":
+			[
+				{
+					"angle": 0.0,
+					"color": "#004EFF"
+				},
+				{
+					"angle": -2.0944,
+					"color": "#FF0000"
+				}
+			],
+			"moons":
+			[
+				{
+					"name": {
+						"generic":"The Dusty Moon",
+						"nimyric":"Palia",
+						"none":"",
+						"rilsu":"Kesivi"
+					},					
+					"color": "#CCCCCC",
+					"radius": 3,
+					"visualDistance": 23,
+					"orbitDays": 25,
+					"orbitDayOffset": 1
+				}
+			]
+		},
+		{	
+			"name": {
+				"generic":"The Molten Planet",
+				"nimyric":"Éisabó",
+				"none":"",
+				"rilsu":"Kasavoa"
+			},			
+			"color": "#FFCC44",
+			"radius": 13,
+			"calendar": "rilsu",
+			"orbitDayOffset": -64,
+			"visualDistance": 175,
+			"markers":
+			[
+				{
+					"angle":0.0,
+					"color":"#FF8800"
+				}
+			],
+			"moons":
+			[
+				{
+					"name": {
+						"generic":"The Sandy Moon",
+						"nimyric":"Lynvia",
+						"none":"",
+						"rilsu":"Ranul"
+					},				
+					"color": "#FFAA88",
+					"radius": 4,
+					"visualDistance": 30,
+					"orbitDays": 32,
+					"orbitDayOffset": -12
+				},
+				{
+					"name": {
+						"generic":"The Rocky Moon",
+						"nimyric":"Cóya",
+						"none":"",
+						"rilsu":"Inekoa"
+					},
+					"color": "#CCCCCC",
+					"radius": 2,
+					"visualDistance": 40,
+					"orbitDays": 57,
+					"orbitDayOffset": 0
+				}
+			]
+		},
+		{	
+			"name": {
+				"generic":"The Ringed Planet",
+				"nimyric":"Lahasabó",
+				"none":"",
+				"rilsu":"Ivlare"
+			},			
+			"color": "#66BBFF",
+			"radius": 14,
+			"calendar": "ivlare",
+			"orbitDayOffset": 67,
+			"visualDistance": 275,
+			"markers":
+			[
+				{
+					"angle":0.0,
+					"color":"#3366FF"
+				}
+			],
+			"moons":[],
+			"ring":
+			{
+				"radius": 23,
+				"thickness": 8,
+				"color": "#AABBFF"
+			}
+		},
+		{	
+			"name": {
+				"generic":"The Outer Planetoid",
+				"nimyric":"Temróph",
+				"none":"",
+				"rilsu":"Vokeran"
+			},			
+			"color": "#FFFFBB",
+			"radius": 4,
+			"calendar": "static",
+			"orbitDayOffset": 77,
+			"visualDistance": 325,
+			"markers":
+			[
+				{
+					"angle":0.0,
+					"color":"#8800FF"
+				}
+			],
+			"moons":[]
+		}
+	],
+	"lights":[
+		{
+			"type":"point",
+			"x":0,
+			"y":0,
+			"intensity":0.3
+		},
+		{
+			"type":"parallel",
+			"angle": 0,
+			"intensity":0.2
+		}
+	]
+}
