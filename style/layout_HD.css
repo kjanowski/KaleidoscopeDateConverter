@@ -31,7 +31,7 @@
 }
 
 .hd .toolshelf-section{
-	font-size: 0.8em;
+	font-size: 1.0em;
 	position: absolute;
 }
 
@@ -41,11 +41,11 @@
 }
 
 .hd .toolshelf-section input{
-	width:30px;
+	width:50px;
 }
 
 .hd .toolshelf-section input.year{
-	width:60px;
+	width:80px;
 }
 
 
