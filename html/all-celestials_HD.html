@@ -36,17 +36,18 @@
 	<link rel="stylesheet" type="text/css" href="../style/theme_Kaleidoscope.css">
 </head>
 <body>
-	<div id="controlPanel">
+	<div id="controlPanel" style="margin-bottom:20px;">
 		<form style="display:inline; margin-right:50px;">
-		<label>select labels:</label>
+		<label style="width:auto;">select labels:</label>
 			<select id="cultureSelect" name="culture" onchange="updateCulture();">
 				<option value="none" selected>no labels</option>
 				<option value="generic">The Culture</option>
 				<option value="rilsu">Rilsu</option>
 				<option value="nimyric">Nimýrité</option>
+				<option value="pereqaian">Pereqaiande</option>
 			</select>
 		</form>
-		<button id="toggleAnim" onclick="toggleAnimation('utd')" style="display:inline;">►</button> 
+		<button id="toggleAnim" onclick="toggleAnimation('utd')" style="display:inline;width:auto;">►</button> 
 		<button id="setUTD" onclick="submitInputs('Now','utd');updateAllInputs('Now');updateStarSystem();" style="display:inline;width:auto;">set UTD time</button>	
 		<button id="setTWK" onclick="submitInputs('Now','twk');updateAllInputs('Now');updateStarSystem();" style="display:inline;width:auto;">set Hive time</button>	
 		<button id="setRilsu" onclick="submitInputs('Now','rilsu');updateAllInputs('Now');updateStarSystem();" style="display:inline;width:auto;">set Rilsu time</button>	
@@ -54,13 +55,14 @@
 		<button id="setPereqaian" onclick="submitInputs('Now','pereqaian');updateStarSystem();" style="display:inline;width:auto;">set Pereqaian time</button>	
 	</div>		
 	<div class="page kaleidoscope hd">
-		<div style="display:inline-block;width=1200px;margin:0px;">
-			<canvas class="backdrop" id="starSystem" width="1180" height="1080">
+		<div style="display:inline-block;">
+			<canvas class="backdrop" id="starSystem" width="1180" height="1070">
 				Your browser does not support the canvas element.
 			</canvas>
 		</div>
-		<div style="width:700px;display:inline-block;margin:0px;">
+		<div style="width:770px;display:inline-block;margin:0px;vertical-align:top;">
 			<div class="panel utd toolshelf-section" id="inputs_utd">
+				<h2>Universal Time Date</h2>
 				<form>
 					<input class="year" type="number" id="year_utd" name="year_utd" value="289071">
 					<select id="era_utd" name="era_utd" onclick="limitInputs('utd');">
@@ -82,6 +84,7 @@
 						<option value="12" selected>December</option>
 					</select>
 					<input type="number" id="day_utd" name="day_utd" min="1" value="17">
+					<br>
 					<input class="hour" type="number" id="hour_utd" name="hour_utd" min="0" max="23" value="0">:
 					<input type="number" id="minute_utd" name="minute_utd" min="0" max="59" value="0">:
 					<input type="number" id="second_utd" name="second_utd" min="0" max="59" value="0">
@@ -110,6 +113,7 @@
 				</form>
 			</div>
 			<div class="panel rilsu toolshelf-section" id="inputs_rilsu">
+				<h2>Rilsu World Republic</h2>
 				<form>
 					<input class="year" type="number" id="year_rilsu" name="year_rilsu">
 					<select id="era_rilsu" name="era_rilsu" value="1" onclick="limitInputs('rilsu');">
@@ -143,6 +147,7 @@
 				</form>
 			</div>
 			<div class="panel nimyric toolshelf-section" id="inputs_nimyric">
+				<h2>Nimýric Empire</h2>
 				<form>
 					<input class="year" type="number" id="year_nimyric" name="year_nimyric">
 					<select id="era_nimyric" name="era_nimyric" onclick="limitInputs('nimyric');">
@@ -173,6 +178,7 @@
 				</form>
 			</div>
 			<div class="panel pereqaian toolshelf-section" id="inputs_pereqaian">
+				<h2>Pereqaian Alliance</h2>
 				<form>
 					<input class="year" type="number" id="year_pereqaian" name="year_pereqaian">
 					<select id="era_pereqaian" name="era_pereqaian" onclick="limitInputs('pereqaian');">
