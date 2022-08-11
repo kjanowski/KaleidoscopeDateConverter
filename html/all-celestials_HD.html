@@ -33,6 +33,7 @@
 	<link rel="icon" href="../img/favicon_kaleidechse_57x57.png" type="image/png">
 	<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Oregano'>
 	<link rel="stylesheet" type="text/css" href="../style/layout.css">
+	<link rel="stylesheet" type="text/css" href="../style/layout_HD.css">
 	<link rel="stylesheet" type="text/css" href="../style/theme_Kaleidoscope.css">
 </head>
 <body>
@@ -47,7 +48,7 @@
 				<option value="pereqaian">Pereqaiande</option>
 			</select>
 		</form>
-		<button id="toggleAnim" onclick="toggleAnimation('utd')" style="display:inline;width:auto;">►</button> 
+		<button id="toggleAnim" onclick="toggleAnimation('utd')" style="display:inline;width:auto; margin-right:50px;">►</button> 
 		<button id="setUTD" onclick="submitInputs('Now','utd');updateAllInputs('Now');updateStarSystem();" style="display:inline;width:auto;">set UTD time</button>	
 		<button id="setTWK" onclick="submitInputs('Now','twk');updateAllInputs('Now');updateStarSystem();" style="display:inline;width:auto;">set Hive time</button>	
 		<button id="setRilsu" onclick="submitInputs('Now','rilsu');updateAllInputs('Now');updateStarSystem();" style="display:inline;width:auto;">set Rilsu time</button>	
@@ -60,7 +61,7 @@
 				Your browser does not support the canvas element.
 			</canvas>
 		</div>
-		<div style="width:620px;display:inline-block;margin:0px;vertical-align:top;">
+		<div class="sidebar">
 			<div class="panel utd toolshelf-section" id="inputs_utd">
 				<h2>Universal Time Date</h2>
 				<form>
