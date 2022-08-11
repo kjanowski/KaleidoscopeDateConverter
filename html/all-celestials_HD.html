@@ -37,7 +37,8 @@
 </head>
 <body>
 	<div id="controlPanel">
-		<div id="cultureSelection">
+		<div id="cultureSelection" style="display:inline;">
+		    <label>select labels:</label>
 			<form>
 				<select id="cultureSelect" name="culture" onchange="updateCulture();">
 					<option value="none" selected>no labels</option>
@@ -47,22 +48,22 @@
 				</select>
 			</form>
 		</div>
-		<div class="anim-control">
-			<button id="toggleAnim" onclick="toggleAnimation('utd')">►</button> 
+		<div class="anim-control" style="display:inline;">
+			<button id="toggleAnim" onclick="toggleAnimation('utd')" style="display:inline;">►</button> 
 		</div>
 		<div id="setTime">
-			<button id="setUTD" onclick="submitInputs('Now','utd');updateAllInputs('Now');updateStarSystem();">set UTD time</button>	
-			<button id="setTWK" onclick="submitInputs('Now','twk');updateAllInputs('Now');updateStarSystem();">set Hive time</button>	
-			<button id="setRilsu" onclick="submitInputs('Now','rilsu');updateAllInputs('Now');updateStarSystem();">set Rilsu time</button>	
-			<button id="setNimyric" onclick="submitInputs('Now','nimyric');updateAllInputs('Now');updateStarSystem();">set Nimýric time</button>	
-			<button id="setPereqaian" onclick="submitInputs('Now','pereqaian');updateStarSystem();">set Pereqaian time</button>	
+			<button id="setUTD" onclick="submitInputs('Now','utd');updateAllInputs('Now');updateStarSystem();" style="display:inline;">set UTD time</button>	
+			<button id="setTWK" onclick="submitInputs('Now','twk');updateAllInputs('Now');updateStarSystem();" style="display:inline;">set Hive time</button>	
+			<button id="setRilsu" onclick="submitInputs('Now','rilsu');updateAllInputs('Now');updateStarSystem();" style="display:inline;">set Rilsu time</button>	
+			<button id="setNimyric" onclick="submitInputs('Now','nimyric');updateAllInputs('Now');updateStarSystem();" style="display:inline;">set Nimýric time</button>	
+			<button id="setPereqaian" onclick="submitInputs('Now','pereqaian');updateStarSystem();" style="display:inline;">set Pereqaian time</button>	
 		</div>
 	</div>		
 	<div class="page kaleidoscope hd">
 		<canvas class="backdrop" id="starSystem" width="1200" height="1080">
 			Your browser does not support the canvas element.
 		</canvas>
-		<div class="sidebar-right" style="width:720px;">
+		<div style="width:720px;display:inline-block;">
 			<div class="panel utd toolshelf-section" id="inputs_utd">
 				<form>
 					<input class="year" type="number" id="year_utd" name="year_utd" value="289071">
