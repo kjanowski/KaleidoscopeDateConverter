@@ -28,7 +28,7 @@
 .toolshelf-section{
 	font-size: 1.8em;
 	position: absolute;
-	width:395px;
+	width:345px;
 }
 
 .toolshelf-section h2{
@@ -41,7 +41,7 @@
 }
 
 .toolshelf-section input{
-	width:50px;
+	width:55px;
 }
 
 .toolshelf-section input.year{
