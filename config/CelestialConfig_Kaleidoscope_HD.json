@@ -20,7 +20,7 @@
 			"radius": 4,
 			"calendar": "achyu",
 			"orbitDayOffset": 0,
-			"visualDistance": 142,
+			"visualDistance": 80,
 			"markers":[],
 			"moons":[]
 		},
@@ -35,7 +35,7 @@
 			"radius": 7,
 			"calendar": "nimyric",
 			"orbitDayOffset": -37,
-			"visualDistance": 260,
+			"visualDistance": 147,
 			"markers":
 			[
 				{
@@ -58,7 +58,7 @@
 					},					
 					"color": "#CCCCCC",
 					"radius": 3,
-					"visualDistance": 23,
+					"visualDistance": 13,
 					"orbitDays": 25,
 					"orbitDayOffset": 1
 				}
@@ -75,7 +75,7 @@
 			"radius": 7,
 			"calendar": "rilsu",
 			"orbitDayOffset": -64,
-			"visualDistance": 359,
+			"visualDistance": 202,
 			"markers":
 			[
 				{
@@ -94,7 +94,7 @@
 					},				
 					"color": "#FFAA88",
 					"radius": 4,
-					"visualDistance": 26,
+					"visualDistance": 15,
 					"orbitDays": 32,
 					"orbitDayOffset": -12
 				},
@@ -107,7 +107,7 @@
 					},
 					"color": "#CCCCCC",
 					"radius": 2,
-					"visualDistance": 56,
+					"visualDistance": 32,
 					"orbitDays": 57,
 					"orbitDayOffset": 0
 				}
@@ -124,7 +124,7 @@
 			"radius": 11,
 			"calendar": "ivlare",
 			"orbitDayOffset": 67,
-			"visualDistance": 547,
+			"visualDistance": 308,
 			"markers":
 			[
 				{
@@ -151,7 +151,7 @@
 			"radius": 4,
 			"calendar": "static",
 			"orbitDayOffset": 0.5,
-			"visualDistance": 832,
+			"visualDistance": 468,
 			"markers":[],
 			"moons":[],
 			"drawOrbit":"false"
