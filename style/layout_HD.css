@@ -25,11 +25,6 @@
 	position:relative;
 }
 
-.canvas-container{
-	position:relative;
-	display:inline-block;
-}
-
 .toolshelf-section{
 	font-size: 1.8em;
 	position: absolute;
