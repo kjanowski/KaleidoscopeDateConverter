@@ -37,7 +37,7 @@
 </head>
 <body>
 	<div id="controlPanel">
-		<div id="cultureSelection" style="display:inline;">
+		<div id="cultureSelection" style="display:inline;width:auto;">
 		    <label>select labels:</label>
 			<form>
 				<select id="cultureSelect" name="culture" onchange="updateCulture();">
@@ -52,11 +52,11 @@
 			<button id="toggleAnim" onclick="toggleAnimation('utd')" style="display:inline;">►</button> 
 		</div>
 		<div id="setTime">
-			<button id="setUTD" onclick="submitInputs('Now','utd');updateAllInputs('Now');updateStarSystem();" style="display:inline;">set UTD time</button>	
-			<button id="setTWK" onclick="submitInputs('Now','twk');updateAllInputs('Now');updateStarSystem();" style="display:inline;">set Hive time</button>	
-			<button id="setRilsu" onclick="submitInputs('Now','rilsu');updateAllInputs('Now');updateStarSystem();" style="display:inline;">set Rilsu time</button>	
-			<button id="setNimyric" onclick="submitInputs('Now','nimyric');updateAllInputs('Now');updateStarSystem();" style="display:inline;">set Nimýric time</button>	
-			<button id="setPereqaian" onclick="submitInputs('Now','pereqaian');updateStarSystem();" style="display:inline;">set Pereqaian time</button>	
+			<button id="setUTD" onclick="submitInputs('Now','utd');updateAllInputs('Now');updateStarSystem();" style="display:inline;width:auto;">set UTD time</button>	
+			<button id="setTWK" onclick="submitInputs('Now','twk');updateAllInputs('Now');updateStarSystem();" style="display:inline;width:auto;">set Hive time</button>	
+			<button id="setRilsu" onclick="submitInputs('Now','rilsu');updateAllInputs('Now');updateStarSystem();" style="display:inlinewidth:auto;;">set Rilsu time</button>	
+			<button id="setNimyric" onclick="submitInputs('Now','nimyric');updateAllInputs('Now');updateStarSystem();" style="display:inline;width:auto;">set Nimýric time</button>	
+			<button id="setPereqaian" onclick="submitInputs('Now','pereqaian');updateStarSystem();" style="display:inline;width:auto;">set Pereqaian time</button>	
 		</div>
 	</div>		
 	<div class="page kaleidoscope hd">
@@ -106,9 +106,9 @@
 						<option value="3">The Phase Of Power Loss</option>
 						<option value="4">The Phase Of Waxing Power</option>
 					</select>
-					<br>
 					<input type="number" id="day_twk" name="day_twk" min="1">
-					<br><input class="hour" type="number" id="hour_twk" name="hour_twk" min="0" max="199">:
+					<br>
+					<input class="hour" type="number" id="hour_twk" name="hour_twk" min="0" max="199">:
 					<input type="number" id="minute_twk" name="minute_twk" min="0" max="79">:
 					<input type="number" id="second_twk" name="second_twk" min="0" max="49">
 				</form>
