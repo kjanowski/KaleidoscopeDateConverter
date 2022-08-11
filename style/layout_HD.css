@@ -15,19 +15,17 @@
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 
-.page.hd{
-	width:1920px;
-	height:1080px;
-	display:inline-block;
-	margin-left:auto;
-}
 
 .hd .sidebar{
 	position:relative;
-	width:620px;
+	width:25%;
 	display:inline-block;
 	vertical-align:top;
 	margin-left:6px;
+}
+
+.hd canvas{
+	width:75%;
 }
 
 .hd .toolshelf-section{
