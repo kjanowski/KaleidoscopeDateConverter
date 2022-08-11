@@ -15,6 +15,9 @@
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 
+.page.hd{
+	width:100%;
+}
 
 .hd .sidebar{
 	position:relative;
@@ -42,17 +45,17 @@
 	width:100px;
 }
 
-.hd .controlpanel{
+.hd .controlPanel{
 	position:absolute;
 	left:0px;
 	bottom:0px;
 	z-index:5;
 }
 
-.hd .controlpanel.show-on-hover{
+.hd .controlPanel.show-on-hover{
 	opacity:0.0;
 }
 
-.hd .controlpanel.show-on-hover:hover{
+.hd .controlPanel.show-on-hover:hover{
 	opacity:1.0;
 }
