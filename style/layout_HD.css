@@ -18,6 +18,7 @@
 .page.hd{
 	width:1920px;
 	height:1080px;
+	display:inline-block;
 }
 
 .hd .sidebar{
@@ -25,6 +26,7 @@
 	width:620px;
 	display:inline-block;
 	vertical-align:top;
+	margin-left:6px;
 }
 
 .hd .toolshelf-section{
