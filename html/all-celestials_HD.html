@@ -37,7 +37,7 @@
 	<link rel="stylesheet" type="text/css" href="../style/theme_Kaleidoscope.css">
 </head>
 <body>
-	<div class="control-panel show-on-hover" style="margin-bottom:20px;">
+	<div class="control-panel" style="margin-bottom:20px;">
 		<form style="display:inline; margin-right:50px;">
 		<label style="width:auto;">select labels:</label>
 			<select id="cultureSelect" name="culture" onchange="updateCulture();">
@@ -56,159 +56,160 @@
 	</div>		
 	<div class="page kaleidoscope hd">
 		<div class="canvas-container">
-			<canvas class="backdrop" id="starSystem" width="1280" height="1070" style="background-position:left; background-size: auto 1500px;">
+			<canvas class="backdrop" id="starSystem" width="1290" height="800" style="background-position:left; background-size: auto 1500px;">
 				Your browser does not support the canvas element.
 			</canvas>
 		</div>
-		<div class="sidebar">
-			<div class="panel utd toolshelf-section" id="inputs_utd">
-				<h2>Universal Time Date</h2>
-				<form>
-					<input class="year" type="number" id="year_utd" name="year_utd" value="289071">
-					<select id="era_utd" name="era_utd" onclick="limitInputs('utd');">
-						<option value="before">before time</option>
-						<option value="after" selected>since time</option>
-					</select>
-					<select id="month_utd" name="month_utd" onclick="limitInputs('utd');">
-						<option value="1">January</option>
-						<option value="2">February</option>
-						<option value="3">March</option>
-						<option value="4">April</option>
-						<option value="5">May</option>
-						<option value="6">June</option>
-						<option value="7">July</option>
-						<option value="8">August</option>
-						<option value="9">September</option>
-						<option value="10">October</option>
-						<option value="11">November</option>
-						<option value="12" selected>December</option>
-					</select>
-					<input type="number" id="day_utd" name="day_utd" min="1" value="17">
-					<br>
-					<input class="hour" type="number" id="hour_utd" name="hour_utd" min="0" max="23" value="0">:
-					<input type="number" id="minute_utd" name="minute_utd" min="0" max="59" value="0">:
-					<input type="number" id="second_utd" name="second_utd" min="0" max="59" value="0">
-				</form>
-			</div>
 		
-			<div class="panel twk toolshelf-section" id="inputs_twk">
-				<h2>Those Who Know</h2>
-				<form>
-					<input class="year" type="number" id="year_twk" name="year_twk">
-					<select id="era_twk" name="era_twk" onclick="limitInputs('twk');">
-						<option value="before">Before The Hive</option>
-						<option value="after">In The Hive</option>
-					</select>
-					<select id="month_twk" name="month_twk" onclick="limitInputs('twk');">
-						<option value="1">The Phase Of Greatest Power</option>
-						<option value="2">The Phase Of Waning Power</option>
-						<option value="3">The Phase Of Power Loss</option>
-						<option value="4">The Phase Of Waxing Power</option>
-					</select>
-					<input type="number" id="day_twk" name="day_twk" min="1">
-					<br>
-					<input class="hour" type="number" id="hour_twk" name="hour_twk" min="0" max="199">:
-					<input type="number" id="minute_twk" name="minute_twk" min="0" max="79">:
-					<input type="number" id="second_twk" name="second_twk" min="0" max="49">
-				</form>
-			</div>
-			<div class="panel rilsu toolshelf-section" id="inputs_rilsu">
-				<h2>Rilsu World Republic</h2>
-				<form>
-					<input class="year" type="number" id="year_rilsu" name="year_rilsu">
-					<select id="era_rilsu" name="era_rilsu" value="1" onclick="limitInputs('rilsu');">
-						<option value="before">NZR</option>
-						<option value="after">VZR</option>
-					</select>
-					<select id="month_rilsu" name="month_rilsu" value="1" onclick="limitInputs('rilsu');">
-						<option value="1">Sizonoma</option>
-						<option value="2">Tugrunoma</option>
-						<option value="3">Aminoma</option>
-						<option value="4">Guztinoma</option>
-						<option value="5">Uvonoma</option>
-						<option value="6">Kolkanoma</option>
-						<option value="7">Sigifnoma</option>
-						<option value="8">Degmanoma</option>
-						<option value="9">Sedunoma</option>
-						<option value="10">Pikanoma</option>
-						<option value="11">Akrunoma</option>
-						<option value="12">Keponoma</option>
-						<option value="13">Zadrunoma</option>
-						<option value="14">Despinoma</option>
-						<option value="15">Hudrunoma</option>
-						<option value="16">Atrunoma</option>
-						<option value="17">Taprunoma</option>
-					</select>
-					<input type="number" id="day_rilsu" name="day_rilsu" min="1">
-					<br>
-					<input class="hour" type="number" id="hour_rilsu" name="hour_rilsu" min="0" max="31">:
-					<input type="number" id="minute_rilsu" name="minute_rilsu" min="0" max="63">:
-					<input type="number" id="second_rilsu" name="second_rilsu" min="0" max="63">
-				</form>
-			</div>
-			<div class="panel nimyric toolshelf-section" id="inputs_nimyric">
-				<h2>Nimýric Empire</h2>
-				<form>
-					<input class="year" type="number" id="year_nimyric" name="year_nimyric">
-					<select id="era_nimyric" name="era_nimyric" onclick="limitInputs('nimyric');">
-						<option value="before">NN</option>
-						<option value="after">PN</option>
-					</select>
-					<select id="month_nimyric" name="month_nimyric" onclick="limitInputs('nimyric');">
-						<option value="1">Córélun</option>
-						<option value="2">Aolun</option>
-						<option value="3">Lahalun</option>
-						<option value="4">Chychlun</option>
-						<option value="5">Chynlun</option>
-						<option value="6">Dapolun</option>
-						<option value="7">Hémélun</option>
-						<option value="8">Dyntélun</option>
-						<option value="9">Miblun</option>
-						<option value="10">Uklun</option>
-						<option value="11">Vésólun</option>
-						<option value="12">Matcylun</option>
-						<option value="13">Roklun</option>
-						<option value="14">Murilun</option>
-					</select>
-					<input type="number" id="day_nimyric" name="day_nimyric" min="1">
-					<br>
-					<input class="hour" type="number" id="hour_nimyric" name="hour_nimyric" min="0" max="29">:
-					<input type="number" id="minute_nimyric" name="minute_nimyric" min="0" max="59">:
-					<input type="number" id="second_nimyric" name="second_nimyric" min="0" max="59">
-				</form>
-			</div>
-			<div class="panel pereqaian toolshelf-section" id="inputs_pereqaian">
-				<h2>Pereqaian Alliance</h2>
-				<form>
-					<input class="year" type="number" id="year_pereqaian" name="year_pereqaian">
-					<select id="era_pereqaian" name="era_pereqaian" onclick="limitInputs('pereqaian');">
-						<option value="before">FGZ</option>
-						<option value="after">TGZ</option>
-					</select>
-					<select id="month_pereqaian" name="month_pereqaian" onclick="limitInputs('pereqaian');">
-						<option value="1">Mu Lilisi</option>
-						<option value="2">Mu Niseqòn</option>
-						<option value="3">Mu Ozide</option>
-						<option value="4">Mu Sedùt</option>
-						<option value="5">Mu Qòtve</option>
-						<option value="6">Mu Pêtve</option>
-						<option value="7">Mu Seshivèr</option>
-						<option value="8">Mu Ligofi</option>
-						<option value="9">Mu Shulòri</option>
-						<option value="10">Mu Renifi</option>
-						<option value="11">Mu Qùshve</option>
-						<option value="12">Mu Nifhêqa</option>
-						<option value="13">Mu Fêfumish</option>
-						<option value="14">Mu Zêicen</option>
-					</select>
-					<input type="number" id="day_pereqaian" name="day_pereqaian" min="1">
-					<br>
-					<input class="hour" type="number" id="hour_pereqaian" name="hour_pereqaian" min="0" max="29">:
-					<input type="number" id="minute_pereqaian" name="minute_pereqaian" min="0" max="59">:
-					<input type="number" id="second_pereqaian" name="second_pereqaian" min="0" max="59">
-				</form>
-			</div>
+		<div class="panel utd toolshelf-section" id="inputs_utd" style="background:var(--generic-neutral-color);left:var(--inner-border-size);top:var(--inner-border-size);">
+			<h2>Universal Time Date</h2>
+			<form>
+				<input class="year" type="number" id="year_utd" name="year_utd" value="289071">
+				<select id="era_utd" name="era_utd" onclick="limitInputs('utd');">
+					<option value="before">before time</option>
+					<option value="after" selected>since time</option>
+				</select>
+				<select id="month_utd" name="month_utd" onclick="limitInputs('utd');">
+					<option value="1">January</option>
+					<option value="2">February</option>
+					<option value="3">March</option>
+					<option value="4">April</option>
+					<option value="5">May</option>
+					<option value="6">June</option>
+					<option value="7">July</option>
+					<option value="8">August</option>
+					<option value="9">September</option>
+					<option value="10">October</option>
+					<option value="11">November</option>
+					<option value="12" selected>December</option>
+				</select>
+				<input type="number" id="day_utd" name="day_utd" min="1" value="17">
+				<br>
+				<input class="hour" type="number" id="hour_utd" name="hour_utd" min="0" max="23" value="0">:
+				<input type="number" id="minute_utd" name="minute_utd" min="0" max="59" value="0">:
+				<input type="number" id="second_utd" name="second_utd" min="0" max="59" value="0">
+			</form>
 		</div>
+			
+		<div class="panel twk toolshelf-section" id="inputs_twk" style="left:var(--inner-border-size);bottom:0px;">
+			<h2>Those Who Know</h2>
+			<form>
+				<input class="year" type="number" id="year_twk" name="year_twk">
+				<select id="era_twk" name="era_twk" onclick="limitInputs('twk');">
+					<option value="before">Before The Hive</option>
+					<option value="after">In The Hive</option>
+				</select>
+				<select id="month_twk" name="month_twk" onclick="limitInputs('twk');">
+					<option value="1">The Phase Of Greatest Power</option>
+					<option value="2">The Phase Of Waning Power</option>
+					<option value="3">The Phase Of Power Loss</option>
+					<option value="4">The Phase Of Waxing Power</option>
+				</select>
+				<input type="number" id="day_twk" name="day_twk" min="1">
+				<br>
+				<input class="hour" type="number" id="hour_twk" name="hour_twk" min="0" max="199">:
+				<input type="number" id="minute_twk" name="minute_twk" min="0" max="79">:
+				<input type="number" id="second_twk" name="second_twk" min="0" max="49">
+			</form>
+		</div>
+		<div class="panel rilsu toolshelf-section" id="inputs_rilsu" style="right:0px;top:var(--inner-border-size);">
+			<h2>Rilsu World Republic</h2>
+			<form>
+				<input class="year" type="number" id="year_rilsu" name="year_rilsu">
+				<select id="era_rilsu" name="era_rilsu" value="1" onclick="limitInputs('rilsu');">
+					<option value="before">NZR</option>
+					<option value="after">VZR</option>
+				</select>
+				<select id="month_rilsu" name="month_rilsu" value="1" onclick="limitInputs('rilsu');">
+					<option value="1">Sizonoma</option>
+					<option value="2">Tugrunoma</option>
+					<option value="3">Aminoma</option>
+					<option value="4">Guztinoma</option>
+					<option value="5">Uvonoma</option>
+					<option value="6">Kolkanoma</option>
+					<option value="7">Sigifnoma</option>
+					<option value="8">Degmanoma</option>
+					<option value="9">Sedunoma</option>
+					<option value="10">Pikanoma</option>
+					<option value="11">Akrunoma</option>
+					<option value="12">Keponoma</option>
+					<option value="13">Zadrunoma</option>
+					<option value="14">Despinoma</option>
+					<option value="15">Hudrunoma</option>
+					<option value="16">Atrunoma</option>
+					<option value="17">Taprunoma</option>
+				</select>
+				<input type="number" id="day_rilsu" name="day_rilsu" min="1">
+				<br>
+				<input class="hour" type="number" id="hour_rilsu" name="hour_rilsu" min="0" max="31">:
+				<input type="number" id="minute_rilsu" name="minute_rilsu" min="0" max="63">:
+				<input type="number" id="second_rilsu" name="second_rilsu" min="0" max="63">
+			</form>
+		</div>		
+		<div class="panel nimyric toolshelf-section" id="inputs_nimyric" style="right:0px;bottom:300px;">
+			<h2>Nimýric Empire</h2>
+			<form>
+				<input class="year" type="number" id="year_nimyric" name="year_nimyric">
+				<select id="era_nimyric" name="era_nimyric" onclick="limitInputs('nimyric');">
+					<option value="before">NN</option>
+					<option value="after">PN</option>
+				</select>
+				<select id="month_nimyric" name="month_nimyric" onclick="limitInputs('nimyric');">
+					<option value="1">Córélun</option>
+					<option value="2">Aolun</option>
+					<option value="3">Lahalun</option>
+					<option value="4">Chychlun</option>
+					<option value="5">Chynlun</option>
+					<option value="6">Dapolun</option>
+					<option value="7">Hémélun</option>
+					<option value="8">Dyntélun</option>
+					<option value="9">Miblun</option>
+					<option value="10">Uklun</option>
+					<option value="11">Vésólun</option>
+					<option value="12">Matcylun</option>
+					<option value="13">Roklun</option>
+					<option value="14">Murilun</option>
+				</select>
+				<input type="number" id="day_nimyric" name="day_nimyric" min="1">
+				<br>
+				<input class="hour" type="number" id="hour_nimyric" name="hour_nimyric" min="0" max="29">:
+				<input type="number" id="minute_nimyric" name="minute_nimyric" min="0" max="59">:
+				<input type="number" id="second_nimyric" name="second_nimyric" min="0" max="59">
+			</form>
+		</div>
+		
+		<div class="panel pereqaian toolshelf-section" id="inputs_pereqaian" style="right:0px; bottom:0px;">
+			<h2>Pereqaian Alliance</h2>
+			<form>
+				<input class="year" type="number" id="year_pereqaian" name="year_pereqaian">
+				<select id="era_pereqaian" name="era_pereqaian" onclick="limitInputs('pereqaian');">
+					<option value="before">FGZ</option>
+					<option value="after">TGZ</option>
+				</select>
+				<select id="month_pereqaian" name="month_pereqaian" onclick="limitInputs('pereqaian');">
+					<option value="1">Mu Lilisi</option>
+					<option value="2">Mu Niseqòn</option>
+					<option value="3">Mu Ozide</option>
+					<option value="4">Mu Sedùt</option>
+					<option value="5">Mu Qòtve</option>
+					<option value="6">Mu Pêtve</option>
+					<option value="7">Mu Seshivèr</option>
+					<option value="8">Mu Ligofi</option>
+					<option value="9">Mu Shulòri</option>
+					<option value="10">Mu Renifi</option>
+					<option value="11">Mu Qùshve</option>
+					<option value="12">Mu Nifhêqa</option>
+					<option value="13">Mu Fêfumish</option>
+					<option value="14">Mu Zêicen</option>
+				</select>
+				<input type="number" id="day_pereqaian" name="day_pereqaian" min="1">
+				<br>
+				<input class="hour" type="number" id="hour_pereqaian" name="hour_pereqaian" min="0" max="29">:
+				<input type="number" id="minute_pereqaian" name="minute_pereqaian" min="0" max="59">:
+				<input type="number" id="second_pereqaian" name="second_pereqaian" min="0" max="59">
+			</form>
+		</div>
+
 	</div>
 	
 	<script>

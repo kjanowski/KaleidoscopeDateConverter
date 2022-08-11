@@ -16,11 +16,12 @@
 */
 
 .page.hd{
-	width:1920px;
-	height:1080px;
+	width:1290px;
+	height:810px;
 	margin-left:auto;
 	margin-right:auto;
 	border: 1px solid white;
+	position:relative;
 }
 
 .hd .canvas-container{
@@ -29,30 +30,23 @@
 	display:inline-block;
 }
 
-.hd .sidebar{
-	position:relative;
-	width:620px;
-	display:inline-block;
-	vertical-align:top;
-	margin-left:6px;
-}
-
 .hd .toolshelf-section{
-	font-size: 1.6em;
-	margin-bottom:4px;
+	font-size: 0.8em;
+	position: absolute;
+	width:350px;
 }
 
 .hd .toolshelf-section input,
 .hd .toolshelf-section select{
-	font-size: 1.05em;
+	font-size: 1.0em;
 }
 
 .hd .toolshelf-section input{
-	width:50px;
+	width:30px;
 }
 
 .hd .toolshelf-section input.year{
-	width:100px;
+	width:50px;
 }
 
 
@@ -61,12 +55,4 @@
 	left:0px;
 	bottom:0px;
 	z-index:5;
-}
-
-.hd .control-panel.show-on-hover{
-	opacity:0.0;
-}
-
-.hd .control-panel.show-on-hover:hover{
-	opacity:1.0;
 }
