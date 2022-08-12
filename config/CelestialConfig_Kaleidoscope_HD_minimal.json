@@ -1,0 +1,115 @@
+{
+	"name": {
+		"generic":"The Central Star",
+		"nimyric":"Saphéne",
+		"none":"",
+		"rilsu":"Larekon"
+	},
+	"color": "#FFFF88",
+	"radius": 19,
+	"planets":
+	[
+		{	
+			"name": {
+				"generic":""
+			},
+			"color": "#888888",
+			"radius": 4,
+			"calendar": "achyu",
+			"orbitDayOffset": 0,
+			"visualDistance": 98,
+			"markers":[],
+			"moons":[]
+		},
+		{	
+			"name": {
+				"generic":""
+			},			
+			"color": "#88FFFF",
+			"radius": 7,
+			"calendar": "nimyric",
+			"orbitDayOffset": -37,
+			"visualDistance": 180,
+			"markers": [],
+			"moons":
+			[
+				{
+					"name": {
+						"generic":""
+					},					
+					"color": "#CCCCCC",
+					"radius": 3,
+					"visualDistance": 16,
+					"orbitDays": 25,
+					"orbitDayOffset": 1
+				}
+			]
+		},
+		{	
+			"name": {
+				"generic":""
+			},			
+			"color": "#FFCC44",
+			"radius": 7,
+			"calendar": "rilsu",
+			"orbitDayOffset": -64,
+			"visualDistance": 248,
+			"markers": [],
+			"moons":
+			[
+				{
+					"name": {
+						"generic":""
+					},				
+					"color": "#FFAA88",
+					"radius": 4,
+					"visualDistance": 18,
+					"orbitDays": 32,
+					"orbitDayOffset": -12
+				},
+				{
+					"name": {
+						"generic":""
+					},
+					"color": "#CCCCCC",
+					"radius": 2,
+					"visualDistance": 39,
+					"orbitDays": 57,
+					"orbitDayOffset": 0
+				}
+			]
+		},
+		{	
+			"name": {
+				"generic":""
+			},			
+			"color": "#66BBFF",
+			"radius": 11,
+			"calendar": "ivlare",
+			"orbitDayOffset": 67,
+			"visualDistance": 378,
+			"markers": [],
+			"moons":[],
+			"ring":
+			{
+				"radius": 28,
+				"thickness": 8,
+				"color": "#AABBFF"
+			}
+		},
+		{	
+			"name": {
+				"generic":""
+			},			
+			"color": "#FFFFBB",
+			"radius": 4,
+			"calendar": "static",
+			"orbitDayOffset": 0.5,
+			"visualDistance": 576,
+			"markers":[],
+			"moons":[],
+			"drawOrbit":"false"
+		}
+	],
+	"lights":[]
+}
