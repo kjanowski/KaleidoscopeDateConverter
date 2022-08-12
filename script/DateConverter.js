@@ -295,6 +295,13 @@ function getTimeText(dateTime)
 	return text;
 }
 
+function updateAllDisplays(){
+	for(calendarName of calendarConfig.calendarNames)
+	{
+		updateDisplay(calendarName)
+	}
+}
+
 function updateDisplay(calendarName){
 	var dateTimeNow = getDateTime("Now", calendarName);
 	

@@ -308,6 +308,7 @@ function advanceTime() {
 
 	updateAllInputs('Now');
 	updateStarSystem();
+	updateAllDisplays();
 }
 
 
