@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<html>
+<!--
+	Copyright Kathrin Janowski (https://www.kathrinjanowski.com/en/home), 2021.
+  
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <https://www.gnu.org/licenses/>.
+  
+    --------------------------------------
+  
+	Regarding the worldbuilding content: 
+	The specific parameters and names associated with the
+	"nimyric", "pereqaian", "rilsu" and "twk" calendars are not included
+	in the license mentioned above.
+	Further details can be found in the file "readme.md" in the root folder.
+	
+  -->
+<head>
+	<title>Celestial body display for the Kaleidoscope System</title>
+	<script src="../script/DateConverter.js"></script>
+	<script src="../script/CelestialBodies.js"></script>
+	<link rel="icon" href="../img/favicon_kaleidechse_57x57.png" type="image/png">
+	<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Oregano'>
+	<link rel="stylesheet" type="text/css" href="../style/layout.css">
+	<link rel="stylesheet" type="text/css" href="../style/layout_HD_minimal.css">
+	<link rel="stylesheet" type="text/css" href="../style/theme_Kaleidoscope.css">
+</head>
+<body>
+	<div class="control-panel" style="margin-bottom:20px;">
+		<button id="toggleAnim" onclick="toggleAnimation('t')" style="display:inline;width:auto; margin-right:50px;">►</button> 
+		<button id="setTWK" onclick="submitInputs('Now','twk');updateAllInputs('Now');updateStarSystem();" style="display:inline;width:auto;">set Hive time</button>	
+
+		<div class="panel twk" id="inputs_twk" style="left:0px;bottom:0px;">
+			<h2>Those Who Know</h2>
+			<form>
+				<input class="year" type="number" id="year_twk" name="year_twk">
+				<select id="era_twk" name="era_twk" onclick="limitInputs('twk');">
+					<option value="before">Before The Hive</option>
+					<option value="after">In The Hive</option>
+				</select>
+				<br>
+				<select id="month_twk" name="month_twk" onclick="limitInputs('twk');">
+					<option value="1">Greatest Power</option>
+					<option value="2">Waning Power</option>
+					<option value="3">Power Loss</option>
+					<option value="4">Waxing Power</option>
+				</select>
+				<input type="number" id="day_twk" name="day_twk" min="1">
+				<br>
+				<input class="hour" type="number" id="hour_twk" name="hour_twk" min="0" max="199">:
+				<input type="number" id="minute_twk" name="minute_twk" min="0" max="79">:
+				<input type="number" id="second_twk" name="second_twk" min="0" max="49">
+			</form>
+		</div>
+	</div>		
+
+
+	<div class="page kaleidoscope">
+		<canvas class="backdrop" id="starSystem" width="1920" height="1080" style="border:none;background-position:left; background-size: cover;">
+			Your browser does not support the canvas element.
+		</canvas>
+					
+		<div id="timestamp-display" class="panel output">
+			<div class="display-section display-now" id="output-twk-now"></div>
+		</div>
+
+	</div>
+	
+	<script>
+		loadCelestialConfig('../config/CalendarConfig_Kaleidoscope.json', '../config/CelestialConfig_Kaleidoscope_HD.json');
+	</script>
+</body>
+</html>
