@@ -284,13 +284,19 @@ function updateStarSystem(){
 	}
 }
 
+
 function toggleAnimation(calendar)
+{
+	toggleAnimation(calendar, 20);
+}
+
+function toggleAnimation(calendar, interval)
 {
 	var btn = document.getElementById("toggleAnim")
 	if(animator == undefined)
 	{
 		animatorCalendar = calendar;
-		animator = setInterval(advanceTime, 20);
+		animator = setInterval(advanceTime, interval);
 		btn.innerHTML = "||";
 	}else{
 		clearInterval(animator);
