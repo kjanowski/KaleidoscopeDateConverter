@@ -284,13 +284,13 @@ function convertToDateTime(calendarName, standardSeconds){
 
 function getTimeText(dateTime)
 {
-	var text = ""+dateTime.hour+":";
+	var text = "<div class=\"hours\">"+dateTime.hour+"<div class=\"minutes\">:";
 	if(dateTime.minute < 10)
 		text = text+"0";
-	text = text +dateTime.minute+":";
+	text = text +dateTime.minute+"<div class=\"seconds\">:";
 	if(dateTime.second < 10)
 		text = text+"0";
-	text = text +dateTime.second;			
+	text = text +dateTime.second+"</div></div></div>";			
 
 	return text;
 }
@@ -309,11 +309,11 @@ function updateDisplay(calendarName){
 	if(output != undefined)
 	{
 		var textNow = "<h3>Current time:</h3>"
-						+dateTimeNow.year+" "+dateTimeNow.era+"<br>"
-						+"<div class=\"tooltip\">"+dateTimeNow.monthName
+						+"<div class=\"year\">"+dateTimeNow.year+"</div><div class=\"era\">"+dateTimeNow.era+"</div>"
+						+"<div class=\"month tooltip\">"+dateTimeNow.monthName
 							+"<div class=\"tooltip-text\">"
-								+dateTimeNow.month+"</div></div> "
-						+dateTimeNow.day+"<br>"+getTimeText(dateTimeNow);
+								+dateTimeNow.month+"</div></div>"
+						+"<div class=\"day\">"+dateTimeNow.day+"</div><div class=\"time\">"+getTimeText(dateTimeNow)+"</div>";
 
 		output.innerHTML= textNow;
 	}else console.log("no output \"now\" for calendar \""+calendarName+"\"");

@@ -28,7 +28,6 @@
 .control-panel{
 	position:relative;
 	width:1920px;
-	margin-left:auto;
 }
 
 #timestamp-display{
@@ -41,6 +40,26 @@
 	text-align:right;
 	width:620px;
 	font-size:3.0em;
+}
+
+#timestamp-display h3{
+	display:none;
+}
+
+#timestamp-display .year{
+	display:block;
+}
+
+#timestamp-display .era{
+	display:none;
+}
+
+#timestamp-display .time{
+	display:block;
+}
+
+#timestamp-display .seconds{
+	display:none;
 }
 
 #timestamp-display .tooltip{
