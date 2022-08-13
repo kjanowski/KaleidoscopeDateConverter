@@ -274,6 +274,7 @@ label{
 	padding-left:10px;
 }
 
+.output .display-diff .date-block,
 .output .year,
 .output .era,
 .output .month,

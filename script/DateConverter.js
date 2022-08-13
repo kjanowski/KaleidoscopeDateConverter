@@ -361,7 +361,7 @@ function updateDisplay(calendarName){
 		var textDiff = "<h3>Difference:</h3>"
 						+"<div class=\"year-block\"><div class=\"year\">"+deltaTime.year+" years, </div>"		
 						+"<div class=\"date-block\"><div class=\"month\">"+(deltaTime.month-1)
-							+"months, </div>"
+							+" months, </div>"
 						+"<div class=\"day\"> "+dateTimeNow.day+" days,</div></div><div class=\"time-block\"> "+getTimeText(dateTimeNow)
 						+" hours</div><div class=\"total-days-block\">("+deltaTime.totalDays+" days total)</div>"; 
 
