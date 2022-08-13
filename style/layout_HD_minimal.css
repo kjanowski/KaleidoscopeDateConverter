@@ -17,8 +17,8 @@
 
 
 .page{
-	width:3200px;
-	height:1800px;
+	width:1920px;
+	height:1080px;
 	margin-left:auto;
 	margin-right:auto;
 	border: 1px solid white;
@@ -27,13 +27,13 @@
 
 .control-panel{
 	position:relative;
-	display:inline-block;
-	margin:10px;
+	margin-bottom:10px;
 }
 
 .control-panel .panel{
 	display:inline-block;
 }
+
 
 #timestamp-display{
 	position:absolute;
