@@ -38,7 +38,7 @@
 </head>
 <body>
 	<div class="control-panel" style="margin-bottom:20px;">
-		<button id="toggleAnim" onclick="toggleAnimation('twk')" style="display:inline;width:auto; margin-right:50px;">►</button> 
+		<button id="toggleAnim" onclick="toggleAnimation('utd')" style="display:inline;width:auto; margin-right:50px;">►</button> 
 		<button id="setTWK" onclick="submitInputs('Now','twk');updateAllInputs('Now');updateStarSystem();" style="display:inline;width:auto;">set Hive time</button>	
 
 		<div class="panel twk" id="inputs_twk" style="left:0px;bottom:0px;">
@@ -71,7 +71,7 @@
 			Your browser does not support the canvas element.
 		</canvas>
 					
-		<div id="timestamp-display" class="panel output">
+		<div id="timestamp-display" class="output">
 			<div class="display-section display-now" id="output-twk-now"></div>
 		</div>
 
@@ -79,6 +79,7 @@
 	
 	<script>
 		loadCelestialConfig('../config/CalendarConfig_Kaleidoscope.json', '../config/CelestialConfig_Kaleidoscope_HD_minimal.json');
+		setDateTime('now', 'twk', 80210, 3, 16, 116, 70, 32)
 	</script>
 </body>
 </html>

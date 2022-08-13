@@ -32,10 +32,17 @@
 }
 
 #timestamp-display{
+	width:620px;
+	font-size:3.0em;
 	position:absolute;
-	vertical-align:50%;
+	right:0px;
+	top:0px;
 }
 
 #timestamp-display .display-section{
-	text-align:left;
+	text-align:right;
+}
+
+#timestamp-display .tooltip{
+	border:none;
 }
