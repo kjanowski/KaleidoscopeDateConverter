@@ -61,6 +61,10 @@
 	display:none;
 }
 
+
+
+#timestamp-display .month,
+#timestamp-display .day,
 #timestamp-display .hours,
 #timestamp-display .minutes{
 	display:inline;

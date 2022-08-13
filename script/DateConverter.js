@@ -334,11 +334,11 @@ function updateDisplay(calendarName){
 		timeThen = timeThen +dateTimeThen.second;			
 		
 		var textThen = "<h3>Comparison time:</h3>"
-						+dateTimeThen.year+" "+dateTimeThen.era+"<br>"
-						+"<div class=\"tooltip\">"+dateTimeThen.monthName
+						+"<div class=\"year-block\"><div class=\"year\">"+dateTimeThen.year+"</div><div class=\"era\"> "+dateTimeThen.era+"</div></div>"
+						+"<div class=\"date-block\"><div class=\"month tooltip\">"+dateTimeThen.monthName
 							+"<div class=\"tooltip-text\">"
-							+dateTimeThen.month+"</div></div> "
-						+dateTimeThen.day+"<br>"+getTimeText(dateTimeThen);	
+								+dateTimeThen.month+"</div></div>"
+						+"<div class=\"day\"> "+dateTimeThen.day+"</div></div><div class=\"time-block\"> "+getTimeText(dateTimeThen)+"</div>";	
 
 		output.innerHTML= textThen;
 	}else console.log("no output \"then\" for calendar \""+calendarName+"\"");
@@ -358,9 +358,12 @@ function updateDisplay(calendarName){
 			timeDiff = timeDiff+"0";
 		timeDiff = timeDiff +deltaTime.second;			
 		
-		var textDiff = "<h3>Distance:</h3>"
-						+deltaTime.year+" years, "+(deltaTime.month-1)+" months, "+(deltaTime.day-1)+" days,<br>"+getTimeText(deltaTime)
-						+"<br>("+deltaTime.totalDays+" days total)"; 
+		var textDiff = "<h3>Difference:</h3>"
+						+"<div class=\"year-block\"><div class=\"year\">"+deltaTime.year+" years, </div>"		
+						+"<div class=\"date-block\"><div class=\"month\">"+(deltaTime.month-1)
+							+"months, </div>"
+						+"<div class=\"day\"> "+dateTimeNow.day+" days,</div></div><div class=\"time-block\"> "+getTimeText(dateTimeNow)
+						+" hours</div><div class=\"total-days-block\">("+deltaTime.totalDays+" days total)</div>"; 
 
 		output.innerHTML= textDiff;
 	}else console.log("no output \"diff\" for calendar \""+calendarName+"\"");
