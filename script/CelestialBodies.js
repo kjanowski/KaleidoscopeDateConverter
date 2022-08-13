@@ -285,11 +285,6 @@ function updateStarSystem(){
 }
 
 
-function toggleAnimation(calendar)
-{
-	toggleAnimation(calendar, 20);
-}
-
 function toggleAnimation(calendar, interval)
 {
 	var btn = document.getElementById("toggleAnim")
