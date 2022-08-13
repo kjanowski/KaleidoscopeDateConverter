@@ -46,16 +46,24 @@
 	display:none;
 }
 
-#timestamp-display .year{
+#timestamp-display .year-block,
+#timestamp-display .date-block,
+#timestamp-display .time-block
+{
 	display:block;
+}
+
+#timestamp-display .year{
+	display:inline;
 }
 
 #timestamp-display .era{
 	display:none;
 }
 
-#timestamp-display .time{
-	display:block;
+#timestamp-display .hours,
+#timestamp-display .minutes{
+	display:inline;
 }
 
 #timestamp-display .seconds{

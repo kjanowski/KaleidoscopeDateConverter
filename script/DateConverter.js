@@ -309,11 +309,11 @@ function updateDisplay(calendarName){
 	if(output != undefined)
 	{
 		var textNow = "<h3>Current time:</h3>"
-						+"<div class=\"year\">"+dateTimeNow.year+"</div><div class=\"era\">"+dateTimeNow.era+"</div>"
-						+"<div class=\"month tooltip\">"+dateTimeNow.monthName
+						+"<div class=\"year-block\"><div class=\"year\">"+dateTimeNow.year+"</div><div class=\"era\"> "+dateTimeNow.era+"</div></div>"
+						+"<div class=\"date-block\"><div class=\"month tooltip\">"+dateTimeNow.monthName
 							+"<div class=\"tooltip-text\">"
 								+dateTimeNow.month+"</div></div>"
-						+"<div class=\"day\">"+dateTimeNow.day+"</div><div class=\"time\">"+getTimeText(dateTimeNow)+"</div>";
+						+"<div class=\"day\"> "+dateTimeNow.day+"</div></div><div class=\"time-block\"> "+getTimeText(dateTimeNow)+"</div>";
 
 		output.innerHTML= textNow;
 	}else console.log("no output \"now\" for calendar \""+calendarName+"\"");
