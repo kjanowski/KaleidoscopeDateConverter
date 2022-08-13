@@ -17,8 +17,8 @@
 
 
 .page{
-	width:1920px;
-	height:1080px;
+	width:3200px;
+	height:1800px;
 	margin-left:auto;
 	margin-right:auto;
 	border: 1px solid white;
@@ -27,7 +27,12 @@
 
 .control-panel{
 	position:relative;
-	width:1920px;
+	display:inline-block;
+	margin:10px;
+}
+
+.control-panel .panel{
+	display:inline-block;
 }
 
 #timestamp-display{
@@ -53,14 +58,11 @@
 	display:block;
 }
 
-#timestamp-display .year{
+#timestamp-display .year,
+#timestamp-display .era
+{
 	display:inline;
 }
-
-#timestamp-display .era{
-	display:none;
-}
-
 
 
 #timestamp-display .month,
