@@ -305,52 +305,65 @@ function updateAllDisplays(){
 function updateDisplay(calendarName){
 	var dateTimeNow = getDateTime("Now", calendarName);
 	
-	var textNow = "<h3>Current time:</h3>"
-					+dateTimeNow.year+" "+dateTimeNow.era+"<br>"
-					+"<div class=\"tooltip\">"+dateTimeNow.monthName
-						+"<div class=\"tooltip-text\">"
-							+dateTimeNow.month+"</div></div> "
-					+dateTimeNow.day+"<br>"+getTimeText(dateTimeNow);
 	var output = document.getElementById("output-"+calendarName+"-now");
-	if(output == undefined)
+	if(output != undefined)
 	{
-		console.log("no output for calendar \""+calendarName+"\"");
-		return;
-	}
-	output.innerHTML= textNow;
+		var textNow = "<h3>Current time:</h3>"
+						+dateTimeNow.year+" "+dateTimeNow.era+"<br>"
+						+"<div class=\"tooltip\">"+dateTimeNow.monthName
+							+"<div class=\"tooltip-text\">"
+								+dateTimeNow.month+"</div></div> "
+						+dateTimeNow.day+"<br>"+getTimeText(dateTimeNow);
+
+		output.innerHTML= textNow;
+	}else console.log("no output \"now\" for calendar \""+calendarName+"\"");
+	
 								
 	var dateTimeThen = getDateTime("Then", calendarName);
 	
-	var timeThen = ""+dateTimeThen.hour+":";
-	if(dateTimeThen.minute < 10)
-		timeThen = timeThen+"0";
-	timeThen = timeThen +dateTimeThen.minute+":";
-	if(dateTimeThen.second < 10)
-		timeThen = timeThen+"0";
-	timeThen = timeThen +dateTimeThen.second;			
 	
-	var textThen = "<h3>Comparison time:</h3>"
-					+dateTimeThen.year+" "+dateTimeThen.era+"<br>"
-					+"<div class=\"tooltip\">"+dateTimeThen.monthName
-						+"<div class=\"tooltip-text\">"
+	output = document.getElementById("output-"+calendarName+"-then");
+	if(output != undefined)
+	{
+		var timeThen = ""+dateTimeThen.hour+":";
+		if(dateTimeThen.minute < 10)
+			timeThen = timeThen+"0";
+		timeThen = timeThen +dateTimeThen.minute+":";
+		if(dateTimeThen.second < 10)
+			timeThen = timeThen+"0";
+		timeThen = timeThen +dateTimeThen.second;			
+		
+		var textThen = "<h3>Comparison time:</h3>"
+						+dateTimeThen.year+" "+dateTimeThen.era+"<br>"
+						+"<div class=\"tooltip\">"+dateTimeThen.monthName
+							+"<div class=\"tooltip-text\">"
 							+dateTimeThen.month+"</div></div> "
-					+dateTimeThen.day+"<br>"+getTimeText(dateTimeThen);	
-	document.getElementById("output-"+calendarName+"-then").innerHTML = textThen;
+						+dateTimeThen.day+"<br>"+getTimeText(dateTimeThen);	
+
+		output.innerHTML= textThen;
+	}else console.log("no output \"then\" for calendar \""+calendarName+"\"");
+	
 
 	var deltaTime = getDeltaTime("Then", "Now", calendarName);
 	
-	var timeDiff = ""+deltaTime.hour+":";
-	if(deltaTime.minute < 10)
-		timeDiff = timeDiff+"0";
-	timeDiff = timeDiff +deltaTime.minute+":";
-	if(deltaTime.second < 10)
-		timeDiff = timeDiff+"0";
-	timeDiff = timeDiff +deltaTime.second;			
-	
-	var textDiff = "<h3>Distance:</h3>"
-					+deltaTime.year+" years, "+(deltaTime.month-1)+" months, "+(deltaTime.day-1)+" days,<br>"+getTimeText(deltaTime)
-					+"<br>("+deltaTime.totalDays+" days total)"; 
-	document.getElementById("output-"+calendarName+"-diff").innerHTML = textDiff;
+
+	output = document.getElementById("output-"+calendarName+"-diff");
+	if(output != undefined)
+	{
+		var timeDiff = ""+deltaTime.hour+":";
+		if(deltaTime.minute < 10)
+			timeDiff = timeDiff+"0";
+		timeDiff = timeDiff +deltaTime.minute+":";
+		if(deltaTime.second < 10)
+			timeDiff = timeDiff+"0";
+		timeDiff = timeDiff +deltaTime.second;			
+		
+		var textDiff = "<h3>Distance:</h3>"
+						+deltaTime.year+" years, "+(deltaTime.month-1)+" months, "+(deltaTime.day-1)+" days,<br>"+getTimeText(deltaTime)
+						+"<br>("+deltaTime.totalDays+" days total)"; 
+
+		output.innerHTML= textDiff;
+	}else console.log("no output \"diff\" for calendar \""+calendarName+"\"");
 }
 
 function setTime(which){

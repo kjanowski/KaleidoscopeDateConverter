@@ -32,8 +32,6 @@
 }
 
 #timestamp-display{
-	width:620px;
-	font-size:3.0em;
 	position:absolute;
 	right:0px;
 	top:0px;
@@ -41,6 +39,8 @@
 
 #timestamp-display .display-section{
 	text-align:right;
+	width:620px;
+	font-size:3.0em;
 }
 
 #timestamp-display .tooltip{
