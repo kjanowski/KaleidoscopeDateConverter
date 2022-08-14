@@ -50,6 +50,7 @@
 	font-size:5.0em;
 	width:auto;
 	color:var(--generic-darker-color);
+	position:relative;
 }
 
 
@@ -57,21 +58,22 @@
 #output-twk .date-block,
 #output-twk .time-block
 {
+	position:absolute;
 	display:block;
-	margin-right:30px;
+	right:30px;
 }
 
-#output-twk .date-block{
-	margin-top: 15px;
+#output-twk .year-block{
+	top: 15px;
 }
 
 #output-twk .time-block{
-	margin-top: 90px;
+	top: 590px;
 	width: 200px;
 }
 
 #output-twk .date-block{
-	margin-top: 90px;
+	bottom:15px;
 }
 
 #output-twk .year,
