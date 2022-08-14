@@ -47,7 +47,7 @@
 
 #output-twk .display-section{
 	text-align:right;
-	font-size:5.0em;
+	font-size:4.0em;
 	width:auto;
 	color:var(--generic-darker-color);
 	position:relative;
@@ -65,15 +65,16 @@
 
 #output-twk .year-block{
 	top: 15px;
+	width:500px;
 }
 
 #output-twk .time-block{
-	top: 590px;
-	width: 200px;
+	top: 300px;
+	width: 300px;
 }
 
 #output-twk .date-block{
-	bottom:15px;
+	top:690px;
 }
 
 #output-twk .year,
