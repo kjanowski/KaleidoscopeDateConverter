@@ -43,8 +43,8 @@
 
 #output-twk .display-section{
 	text-align:right;
-	width:620px;
-	font-size:3.0em;
+	font-size:5.0em;
+	color:var(--generic-darker-color);
 }
 
 
@@ -53,13 +53,16 @@
 #output-twk .time-block
 {
 	display:block;
-	margin-top:20px;
+	margin-top:50px;
 	margin-right:20px;
 }
 
-#output-twk .date-block,
+#output-twk .date-block{
+	margin-top: 80px;
+}
+
 #output-twk .time-block{
-	margin-top: 50px;
+	margin-top: 140px;
 }
 
 #output-twk .year,
@@ -71,19 +74,19 @@
 }
 
 #output-twk .year{
-	width: 140px;
+	width: 220px;
 }
 
 #output-twk .month{
-	width: 300px;
+	width: 500px;
 }
 
 #output-twk .day{
-	width: 70px;
+	width: 100px;
 }
 
 #output-twk .hours{
-	width: 80px;
+	width: 110px;
 }
 
 
