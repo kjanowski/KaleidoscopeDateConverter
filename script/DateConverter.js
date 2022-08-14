@@ -220,6 +220,10 @@ function convertToDateTime(calendarName, standardSeconds){
 	}
 	
 	
+	//determine the week day
+	var weekDayNum = localYearDays % dstCalendar.weekDayNames.length;
+	var weekDayName = dstCalendar.weekDayNames[weekDayNum];
+	
 
 	//--------------------------------------------------
 	var day;
@@ -231,7 +235,7 @@ function convertToDateTime(calendarName, standardSeconds){
 	year = localYear;
 	
 	
-	//extract the month, if it's not the leap month
+	//extract the month
 	var m = 0;
 	while((m<dstCalendar.monthNames.length) && (monthName==""))
 	{
@@ -271,6 +275,7 @@ function convertToDateTime(calendarName, standardSeconds){
 		month: month,
 		monthName: monthName,
 		totalDays : totalLocalDays,
+		weekDayName: weekDayName,
 		day: day,
 		hour: hour,
 		minute: minute,

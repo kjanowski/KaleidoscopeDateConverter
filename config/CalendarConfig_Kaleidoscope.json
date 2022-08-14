@@ -12,7 +12,9 @@
 			"monthNames": ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
 			"monthLength": [31, 28, 31, 30, 31, 30,	31, 31, 30, 31, 30, 31],
 			"eraBefore": "before time began",
-			"eraAfter": "since time began"
+			"eraAfter": "since time began",
+			"weekDayNames": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+			"weekDayOffset": 0
 		},
 		{
 			"name": "Nimýric Empire",
@@ -25,7 +27,9 @@
 			"daysPerYear": 348.0,
 			"eraBefore": "NN",
 			"eraAfter": "PN",
-			"rawOffsetUTD": 287345.12537
+			"rawOffsetUTD": 287345.12537,
+			"weekDayNames": ["Palidinó", "Éidinó", "Lahadinó", "Phódinó", "Saphédinó"],
+			"weekDayOffset": 2
 		},
 		{
 			"name": "Pereqaian Alliance",
@@ -38,7 +42,9 @@
 			"daysPerYear": 348.0,
 			"eraBefore": "FGZ",
 			"eraAfter": "TGZ",
-			"rawOffsetUTD": 288552.6619
+			"rawOffsetUTD": 288552.6619,
+			"weekDayNames": ["Oitada", "Oibele", "Oisevde", "Oilèmi", "Oiqaxide"],
+			"weekDayOffset": 4
 		},
 		{
 			"name": "Rilsu World Republic",
@@ -51,7 +57,9 @@
 			"daysPerYear": 521.0,
 			"eraBefore": "NZR",
 			"eraAfter": "VZR",
-			"rawOffsetUTD": 287459.0931
+			"rawOffsetUTD": 287459.0931,
+			"weekDayNames": ["Musamiz", "Musagol", "Musakep", "Musavil", "Musamif", "Musagot", "Musadeo", "Musakuz"],
+			"weekDayOffset": 0
 		},
 		{
 			"name": "The Hive",
@@ -64,7 +72,9 @@
 			"daysPerYear": 205.0,
 			"eraBefore": "Before The Hive",
 			"eraAfter": "In The Hive",
-			"rawOffsetUTD": 0.0
+			"rawOffsetUTD": 0.0,
+			"weekDayNames": ["First Day Of The Week", "Second Day Of The Week", "Third Day Of The Week", "Fourth Day Of The Week", "Fifth Day Of The Week"],
+			"weekDayOffset": 0
 		},
 		{
 			"name": "The Burnt Planet",
@@ -77,7 +87,9 @@
 			"daysPerYear": 95.0,
 			"eraBefore": "Before The Hive",
 			"eraAfter": "In The Hive",
-			"rawOffsetUTD": 0.0
+			"rawOffsetUTD": 0.0,
+			"weekDayNames": ["First Day Of The Week", "Second Day Of The Week", "Third Day Of The Week", "Fourth Day Of The Week", "Fifth Day Of The Week"],
+			"weekDayOffset": 0
 		},
 		{
 			"name": "The Ringed Planet",
@@ -90,7 +102,9 @@
 			"daysPerYear": 783.0,
 			"eraBefore": "Before The Hive",
 			"eraAfter": "In The Hive",
-			"rawOffsetUTD": 0.0
+			"rawOffsetUTD": 0.0,
+			"weekDayNames": ["First Day Of The Week", "Second Day Of The Week", "Third Day Of The Week", "Fourth Day Of The Week", "Fifth Day Of The Week"],
+			"weekDayOffset": 0
 		},
 		{
 			"name": "none",
@@ -103,7 +117,9 @@
 			"daysPerYear": 1.0,
 			"eraBefore": "before time",
 			"eraAfter": "since time",
-			"rawOffsetUTD": 0.0
+			"rawOffsetUTD": 0.0,
+			"weekDayNames": ["First Day Of The Week", "Second Day Of The Week", "Third Day Of The Week", "Fourth Day Of The Week", "Fifth Day Of The Week"],
+			"weekDayOffset": 0
 		}
 	]
 }
