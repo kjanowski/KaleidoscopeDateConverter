@@ -34,6 +34,10 @@
 	display:inline-block;
 }
 
+.control-panel select{
+	color:var(--generic-text-color);
+}
+
 
 #output-twk{
 	position:absolute;
