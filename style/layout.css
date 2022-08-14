@@ -278,6 +278,7 @@ label{
 .output .year,
 .output .era,
 .output .month,
+.output .weekday,
 .output .day,
 .output .hours,
 .output .minutes,
