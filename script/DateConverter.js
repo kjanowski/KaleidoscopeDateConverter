@@ -301,44 +301,44 @@ function updateDisplaySection(calendarName, which, dateTime){
 	}
 	
 	//fill in the year
-	var yearOutput = output.getElementById(outputName+"-year");
+	var yearOutput = document.getElementById(outputName+"-year");
 	if(yearOutput != undefined)
 		yearOutput.innerHTML = ""+dateTime.year;
 	
 	//fill in the era
-	var eraOutput = output.getElementById(outputName+"-era");
+	var eraOutput = document.getElementById(outputName+"-era");
 	if(eraOutput != undefined)
 		eraOutput.innerHTML = dateTime.era;
 	
 	//fill in the month
-	var monthNameOutput = output.getElementById(outputName+"-month-full");
+	var monthNameOutput = document.getElementById(outputName+"-month-full");
 	if(monthNameOutput != undefined)
 		monthNameOutput.innerHTML = dateTime.monthName;
 	
-	var monthNumOutput = output.getElementById(outputName+"-month-num");
+	var monthNumOutput = document.getElementById(outputName+"-month-num");
 	if(monthNumOutput != undefined)
 		monthNumOutput.innerHTML = ""+dateTime.month;
 	
-	var monthDeltaOutput = output.getElementById(outputName+"-months-delta");
+	var monthDeltaOutput = document.getElementById(outputName+"-months-delta");
 	if(monthDeltaOutput != undefined)
 		monthDeltaOutput.innerHTML = ""+(dateTime.month-1);
 	
 	//fill in the day
-	var dayOutput = output.getElementById(outputName+"-day");
+	var dayOutput = document.getElementById(outputName+"-day");
 	if(dayOutput != undefined)
 		dayOutput.innerHTML = dateTime.day;
 	
-	var dayOutput = output.getElementById(outputName+"-days-total");
+	var dayOutput = document.getElementById(outputName+"-days-total");
 	if(dayOutput != undefined)
 		dayOutput.innerHTML = dateTime.totalDays;
 	
 	
 	//fill in the time
-	var hourOutput = output.getElementById(outputName+"-hours");
+	var hourOutput = document.getElementById(outputName+"-hours");
 	if(hourOutput != undefined)
 		hourOutput.innerHTML = dateTime.day;
 	
-	var minuteOutput = output.getElementById(outputName+"-minutes");
+	var minuteOutput = document.getElementById(outputName+"-minutes");
 	if(minuteOutput != undefined)
 	{	
 		if(dateTime.minute < 10)
@@ -346,7 +346,7 @@ function updateDisplaySection(calendarName, which, dateTime){
 		else minuteOutput.innerHTML = ""+dateTime.minute;
 	}
 	
-	var secondOutput = output.getElementById(outputName+"-seconds");
+	var secondOutput = document.getElementById(outputName+"-seconds");
 	if(secondOutput != undefined)
 	{	
 		if(dateTime.second < 10)
