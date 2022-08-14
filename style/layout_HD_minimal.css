@@ -35,47 +35,37 @@
 }
 
 
-#timestamp-display{
+#output-twk{
 	position:absolute;
 	right:0px;
 	top:0px;
 }
 
-#timestamp-display .display-section{
+#output-twk .display-section{
 	text-align:right;
 	width:620px;
 	font-size:3.0em;
 }
 
-#timestamp-display h3{
-	display:none;
-}
 
-#timestamp-display .year-block,
-#timestamp-display .date-block,
-#timestamp-display .time-block
+#output-twk .year-block,
+#output-twk .date-block,
+#output-twk .time-block
 {
 	display:block;
+	margin-top:20px;
+	margin-right:20px;
 }
 
-#timestamp-display .year,
-#timestamp-display .era
-{
+#output-twk .year,
+#output-twk .era,
+#output-twk .month,
+#output-twk .day,
+#output-twk .hours{
 	display:inline;
 }
 
 
-#timestamp-display .month,
-#timestamp-display .day,
-#timestamp-display .hours,
-#timestamp-display .minutes{
-	display:inline;
-}
-
-#timestamp-display .seconds{
-	display:none;
-}
-
-#timestamp-display .tooltip{
+#output-twk .tooltip{
 	border:none;
 }

@@ -155,7 +155,7 @@ function convertToDateTime(calendarName, standardSeconds){
 	var dstCalendar = getCalendar(calendarName);
 	
 	
-	console.log("converting from \""+srcCalendar.name+"\" to \""+dstCalendar.name+"\"");
+	//console.log("converting from \""+srcCalendar.name+"\" to \""+dstCalendar.name+"\"");
 	
 	var after = (standardSeconds >= 0);
 	
@@ -282,18 +282,6 @@ function convertToDateTime(calendarName, standardSeconds){
 	return dateTime;
 }
 
-function getTimeText(dateTime)
-{
-	var text = "<div class=\"hours\">"+dateTime.hour+"<div class=\"minutes\">:";
-	if(dateTime.minute < 10)
-		text = text+"0";
-	text = text +dateTime.minute+"<div class=\"seconds\">:";
-	if(dateTime.second < 10)
-		text = text+"0";
-	text = text +dateTime.second+"</div></div></div>";			
-
-	return text;
-}
 
 function updateAllDisplays(){
 	for(calendarName of calendarConfig.calendarNames)
@@ -302,72 +290,91 @@ function updateAllDisplays(){
 	}
 }
 
-function updateDisplay(calendarName){
-	var dateTimeNow = getDateTime("Now", calendarName);
-	
-	var output = document.getElementById("output-"+calendarName+"-now");
-	if(output != undefined)
-	{
-		var textNow = "<h3>Current time:</h3>"
-						+"<div class=\"year-block\"><div class=\"year\">"+dateTimeNow.year+"</div><div class=\"era\"> "+dateTimeNow.era+"</div></div>"
-						+"<div class=\"date-block\"><div class=\"month tooltip\">"+dateTimeNow.monthName
-							+"<div class=\"tooltip-text\">"
-								+dateTimeNow.month+"</div></div>"
-						+"<div class=\"day\"> "+dateTimeNow.day+"</div></div><div class=\"time-block\"> "+getTimeText(dateTimeNow)+"</div>";
 
-		output.innerHTML= textNow;
-	}else console.log("no output \"now\" for calendar \""+calendarName+"\"");
+function updateDisplaySection(calendarName, which, dateTime){
+	var outputName = "output-"+calendarName+"-"+which;
+	var output = document.getElementById(outputName);
+	if(output == undefined)
+	{
+		console.log("no output \""+which+"\" for calendar \""+calendarName+"\"");
+		return;
+	}
 	
+	//fill in the year
+	var yearOutput = output.getElementById(outputName+"-year");
+	if(yearOutput != undefined)
+		yearOutput.innerHTML = ""+dateTime.year;
+	
+	//fill in the era
+	var eraOutput = output.getElementById(outputName+"-era");
+	if(eraOutput != undefined)
+		eraOutput.innerHTML = dateTime.era;
+	
+	//fill in the month
+	var monthNameOutput = output.getElementById(outputName+"-month-full");
+	if(monthNameOutput != undefined)
+		monthNameOutput.innerHTML = dateTime.monthName;
+	
+	var monthNumOutput = output.getElementById(outputName+"-month-num");
+	if(monthNumOutput != undefined)
+		monthNumOutput.innerHTML = ""+dateTime.month;
+	
+	var monthDeltaOutput = output.getElementById(outputName+"-months-delta");
+	if(monthDeltaOutput != undefined)
+		monthDeltaOutput.innerHTML = ""+(dateTime.month-1);
+	
+	//fill in the day
+	var dayOutput = output.getElementById(outputName+"-day");
+	if(dayOutput != undefined)
+		dayOutput.innerHTML = dateTime.day;
+	
+	var dayOutput = output.getElementById(outputName+"-days-total");
+	if(dayOutput != undefined)
+		dayOutput.innerHTML = dateTime.totalDays;
+	
+	
+	//fill in the time
+	var hourOutput = output.getElementById(outputName+"-hours");
+	if(hourOutput != undefined)
+		hourOutput.innerHTML = dateTime.day;
+	
+	var minuteOutput = output.getElementById(outputName+"-minutes");
+	if(minuteOutput != undefined)
+	{	
+		if(dateTime.minute < 10)
+			minuteOutput.innerHTML = "0"+dateTime.minute;
+		else minuteOutput.innerHTML = ""+dateTime.minute;
+	}
+	
+	var secondOutput = output.getElementById(outputName+"-seconds");
+	if(secondOutput != undefined)
+	{	
+		if(dateTime.second < 10)
+			secondOutput.innerHTML = "0"+dateTime.second;
+		else secondOutput.innerHTML = ""+dateTime.second;
+	}	
+}	
+	
+
+function updateDisplay(calendarName){
+	var outputRoot = document.getElementById("output-"+calendarName);
+	if(outputRoot == undefined)
+	{
+		console.log("no output for calendar \""+calendarName+"\"");
+		return;
+	}
+	
+	
+	var dateTimeNow = getDateTime("Now", calendarName);
+	updateDisplaySection(calendarName, "now", dateTimeNow);	
 								
 	var dateTimeThen = getDateTime("Then", calendarName);
-	
-	
-	output = document.getElementById("output-"+calendarName+"-then");
-	if(output != undefined)
-	{
-		var timeThen = ""+dateTimeThen.hour+":";
-		if(dateTimeThen.minute < 10)
-			timeThen = timeThen+"0";
-		timeThen = timeThen +dateTimeThen.minute+":";
-		if(dateTimeThen.second < 10)
-			timeThen = timeThen+"0";
-		timeThen = timeThen +dateTimeThen.second;			
-		
-		var textThen = "<h3>Comparison time:</h3>"
-						+"<div class=\"year-block\"><div class=\"year\">"+dateTimeThen.year+"</div><div class=\"era\"> "+dateTimeThen.era+"</div></div>"
-						+"<div class=\"date-block\"><div class=\"month tooltip\">"+dateTimeThen.monthName
-							+"<div class=\"tooltip-text\">"
-								+dateTimeThen.month+"</div></div>"
-						+"<div class=\"day\"> "+dateTimeThen.day+"</div></div><div class=\"time-block\"> "+getTimeText(dateTimeThen)+"</div>";	
-
-		output.innerHTML= textThen;
-	}else console.log("no output \"then\" for calendar \""+calendarName+"\"");
-	
+	updateDisplaySection(calendarName, "then", dateTimeThen);
 
 	var deltaTime = getDeltaTime("Then", "Now", calendarName);
-	
-
-	output = document.getElementById("output-"+calendarName+"-diff");
-	if(output != undefined)
-	{
-		var timeDiff = ""+deltaTime.hour+":";
-		if(deltaTime.minute < 10)
-			timeDiff = timeDiff+"0";
-		timeDiff = timeDiff +deltaTime.minute+":";
-		if(deltaTime.second < 10)
-			timeDiff = timeDiff+"0";
-		timeDiff = timeDiff +deltaTime.second;			
-		
-		var textDiff = "<h3>Difference:</h3>"
-						+"<div class=\"year-block\"><div class=\"year\">"+deltaTime.year+" years, </div>"		
-						+"<div class=\"date-block\"><div class=\"month\">"+(deltaTime.month-1)
-							+" months, </div>"
-						+"<div class=\"day\"> "+dateTimeNow.day+" days,</div></div><div class=\"time-block\"> "+getTimeText(dateTimeNow)
-						+" hours</div><div class=\"total-days-block\">("+deltaTime.totalDays+" days total)</div>"; 
-
-		output.innerHTML= textDiff;
-	}else console.log("no output \"diff\" for calendar \""+calendarName+"\"");
+	updateDisplaySection(calendarName, "diff", deltaTime);
 }
+
 
 function setTime(which){
 	//get the values and convert them to numbers

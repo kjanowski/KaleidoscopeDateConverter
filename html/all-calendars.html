@@ -99,46 +99,402 @@
 			</div>
 		</div>
 		
-		<div class="panel output utd" id="utdDisplay">
-			<div class="display-section display-caption"><h3>UTD</h3></div>
-			<div class="display-section display-now" id="output-utd-now"></div>
+		<div class="panel output utd" id="output-utd">
+			<div class="display-section display-caption"><h3>Universal Time Date</h3></div>
+			<div class="display-section display-now" id="output-utd-now">
+				<div class="year-block"> 
+					<div id="output-utd-now-year" class="year"></div>
+					<div id="output-utd-now-era" class="era"></div>
+				</div>
+				<div class="date-block">
+					<div id="output-utd-now-month-full" class="month tooltip"></div>
+					<div id="output-utd-now-day" class="day"></div>
+				</div>
+				<div class="time-block">
+					<div class="hours">
+						<div id="output-utd-now-hours"></div>
+						<div class="minutes">
+							:
+							<div id="output-utd-now-minutes"></div>
+							<div class="seconds">
+								:
+								<div id="output-utd-now-seconds"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 			<div class="separator"></div>
-			<div class="display-section display-then" id="output-utd-then"></div>
+			<div class="display-section display-then" id="output-utd-then">
+				<div class="year-block"> 
+					<div id="output-utd-then-year" class="year"></div>
+					<div id="output-utd-then-era" class="era"></div>
+				</div>
+				<div class="date-block">
+					<div id="output-utd-then-month-full" class="month tooltip"></div>
+					<div id="output-utd-then-day" class="day"></div>
+				</div>
+				<div class="time-block">
+					<div class="hours">
+						<div id="output-utd-then-hours"></div>
+						<div class="minutes">
+							:
+							<div id="output-utd-then-minutes"></div>
+							<div class="seconds">
+								:
+								<div id="output-utd-then-seconds"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 			<div class="separator"></div>
-			<div class="display-section display-diff" id="output-utd-diff"></div>
+			<div class="display-section display-diff" id="output-utd-diff">
+				<div class="year-block"> 
+					<div id="output-utd-diff-year" class="year"></div>
+					<div id="output-utd-diff-era" class="era"></div>
+				</div>
+				<div class="date-block">
+					<div id="output-utd-diff-months-delta" class="month tooltip"></div>
+					<div id="output-utd-diff-day" class="day"></div>
+				</div>
+				<div class="time-block">
+					<div class="hours">
+						<div id="output-utd-diff-hours"></div>
+						<div class="minutes">
+							:
+							<div id="output-utd-diff-minutes"></div>
+							<div class="seconds">
+								:
+								<div id="output-utd-diff-seconds"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="total-days-block">
+					(
+					<div id="output-utd-diff-days-total"></div>
+					days total)
+				</div>
+			</div>
 		</div>
-		<div class="panel output nimyric" id="nimyricDisplay">
+		<div class="panel output nimyric" id="output-nimyric">
 			<div class="display-section display-caption"><h3>Nimýric Empire</h3></div>
-			<div class="display-section display-now" id="output-nimyric-now"></div>
+			<div class="display-section display-now" id="output-nimyric-now">
+				<div class="year-block"> 
+					<div id="output-nimyric-now-year" class="year"></div>
+					<div id="output-nimyric-now-era" class="era"></div>
+				</div>
+				<div class="date-block">
+					<div id="output-nimyric-now-month-full" class="month tooltip"></div>
+					<div id="output-nimyric-now-day" class="day"></div>
+				</div>
+				<div class="time-block">
+					<div class="hours">
+						<div id="output-nimyric-now-hours"></div>
+						<div class="minutes">
+							:
+							<div id="output-nimyric-now-minutes"></div>
+							<div class="seconds">
+								:
+								<div id="output-nimyric-now-seconds"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 			<div class="separator"></div>
-			<div class="display-section display-then" id="output-nimyric-then"></div>
+			<div class="display-section display-then" id="output-nimyric-then">
+				<div class="year-block"> 
+					<div id="output-nimyric-then-year" class="year"></div>
+					<div id="output-nimyric-then-era" class="era"></div>
+				</div>
+				<div class="date-block">
+					<div id="output-nimyric-then-month-full" class="month tooltip"></div>
+					<div id="output-nimyric-then-day" class="day"></div>
+				</div>
+				<div class="time-block">
+					<div class="hours">
+						<div id="output-nimyric-then-hours"></div>
+						<div class="minutes">
+							:
+							<div id="output-nimyric-then-minutes"></div>
+							<div class="seconds">
+								:
+								<div id="output-nimyric-then-seconds"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 			<div class="separator"></div>
-			<div class="display-section display-diff" id="output-nimyric-diff"></div>
+			<div class="display-section display-diff" id="output-nimyric-diff">
+				<div class="year-block"> 
+					<div id="output-nimyric-diff-year" class="year"></div>
+					<div id="output-nimyric-diff-era" class="era"></div>
+				</div>
+				<div class="date-block">
+					<div id="output-nimyric-diff-months-delta" class="month tooltip"></div>
+					<div id="output-nimyric-diff-day" class="day"></div>
+				</div>
+				<div class="time-block">
+					<div class="hours">
+						<div id="output-nimyric-diff-hours"></div>
+						<div class="minutes">
+							:
+							<div id="output-nimyric-diff-minutes"></div>
+							<div class="seconds">
+								:
+								<div id="output-nimyric-diff-seconds"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="total-days-block">
+					(
+					<div id="output-nimyric-diff-days-total"></div>
+					days total)
+				</div>
+			</div>
 		</div>
-		<div class="panel output pereqaian" id="pereqaianDisplay">
+		<div class="panel output pereqaian" id="output-pereqaian">
 			<div class="display-section display-caption"><h3>Pereqaian Alliance</h3></div>
-			<div class="display-section display-now" id="output-pereqaian-now"></div>
+			<div class="display-section display-now" id="output-pereqaian-now">
+				<div class="year-block"> 
+					<div id="output-pereqaian-now-year" class="year"></div>
+					<div id="output-pereqaian-now-era" class="era"></div>
+				</div>
+				<div class="date-block">
+					<div id="output-pereqaian-now-month-full" class="month tooltip"></div>
+					<div id="output-pereqaian-now-day" class="day"></div>
+				</div>
+				<div class="time-block">
+					<div class="hours">
+						<div id="output-pereqaian-now-hours"></div>
+						<div class="minutes">
+							:
+							<div id="output-pereqaian-now-minutes"></div>
+							<div class="seconds">
+								:
+								<div id="output-pereqaian-now-seconds"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 			<div class="separator"></div>
-			<div class="display-section display-then" id="output-pereqaian-then"></div>
+			<div class="display-section display-then" id="output-pereqaian-then">
+				<div class="year-block"> 
+					<div id="output-pereqaian-then-year" class="year"></div>
+					<div id="output-pereqaian-then-era" class="era"></div>
+				</div>
+				<div class="date-block">
+					<div id="output-pereqaian-then-month-full" class="month tooltip"></div>
+					<div id="output-pereqaian-then-day" class="day"></div>
+				</div>
+				<div class="time-block">
+					<div class="hours">
+						<div id="output-pereqaian-then-hours"></div>
+						<div class="minutes">
+							:
+							<div id="output-pereqaian-then-minutes"></div>
+							<div class="seconds">
+								:
+								<div id="output-pereqaian-then-seconds"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 			<div class="separator"></div>
-			<div class="display-section display-diff" id="output-pereqaian-diff"></div>
+			<div class="display-section display-diff" id="output-pereqaian-diff">
+				<div class="year-block"> 
+					<div id="output-pereqaian-diff-year" class="year"></div>
+					<div id="output-pereqaian-diff-era" class="era"></div>
+				</div>
+				<div class="date-block">
+					<div id="output-pereqaian-diff-months-delta" class="month tooltip"></div>
+					<div id="output-pereqaian-diff-day" class="day"></div>
+				</div>
+				<div class="time-block">
+					<div class="hours">
+						<div id="output-pereqaian-diff-hours"></div>
+						<div class="minutes">
+							:
+							<div id="output-pereqaian-diff-minutes"></div>
+							<div class="seconds">
+								:
+								<div id="output-pereqaian-diff-seconds"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="total-days-block">
+					(
+					<div id="output-pereqaian-diff-days-total"></div>
+					days total)
+				</div>
+			</div>
 		</div>
-		<div class="panel output rilsu" id="rilsuDisplay">
+		<div class="panel output rilsu" id="output-rilsu">
 			<div class="display-section display-caption"><h3>Rilsu World Republic</h3></div>
-			<div class="display-section display-now" id="output-rilsu-now"></div>
+			<div class="display-section display-now" id="output-rilsu-now">
+				<div class="year-block"> 
+					<div id="output-rilsu-now-year" class="year"></div>
+					<div id="output-rilsu-now-era" class="era"></div>
+				</div>
+				<div class="date-block">
+					<div id="output-rilsu-now-month-full" class="month tooltip"></div>
+					<div id="output-rilsu-now-day" class="day"></div>
+				</div>
+				<div class="time-block">
+					<div class="hours">
+						<div id="output-rilsu-now-hours"></div>
+						<div class="minutes">
+							:
+							<div id="output-rilsu-now-minutes"></div>
+							<div class="seconds">
+								:
+								<div id="output-rilsu-now-seconds"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 			<div class="separator"></div>
-			<div class="display-section display-then" id="output-rilsu-then"></div>
+			<div class="display-section display-then" id="output-rilsu-then">
+				<div class="year-block"> 
+					<div id="output-rilsu-then-year" class="year"></div>
+					<div id="output-rilsu-then-era" class="era"></div>
+				</div>
+				<div class="date-block">
+					<div id="output-rilsu-then-month-full" class="month tooltip"></div>
+					<div id="output-rilsu-then-day" class="day"></div>
+				</div>
+				<div class="time-block">
+					<div class="hours">
+						<div id="output-rilsu-then-hours"></div>
+						<div class="minutes">
+							:
+							<div id="output-rilsu-then-minutes"></div>
+							<div class="seconds">
+								:
+								<div id="output-rilsu-then-seconds"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 			<div class="separator"></div>
-			<div class="display-section display-diff" id="output-rilsu-diff"></div>
+			<div class="display-section display-diff" id="output-rilsu-diff">
+				<div class="year-block"> 
+					<div id="output-rilsu-diff-year" class="year"></div>
+					<div id="output-rilsu-diff-era" class="era"></div>
+				</div>
+				<div class="date-block">
+					<div id="output-rilsu-diff-months-delta" class="month tooltip"></div>
+					<div id="output-rilsu-diff-day" class="day"></div>
+				</div>
+				<div class="time-block">
+					<div class="hours">
+						<div id="output-rilsu-diff-hours"></div>
+						<div class="minutes">
+							:
+							<div id="output-rilsu-diff-minutes"></div>
+							<div class="seconds">
+								:
+								<div id="output-rilsu-diff-seconds"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="total-days-block">
+					(
+					<div id="output-rilsu-diff-days-total"></div>
+					days total)
+				</div>
+			</div>
 		</div>
-		<div class="panel output twk">
+		<div class="panel output twk" id="output-twk">
 			<div class="display-section display-caption"><h3>The Hive</h3></div>
-			<div class="display-section display-now" id="output-twk-now"></div>
+			<div class="display-section display-now" id="output-twk-now">
+				<div class="year-block"> 
+					<div id="output-twk-now-year" class="year"></div>
+					<div id="output-twk-now-era" class="era"></div>
+				</div>
+				<div class="date-block">
+					<div id="output-twk-now-month-full" class="month tooltip"></div>
+					<div id="output-twk-now-day" class="day"></div>
+				</div>
+				<div class="time-block">
+					<div class="hours">
+						<div id="output-twk-now-hours"></div>
+						<div class="minutes">
+							:
+							<div id="output-twk-now-minutes"></div>
+							<div class="seconds">
+								:
+								<div id="output-twk-now-seconds"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 			<div class="separator"></div>
-			<div class="display-section display-then" id="output-twk-then"></div>
+			<div class="display-section display-then" id="output-twk-then">
+				<div class="year-block"> 
+					<div id="output-twk-then-year" class="year"></div>
+					<div id="output-twk-then-era" class="era"></div>
+				</div>
+				<div class="date-block">
+					<div id="output-twk-then-month-full" class="month tooltip"></div>
+					<div id="output-twk-then-day" class="day"></div>
+				</div>
+				<div class="time-block">
+					<div class="hours">
+						<div id="output-twk-then-hours"></div>
+						<div class="minutes">
+							:
+							<div id="output-twk-then-minutes"></div>
+							<div class="seconds">
+								:
+								<div id="output-twk-then-seconds"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 			<div class="separator"></div>
-			<div class="display-section display-diff" id="output-twk-diff"></div>
+			<div class="display-section display-diff" id="output-twk-diff">
+				<div class="year-block"> 
+					<div id="output-twk-diff-year" class="year"></div>
+					<div id="output-twk-diff-era" class="era"></div>
+				</div>
+				<div class="date-block">
+					<div id="output-twk-diff-months-delta" class="month tooltip"></div>
+					<div id="output-twk-diff-day" class="day"></div>
+				</div>
+				<div class="time-block">
+					<div class="hours">
+						<div id="output-twk-diff-hours"></div>
+						<div class="minutes">
+							:
+							<div id="output-twk-diff-minutes"></div>
+							<div class="seconds">
+								:
+								<div id="output-twk-diff-seconds"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="total-days-block">
+					(
+					<div id="output-twk-diff-days-total"></div>
+					days total)
+				</div>
+			</div>
 		</div>
+
 	</div>
 	<script>
 		loadCalendarConfig('../config/CalendarConfig_Kaleidoscope.json');
