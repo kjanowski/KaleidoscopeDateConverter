@@ -86,7 +86,7 @@
 }
 
 #output-twk .year{
-	width: 220px;
+	width: 180px;
 }
 
 #output-twk .month{
@@ -94,7 +94,7 @@
 }
 
 #output-twk .day{
-	width: 100px;
+	width: 75px;
 }
 
 #output-twk .hours{
