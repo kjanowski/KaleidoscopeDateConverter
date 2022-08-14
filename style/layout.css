@@ -281,7 +281,9 @@ label{
 .output .day,
 .output .hours,
 .output .minutes,
-.output .seconds{
+.output .seconds,
+.output .total-days
+{
 	display: inline;
 }
 

@@ -65,6 +65,14 @@
 	display:inline;
 }
 
+#output-twk .day{
+	width: 80px;
+}
+
+#output-twk .hours{
+	width: 100px;
+}
+
 
 #output-twk .tooltip{
 	border:none;
