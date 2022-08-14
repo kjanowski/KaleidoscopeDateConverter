@@ -57,20 +57,33 @@
 	margin-right:20px;
 }
 
+#output-twk .date-block,
+#output-twk .time-block{
+	margin-top: 50px;
+}
+
 #output-twk .year,
 #output-twk .era,
 #output-twk .month,
 #output-twk .day,
 #output-twk .hours{
-	display:inline;
+	display:inline-block;
+}
+
+#output-twk .year{
+	width: 140px;
+}
+
+#output-twk .month{
+	width: 300px;
 }
 
 #output-twk .day{
-	width: 80px;
+	width: 70px;
 }
 
 #output-twk .hours{
-	width: 100px;
+	width: 80px;
 }
 
 

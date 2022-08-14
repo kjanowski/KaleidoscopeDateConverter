@@ -345,7 +345,7 @@ function updateDisplaySection(calendarName, which, dateTime){
 	//fill in the time
 	var hourOutput = document.getElementById(outputName+"-hours");
 	if(hourOutput != undefined)
-		hourOutput.innerHTML = dateTime.day;
+		hourOutput.innerHTML = dateTime.hour;
 	
 	var minuteOutput = document.getElementById(outputName+"-minutes");
 	if(minuteOutput != undefined)
