@@ -221,8 +221,8 @@ function convertToDateTime(calendarName, standardSeconds){
 	
 	
 	//determine the week day
-	var weekDayNum = localYearDays % dstCalendar.weekDayNames.length;
-	var weekDayName = dstCalendar.weekDayNames[weekDayNum];
+	var weekdayNum = (localYearDays+dstcalendar.weekdayOffset) % dstCalendar.weekdayNames.length;
+	var weekdayName = dstCalendar.weekdayNames[weekdayNum];
 	
 
 	//--------------------------------------------------
@@ -275,7 +275,7 @@ function convertToDateTime(calendarName, standardSeconds){
 		month: month,
 		monthName: monthName,
 		totalDays : totalLocalDays,
-		weekDayName: weekDayName,
+		weekdayName: weekdayName,
 		day: day,
 		hour: hour,
 		minute: minute,
@@ -329,6 +329,10 @@ function updateDisplaySection(calendarName, which, dateTime){
 		monthDeltaOutput.innerHTML = ""+(dateTime.month-1);
 	
 	//fill in the day
+	var weekdayOutput = document.getElementById(outputName+"-weekday");
+	if(weekdayOutput != undefined)
+		weekdayOutput.innerHTML = dateTime.weekdayName;
+	
 	var dayOutput = document.getElementById(outputName+"-day");
 	if(dayOutput != undefined)
 		dayOutput.innerHTML = dateTime.day;

@@ -74,6 +74,6 @@
 }
 
 
-#output-twk .tooltip{
-	border:none;
+#output-twk .tooltip-text{
+	display:none;
 }
