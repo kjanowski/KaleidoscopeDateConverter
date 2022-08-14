@@ -65,12 +65,13 @@
 	margin-top: 15px;
 }
 
-#output-twk .date-block{
-	margin-top: 80px;
+#output-twk .time-block{
+	margin-top: 90px;
+	width: 200px;
 }
 
-#output-twk .time-block{
-	margin-top: 140px;
+#output-twk .date-block{
+	margin-top: 90px;
 }
 
 #output-twk .year,
