@@ -221,7 +221,7 @@ function convertToDateTime(calendarName, standardSeconds){
 	
 	
 	//determine the week day
-	var weekdayNum = (localYearDays+dstcalendar.weekdayOffset) % dstCalendar.weekdayNames.length;
+	var weekdayNum = (localYearDays+dstCalendar.weekdayOffset) % dstCalendar.weekdayNames.length;
 	var weekdayName = dstCalendar.weekdayNames[weekdayNum];
 	
 
