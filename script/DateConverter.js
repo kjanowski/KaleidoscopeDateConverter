@@ -313,7 +313,7 @@ function updateDisplaySection(calendarName, which, dateTime){
 	//fill in the month
 	var monthNameOutput = document.getElementById(outputName+"-month-full");
 	if(monthNameOutput != undefined)
-		monthNameOutput.innerHTML = dateTime.monthName;
+		monthNameOutput.innerHTML = dateTime.monthName+"<div class=\"tooltip-text\">"+dateTime.month+"</div>";
 	
 	var monthNumOutput = document.getElementById(outputName+"-month-num");
 	if(monthNumOutput != undefined)
