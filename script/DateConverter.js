@@ -110,7 +110,8 @@ function convertToStdSeconds(calendarName, year, month, day, hour, minute, secon
 	localSeconds = localSeconds + second;
 	
 	//convert to standard seconds -------------------------------
-	
+	console.log("local seconds ("+calendarName+"): "+localSeconds);	
+
 	var standardSeconds = localSeconds
 						/ srcCalendar.secondsPerMinute //current value: local minutes
 						/ srcCalendar.minutesPerHour //current value: local hours
@@ -171,6 +172,7 @@ function convertToDateTime(calendarName, standardSeconds){
 					 * dstCalendar.locHoursPerDay //local hours
 					 * dstCalendar.minutesPerHour //local minutes
 					 * dstCalendar.secondsPerMinute; //local seconds
+	console.log("local seconds ("+calendarName+"): "+localSeconds);	
 	
 	if(!after)
 		localSeconds = localSeconds + 1;
