@@ -129,6 +129,7 @@ function setDateTime(which, calendarName, year, month, day, hour, minute, second
 	var srcCalendar = getCalendar(calendarName);
 	
 	times[which] = standardSeconds + srcCalendar.offsetUTD;
+	console.log("standard seconds: "+times["which"]);
 }
 
 
@@ -136,8 +137,10 @@ function setDateTime(which, calendarName, year, month, day, hour, minute, second
 
 function getDateTime(which, calendarName)
 {
+	console.log("standard seconds: "+times["which"]);
 	var dstCalendar = getCalendar(calendarName);
 	var standardSeconds = times[which] - dstCalendar.offsetUTD;
+	
 
 	return convertToDateTime(calendarName, standardSeconds);
 }
