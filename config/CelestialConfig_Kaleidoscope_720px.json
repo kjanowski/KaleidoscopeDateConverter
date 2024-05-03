@@ -182,7 +182,7 @@
 			},			
 			"color": "transparent",
 			"radius": 0,
-			"angularPosition": 270,
+			"angularPosition": 150,
 			"visualDistance": 250
 		}
 	],
