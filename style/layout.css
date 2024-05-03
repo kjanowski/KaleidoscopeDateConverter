@@ -59,6 +59,11 @@ hr{
 	margin:0px;
 }
 
+.page.w-960{
+	width:950px;
+	margin:0px;
+}
+
 .page.hd{
 	width:1920px;
 	height:1080px;
