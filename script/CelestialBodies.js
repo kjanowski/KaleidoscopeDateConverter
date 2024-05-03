@@ -242,6 +242,21 @@ function drawRing(ctx, centerX, centerY, planet)
 	}
 }
 
+
+function drawStaticObject(ctx, originX, originY, staticObject){
+	var orbitAngle = staticObject.angularPosition;
+	var orbitX = Math.cos(orbitAngle);
+	var orbitY = Math.sin(orbitAngle);
+	var orbitVisualX = orbitX*staticObject.visualDistance;
+	var orbitVisualY = orbitY*staticObject.visualDistance;
+	
+	var centerX =  originX + orbitVisualX;
+	var centerY = originY + orbitVisualY;
+	
+	drawCelestialBody(ctx, originX, originY, centerX, centerY, staticObject);	
+}
+
+
 function updateStarSystem(){
 	var c = document.getElementById("starSystem");
 	var canvasWidth = c.width;
@@ -281,6 +296,11 @@ function updateStarSystem(){
 	{
 		drawOrbit(ctx, originX, originY, planet);
 		drawPlanet(ctx, originX, originY, planet);
+	}
+
+	for(staticObject of star.staticObjects)
+	{
+		drawStaticObject(ctx, originX, originY, staticObject);
 	}
 }
 
