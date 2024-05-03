@@ -169,22 +169,6 @@
 				}
 			],
 			"moons":[]
-		},
-		{	
-			"name": {
-				"generic":"That Which Changes",
-				"nimyric":"Caléidóscópa",
-				"none":"",
-				"rilsu":"Larevok",
-				"pereqaian":"Miraqùl'òrò"
-			},			
-			"color": "#FFFFBB",
-			"radius": 4,
-			"calendar": "static",
-			"orbitDayOffset": 0,
-			"visualDistance": 300,
-			"markers": [],
-			"moons":[]
 		}
 	],
 	"staticObjects":[
@@ -198,7 +182,7 @@
 			},			
 			"color": "transparent",
 			"radius": 0,
-			"angularPosition": 0,
+			"angularPosition": 180,
 			"visualDistance": 300
 		}
 	],
