@@ -97,34 +97,26 @@
 			<button id="setUTD" onclick="submitInputs('Now','utd');updateAllInputs('Now');updateStarSystem();">set UTD time</button>	
 		</div>
 
-    <div class="panel twk toolshelf-section" id="inputs_twk">
+                <div class="panel twk toolshelf-section" id="inputs_twk">
 			<h2>Those Who Know</h2>
 			<form>
-				<label>year:</label>
 				<input class="year" type="number" id="year_twk" name="year_twk">
-				<br>
-				<label>era:</label>
 				<select id="era_twk" name="era_twk" onclick="limitInputs('twk');">
 					<option value="before">Before The Hive</option>
 					<option value="after">In The Hive</option>
 				</select>
-				<br>
-				<label>month:</label>
 				<select id="month_twk" name="month_twk" onclick="limitInputs('twk');">
 					<option value="1">The Phase Of Greatest Power</option>
 					<option value="2">The Phase Of Waning Power</option>
 					<option value="3">The Phase Of Power Loss</option>
 					<option value="4">The Phase Of Waxing Power</option>
 				</select>
-				<br>
-				<label>day:</label>
 				<input type="number" id="day_twk" name="day_twk" min="1">
-				<br><label>time:</label>
 				<input class="hour" type="number" id="hour_twk" name="hour_twk" min="0" max="199">:
 				<input type="number" id="minute_twk" name="minute_twk" min="0" max="79">:
 				<input type="number" id="second_twk" name="second_twk" min="0" max="49">
 			</form>
-			<button id="setTWK" onclick="submitInputs('Now','twk');updateInputs('Now','utd');">set Hive time</button>	
+			<button id="setTWK" onclick="submitInputs('Now','twk');updateAllInputs('Now');updateStarSystem();">set Hive time</button>	
 		</div>
 
 		<div class="panel rilsu toolshelf-section" id="inputs_rilsu">
