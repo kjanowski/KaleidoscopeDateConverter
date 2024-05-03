@@ -199,7 +199,7 @@
 			"color": "transparent",
 			"radius": 0,
 			"angularPosition": 0,
-			"visualDistance": 300,
+			"visualDistance": 300
 		}
 	],
 	"lights":[
