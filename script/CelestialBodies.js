@@ -244,7 +244,7 @@ function drawRing(ctx, centerX, centerY, planet)
 
 
 function drawStaticObject(ctx, originX, originY, staticObject){
-	var orbitAngle = staticObject.angularPosition;
+	var orbitAngle = staticObject.angularPosition/180*Math.PI;
 	var orbitX = Math.cos(orbitAngle);
 	var orbitY = Math.sin(orbitAngle);
 	var orbitVisualX = orbitX*staticObject.visualDistance;
