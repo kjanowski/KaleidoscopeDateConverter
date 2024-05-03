@@ -183,7 +183,7 @@
 			"color": "transparent",
 			"radius": 0,
 			"angularPosition": 150,
-			"visualDistance": 350
+			"visualDistance": 320
 		}
 	],
 	"lights":[
