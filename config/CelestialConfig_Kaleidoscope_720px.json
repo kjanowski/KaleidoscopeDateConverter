@@ -3,7 +3,8 @@
 		"generic":"The Central Star",
 		"nimyric":"Saphéne",
 		"none":"",
-		"rilsu":"Larekon"
+		"rilsu":"Larekon",
+		"pereqaian":"Tadan'a"
 	},
 	"color": "#FFFF88",
 	"radius": 20,
@@ -14,7 +15,8 @@
 				"generic":"The Burnt Planet",
 				"nimyric":"Achýu",
 				"none":"",
-				"rilsu":"Divusu"
+				"rilsu":"Divusu",
+				"pereqaian":""
 			},
 			"color": "#888888",
 			"radius": 5,
@@ -29,7 +31,8 @@
 				"generic":"The Watery Planet",
 				"nimyric":"Chryphóra",
 				"none":"",
-				"rilsu":"Tuvasuno"
+				"rilsu":"Tuvasuno",
+				"pereqaian":"Qentora"
 			},			
 			"color": "#88FFFF",
 			"radius": 12,
@@ -54,7 +57,8 @@
 						"generic":"The Dusty Moon",
 						"nimyric":"Palia",
 						"none":"",
-						"rilsu":"Kesivi"
+						"rilsu":"Kesivi",
+						"pereqaian":"Belen'a"
 					},					
 					"color": "#CCCCCC",
 					"radius": 3,
@@ -69,7 +73,8 @@
 				"generic":"The Molten Planet",
 				"nimyric":"Éisabó",
 				"none":"",
-				"rilsu":"Kasavoa"
+				"rilsu":"Kasavoa",
+				"pereqaian":""
 			},			
 			"color": "#FFCC44",
 			"radius": 13,
@@ -90,7 +95,8 @@
 						"generic":"The Sandy Moon",
 						"nimyric":"Lynvia",
 						"none":"",
-						"rilsu":"Ranul"
+						"rilsu":"Ranul",
+						"pereqaian":""
 					},				
 					"color": "#FFAA88",
 					"radius": 4,
@@ -103,7 +109,8 @@
 						"generic":"The Rocky Moon",
 						"nimyric":"Cóya",
 						"none":"",
-						"rilsu":"Inekoa"
+						"rilsu":"Inekoa",
+						"pereqaian":""
 					},
 					"color": "#CCCCCC",
 					"radius": 2,
@@ -118,7 +125,8 @@
 				"generic":"The Ringed Planet",
 				"nimyric":"Lahasabó",
 				"none":"",
-				"rilsu":"Ivlare"
+				"rilsu":"Ivlare",
+				"pereqaian":""
 			},			
 			"color": "#66BBFF",
 			"radius": 14,
@@ -145,7 +153,8 @@
 				"generic":"The Outer Planetoid",
 				"nimyric":"Temróph",
 				"none":"",
-				"rilsu":"Vokeran"
+				"rilsu":"Vokeran",
+				"pereqaian":""
 			},			
 			"color": "#FFFFBB",
 			"radius": 4,
@@ -159,6 +168,22 @@
 					"color":"#8800FF"
 				}
 			],
+			"moons":[]
+		},
+		{	
+			"name": {
+				"generic":"That Which Changes",
+				"nimyric":"Caléidóscópa",
+				"none":"",
+				"rilsu":"Larevok",
+				"pereqaian":"Miraqùl'òrò"
+			},			
+			"color": "#FFFFBB",
+			"radius": 4,
+			"calendar": "static",
+			"orbitDayOffset": 0,
+			"visualDistance": 300,
+			"markers": [],
 			"moons":[]
 		}
 	],
