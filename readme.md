@@ -7,7 +7,7 @@ Their primary purpose is to allow me to convert dates and times between the cale
 If you're interested in the lore behind these calendars, you can find more infomation here:
 * WorldAnvil: <https://www.worldanvil.com/w/the-kaleidoscope-system-kaleidechse>
 * DeviantArt: <https://www.deviantart.com/kaleidechse/gallery/63178723/kaleidoscope>
-* my personal Website: <https://www.kathrinjanowski.com/en/kaleidoscope>
+* my personal Website: <https://www.kathrinjanowski.com/en/art/projects/kaleidoscope>
 
 
 # License
